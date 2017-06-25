@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 
 import './style.css';
 import logo from './phil.gif';
+
 export default class Navbar extends Component {
 
     render() {

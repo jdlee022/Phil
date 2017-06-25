@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Navbar from '../Navbar/index';
 
+import './style.css';
+
 export default class Discuss extends Component {
 
 	render() {
