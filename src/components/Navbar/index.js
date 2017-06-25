@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
+import './style.css';
+import logo from './phil.gif';
 export default class Navbar extends Component {
 
     render() {
         return (
-            <div>
+            <div className="nav">
                 <div className="col-md-2 col-md-offset-1 text-center">
-                    <Link to='/'>Home</Link>
+                    <Link to='/' className="link">Home</Link>
                 </div>
                 <div className="col-md-2 text-center">
-                    <Link to='/discuss'>Discuss</Link>
+                    <Link to='/discuss' className="link">Discuss</Link>
                 </div>
                 <div className="col-md-2 text-center">
-                    Logo
+                    <img src={logo} alt="logo" className="logo"/>
             </div>
                 <div className="col-md-2 text-center">
-                    <Link to='/explore'>Explore</Link>
+                    <Link to='/explore' className="link">Explore</Link>
                 </div>
                 <div className="col-md-2 text-center">
-                    <Link to='/game'>Play</Link>
+                    <Link to='/game' className="link">Play</Link>
                 </div>
             </div>
         );
