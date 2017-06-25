@@ -16,7 +16,7 @@ export default class Navbar extends Component {
                     <Link to='/discuss' className="link">Discuss</Link>
                 </div>
                 <div className="col-md-2 text-center">
-                    <img src={logo} alt="logo" className="logo"/>
+                    <Link to='/' ><img src={logo} alt="logo" className="logo"/></Link>
             </div>
                 <div className="col-md-2 text-center">
                     <Link to='/explore' className="link">Explore</Link>
