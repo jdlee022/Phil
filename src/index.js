@@ -8,28 +8,28 @@ import { browserHistory} from 'react-router';
 //Import all of our components to configure react-router
 import { Router, Route, IndexRoute } from 'react-router';
 import Home from './components/Home';
-import Discuss from './components/Discuss';
+import Discuss from './components/Discuss/index';
+import Categories from './components/Discuss/categories'
 import Explore from './components/Explore';
 import Game from './components/Game';
-import UserAccount from './components/UserAccount';
-import UserLogin from './components/UserLogin';
-import UserRegister from './components/UserRegister';
+import UserLogin from './components/Discuss/login';
+import UserRegister from './components/Discuss/register';
 import NotFound from './components/NotFound';
 import Main from './components/Main';
 
 const Routes = (props) => (
     <Router {...props}>
 		<Route path="/" component={Main}>
-			<Route path="/discuss" component={Discuss} />
+			<IndexRoute component={Home}></IndexRoute>
+			<Route path="/discuss" component={Discuss}>
+                <IndexRoute component={Categories} />
+                <Route path="/login" component={UserLogin} />
+			    <Route path="/register" component={UserRegister} />
+            </Route>
 			<Route path="/explore" component={Explore} />
 			<Route path="/game" component={Game} />
-			<Route path="/account" component={UserAccount} />
-			<Route path="/login" component={UserLogin} />
-			<Route path="/register" component={UserRegister} />
 			<Route path="*" component={NotFound} />
-			<IndexRoute component={Home}></IndexRoute>
 		</Route>
-		
     </Router>
 );
 
