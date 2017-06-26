@@ -3,7 +3,19 @@ import React, {Component} from 'react'
 import oedipus from '../img/Oedipus.jpg'
 import sphinx from '../img/Sphinx.jpg'
 
+import MtSvgLines from 'react-mt-svg-lines';
+
 export default class Play extends Component {
+
+	laserLine(){
+		return (
+			<MtSvgLines animate={true} duration={500}>
+				<svg viewBox="0 0 100 5">
+					<path stroke="red" strokeWidth="3" fill="none" d="m0,0, h50" />
+				</svg>
+			</MtSvgLines>
+		)
+	}
 	render() {
 		return (
 			<div className="row container-fluid">
@@ -21,11 +33,21 @@ export default class Play extends Component {
 						</div>
 					</div>
 				</div>*/}
+				
 
 				<div className="row">
 					<p className="col-lg-6 questionBox">
 						"Quote from someone"
 					</p>
+				</div>
+
+				<div className="laser-line row">
+					<button onClick={this.laserLine}> Laser </button>
+					<MtSvgLines animate={true} duration={500}>
+						<svg viewBox="0 0 100 5">
+							<path stroke="red" strokeWidth="3" fill="none" d="m0,0, h50" />
+						</svg>
+					</MtSvgLines>
 				</div>
 
 				<div className="row">
