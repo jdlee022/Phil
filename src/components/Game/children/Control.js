@@ -32,7 +32,7 @@ export default class Control extends Component {
 						<button onClick={this.handlingReset} className="btn btn-danger"><h4>Reset</h4></button>
 					</div>
 					<div className="col-sm-4">
-						<h3>Survival of the God</h3>
+						<h3>Oedipus's Journey</h3>
 					</div>
 					<div className="col-sm-4">
 						<h4>Score: {this.state.score} </h4>

@@ -1,11 +1,33 @@
 import React, {Component} from 'react'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; 
 
-import oedipus from '../img/Oedipus.jpg'
-import sphinx from '../img/Sphinx.jpg'
+import oedipus from '../assets/img/Oedipus.jpg'
+import sphinx from '../assets/img/Sphinx.jpg'
+import MtSvgLines from 'react-mt-svg-lines'
+import quizletAPI from '../utils/quizletAPI'
 
-import MtSvgLines from 'react-mt-svg-lines';
 
 export default class Play extends Component {
+	constructor(){
+		super();
+		this.state = {
+			quoteBank: [],
+			currentQuote: {}
+		}
+	}
+
+	componentDidMount(){
+		this.handleStartGame();
+	}
+
+	handleStartGame(){
+		quizletAPI.getQuotes().then(function(allQuotes){
+			console.log("allQuotes from quizletAPI:", allQuotes.data.terms);
+			this.setState({
+				quoteBank: allQuotes.data.terms
+			});
+		}.bind(this));
+	}
 
 	laserLine(){
 		return (
@@ -16,6 +38,8 @@ export default class Play extends Component {
 			</MtSvgLines>
 		)
 	}
+
+
 	render() {
 		return (
 			<div className="row container-fluid">
@@ -32,7 +56,18 @@ export default class Play extends Component {
   						</div>
 						</div>
 					</div>
-				</div>*/}
+				</div>
+				*/}
+				<ReactCSSTransitionGroup 
+					ransitionName="gameIntro"
+					transitionEnterTimeout={500}
+					transitionLeaveTimeout={300}
+				>
+					<div>
+						<p>Sphinx used to sit outside of Thebes, asking riddles to anyone who passed by. Only you can help Oedipus get back to his journey.</p>
+						<p>Collecting Quotes...</p>
+					</div>
+				</ReactCSSTransitionGroup>
 				
 
 				<div className="row">
@@ -52,10 +87,11 @@ export default class Play extends Component {
 
 				<div className="row">
 					<img className="col-lg-4" src={sphinx} alt="Sphinx"/>
-					<form action="" className="col-lg-4">
+					<form action="" className="col-lg-4" onSubmit={this.handlingSubmit}>
 						<br /> <br /> <br />  <br /> <br /> <br />
 						<label htmlFor="">Who said this?</label><br />
 						Answer: <input type="text" />
+						<input type="submit" value="Submit"/>
 					</form>
 					<img className="col-lg-4" src={oedipus} alt="Oedipus" />
 				</div>
