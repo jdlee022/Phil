@@ -3,11 +3,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { browserHistory } from 'react-router';
+import { browserHistory} from 'react-router';
 
 //Import all of our components to configure react-router
-import { Router, Route } from 'react-router';
-import App from './components/App';
+import { Router, Route, IndexRoute } from 'react-router';
+import Home from './components/Home';
 import Discuss from './components/Discuss';
 import Explore from './components/Explore';
 import Game from './components/Game';
@@ -15,17 +15,21 @@ import UserAccount from './components/UserAccount';
 import UserLogin from './components/UserLogin';
 import UserRegister from './components/UserRegister';
 import NotFound from './components/NotFound';
+import Main from './components/Main';
 
 const Routes = (props) => (
     <Router {...props}>
-        <Route path="/" component={App} />
-        <Route path="/discuss" component={Discuss} />
-        <Route path="/explore" component={Explore} />
-        <Route path="/game" component={Game} />
-        <Route path="/account" component = {UserAccount} />
-        <Route path="/login" component = {UserLogin} />
-        <Route path="/register" component = {UserRegister} />
-        <Route path="*" component={NotFound} />
+		<Route path="/" component={Main}>
+			<Route path="/discuss" component={Discuss} />
+			<Route path="/explore" component={Explore} />
+			<Route path="/game" component={Game} />
+			<Route path="/account" component={UserAccount} />
+			<Route path="/login" component={UserLogin} />
+			<Route path="/register" component={UserRegister} />
+			<Route path="*" component={NotFound} />
+			<IndexRoute component={Home}></IndexRoute>
+		</Route>
+		
     </Router>
 );
 
