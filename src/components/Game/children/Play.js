@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+// import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {CSSTransitionGroup} from 'react-transition-group'
 // import oedipus from '../assets/img/Oedipus.jpg'
 // import sphinx from '../assets/img/Sphinx.jpg'
@@ -19,12 +19,21 @@ export default class Play extends Component {
 			quoteBank: [],
 			currentQuote: {},
 			quoteIndex: 0, 
-			sphinxSrc: sphinx
+			matched: "",
+			sphinxSrc: sphinx, 
+			answer: "",
+			hidden: "hidden", 
+			animation: false
 		}
-		this.handleSphinxAnimation = this.handleSphinxAnimation.bind(this);
+
+		this.handleAnswer = this.handleAnswer.bind(this);
+		this.handleInput = this.handleInput.bind(this);
+		this.renderLaser = this.renderLaser.bind(this);
+		this.renderNormal = this.renderNormal.bind(this);
 	}
 
 	componentDidMount() {
+		// this.runIntro();
 		this.handleStartGame();
 	}
 
@@ -34,31 +43,122 @@ export default class Play extends Component {
 			this.setState({
 				quoteBank: allQuotes.data.terms
 			});
+			let thisIndex = 0;
+			if (thisIndex !== this.state.currentIndex){
+				this.setState({
+					currentIndex: thisIndex
+				});
+			}
+			let thisQuote = {
+				definition: this.state.quoteBank[thisIndex].definition,
+				term: this.state.quoteBank[thisIndex].term
+			}
+			if (thisQuote !== this.state.currentQuote){
+				this.setState({
+					currentQuote: thisQuote
+				});
+			}
 		}.bind(this));
+		console.log("THIS.STATE", this.state);
 	}
-
-	laserLine() {
-		return (
-			<MtSvgLines animate={true} duration={500}>
-				<svg viewBox="0 0 100 5">
-					<path stroke="red" strokeWidth="3" fill="none" d="m0,0, h50" />
-				</svg>
-			</MtSvgLines>
-		)
-	}
-
-	handleSphinxAnimation(){
+	
+	handleInput(event){
 		this.setState({
-			sphinxSrc: sphinx_laser
+			answer: event.target.value
 		});
+		console.log("input:", this.state.answer);
 	}
 
-	render() {
+	handleAnswer(event){
+		event.preventDefault();
+		this.setState({
+			answer: event.target.value
+		});
+		if (this.state.answer === this.state.currentQuote.definition){
+			console.log("the answer is correct");
+			if ((this.state.currentIndex++) < (this.state.quoteBank).length) {
+				this.setState({
+					matched: "true",
+				}, function () {
+					console.log("this.state.matched:", this.state.matched);
+					this.props.handleScore(this.state.matched);
+					this.setState({
+						currentIndex: (this.state.currentIndex + 1),
+						answer: "", 
+						currentQuote: (this.state.quoteBank[this.state.currentIndex])
+					}, function(){
+						console.log("THIS.STATE", this.state);
+					});
+				});
+			}
+			
+			
+		} else {
+			console.log("the answer is incorrect");
+			this.setState({
+				matched: "false",
+				sphinxSrc: sphinx_laser, 
+			}, function () {
+				console.log("this.state.matched:", this.state.matched);
+				this.props.handleScore(this.state.matched);
+				setTimeout(function() {
+					this.setState({
+						matched: "",
+						currentIndex: (this.state.currentIndex + 1),
+						answer: "",
+						currentQuote: (this.state.quoteBank[this.state.currentIndex]),
+						sphinx: sphinx
+					}, function () {
+						console.log("THIS.STATE", this.state);
+					});
+				}.bind(this), 2000);
+				
+			});
+		}
+	}
+
+	/**Run this in render(), connected to this.state.matched
+	 * Run laser animation and then after that set everything back to 
+	 * normal after 3s.
+	 */
+	something() {
+		console.log("renderlaser()");
+		if (this.state.matched === 'false'){
+			this.setState({
+				matched: ""
+			}, function(){
+				//FIXME:
+				return (
+					<MtSvgLines animate={true} duration={300}>
+						<svg viewBox="0 0 100 5">
+							<path stroke="red" strokeWidth="3" fill="none" d="m0,0, h1000" />
+						</svg>
+					</MtSvgLines>
+				)
+			});
+			setTimeout(function(){
+				console.log("setTimeout");
+				this.setState({
+					sphinx: sphinx
+				});
+				return (
+					<div></div>
+				)
+			}.bind(this), 3000);
+		}
+		else if (this.state.matched === "" || this.state.matched === "true"){
+			return (
+				<div></div>
+			)
+		}	
+	}
+
+	renderLaser(){
 		return (
 			<div className="row container-fluid">
 				<div className="row progress-bar">
 					<div className="progress">
-						<div transition className="progress-bar progress-bar-danger progress-bar-striped" role="progressbar"
+						<div className="progress-bar progress-bar-danger progress-bar-striped" role="progressbar"
 							ariaValuenow="70" ariaValuemin="0" ariaValuemax="100">
 							70% Complete (danger)
   						</div>
@@ -70,15 +170,15 @@ export default class Play extends Component {
 						</div>
 					</div>
 				</div>
-				
-				<CSSTransitionGroup 
+
+				<CSSTransitionGroup
 					transitionName="intro"
 					transitionAppear={true}
 					transitionEnterTimeout={1500}
 					transitionLeaveTimeout={300}>
 					<div>
 						<p>Sphinx used to sit outside of Thebes, asking riddles to anyone who passed by. Only you can help Oedipus get back to his journey.</p>
-						<br/>
+						<br />
 						<p>Collecting Quotes...</p>
 					</div>
 				</CSSTransitionGroup>
@@ -86,7 +186,7 @@ export default class Play extends Component {
 				<div className="row">
 					<div className="talk-bubble tri-right border round btm-left-in">
 						<div className="talktext">
-							<p>This is the quote....</p>
+							<p>{this.state.currentQuote.term}</p>
 						</div>
 					</div>
 				</div>
@@ -95,25 +195,91 @@ export default class Play extends Component {
 					<img onClick={this.handleSphinxAnimation} className="col-lg-4" src={this.state.sphinxSrc} alt="Sphinx" />
 
 					<div className="laser-line col-lg-4">
-						<br/> <br/> <br/> <br/>
-						<MtSvgLines animate={true} duration={2000}>
-							<svg width="1200" height="10" version="1.1" id="laser" x="-10px" y="100px"
-								xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" xmlSpace="preserve">
-								<path d="M0 1 h 600"stroke="red" strokeWidth="10" fill="none" />
+						<br /> <br /> <br /> <br />
+						<MtSvgLines animate={true} duration={300}>
+							<svg viewBox="0 0 100 5">
+								<path stroke="red" strokeWidth="3" fill="none" d="m0,0, h1000" />
 							</svg>
 						</MtSvgLines>
-						<form action=""  onSubmit={this.handlingSubmit}>
+						<div >
 							<br /> <br /> <br />  <br /> <br /> <br />
 							<label htmlFor="">Who said this?</label><br />
-							Answer: <input type="text" />
-							<input type="submit" value="Submit" />
-						</form>
+							Answer: <input type="text" onInput={this.handleInput} value={this.state.answer} />
+							<input type="submit" value="Submit" onClick={this.handleAnswer} />
+						</div>
 					</div>
-					
+
 					<img className="col-lg-4" src={oedipus} alt="Oedipus" />
 				</div>
 
 			</div>
 		)
+	}
+	
+	renderNormal(){
+		return (
+			<div className="row container-fluid">
+				<div className="row progress-bar">
+					<div className="progress">
+						<div className="progress-bar progress-bar-danger progress-bar-striped" role="progressbar"
+							ariaValuenow="70" ariaValuemin="0" ariaValuemax="100">
+							70% Complete (danger)
+  						</div>
+						<div className="progress">
+							<div className="progress-bar progress-bar-danger progress-bar-striped" role="progressbar"
+								ariaValuenow="70" ariaValuemin="0" ariaValuemax="100">
+								70% Complete (danger)
+  						</div>
+						</div>
+					</div>
+				</div>
+
+				<CSSTransitionGroup
+					transitionName="intro"
+					transitionAppear={true}
+					transitionEnterTimeout={1500}
+					transitionLeaveTimeout={300}>
+					<div>
+						<p>Sphinx used to sit outside of Thebes, asking riddles to anyone who passed by. Only you can help Oedipus get back to his journey.</p>
+						<br />
+						<p>Collecting Quotes...</p>
+					</div>
+				</CSSTransitionGroup>
+
+				<div className="row">
+					<div className="talk-bubble tri-right border round btm-left-in">
+						<div className="talktext">
+							<p>{this.state.currentQuote.term}</p>
+						</div>
+					</div>
+				</div>
+
+				<div className="row">
+					<img onClick={this.handleSphinxAnimation} className="col-lg-4" src={this.state.sphinxSrc} alt="Sphinx" />
+
+					<div className="laser-line col-lg-4">
+						<br /> <br /> <br /> <br />
+						<div >
+							<br /> <br /> <br />  <br /> <br /> <br />
+							<label htmlFor="">Who said this?</label><br />
+							Answer: <input type="text" onInput={this.handleInput} value={this.state.answer} />
+							<input type="submit" value="Submit" onClick={this.handleAnswer} />
+						</div>
+					</div>
+
+					<img className="col-lg-4" src={oedipus} alt="Oedipus" />
+				</div>
+
+			</div>
+		)
+	}
+
+	render() {
+		if (this.state.matched === 'false') {
+			return this.renderLaser();
+		} else {
+			return this.renderNormal();
+		}
+		
 	}
 }

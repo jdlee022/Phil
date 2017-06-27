@@ -5,7 +5,7 @@ export default class Control extends Component {
 		super();
 		this.state = {
 			playing: false,
-			gameScore: 0,
+			score: 0,
 		}
 	}
 
@@ -20,6 +20,13 @@ export default class Control extends Component {
 		// this.props.handlingReset();
 		this.setState({
 			score: 0
+		});
+	}
+
+	componentWillReceiveProps(nextProps) {
+		console.log("nextProps:", nextProps.score);
+		this.setState({
+			score: nextProps.score
 		});
 	}
 
