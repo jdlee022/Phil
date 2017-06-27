@@ -1,7 +1,6 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "axios": "^0.16.2",
     "babel-register": "^6.24.1",
@@ -34,6 +33,7 @@
     "react-scripts": "1.0.7"
   },
   "scripts": {
-	"script":"react-scripts build"
+	"test": "echo \"Error: no test specified\" && exit 1",
+	"start": "react-scripts build"
   }
 }
