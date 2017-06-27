@@ -15,13 +15,16 @@ export default class Control extends Component {
 		this.setState({
 			playing: true,
 			score: 0
+		}, function(){
+			this.props.handleControlBtn(this.state.playing);
 		});
 	}
 
 	handlingReset() {
 		// this.props.handlingReset();
 		this.setState({
-			score: 0
+			score: 0,
+			playing: false
 		});
 	}
 

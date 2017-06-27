@@ -16,7 +16,7 @@ export default class Play extends Component {
 	constructor() {
 		super();
 		this.state = {
-			playing: true,
+			playing: false,
 			quoteBank: [],
 			currentQuote: {},
 			quoteIndex: 0, 
@@ -34,41 +34,81 @@ export default class Play extends Component {
 
 	componentDidMount() {
 		// this.runIntro();
-		this.handleStartGame(function(){
-			if (this.state.playing) {
-				let thisIndex = 0;
-				if (thisIndex !== this.state.currentIndex) {
-					this.setState({
-						currentIndex: thisIndex
-					});
-				}
-				let thisQuote = {
-					definition: this.state.quoteBank[thisIndex].definition,
-					term: this.state.quoteBank[thisIndex].term
-				}
-				if (thisQuote !== this.state.currentQuote) {
-					this.setState({
-						currentQuote: thisQuote
-					});
-				}
+		this.setState({
+			currentQuote: {
+				term: "Sphinx: I am the protector of Thebes. Only those who can answer my questions correctly can pass. Maybe you can help Oedipus get back to his journey."
 			}
-		}.bind(this));
-		
+		}, function(){
+			setTimeout(function(){
+				this.setState({
+					currentQuote: {
+						term: "Sphinx: A wrong answer will hurt Oedipus. You can only miss 5 before Oedipus has to turn around. Click 'Start' to play."
+					}
+				});
+			}.bind(this), 4000);
+		})
+		this.handleStartGame();
+	}
+
+	componentWillUpdate(){
+		// if (this.state.playing) {
+		// 	let thisIndex = 0;
+		// 	if (thisIndex !== this.state.currentIndex) {
+		// 		this.setState({
+		// 			currentIndex: thisIndex
+		// 		}, function () {
+		// 			let thisQuote = {
+		// 				definition: this.state.quoteBank[thisIndex].definition,
+		// 				term: this.state.quoteBank[thisIndex].term
+		// 			}
+		// 			if (thisQuote !== this.state.currentQuote) {
+		// 				this.setState({
+		// 					currentQuote: thisQuote
+		// 				});
+		// 			}
+		// 		});
+		// 	}
+		// }
 	}
 
 	componentWillReceiveProps(nextProps){
+		console.log("nextProps", nextProps);
 		this.setState({
-			playing: nextProps.playing
-		});
+			currentQuote: {
+				term: "Collecting quotes..."
+			}
+		}, function(){
+			setTimeout(function() {
+				this.setState({
+					playing: nextProps.playing
+				}, function () {
+					console.log("playing", this.state.playing);
+					let thisIndex = 0;
+					if (thisIndex !== this.state.currentIndex) {
+						this.setState({
+							currentIndex: thisIndex
+						}, function () {
+							let thisQuote = {
+								definition: this.state.quoteBank[thisIndex].definition,
+								term: this.state.quoteBank[thisIndex].term
+							}
+							if (thisQuote !== this.state.currentQuote) {
+								this.setState({
+									currentQuote: thisQuote
+								});
+							}
+						});
+					}
+				});
+			}.bind(this), 3000);
+		});	
 	}
 
-	handleStartGame(callback) {
+	handleStartGame() {
 		quizletAPI.getQuotes().then(function (allQuotes) {
 			console.log("allQuotes from quizletAPI:", allQuotes.data.terms);
 			this.setState({
 				quoteBank: allQuotes.data.terms
-			}, function(){
-				callback();
 			});
 		}.bind(this));
 		console.log("THIS.STATE", this.state);
@@ -154,7 +194,6 @@ export default class Play extends Component {
 					transitionEnterTimeout={1500}
 					transitionLeaveTimeout={300}>
 					<div>
-						<p>Sphinx used to sit outside of Thebes, asking riddles to anyone who passed by. Only you can help Oedipus get back to his journey.</p>
 						<br />
 						<p>Collecting Quotes...</p>
 					</div>
