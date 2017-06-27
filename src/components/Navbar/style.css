@@ -16,11 +16,15 @@ body{
     height: 80px;
   line-height: 80px;
   text-align: center;
+  font-size: 175%;
+  font-weight: 800;
 }
 
 .link{
     color: white;
 }
 .link:hover {
-    color: grey;
+    color: #ffd863;
+    text-decoration: none;
+    transform: translate(10px);
 }
