@@ -1,4 +1,4 @@
-// server/app.js
+require('babel-register');
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
@@ -11,11 +11,10 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const mongo = require('mongodb');
 const mongoose = require('mongoose');
+var Promise = require("bluebird");
+mongoose.Promise = Promise;
 mongoose.connect('mongodb://localhost/loginapp');
 const db = mongoose.connection;
-
-var routes = require('./routes/index');
-var users = require('./routes/users');
 
 const app = express();
 
@@ -64,19 +63,18 @@ app.use(expressValidator({
     }
 }));
 
-//Connect flash
-app.use(flash());
+// //Connect flash
+// app.use(flash());
 
-//Global vars
-app.use(function(req, res, next){
-    res.locals.success_msg = req.flash('success_msg');
-    res.locals.error_msg = req.flash('error_msg');
-    res.locals.error = req.flash('error');
-    next();
-});
+// //Global vars
+// app.use(function(req, res, next){
+//     res.locals.success_msg = req.flash('success_msg');
+//     res.locals.error_msg = req.flash('error_msg');
+//     res.locals.error = req.flash('error');
+//     next();
+// });
 
 var apiRoutes = require('./routes/users');
 app.use('/', apiRoutes);
-// app.use('/users', users);
 
 module.exports = app;
