@@ -64,11 +64,18 @@
 
 
 /** Intro transition*/
-.intro-enter {
+.intro-appear {
+
+	color: red;
+}
+
+
+
+.intro-appear {
 	opacity: 0.01;
 }
 
-.intro-enter.intro-enter-active {
+.intro-appear.intro-appear-active {
 	opacity: 1;
 	transition: opacity 500ms ease-in;
 }

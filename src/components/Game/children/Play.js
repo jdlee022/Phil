@@ -71,16 +71,17 @@ export default class Play extends Component {
 					</div>
 				</div>
 				
-				<ReactCSSTransitionGroup 
+				<CSSTransitionGroup 
 					transitionName="intro"
-					transitionEnterTimeout={500}
+					transitionAppear={true}
+					transitionEnterTimeout={1500}
 					transitionLeaveTimeout={300}>
-					<div className="intro">
+					<div>
 						<p>Sphinx used to sit outside of Thebes, asking riddles to anyone who passed by. Only you can help Oedipus get back to his journey.</p>
 						<br/>
 						<p>Collecting Quotes...</p>
 					</div>
-				</ReactCSSTransitionGroup>
+				</CSSTransitionGroup>
 
 				<div className="row">
 					<div className="talk-bubble tri-right border round btm-left-in">
