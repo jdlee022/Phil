@@ -7,6 +7,8 @@ export default class Control extends Component {
 			playing: false,
 			score: 0,
 		}
+		this.handlingReset = this.handlingReset.bind(this);
+		this.handlingStart = this.handlingStart.bind(this);
 	}
 
 	handlingStart() {

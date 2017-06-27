@@ -11,8 +11,9 @@ export default class Game extends Component {
 		this.state ={
 			score: 0, 
 			//can be "start" or "reset"
-			action: ""
+			playing: false
 		}
+		this.handleScore = this.handleScore.bind(this);
 	}
 
 	componentDidMount(){
@@ -25,8 +26,12 @@ export default class Game extends Component {
 			});
 		}
 		console.log("update score:", this.state.score);
-		
 	}
+
+	handleAction(){
+
+	}
+
 	render() {
 		return (
 			<div className="">
@@ -38,7 +43,10 @@ export default class Game extends Component {
 				<div className="container">
 					<Control score={this.state.score} />
 					<br />
-					<Play handleScore={this.handleScore.bind(this)}/>
+					<Play 
+						handleScore={this.handleScore}
+						playing = {this.state.playing}
+					/>
 				</div>
 
 			</div>

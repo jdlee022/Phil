@@ -16,48 +16,60 @@ export default class Play extends Component {
 	constructor() {
 		super();
 		this.state = {
+			playing: true,
 			quoteBank: [],
 			currentQuote: {},
 			quoteIndex: 0, 
 			matched: "",
 			sphinxSrc: sphinx, 
-			answer: "",
-			hidden: "hidden", 
-			animation: false
+			answer: ""
 		}
 
 		this.handleAnswer = this.handleAnswer.bind(this);
 		this.handleInput = this.handleInput.bind(this);
 		this.renderLaser = this.renderLaser.bind(this);
 		this.renderNormal = this.renderNormal.bind(this);
+		this.componentDidMount = this.componentDidMount.bind(this);
 	}
 
 	componentDidMount() {
 		// this.runIntro();
-		this.handleStartGame();
+		this.handleStartGame(function(){
+			if (this.state.playing) {
+				let thisIndex = 0;
+				if (thisIndex !== this.state.currentIndex) {
+					this.setState({
+						currentIndex: thisIndex
+					});
+				}
+				let thisQuote = {
+					definition: this.state.quoteBank[thisIndex].definition,
+					term: this.state.quoteBank[thisIndex].term
+				}
+				if (thisQuote !== this.state.currentQuote) {
+					this.setState({
+						currentQuote: thisQuote
+					});
+				}
+			}
+		}.bind(this));
+		
 	}
 
-	handleStartGame() {
+	componentWillReceiveProps(nextProps){
+		this.setState({
+			playing: nextProps.playing
+		});
+	}
+
+	handleStartGame(callback) {
 		quizletAPI.getQuotes().then(function (allQuotes) {
 			console.log("allQuotes from quizletAPI:", allQuotes.data.terms);
 			this.setState({
 				quoteBank: allQuotes.data.terms
+			}, function(){
+				callback();
 			});
-			let thisIndex = 0;
-			if (thisIndex !== this.state.currentIndex){
-				this.setState({
-					currentIndex: thisIndex
-				});
-			}
-			let thisQuote = {
-				definition: this.state.quoteBank[thisIndex].definition,
-				term: this.state.quoteBank[thisIndex].term
-			}
-			if (thisQuote !== this.state.currentQuote){
-				this.setState({
-					currentQuote: thisQuote
-				});
-			}
 		}.bind(this));
 		console.log("THIS.STATE", this.state);
 	}
@@ -71,9 +83,9 @@ export default class Play extends Component {
 
 	handleAnswer(event){
 		event.preventDefault();
-		this.setState({
-			answer: event.target.value
-		});
+		// this.setState({
+		// 	answer: event.target.value
+		// });
 		if (this.state.answer === this.state.currentQuote.definition){
 			console.log("the answer is correct");
 			if ((this.state.currentIndex++) < (this.state.quoteBank).length) {
@@ -92,7 +104,6 @@ export default class Play extends Component {
 				});
 			}
 			
-			
 		} else {
 			console.log("the answer is incorrect");
 			this.setState({
@@ -106,51 +117,17 @@ export default class Play extends Component {
 						matched: "",
 						currentIndex: (this.state.currentIndex + 1),
 						answer: "",
-						currentQuote: (this.state.quoteBank[this.state.currentIndex]),
 						sphinxSrc: sphinx
 					}, function () {
 						console.log("THIS.STATE", this.state);
-					});
-				}.bind(this), 2000);
+						this.setState({
+							currentQuote: (this.state.quoteBank[this.state.currentIndex])
+						});
+					}.bind(this));
+				}.bind(this), 1000);
 				
 			});
 		}
-	}
-
-	/**Run this in render(), connected to this.state.matched
-	 * Run laser animation and then after that set everything back to 
-	 * normal after 3s.
-	 */
-	something() {
-		console.log("renderlaser()");
-		if (this.state.matched === 'false'){
-			this.setState({
-				matched: ""
-			}, function(){
-				//FIXME:
-				return (
-					<MtSvgLines animate={true} duration={300}>
-						<svg viewBox="0 0 100 5">
-							<path stroke="red" strokeWidth="3" fill="none" d="m0,0, h1000" />
-						</svg>
-					</MtSvgLines>
-				)
-			});
-			setTimeout(function(){
-				console.log("setTimeout");
-				this.setState({
-					sphinxSrc: sphinx
-				});
-				return (
-					<div></div>
-				)
-			}.bind(this), 3000);
-		}
-		else if (this.state.matched === "" || this.state.matched === "true"){
-			return (
-				<div></div>
-			)
-		}	
 	}
 
 	renderLaser(){
