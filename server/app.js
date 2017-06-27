@@ -76,6 +76,8 @@ app.use(function (req, res, next) {
 
 // Routes
 var userRoutes = require('./routes/users');
+var quoteRoutes = require('./routes/quotes');
 app.use('/', userRoutes);
+app.use('/', quoteRoutes);
 
 module.exports = app;
