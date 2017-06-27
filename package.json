@@ -15,6 +15,7 @@
     "express-messages": "*",
     "express-session": "*",
     "express-validator": "*",
+    "jquery": "^3.2.1",
     "mongodb": "*",
     "mongoose": "*",
     "morgan": "^1.8.2",
