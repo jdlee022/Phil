@@ -1,4 +1,4 @@
-// server/index.js
+/** @file imports the express app from app.js and starts the server on port 9000 */
 'use strict';
 
 const app = require('./app');

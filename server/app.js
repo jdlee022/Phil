@@ -1,3 +1,4 @@
+/** @file initializes the express app, necessary dependencies, and our routes */
 require('babel-register');
 const express = require('express');
 const morgan = require('morgan');
@@ -63,18 +64,7 @@ app.use(expressValidator({
     }
 }));
 
-// //Connect flash
-// app.use(flash());
-
-// //Global vars
-// app.use(function(req, res, next){
-//     res.locals.success_msg = req.flash('success_msg');
-//     res.locals.error_msg = req.flash('error_msg');
-//     res.locals.error = req.flash('error');
-//     next();
-// });
-
-var apiRoutes = require('./routes/users');
-app.use('/', apiRoutes);
+var userRoutes = require('./routes/users');
+app.use('/', userRoutes);
 
 module.exports = app;
