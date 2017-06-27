@@ -107,7 +107,7 @@ export default class Play extends Component {
 						currentIndex: (this.state.currentIndex + 1),
 						answer: "",
 						currentQuote: (this.state.quoteBank[this.state.currentIndex]),
-						sphinx: sphinx
+						sphinxSrc: sphinx
 					}, function () {
 						console.log("THIS.STATE", this.state);
 					});
@@ -139,7 +139,7 @@ export default class Play extends Component {
 			setTimeout(function(){
 				console.log("setTimeout");
 				this.setState({
-					sphinx: sphinx
+					sphinxSrc: sphinx
 				});
 				return (
 					<div></div>
