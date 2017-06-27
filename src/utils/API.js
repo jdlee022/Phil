@@ -14,8 +14,12 @@ const API = {
      */
   postUser: function(user) {
     return axios.post("/api/register", user);
+  },
+
+  userLogin: function(loginInfo){
+      return axios.post("/login", loginInfo)
   }
-  
+
 };
 
 export default API;

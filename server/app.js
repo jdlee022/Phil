@@ -48,12 +48,12 @@ app.use(passport.session());
 
 //Express validator
 app.use(expressValidator({
-    errorFormatter: function(param, msg, value) {
+    errorFormatter: function (param, msg, value) {
         var namespace = param.split('.')
-        , root = namespace.shift()
-        , formParam = root;
+            , root = namespace.shift()
+            , formParam = root;
 
-        while(namespace.length) {
+        while (namespace.length) {
             formParam += '[' + namespace.shift() + ']';
         }
         return {
@@ -64,6 +64,17 @@ app.use(expressValidator({
     }
 }));
 
+// Connect Flash
+app.use(flash());
+// Global Vars
+app.use(function (req, res, next) {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    next();
+});
+
+// Routes
 var userRoutes = require('./routes/users');
 app.use('/', userRoutes);
 
