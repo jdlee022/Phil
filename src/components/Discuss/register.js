@@ -8,7 +8,7 @@ export default class UserRegister extends Component {
 		return (
 			<div className="">
 				<div className="col-md-6 col-md-offset-3 text-center">
-                    <h2 className="page-header">Regiser</h2>
+                    <h2 className="page-header">Register</h2>
                     <form method="post" action="/register">
                         <div className="form-group">
                             <label>Name</label>

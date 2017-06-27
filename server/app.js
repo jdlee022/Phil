@@ -75,7 +75,8 @@ app.use(function(req, res, next){
     next();
 });
 
-// app.use('/', routes);
+var apiRoutes = require('./routes/users');
+app.use('/', apiRoutes);
 // app.use('/users', users);
 
 module.exports = app;
