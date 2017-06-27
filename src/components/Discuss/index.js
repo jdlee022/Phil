@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from '../Navbar/index';
+import { Link } from 'react-router';
 
 import './style.css';
 
@@ -7,12 +7,16 @@ export default class Discuss extends Component {
 
 	render() {
 		return (
-			<div className="">
-				<Navbar />
+			<div>
 
-				<div className="col-md-6 col-md-offset-3 text-center">
-					<h1>Discuss</h1>
-				</div>
+                <div className="discussLinks col-md-8 col-md-offset-2 text-center" >
+                    <Link to="/discuss">Dashboard </Link>
+                    <Link to="/login" >Login </Link>
+                    <Link to="/register" >Register</Link>
+                </div>
+				    <div className="">
+					    {this.props.children}
+				    </div>
 			</div>
 		);
 	}
