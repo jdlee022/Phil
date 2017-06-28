@@ -69,13 +69,27 @@ passport.deserializeUser(function (id, done) {
     });
 });
 
+// router.post('/login',
+//     passport.authenticate('local', { successRedirect: '/login/success', failureRedirect: '/login/failure', failureFlash: true }),
+//     function (req, res) {
+//         console.log("req.body inside /routes/users.js", req.body);
+//         res.json({test: 'it works!'});
+//     }
+// );
+
 router.post('/login',
-    passport.authenticate('local', { successRedirect: '/', failureRedirect: '/users/login', failureFlash: true }),
-    function (req, res) {
-        console.log("req.body inside /routes/users.js", req.body);
-        res.redirect('/');
-    }
-);
+  passport.authenticate('local'),
+  function(req, res) {
+    // If this function gets called, authentication was successful.
+    // `req.user` contains the authenticated user.
+    res.json({user: req.user, success: true});
+  });
+
+router.get('/login/success', function(req, res){
+    // Can use axios to make requests from client to server
+    // but how to communicate from server to client???
+    // 
+});
 
 
 module.exports = router;

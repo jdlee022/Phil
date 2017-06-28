@@ -7,7 +7,8 @@ export default class UserLogin extends Component {
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            loginFailed: false
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,11 +37,17 @@ export default class UserLogin extends Component {
             username: this.state.username,
             password: this.state.password,
         }).then(function (response) {
-            // this.setState({ 
-            //     errors: response.data.errors,
-            //     success: response.data.success
-            // });
+            // if login was a success then redirect to /discuss route
             console.log("response from post in login component:", response);
+            if(response.data.success){
+                this.props.router.push('/discuss');
+            }
+            else{
+                //FIXME: Never gets called because the request fails.
+                //Need to figure out a way to notify user of failed login
+                console.log("login failed");
+                this.setState({loginFailed: true});
+            }
         }.bind(this));;
     }
 

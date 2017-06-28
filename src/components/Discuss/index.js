@@ -4,6 +4,12 @@ import { Link } from 'react-router';
 import './style.css';
 
 export default class Discuss extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            loggedIn: false
+        };
+    }
 
 	render() {
 		return (

@@ -82,7 +82,6 @@ export default class UserRegister extends Component {
      */
     displaySuccess(){
         if(this.state.success){
-            console.log("inside displaySuccess");
             return <p style={{color: 'yellow'}}>You are registered and can now login to begin posting.</p>
         }
     }
