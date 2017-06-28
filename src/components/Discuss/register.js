@@ -20,7 +20,7 @@ export default class UserRegister extends Component {
             password: '',
             password2: '',
             errors: [],
-            success: false
+            // success: false
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -56,8 +56,11 @@ export default class UserRegister extends Component {
         }).then(function (response) {
             this.setState({ 
                 errors: response.data.errors,
-                success: response.data.success
+                // success: response.data.success
             });
+            if(response.data.success){
+                this.props.router.push('/login');
+            }
         }.bind(this));;
     }
 
@@ -118,7 +121,6 @@ export default class UserRegister extends Component {
                             <input type="password" className="form-control" name="password2" value={this.state.password2} onChange={this.handleInputChange} />
                         </div>
                         <button type="submit" className="btn btn-default">Submit</button>
-                        {this.displaySuccess()}
                     </form>
                 </div>
             </div>
