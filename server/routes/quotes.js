@@ -3,23 +3,25 @@ const express = require('express');
 const router = new express.Router();
 const Quote = require('../models/quote');
 
-router.get('/api/loadQuotes', function (req, res){
+router.get('/api/getquotes', function (req, res){
 	Quote.getQuotes(function (err, allQuotes){
 		if (err) throw err; 
-		console.log("get quotes", allQuotes)
+		console.log("get quotes", allQuotes);
+		res.json({ allQuotes: allQuotes });
 	});
+	
 });
 
-
-router.post('/api/addQuote', function (req, res) {
+router.post('/api/addquote', function (req, res) {
 	var newQuote = new Quote({
-		term: req.body.term,
-		definition: req.body.definition
+		quote: req.body.quote,
+		author: req.body.author
 	})
 	Quote.addQuote(newQuote, function (err, quote) {
 		if (err) throw err;
-		console.log("new quote added", quote)
+		console.log("new quote added", quote); 
 	});
+	
 });
 
 module.exports = router;

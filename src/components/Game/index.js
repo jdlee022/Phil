@@ -1,60 +1,20 @@
 import React, { Component } from 'react';
-
-import Play from './children/Play';
-import Control from './children/Control';
+import { Link } from 'react-router';
 
 import './style.css';
 
-export default class Game extends Component {
-	constructor(){
-		super();
-		this.state ={
-			score: 0, 
-			//can be "start" or "reset"
-			playing: false
-		}
-		this.handleScore = this.handleScore.bind(this);
-		this.handleControlBtn = this.handleControlBtn.bind(this);
-	}
-
-	componentDidMount(){
-	}
-
-	handleScore(result){
-		if (result === "true"){
-			this.setState({
-				score: (this.state.score + 1)
-			});
-		}
-		console.log("update score:", this.state.score);
-	}
-
-	handleControlBtn(playingBoolean){
-		this.setState({
-			playing: playingBoolean
-		});
-	}
+export default class Discuss extends Component {
 
 	render() {
 		return (
-			<div className="">
-
-				<div className="col-md-6 col-md-offset-3 text-center">
-					<h1>Game</h1>
+			<div>
+				<div className="" >
+					<Link to="/addQuote">Add New Quote </Link>
+					<Link to="/game">Play</Link>
 				</div>
-
-				<div className="container">
-					<Control 
-						score={this.state.score}
-						handleControlBtn = {this.handleControlBtn}
-					/>
-					<br />
-					<Play 
-						handleScore={this.handleScore}
-						playing = {this.state.playing}
-					/>
+				<div className="">
+					{this.props.children}
 				</div>
-
 			</div>
 		);
 	}

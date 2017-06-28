@@ -1,20 +1,20 @@
 const mongoose = require('mongoose');
 
 var QuoteSchema = mongoose.Schema({
-	term: {
+	quote: {
 		type: String
 	}, 
-	definition: {
+	author: {
 		type: String
 	}
 });
 
-var User = module.exports = mongoose.model('Quote', QuoteSchema);
+var Quote = module.exports = mongoose.model('Quote', QuoteSchema);
 
-module.exports.getQuotes = function(){
-	Quote.findAll(callback);
+module.exports.getQuotes = function(callback){
+	Quote.find({}, callback);
 }
 
-module.exports.addQuote = function () {
-	Quote.findAll(quoteObj, callback);
+module.exports.addQuote = function (newQuote, callback) {
+	newQuote.save(callback);
 }

@@ -1,20 +1,14 @@
 import axios from "axios";
 
-const API = {
-    /**
-     * Submits a request to post a new user to the db
-     * @param user - the new user object that we want to store in db
-     * @returns a promise with a response from the server telling the component
-     * whether there was a validation error or if the post was a success
-     */
-	loadQuotes: function () {
-		return axios.get("/api/loadQuotes");
+const quoteAPI = {
+	getQuotes: function () {
+		return axios.get("/api/getquotes");
 	},
 
 	addQuote: function (quoteObj) {
-		return axios.post("/api/addQuote", quoteObj)
+		return axios.post("/api/addquote", quoteObj);
 	}
 
 };
 
-export default API;
+export default quoteAPI;
