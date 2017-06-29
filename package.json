@@ -2,8 +2,8 @@
   "name": "client",
   "version": "0.1.0",
   "engines": {
-	"node": "6.9.4",
-	"npm": "3.10.10"
+    "node": "6.9.4",
+    "npm": "3.10.10"
   },
   "dependencies": {
     "axios": "^0.16.2",
@@ -37,9 +37,9 @@
     "react-scripts": "1.0.7"
   },
   "scripts": {
-	"start": "node server",
-	"build": "react-scripts build",
-	"test": "react-scripts start",
-	"eject": "react-scripts eject"
+    "start": "node server",
+    "build": "react-scripts build",
+    "test": "react-scripts start",
+    "eject": "react-scripts eject"
   }
 }
