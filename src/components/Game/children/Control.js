@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 
+import '../style.css'
+
 export default class Control extends Component {
 	constructor() {
 		super();
 		this.state = {
 			playing: false,
 			score: 0,
+			disabled: true
 		}
 		this.handlingReset = this.handlingReset.bind(this);
 		this.handlingStart = this.handlingStart.bind(this);
@@ -14,7 +17,8 @@ export default class Control extends Component {
 	handlingStart() {
 		this.setState({
 			playing: true,
-			score: 0
+			score: 0, 
+			disabled: false
 		}, function(){
 			this.props.handleControlBtn(this.state.playing);
 		});
@@ -24,7 +28,8 @@ export default class Control extends Component {
 		// this.props.handlingReset();
 		this.setState({
 			score: 0,
-			playing: false
+			playing: false,
+			disabled: true
 		});
 	}
 
@@ -40,7 +45,7 @@ export default class Control extends Component {
 			<div className="container-fluid">
 				<div className="row">
 					<div className="col-sm-4">
-						<button onClick={this.handlingStart} className="btn btn-success"><h4>Start</h4></button>
+						<button  onClick={this.handlingStart} className="btn btn-success"><h4>Start</h4></button>
 						<button onClick={this.handlingReset} className="btn btn-danger"><h4>Reset</h4></button>
 
 					</div>

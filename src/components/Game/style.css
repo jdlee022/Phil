@@ -22,7 +22,7 @@
 	display: inline-block;
 	position: relative;
 	width: 400px;
-	height: 100px;
+	height: 150px;
 	background-color: black;
 }
 
@@ -41,7 +41,7 @@
 	position: absolute;
 	width: 0;
 	height: 0;
-	left: 30px;
+	left: 280px;
 	right: auto;
 	top: auto;
 	bottom: -40px;
@@ -64,10 +64,10 @@
 
 
 /** Intro transition*/
-.intro-appear {
+/*.intro-appear {
 	text-align: center;
 	color: white;
-}
+}*/
 
 
 /*
@@ -91,4 +91,15 @@
 
 .feedback {
 	color: white
+}
+
+.clock {
+	background: black;
+	margin: 0;
+	overflow: hidden;
+}
+
+
+.disabled {
+	
 }
