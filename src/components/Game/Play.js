@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import  {Link} from 'react-router'
+// import  {Link} from 'react-router'
 import Stage from './children/Stage';
 import Control from './children/Control';
 

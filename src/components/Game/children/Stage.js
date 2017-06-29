@@ -1,16 +1,13 @@
 import React, { Component } from 'react'
-// import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import {CSSTransitionGroup} from 'react-transition-group'
+
 import oedipus from '../assets/img/Oedipus_transbg.png'
 import sphinx from '../assets/img/Sphinx_transbg.png'
-
 import sphinx_laser from '../assets/img/Sphinx_laser_transbg.png'
-import MtSvgLines from 'react-mt-svg-lines'
-import quizletAPI from '../utils/quizletAPI'
-import quoteAPI from '../utils/quoteAPI'
 
-// import clock from '../utils/clock'
+import MtSvgLines from 'react-mt-svg-lines'
 import ReactCountdownClock from 'react-countdown-clock'
+
+import quoteAPI from '../utils/quoteAPI'
 
 import '../style.css'
 
