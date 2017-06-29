@@ -29,7 +29,6 @@ export default class Play extends Component {
 
 		this.handleAnswer = this.handleAnswer.bind(this);
 		this.handleInput = this.handleInput.bind(this);
-		// this.renderLaser = this.renderLaser.bind(this);
 		this.renderNormal = this.renderNormal.bind(this);
 		this.componentDidMount = this.componentDidMount.bind(this);
 		this.handleAPI = this.handleAPI.bind(this);

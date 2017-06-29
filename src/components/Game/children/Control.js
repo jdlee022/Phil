@@ -50,9 +50,6 @@ export default class Control extends Component {
 
 					</div>
 					<div className="col-sm-4">
-						<h3>Oedipus's Journey</h3>
-					</div>
-					<div className="col-sm-4">
 						<h4>Score: {this.state.score} </h4>
 					</div>
 				</div>

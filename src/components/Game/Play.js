@@ -40,7 +40,7 @@ export default class Game extends Component {
 			<div className="">
 
 				<div className="col-md-6 col-md-offset-3 text-center">
-					<h1>Game</h1>
+					<h1>Oedipus' Journey</h1>
 				</div>
 				<div className="container">
 					<Control 
