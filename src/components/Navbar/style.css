@@ -1,3 +1,5 @@
+/*GENERAL STYLING*/
+
 body{
     background: black;
 }
@@ -6,8 +8,6 @@ body{
     width: 80px;
     height: 80px;
 }
-
-
 
 .nav{
     background: black;
@@ -18,13 +18,36 @@ body{
   text-align: center;
   font-size: 175%;
   font-weight: 800;
+  margin-top:10px;
 }
 
-.link{
+/*LINK STYLING*/
+
+a.link{
     color: white;
+    text-decoration: none;
 }
-.link:hover {
+a.link:hover {
     color: #ffd863;
     text-decoration: none;
-    transform: translate(10px);
+    transition-duration: 1s;
+}
+
+a.link:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a.link:visited {
+    text-decoration: none;
+}
+
+a.link:active:visited {
+    text-decoration: none;
+}
+
+a.link:visited:hover {
+    color: #ffd863;
+    text-decoration: none;
+    transition-duration: 1s;
 }
