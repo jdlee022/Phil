@@ -1,0 +1,94 @@
+
+
+/* talk bubble contents */
+
+.talktext {
+	padding: 1em;
+	text-align: left;
+	line-height: 1.5em;
+	color: white;
+}
+
+.talktext p {
+	/* remove webkit p margins */
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+}
+
+/* CSS talk bubble */
+
+.talk-bubble {
+	margin: 40px;
+	display: inline-block;
+	position: relative;
+	width: 400px;
+	height: 100px;
+	background-color: black;
+}
+
+.border {
+	border: 8px solid #666;
+}
+
+.round {
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+}
+
+.tri-right.border.btm-left-in:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 30px;
+	right: auto;
+	top: auto;
+	bottom: -40px;
+	border: 20px solid;
+	border-color: #666 transparent transparent #666;
+}
+
+/*.tri-right.btm-left-in:after {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 38px;
+	right: auto;
+	top: auto;
+	bottom: -20px;
+	border: 12px solid;
+	border-color: lightyellow transparent transparent;
+}*/
+
+
+/** Intro transition*/
+.intro-appear {
+	text-align: center;
+	color: white;
+}
+
+
+/*
+.intro-appear {
+	opacity: 0.01;
+}
+
+.intro-appear.intro-appear-active {
+	opacity: 1;
+	transition: opacity 500ms ease-in;
+}
+
+.intro-leave {
+	opacity: 1;
+}
+
+.intro-leave.intro-leave-active {
+	opacity: 0.01;
+	transition: opacity 300ms ease-in;
+}*/
+
+.feedback {
+	color: white
+}

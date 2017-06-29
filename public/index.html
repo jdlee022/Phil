@@ -20,6 +20,26 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Phil</title>
+
+	<style>
+		.intro-enter {
+	opacity: 0.01;
+}
+
+.intro-enter.intro-enter-active {
+	opacity: 1;
+	transition: opacity 500ms ease-in;
+}
+
+.intro-leave {
+	opacity: 1;
+}
+
+.intro-leave.intro-leave-active {
+	opacity: 0.01;
+	transition: opacity 300ms ease-in;
+}
+		</style>
   </head>
   <body>
     <noscript>

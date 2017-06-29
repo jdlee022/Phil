@@ -1,3 +1,9 @@
+/** 
+ * @file this is the entry point to our react app.
+ * We import all of the components used in routing, 
+ * define our routes, and call ReactDOM to render the view.
+ */
+
 //Import bootstrap first so we don't overwrite our own styles
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
@@ -11,7 +17,9 @@ import Home from './components/Home';
 import Discuss from './components/Discuss/index';
 import Categories from './components/Discuss/categories'
 import Explore from './components/Explore';
-import Game from './components/Game';
+import Game from './components/Game/index.js';
+import Play from './components/Game/Play'
+import AddQuote from './components/Game/AddQuote.js'
 import UserLogin from './components/Discuss/login';
 import UserRegister from './components/Discuss/register';
 import NotFound from './components/NotFound';
@@ -27,7 +35,10 @@ const Routes = (props) => (
 			    <Route path="/register" component={UserRegister} />
             </Route>
 			<Route path="/explore" component={Explore} />
-			<Route path="/game" component={Game} />
+			<Route path="/game" component={Game}>
+				<IndexRoute component={Play} />
+				<Route path="/addQuote" component={AddQuote} />
+			</Route>
 			<Route path="*" component={NotFound} />
 		</Route>
     </Router>

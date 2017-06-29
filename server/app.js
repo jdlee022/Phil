@@ -1,4 +1,5 @@
-// server/app.js
+/** @file initializes the express app, necessary dependencies, and our routes */
+require('babel-register');
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
@@ -11,11 +12,10 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const mongo = require('mongodb');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/loginapp');
+var Promise = require("bluebird");
+mongoose.Promise = Promise;
+mongoose.connect('mongodb://heroku_vrds24zc:n3skg2tmaquasli0cs0ta4elrq@ds139322.mlab.com:39322/heroku_vrds24zc');
 const db = mongoose.connection;
-
-var routes = require('./routes/index');
-var users = require('./routes/users');
 
 const app = express();
 
@@ -30,10 +30,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// Always return the main index.html, so react-router render the route in the client
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
-});
+
+
 
 //Express session
 app.use(session({
@@ -48,12 +46,12 @@ app.use(passport.session());
 
 //Express validator
 app.use(expressValidator({
-    errorFormatter: function(param, msg, value) {
+    errorFormatter: function (param, msg, value) {
         var namespace = param.split('.')
-        , root = namespace.shift()
-        , formParam = root;
+            , root = namespace.shift()
+            , formParam = root;
 
-        while(namespace.length) {
+        while (namespace.length) {
             formParam += '[' + namespace.shift() + ']';
         }
         return {
@@ -64,18 +62,25 @@ app.use(expressValidator({
     }
 }));
 
-//Connect flash
+// Connect Flash
 app.use(flash());
-
-//Global vars
-app.use(function(req, res, next){
+// Global Vars
+app.use(function (req, res, next) {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
     next();
 });
 
-// app.use('/', routes);
-// app.use('/users', users);
+// Routes
+var userRoutes = require('./routes/users');
+var quoteRoutes = require('./routes/quotes');
+app.use('/', userRoutes);
+app.use('/', quoteRoutes);
+
+// Always return the main index.html, so react-router render the route in the client
+app.get("*", (req, res) => {
+	res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
+});
 
 module.exports = app;
