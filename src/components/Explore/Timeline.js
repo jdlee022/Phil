@@ -53,7 +53,7 @@ var Timeline = React.createClass({
 				<div className="row">
 					<section id="timeline">
 						<div className="tl-item">
-							<button>
+							<button data-timePeriod="" onClick={}>
 								<div className="tl-bg" style={backgroundImg1}></div>
 								<div className="tl-year">
 									<p className="f2 heading--sanSerif">460 - 625 BC</p>

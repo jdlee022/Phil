@@ -30,10 +30,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// Always return the main index.html, so react-router render the route in the client
-app.get('/', (req, res) => {
-    res.sendFile(__dirname, '..', 'build', 'index.html');
-});
+
+
 
 //Express session
 app.use(session({
@@ -79,5 +77,10 @@ var userRoutes = require('./routes/users');
 var quoteRoutes = require('./routes/quotes');
 app.use('/', userRoutes);
 app.use('/', quoteRoutes);
+
+// Always return the main index.html, so react-router render the route in the client
+app.get("*", (req, res) => {
+	res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
+});
 
 module.exports = app;

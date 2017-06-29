@@ -158,7 +158,16 @@ export default class Play extends Component {
 	}
 
 	resetGame(){
-		
+		this.setState({
+			playing: false,
+			currentQuote: this.state.quoteBank[0],
+			currentIndex: 0,
+			matched: "",
+			sphinxSrc: sphinx,
+			answer: "",
+			feedback: ""
+			
+		})
 	}
 
 	nextQuestion(){
