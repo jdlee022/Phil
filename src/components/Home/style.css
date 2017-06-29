@@ -1,3 +1,16 @@
-.teaser{
-    margin-top: 150px;
+div.container {
+    height: 88vh;
+    width: 100%;
+    overflow: hidden;
+    margin-left:-5px;
+    margin-top: 10px;
 }
+
+div.background img {
+    width:100%;
+    height: 100%;
+}
+
+
+
+
