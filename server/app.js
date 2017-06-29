@@ -32,7 +32,6 @@ app.use(cookieParser());
 
 
 
-
 //Express session
 app.use(session({
     secret: 'secret',
@@ -46,7 +45,7 @@ app.use(passport.session());
 
 //Express validator
 app.use(expressValidator({
-    errorFormatter: function (param, msg, value) {
+    errorFormatter: function(param, msg, value) {
         var namespace = param.split('.')
             , root = namespace.shift()
             , formParam = root;
@@ -62,25 +61,15 @@ app.use(expressValidator({
     }
 }));
 
-// Connect Flash
-app.use(flash());
-// Global Vars
-app.use(function (req, res, next) {
-    res.locals.success_msg = req.flash('success_msg');
-    res.locals.error_msg = req.flash('error_msg');
-    res.locals.error = req.flash('error');
-    next();
-});
-
 // Routes
-var userRoutes = require('./routes/users');
+var userRoutes = require('./routes/user-routes');
 var quoteRoutes = require('./routes/quotes');
 app.use('/', userRoutes);
 app.use('/', quoteRoutes);
 
 // Always return the main index.html, so react-router render the route in the client
-app.get("*", (req, res) => {
-	res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
 });
 
 module.exports = app;
