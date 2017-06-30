@@ -18,7 +18,18 @@ var UserSchema = mongoose.Schema({
 	},
 	name: {
 		type: String
-	}
+	},
+    posts: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Post"
+    },
+    comments: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Comment"
+    },
+    highScore: {
+        type: String
+    }
 });
 
 var User = module.exports = mongoose.model('User', UserSchema);

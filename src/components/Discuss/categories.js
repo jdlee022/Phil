@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 
 export default class Categories extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            categories: []
+        };
+    }
+    //TODO: how to populate category table when /discuss route is hit?
 
 	render() {
 		return (

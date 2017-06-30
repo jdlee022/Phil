@@ -14,7 +14,8 @@ const mongo = require('mongodb');
 const mongoose = require('mongoose');
 var Promise = require("bluebird");
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://heroku_vrds24zc:n3skg2tmaquasli0cs0ta4elrq@ds139322.mlab.com:39322/heroku_vrds24zc');
+//heroku db: 'mongodb://heroku_vrds24zc:n3skg2tmaquasli0cs0ta4elrq@ds139322.mlab.com:39322/heroku_vrds24zc'
+mongoose.connect('mongodb://localhost/loginapp');
 const db = mongoose.connection;
 
 const app = express();
@@ -65,9 +66,11 @@ app.use(expressValidator({
 var userRoutes = require('./routes/user-routes');
 var quoteRoutes = require('./routes/quotes');
 var dailyQuoteRoutes = require('./routes/dailyQuote-routes');
+var categoryRoutes = require('./routes/category-routes');
 app.use('/', userRoutes);
 app.use('/', quoteRoutes);
 app.use('/', dailyQuoteRoutes);
+app.use('/', categoryRoutes);
 
 // Always return the main index.html, so react-router render the route in the client
 app.get('*', (req, res) => {
