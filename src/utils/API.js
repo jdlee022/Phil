@@ -33,6 +33,10 @@ const API = {
 		return axios.get('/logout');
 	},
 
+    checkDuplicateUsername: function(username){
+        return axios.get('/check/'+username);
+    }
+
 };
 
 export default API;

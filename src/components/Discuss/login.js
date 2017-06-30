@@ -40,6 +40,7 @@ export default class UserLogin extends Component {
      */
 	handleSubmit(event) {
 		event.preventDefault();
+        var component = this;
 		API.userLogin({
 			username: this.state.username,
 			password: this.state.password,
@@ -53,7 +54,7 @@ export default class UserLogin extends Component {
 			}
 			else {
 				//if login failed then change the state so that an error msg renders
-				this.setState({ loginFailed: true });
+				component.setState({ loginFailed: true });
 			}
 		}.bind(this));;
 	}
