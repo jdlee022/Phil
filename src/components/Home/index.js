@@ -41,6 +41,7 @@ export default class Home extends Component {
 		}.bind(this));
 	}
 
+	//TODO:
 	checkTime(){
 
 	}

@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import oedipus from '../assets/img/Oedipus_transbg.png'
 import sphinx from '../assets/img/Sphinx_transbg.png'
 import sphinx_laser from '../assets/img/Sphinx_laser_transbg.png'
+import oedipus_laser from '../assets/img/Oedipus_laser.png'
 
 import MtSvgLines from 'react-mt-svg-lines'
 import ReactCountdownClock from 'react-countdown-clock'
@@ -24,7 +25,8 @@ export default class Play extends Component {
 			answer: "", 
 			feedback: "", 
 			life : 5, 
-			timer: false
+			timer: false, 
+			oedipus: oedipus
 		}
 
 		this.handleAnswer = this.handleAnswer.bind(this);
@@ -37,6 +39,7 @@ export default class Play extends Component {
 		this.laser = this.laser.bind(this);
 		this.timerClock = this.timerClock.bind(this);
 		this.endGame = this.endGame.bind(this);
+		this.correctAnswerDisplay = this.correctAnswerDisplay.bind(this);
 	}
 
 	componentDidMount() {
@@ -112,6 +115,7 @@ export default class Play extends Component {
 				this.setState({
 					matched: "false",
 					sphinxSrc: sphinx_laser, 
+					oedipus: oedipus_laser,
 					feedback: "Incorrect", 
 					answer: "",
 					currentIndex: (this.state.currentIndex + 1),
@@ -161,6 +165,7 @@ export default class Play extends Component {
 			},
 			matched: "",
 			sphinxSrc: sphinx,
+			oedipus: oedipus,
 			feedback: "",
 			timer: false,
 			playing: false,
@@ -177,6 +182,7 @@ export default class Play extends Component {
 			currentIndex: 0,
 			matched: "",
 			sphinxSrc: sphinx,
+			oedipus: oedipus,
 			answer: "",
 			feedback: "", 
 			timer: false,
@@ -192,12 +198,21 @@ export default class Play extends Component {
 		this.setState({
 			matched: "",
 			sphinxSrc: sphinx, 
+			oedipus: oedipus,
 			currentQuote: (this.state.quoteBank[this.state.currentIndex]),
 			feedback: "", 
 			timer: true
 		}, function () {
 			console.log("Next question THIS.STATE", this.state);
 		}.bind(this));
+	}
+
+	correctAnswerDisplay(){
+		if (this.state.matched === "false"){
+			return (
+				<h3>Correct Answer: {this.state.currentQuote.author}</h3>
+			)
+		} else return;
 	}
 	
 	timerClock(){
@@ -216,6 +231,7 @@ export default class Play extends Component {
 		}
 		
 	}
+
 	laser(){
 		if (this.state.matched === 'false'){
 			return (
@@ -271,21 +287,21 @@ export default class Play extends Component {
 						{this.laser()}
 
 						<div>
-							<h3>{this.correctAnswerDisplay}</h3>
-							<br /> <br /> <br />  <br /> <br /> <br />
+							{this.correctAnswerDisplay()}
+							<br /> <br /> 
 							<label htmlFor="">Who said this?</label><br />
 							Answer: 
 							<div className="input-container">
 								<input type="text" onInput={this.handleInput} value={this.state.answer} />
 							</div>
-							{/**<input type="submit" value="Submit" onClick={this.handleAnswer} />*/}
+							<input type="submit" value="Submit" onClick={this.handleAnswer}/>
 						</div>
 						<div>
-							<p class="feedback">{this.state.feedback}</p>	
+							<p class="feedback">{this.state.feedback}</p>
 						</div>
 					</div>
 
-					<img className="col-lg-4" src={oedipus} alt="Oedipus" />
+					<img className="col-lg-4" src={this.state.oedipus} alt="Oedipus" />
 				</div>
 
 			</div>

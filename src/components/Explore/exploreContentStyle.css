@@ -1,0 +1,33 @@
+.title  {
+    color:white;
+}
+#content-container {
+    border: 1px solid white;
+    text-align: center;
+    max-height: 75%;
+    position: absolute;
+    left: 17vw;
+    top: 14vh;
+    bottom: 22vh;
+    overflow-y: auto;
+    border-radius: 4px;
+}
+h4, p {
+    color:white;
+}
+li {
+    text-decoration: none;
+    list-style-type: none;
+    line-height: 25px;
+}
+li a {
+    color: #337ab7;
+}
+ul {
+    margin: 0 auto;
+    padding-left:0;
+}
+#prominent-philosopher-title {
+    margin:0 auto;
+    text-align: center;
+}
