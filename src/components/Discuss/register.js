@@ -56,8 +56,8 @@ export default class UserRegister extends Component {
         };
         var component = this;
         API.checkDuplicateUsername(newUser.username).then(function (response) {
-            if (typeof response.data.user != undefined) {
-                component.setState({duplicateError: true});
+            if (response.data) {
+                component.setState({ duplicateError: true });
             }
             else {
                 console.log("valid username, adding new user");
@@ -93,8 +93,8 @@ export default class UserRegister extends Component {
      * If the user attempted to register with a username that is already
      * in our database then render an error message
      */
-    displayDuplicateError(){
-        if(this.state.duplicateError){
+    displayDuplicateError() {
+        if (this.state.duplicateError) {
             console.log("inside displayLoginError");
             return <p style={{ color: 'red' }}>Username already exists.</p>
         }
