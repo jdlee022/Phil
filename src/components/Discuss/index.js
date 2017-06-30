@@ -32,7 +32,6 @@ export default class Discuss extends Component {
 
 	/** Returns login, register, or logout JSX links depending on the login status  */
 	displayUserLinks() {
-		console.log("inside displayUserLinks", this.state.loginStatus);
 		if (this.state.loginStatus == true) {
 			return <a onClick={this.handleLogout}>Logout</a>;
 		}
