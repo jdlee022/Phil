@@ -21,7 +21,6 @@ router.post('/api/home/addquote', function (req, res) {
 		if (err) throw err;
 		console.log("new quote added", quote);
 	});
-
 });
 
 module.exports = router;

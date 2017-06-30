@@ -137,7 +137,8 @@ export default class Play extends Component {
 				setTimeout(function() {
 					this.setState({
 						currentQuote: {
-							quote: "Collecting quotes..."
+							quote: "Collecting quotes...", 
+							life: 5
 						}
 					}, function () {
 						this.setState({
@@ -163,8 +164,7 @@ export default class Play extends Component {
 			feedback: "",
 			timer: false,
 			playing: false,
-			currentIndex: 0, 
-			life: 5
+			currentIndex: 0
 		});
 	}
 
@@ -274,7 +274,10 @@ export default class Play extends Component {
 							<h3>{this.correctAnswerDisplay}</h3>
 							<br /> <br /> <br />  <br /> <br /> <br />
 							<label htmlFor="">Who said this?</label><br />
-							Answer: <input type="text" onInput={this.handleInput} value={this.state.answer} />
+							Answer: 
+							<div className="input-container">
+								<input type="text" onInput={this.handleInput} value={this.state.answer} />
+							</div>
 							{/**<input type="submit" value="Submit" onClick={this.handleAnswer} />*/}
 						</div>
 						<div>
