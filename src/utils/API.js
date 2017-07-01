@@ -33,8 +33,20 @@ const API = {
 		return axios.get('/logout');
 	},
 
+    /**
+     * Checks db to see if a username has been taken
+     * @param username - the username we are checking
+     */
     checkDuplicateUsername: function(username){
         return axios.get('/check/'+username);
+    },
+
+
+    /**
+     * Gets all categories stored in the db
+     */
+    getCategories: function(){
+        return axios.get('/api/categories');
     }
 
 };
