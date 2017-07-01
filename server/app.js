@@ -15,7 +15,7 @@ const mongoose = require('mongoose');
 var Promise = require("bluebird");
 mongoose.Promise = Promise;
 //heroku db: 'mongodb://heroku_vrds24zc:n3skg2tmaquasli0cs0ta4elrq@ds139322.mlab.com:39322/heroku_vrds24zc'
-mongoose.connect('mongodb://localhost/loginapp');
+mongoose.connect('mongodb://heroku_vrds24zc:n3skg2tmaquasli0cs0ta4elrq@ds139322.mlab.com:39322/heroku_vrds24zc');
 const db = mongoose.connection;
 
 const app = express();
@@ -65,10 +65,12 @@ app.use(expressValidator({
 // Routes
 var userRoutes = require('./routes/user-routes');
 var quoteRoutes = require('./routes/quotes');
+var gameRoutes = require('./routes/game-routes');
 var dailyQuoteRoutes = require('./routes/dailyQuote-routes');
 var categoryRoutes = require('./routes/category-routes');
 app.use('/', userRoutes);
 app.use('/', quoteRoutes);
+app.use('/', gameRoutes);
 app.use('/', dailyQuoteRoutes);
 app.use('/', categoryRoutes);
 

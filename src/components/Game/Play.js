@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import  {Link} from 'react-router'
-import Stage from './children/Stage';
+import Stage from './children/State2';
 import Control from './children/Control';
 
 import './style.css';
@@ -11,10 +11,12 @@ export default class Game extends Component {
 		this.state ={
 			score: 0, 
 			//can be "start" or "reset"
-			playing: false
+			playing: false, 
+			gametype: ""
 		}
 		this.handleScore = this.handleScore.bind(this);
 		this.handleControlBtn = this.handleControlBtn.bind(this);
+		this.handleTypeSelect = this.handleTypeSelect.bind(this);
 	}
 
 	componentDidMount(){
@@ -35,6 +37,12 @@ export default class Game extends Component {
 		});
 	}
 
+	handleTypeSelect(type){
+		this.setState({
+			gametype: type 
+		});
+	}
+
 	render() {
 		return (
 			<div className="">
@@ -46,11 +54,13 @@ export default class Game extends Component {
 					<Control 
 						score={this.state.score}
 						handleControlBtn = {this.handleControlBtn}
+						handleTypeSelect = {this.handleTypeSelect}
 					/>
 					<br />
 					<Stage 
 						handleScore={this.handleScore}
 						playing = {this.state.playing}
+						gametype = {this.state.gametype}
 					/>
 				</div>
 

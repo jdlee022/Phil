@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router'
-import quoteAPI from './utils/quoteAPI'
+// import quoteAPI from './utils/quoteAPI'
+
+import gameAPI from './utils/gameAPI'
 
 import './style.css';
 
@@ -8,13 +10,16 @@ export default class AddQuote extends Component {
 	constructor(){
 		super();
 		this.state = {
-			quote: "", 
-			author: "", 
+			question: "", 
+			answer: "", 
+			gametype: "",
 			posted: false
 		}
 		this.handleInput = this.handleInput.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.postSuccess = this.postSuccess.bind(this);
+		this.handleSelect = this.handleSelect.bind(this);
+
 	}
 
 	handleInput(event){
@@ -23,16 +28,28 @@ export default class AddQuote extends Component {
 		});
 	}
 
+	handleSelect(event){
+		console.log("select event", event.target);
+		this.setState({
+			[event.target.name]: event.target.value
+		}, function(){
+			console.log("this.state.gametype", this.state.gametype);
+		});
+
+	}
+
 	handleSubmit(event){
 		event.preventDefault();
-		var newQuote = {
-			quote: this.state.quote,
-			author: this.state.author
+		var newQuestion = {
+			question: this.state.question,
+			answer: this.state.answer, 
+			gametype: this.state.gametype
 		};
-		quoteAPI.addQuote(newQuote).then(function(){
+		gameAPI.addQuestion(newQuestion).then(function(){
 			this.setState({
-				quote: '',
-				author:'', 
+				question: '',
+				answer:'', 
+				gametype: '',
 				posted: true
 			});
 		}.bind(this));
@@ -40,6 +57,9 @@ export default class AddQuote extends Component {
 
 	postSuccess(){
 		if (this.state.posted === true){
+			this.setState({
+				posted: false
+			});
 			return (
 				<p>Your quote has been saved</p>
 			)
@@ -50,14 +70,20 @@ export default class AddQuote extends Component {
 			<div>
 				<div className="">
 					<form onSubmit={this.handleSubmit}>
-						<label htmlFor="">Philosopher:</label>
-						<input onInput={this.handleInput} type="text" name="author" value={this.state.author}/>
+						<label htmlFor="">Hint:</label>
+						<input onInput={this.handleInput} type="text" name="question" value={this.state.question}/>
 						<br/>
-						<label htmlFor="">Quote:</label>
-						<input onInput={this.handleInput} type="text" name='quote' value={this.state.quote}/>
+						<label htmlFor="">Answer:</label>
+						<input onInput={this.handleInput} type="text" name='answer' value={this.state.answer}/>
+						<label htmlFor="">Type Question:</label>
+						<select onChange={this.handleSelect} name="gametype" id="">
+							<option selected="selected" value="Select the type of game"></option>
+							<option value="Which period is this from?">Which period is this from?</option>
+							<option value="Who says this?">Who says this?</option>
+						</select>
 						<input  type="submit" value="Submit"/>
-						{this.postSuccess()}
 					</form>
+					{this.postSuccess()}
 				</div>
 			</div>
 		);

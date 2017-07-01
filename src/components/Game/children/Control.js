@@ -8,10 +8,20 @@ export default class Control extends Component {
 		this.state = {
 			playing: false,
 			score: 0,
+			gametype: "",
 			disabled: true
 		}
 		this.handlingReset = this.handlingReset.bind(this);
 		this.handlingStart = this.handlingStart.bind(this);
+		this.handleTypeSelect = this.handleTypeSelect.bind(this);
+	}
+
+	handleTypeSelect(event){
+		this.setState({
+			[event.target.name]: event.target.value
+		}, function(){
+			this.props.handleTypeSelect(this.state.gametype);
+		});
 	}
 
 	handlingStart() {
@@ -50,6 +60,15 @@ export default class Control extends Component {
 					
 					<div className="col-sm-4">
 						Score: {this.state.score} 
+					</div>
+
+					<div>
+						Type of Questions: 
+						<select onChange={this.handleTypeSelect} name="gametype" id="">
+							<option selected="selected" value="Select the type of game"></option>
+							<option value="Which period is this from?">Which period is this from?</option>
+							<option value="Who says this?">Who says this?</option>
+						</select>
 					</div>
 
 					<div className="col-sm-4" >

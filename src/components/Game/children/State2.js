@@ -9,7 +9,6 @@ import MtSvgLines from 'react-mt-svg-lines'
 import ReactCountdownClock from 'react-countdown-clock'
 
 import gameAPI from '../utils/gameAPI'
-import quoteAPI from '../utils/quoteAPI'
 
 import '../style.css'
 
@@ -18,16 +17,16 @@ export default class Play extends Component {
 		super();
 		this.state = {
 			playing: false,
-			quoteBank: [],
-			currentQuote: {},
+			questionBank: [],
+			currentQuestion: {},
 			currentIndex: 0, 
 			matched: "",
 			sphinxSrc: sphinx, 
+			oedipus: oedipus,
 			answer: "", 
 			feedback: "", 
 			life : 5, 
 			timer: false, 
-			oedipus: oedipus
 		}
 
 		this.handleAnswer = this.handleAnswer.bind(this);
@@ -46,14 +45,14 @@ export default class Play extends Component {
 	componentDidMount() {
 		this.handleAPI();
 		this.setState({
-			currentQuote: {
-				quote: "Sphinx: 'I am the protector of Thebes. You can help Oedipus get back to his journey by answering my questions correctly.' "
+			currentQuestion: {
+				question: "Sphinx: 'I am the protector of Thebes. You can help Oedipus get back to his journey by answering my questions correctly.' "
 			}
 		}, function(){
 			setTimeout(function(){
 				this.setState({
-					currentQuote: {
-						quote: "Sphinx: 'A wrong answer will hurt Oedipus. You can only miss 5 questions before Oedipus has to turn around. Click 'Start' to play.'"
+					currentQuestion: {
+						question: "Sphinx: 'A wrong answer will hurt Oedipus. You can only miss 5 questions before Oedipus has to turn around. Click 'Start' to play.'"
 					}
 				});
 			}.bind(this), 2000);
@@ -64,6 +63,7 @@ export default class Play extends Component {
 		console.log("nextProps", nextProps);
 		this.setState({
 			playing: nextProps.playing, 
+			gametype: nextProps.gametype
 		}, function(){
 			this.startGame();
 		}.bind(this)); 
@@ -71,10 +71,10 @@ export default class Play extends Component {
 
 
 	handleAPI(){
-		quoteAPI.getQuotes().then(function (allQuotes) {
+		gameAPI.getAllQuestions().then(function (allQuotes) {
 			console.log(" quoteAPI:", allQuotes);
 			this.setState({
-				quoteBank: allQuotes.data.allQuotes
+				questionBank: allQuotes.data.allQuotes
 			});
 		}.bind(this));
 		console.log("THIS.STATE", this.state);
@@ -91,7 +91,7 @@ export default class Play extends Component {
 	handleAnswer(){
 		// event.preventDefault();
 		var submittedAns = this.state.answer.trim().toLowerCase();
-		var theRightAns = this.state.currentQuote.author.trim().toLowerCase();
+		var theRightAns = this.state.currentQuestion.answer.trim().toLowerCase();
 		if (submittedAns === theRightAns){
 			console.log("the answer is correct");
 			this.setState({
@@ -104,7 +104,7 @@ export default class Play extends Component {
 				console.log("this.state.matched:", this.state.matched);
 				this.props.handleScore(this.state.matched);
 				setTimeout(function () {
-					if ((this.state.currentIndex) < (this.state.quoteBank).length && this.state.life > 0) {
+					if ((this.state.currentIndex) < (this.state.questionBank).length && this.state.life > 0) {
 						this.nextQuestion();
 					} else {
 						this.endGame();
@@ -126,7 +126,7 @@ export default class Play extends Component {
 					console.log("this.state.matched:", this.state.matched);
 					this.props.handleScore(this.state.matched);
 					setTimeout(function() {
-						if ((this.state.currentIndex) < (this.state.quoteBank).length && this.state.life > 0) {
+						if ((this.state.currentIndex) < (this.state.questionBank).length && this.state.life > 0) {
 							this.nextQuestion();
 						} else {
 							this.endGame();
@@ -141,27 +141,27 @@ export default class Play extends Component {
 			if (this.state.currentIndex === 0) {
 				setTimeout(function() {
 					this.setState({
-						currentQuote: {
-							quote: "Collecting quotes...", 
+						currentQuestion: {
+							question: "Collecting quotes...", 
 							life: 5
 						}
 					}, function () {
 						this.setState({
-							currentQuote: this.state.quoteBank[this.state.currentIndex], 
+							currentQuestion: this.state.questionBank[this.state.currentIndex], 
 							timer: true
 						});
 					}.bind(this));
 				}.bind(this), 1200);	
 			}
-		} else {
-			this.resetGame()
+		} else  if (this.state.playing === ''){
+			this.resetGame();
 		}
 	}
 	
 	endGame(){
 		this.setState({
-			currentQuote: {
-				quote: "End of game",
+			currentQuestion: {
+				question: "End of game",
 				author: ''
 			},
 			matched: "",
@@ -177,8 +177,8 @@ export default class Play extends Component {
 	resetGame(){
 		this.setState({
 			playing: false,
-			currentQuote: {
-				quote: "Resetting Game..."
+			currentQuestion: {
+				question: "Resetting Game..."
 			},
 			currentIndex: 0,
 			matched: "",
@@ -190,7 +190,7 @@ export default class Play extends Component {
 			life: 5
 		}, function(){
 			this.setState({
-				currentQuote:this.state.quoteBank[this.state.currentIndex]
+				currentQuestion: this.state.questionBank[this.state.currentIndex]
 			});
 		}.bind(this));
 	}
@@ -200,7 +200,7 @@ export default class Play extends Component {
 			matched: "",
 			sphinxSrc: sphinx, 
 			oedipus: oedipus,
-			currentQuote: (this.state.quoteBank[this.state.currentIndex]),
+			currentQuestion: (this.state.questionBank[this.state.currentIndex]),
 			feedback: "", 
 			timer: true
 		}, function () {
@@ -211,7 +211,7 @@ export default class Play extends Component {
 	correctAnswerDisplay(){
 		if (this.state.matched === "false"){
 			return (
-				<h3>Correct Answer: {this.state.currentQuote.author}</h3>
+				<h3>Correct Answer: {this.state.currentQuestion.answer}</h3>
 			)
 		} else return;
 	}
@@ -248,25 +248,10 @@ export default class Play extends Component {
 	renderNormal(){
 		return (
 			<div className="row container-fluid">
-				<div className="row progress-bar">
-					<div className="progress">
-						<div className="progress-bar progress-bar-danger progress-bar-striped" role="progressbar"
-							ariaValuenow="70" ariaValuemin="0" ariaValuemax="100">
-							70% Complete (danger)
-  						</div>
-						<div className="progress">
-							<div className="progress-bar progress-bar-danger progress-bar-striped" role="progressbar"
-								ariaValuenow="70" ariaValuemin="0" ariaValuemax="100">
-								70% Complete (danger)
-  						</div>
-						</div>
-					</div>
-				</div>
-				
 				<div className="row">
 					<div className="col-lg-5 talk-bubble tri-right border round btm-left-in">
 						<div className="talktext">
-							<p>{this.state.currentQuote.quote}</p>
+							<p>{this.state.currentQuestion.question}</p>
 						</div>
 					</div>
 
@@ -290,7 +275,7 @@ export default class Play extends Component {
 						<div>
 							{this.correctAnswerDisplay()}
 							<br /> <br /> 
-							<label htmlFor="">Who said this?</label><br />
+							<label htmlFor="">{this.state.gametype}</label><br />
 							Answer: 
 							<div className="input-container">
 								<input type="text" onInput={this.handleInput} value={this.state.answer} />
