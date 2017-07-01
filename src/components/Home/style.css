@@ -4,11 +4,13 @@ div.container {
     overflow: hidden;
     margin-left:-5px;
     margin-top: 10px;
+    position: relative;
 }
 
-div.background img {
+img.background {
+    position: absolute;
+    bottom: -450px;
     width:100%;
-    height: 100%;
 }
 
 
