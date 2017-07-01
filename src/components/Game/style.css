@@ -22,7 +22,7 @@
 	display: inline-block;
 	position: relative;
 	width: 400px;
-	height: 100px;
+	height: 150px;
 	background-color: black;
 }
 
@@ -41,7 +41,7 @@
 	position: absolute;
 	width: 0;
 	height: 0;
-	left: 30px;
+	left: 280px;
 	right: auto;
 	top: auto;
 	bottom: -40px;
@@ -64,10 +64,10 @@
 
 
 /** Intro transition*/
-.intro-appear {
+/*.intro-appear {
 	text-align: center;
 	color: white;
-}
+}*/
 
 
 /*
@@ -91,4 +91,54 @@
 
 .feedback {
 	color: white
+}
+
+.clock {
+	background: black;
+	margin: 0;
+	overflow: hidden;
+}
+
+/*img {
+	flex: 1;
+	width: 75%;
+	height: auto;
+	border-color: red;
+}*/
+
+.disabled {
+	
+}
+
+.input-container {
+	background: url(https://thumbs.dreamstime.com/x/seamless-sandstone-background-3313450.jpg) no-repeat;
+	width: 250px;
+	height: 75px;
+}
+
+.input-container input {
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	height: 75px;
+	line-height: 28px;
+	/*results in nice text vertical alignment*/
+	border: none;
+	background: transparent;
+	padding: 0 10px;
+	/*don't start input text directly from the edge*/
+	width: 250px;
+	/*full width - grey on the side - 2*10px padding*/
+}
+
+
+/** Control js */
+
+button { 
+	border-radius: 10px;
+	color: white;
+	background-color: black;
+	border-color: black;
+	font-size: 24px;
 }

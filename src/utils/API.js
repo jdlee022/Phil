@@ -12,13 +12,42 @@ const API = {
      * @returns a promise with a response from the server telling the component
      * whether there was a validation error or if the post was a success
      */
-  postUser: function(user) {
-    return axios.post("/api/register", user);
-  },
+	postUser: function (user) {
+		return axios.post("/api/register", user);
+	},
 
-  userLogin: function(loginInfo){
-      return axios.post("/login", loginInfo)
-  }
+    /**
+     * Submit user login info and attempt login
+     * @param loginInfo - the user's submitted info that we're checking
+     * @returns a promise telling us whether or not the login was a success
+     */
+	userLogin: function (loginInfo) {
+		return axios.post("/login", loginInfo)
+	},
+
+    /**
+     * Submits a user logout request to the server
+     * @returns the success status of the request
+     */
+	userLogout: function () {
+		return axios.get('/logout');
+	},
+
+    /**
+     * Checks db to see if a username has been taken
+     * @param username - the username we are checking
+     */
+    checkDuplicateUsername: function(username){
+        return axios.get('/check/'+username);
+    },
+
+
+    /**
+     * Gets all categories stored in the db
+     */
+    getCategories: function(){
+        return axios.get('/api/categories');
+    }
 
 };
 

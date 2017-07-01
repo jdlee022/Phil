@@ -19,19 +19,18 @@ export default class UserRegister extends Component {
             email: '',
             password: '',
             password2: '',
-            errors: [],
-            // success: false
+            errors: []
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.checkError = this.checkError.bind(this);
-        this.displaySuccess = this.displaySuccess.bind(this);
+        this.displayDuplicateError = this.displayDuplicateError.bind(this);
     }
 
     /**
      * Detects when a change is made in an input field and 
      * updates the corresponding state prop
-     */ 
+     */
     handleInputChange(event) {
         const value = event.target.value;
         const name = event.target.name;
@@ -47,21 +46,32 @@ export default class UserRegister extends Component {
      */
     handleSubmit(event) {
         event.preventDefault();
-        API.postUser({
+        var newUser = {
             name: this.state.name,
             username: this.state.username,
             email: this.state.email,
             password: this.state.password,
-            password2: this.state.password2
-        }).then(function (response) {
-            this.setState({ 
-                errors: response.data.errors,
-                // success: response.data.success
-            });
-            if(response.data.success){
-                this.props.router.push('/login');
+            password2: this.state.password2,
+            duplicateError: false
+        };
+        var component = this;
+        API.checkDuplicateUsername(newUser.username).then(function (response) {
+            if (response.data) {
+                component.setState({ duplicateError: true });
             }
-        }.bind(this));;
+            else {
+                console.log("valid username, adding new user");
+                API.postUser(newUser).then(function (response) {
+                    component.setState({
+                        errors: response.data.errors
+                    });
+                    if (response.data.success) {
+                        //If register was a success then redirect to login page
+                        component.props.router.push('/login');
+                    }
+                }.bind(this));;
+            }
+        });
     }
 
     /**
@@ -80,12 +90,13 @@ export default class UserRegister extends Component {
     }
 
     /**
-     * Checks to see if the user's registration was successful.
-     * If so, then displays a message above the submit button.
+     * If the user attempted to register with a username that is already
+     * in our database then render an error message
      */
-    displaySuccess(){
-        if(this.state.success){
-            return <p style={{color: 'yellow'}}>You are registered and can now login to begin posting.</p>
+    displayDuplicateError() {
+        if (this.state.duplicateError) {
+            console.log("inside displayLoginError");
+            return <p style={{ color: 'red' }}>Username already exists.</p>
         }
     }
 
@@ -103,6 +114,7 @@ export default class UserRegister extends Component {
                         <div className="form-group">
                             <label>Username</label>
                             {this.checkError("username")}
+                            {this.displayDuplicateError()}
                             <input type="text" className="form-control" name="username" value={this.state.username} onChange={this.handleInputChange} />
                         </div>
                         <div className="form-group">

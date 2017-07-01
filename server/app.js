@@ -14,6 +14,8 @@ const mongo = require('mongodb');
 const mongoose = require('mongoose');
 var Promise = require("bluebird");
 mongoose.Promise = Promise;
+//heroku db: 'mongodb://heroku_vrds24zc:n3skg2tmaquasli0cs0ta4elrq@ds139322.mlab.com:39322/heroku_vrds24zc'
+//local db: 'mongodb://localhost:27017/loginapp'
 mongoose.connect('mongodb://heroku_vrds24zc:n3skg2tmaquasli0cs0ta4elrq@ds139322.mlab.com:39322/heroku_vrds24zc');
 const db = mongoose.connection;
 
@@ -30,9 +32,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-
-
-
 //Express session
 app.use(session({
     secret: 'secret',
@@ -46,7 +45,7 @@ app.use(passport.session());
 
 //Express validator
 app.use(expressValidator({
-    errorFormatter: function (param, msg, value) {
+    errorFormatter: function(param, msg, value) {
         var namespace = param.split('.')
             , root = namespace.shift()
             , formParam = root;
@@ -62,25 +61,21 @@ app.use(expressValidator({
     }
 }));
 
-// Connect Flash
-app.use(flash());
-// Global Vars
-app.use(function (req, res, next) {
-    res.locals.success_msg = req.flash('success_msg');
-    res.locals.error_msg = req.flash('error_msg');
-    res.locals.error = req.flash('error');
-    next();
-});
-
 // Routes
-var userRoutes = require('./routes/users');
+var userRoutes = require('./routes/user-routes');
 var quoteRoutes = require('./routes/quotes');
+var gameRoutes = require('./routes/game-routes');
+var dailyQuoteRoutes = require('./routes/dailyQuote-routes');
+var categoryRoutes = require('./routes/category-routes');
 app.use('/', userRoutes);
 app.use('/', quoteRoutes);
+app.use('/', gameRoutes);
+app.use('/', dailyQuoteRoutes);
+app.use('/', categoryRoutes);
 
 // Always return the main index.html, so react-router render the route in the client
-app.get("*", (req, res) => {
-	res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
 });
 
 module.exports = app;

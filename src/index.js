@@ -15,7 +15,8 @@ import { browserHistory} from 'react-router';
 import { Router, Route, IndexRoute } from 'react-router';
 import Home from './components/Home';
 import Discuss from './components/Discuss/index';
-import Categories from './components/Discuss/categories'
+import Categories from './components/Discuss/categories';
+import Topic from './components/Discuss/topic';
 import Explore from './components/Explore';
 import Game from './components/Game/index.js';
 import Play from './components/Game/Play'
@@ -33,6 +34,7 @@ const Routes = (props) => (
                 <IndexRoute component={Categories} />
                 <Route path="/login" component={UserLogin} />
 			    <Route path="/register" component={UserRegister} />
+                <Route path ="/topic/:topic" component={Topic} />
             </Route>
 			<Route path="/explore" component={Explore} />
 			<Route path="/game" component={Game}>
