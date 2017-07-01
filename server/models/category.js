@@ -12,9 +12,6 @@ var CategorySchema = new mongoose.Schema({
         required: [true, 'Missing description'],
         minlength: 1
     },
-    numPosts: {
-        type: Number
-    },
     posts: [{
         type: mongoose.Schema.Types.ObjectId,
         //The ObjectIds will refer to ids in the Post model
