@@ -3,7 +3,7 @@ import moment from 'moment'
 
 import './style.css'
 import teaser from './teaser.png'
-import image1 from './images/IMG_1693.JPG'
+import image1 from './images/om.gif'
 import dailyQuoteAPI from "../../utils/dailyQuoteAPI"
 
 export default class Home extends Component {
@@ -66,7 +66,7 @@ export default class Home extends Component {
                 <div className="container">
 					{this.displayTodayQuote()}
 					<div className="image">
-						<img src={image1} alt="teaser" className="teaser" />
+						<img src={image1} alt="teaser" className="background" />
 					</div>
 					
                 </div>
