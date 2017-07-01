@@ -47,6 +47,15 @@ const API = {
      */
     getCategories: function(){
         return axios.get('/api/categories');
+    },
+
+    /**
+     * Posts a new thread to the db associated with a certain topic
+     * @param postInfo - contains the object that will be submitted as 
+     * a new post in post-routes.js
+     */
+    newPost: function(postInfo){
+        return axios.post('/api/new_post', postInfo);
     }
 
 };

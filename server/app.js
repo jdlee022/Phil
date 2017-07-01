@@ -16,7 +16,7 @@ var Promise = require("bluebird");
 mongoose.Promise = Promise;
 //heroku db: 'mongodb://heroku_vrds24zc:n3skg2tmaquasli0cs0ta4elrq@ds139322.mlab.com:39322/heroku_vrds24zc'
 //local db: 'mongodb://localhost:27017/loginapp'
-mongoose.connect('mongodb://heroku_vrds24zc:n3skg2tmaquasli0cs0ta4elrq@ds139322.mlab.com:39322/heroku_vrds24zc');
+mongoose.connect('mongodb://localhost:27017/loginapp');
 const db = mongoose.connection;
 
 const app = express();
@@ -80,11 +80,13 @@ var quoteRoutes = require('./routes/quotes');
 var gameRoutes = require('./routes/game-routes');
 var dailyQuoteRoutes = require('./routes/dailyQuote-routes');
 var categoryRoutes = require('./routes/category-routes');
+var postRoutes = require('./routes/post-routes');
 app.use('/', userRoutes);
 app.use('/', quoteRoutes);
 app.use('/', gameRoutes);
 app.use('/', dailyQuoteRoutes);
 app.use('/', categoryRoutes);
+app.use('/', postRoutes);
 
 // Always return the main index.html, so react-router render the route in the client
 app.get('*', (req, res) => {
