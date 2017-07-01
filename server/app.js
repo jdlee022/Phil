@@ -20,6 +20,19 @@ mongoose.connect('mongodb://heroku_vrds24zc:n3skg2tmaquasli0cs0ta4elrq@ds139322.
 const db = mongoose.connection;
 
 const app = express();
+var allowCrossDomain = function (req, res, next) {
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+	// intercept OPTIONS method
+	if ('OPTIONS' == req.method) {
+		res.sendStatus(200);
+	} else {
+		next();
+	}
+};
+
+app.use(allowCrossDomain);
 
 // Setup logger
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));

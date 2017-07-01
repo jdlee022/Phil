@@ -48,13 +48,13 @@ export default class Play extends Component {
 	componentDidMount() {
 		this.setState({
 			currentQuestion: {
-				question: "Sphinx: 'I am the protector of Thebes. You can help Oedipus get back to his journey by answering my questions correctly.' "
+				question: "Sphinx: &quot; I am the protector of Thebes. You can help Oedipus get back to his journey by answering my questions correctly. &quot; "
 			}
 		}, function(){
 			setTimeout(function(){
 				this.setState({
 					currentQuestion: {
-						question: "Sphinx: 'A wrong answer will hurt Oedipus. You can only miss 5 questions before Oedipus has to turn around. Click 'Start' to play.'"
+						question: "Sphinx: &quot; A wrong answer will hurt Oedipus. You can only miss 5 questions before Oedipus has to turn around. Click 'Start' to play. !&quot;"
 					}
 				});
 			}.bind(this), 3000);
@@ -78,8 +78,8 @@ export default class Play extends Component {
 	//this looks at the gametype state and find the right set of questiosn
 	handleAPI(){
 		this.setupGameType();
-		if (this.state.gametype === "Who says this?"){
-			gameAPI.getSpecificQuestions("Who says this?").then(function (questions){
+		if (this.state.gametype !== "mixed"){
+			gameAPI.getSpecificQuestions(this.state.gametype).then(function (questions){
 				console.log(" quoteAPI:", questions);
 				this.setState({
 					questionBank: questions.data.specificQuestions
@@ -88,17 +88,17 @@ export default class Play extends Component {
 				});
 			}.bind(this));
 		} 
-		else if (this.state.gametype === "Which period is this from?"){
-			gameAPI.getSpecificQuestions("Which period is this from?").then(function(questions){
-				console.log(" quoteAPI:", questions);
-				this.setState({
-					questionBank: questions.data.specificQuestions
-				}, function () {
-					console.log("THIS.STATE", this.state);
-				});
-			}.bind(this));
-		} 
-		else if (this.state.gametype === "Mixed"){
+		// else if (this.state.gametype === "whichperiodisthisfrom"){
+		// 	gameAPI.getSpecificQuestions(this.state.gametype).then(function(questions){
+		// 		console.log(" quoteAPI:", questions);
+		// 		this.setState({
+		// 			questionBank: questions.data.specificQuestions
+		// 		}, function () {
+		// 			console.log("THIS.STATE", this.state);
+		// 		});
+		// 	}.bind(this));
+		// } 
+		else if (this.state.gametype === "mixed"){
 			gameAPI.getAllQuestions().then(function (questions) {
 				console.log(" quoteAPI:", questions);
 				this.setState({
@@ -184,7 +184,14 @@ export default class Play extends Component {
 					}.bind(this));
 				}.bind(this), 1200);	
 			}
-		} else  if (this.state.playing === ''){
+		} else if (this.state.playing === false){
+			this.setState({
+				currentQuestion: {
+					question: "Click &quot;Start&quot; to play.",
+					life: 5
+				}
+			});
+		} else if (this.state.playing === ''){
 			this.resetGame();
 		}
 	}
