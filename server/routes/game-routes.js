@@ -13,7 +13,7 @@ router.get('/api/game/getallquestions', function (req, res) {
 });
 
 router.get('/api/game/getspecificquestions', function (req, res) {
-	Gameset.getSpecificQuestions({gametype: req.body.gametype},function (err, specificQuestions) {
+	Gameset.getSpecificQuestions(req.body.gametype,function (err, specificQuestions) {
 		if (err) throw err;
 		console.log("get quotes", specificQuestions);
 		res.json({ specificQuestions: specificQuestions });

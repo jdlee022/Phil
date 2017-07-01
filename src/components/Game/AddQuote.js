@@ -22,12 +22,14 @@ export default class AddQuote extends Component {
 
 	}
 
+	//Handle any input field 
 	handleInput(event){
 		this.setState({
 			[event.target.name]: event.target.value
 		});
 	}
 
+	//handle select the game type and pass this to the parent (index.js) --> (play.js)
 	handleSelect(event){
 		console.log("select event", event.target);
 		this.setState({
@@ -38,6 +40,7 @@ export default class AddQuote extends Component {
 
 	}
 
+	//When submit, this would post to the database name 'gameset'
 	handleSubmit(event){
 		event.preventDefault();
 		var newQuestion = {
@@ -55,6 +58,7 @@ export default class AddQuote extends Component {
 		}.bind(this));
 	}
 
+	//Supposed to tell me when my quote have saved. 
 	postSuccess(){
 		if (this.state.posted === true){
 			this.setState({
@@ -65,6 +69,8 @@ export default class AddQuote extends Component {
 			)
 		}
 	}
+
+	
 	render() {
 		return (
 			<div>

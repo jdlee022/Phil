@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import  {Link} from 'react-router'
-import Stage from './children/State2';
+import Stage from './children/Stage2';
 import Control from './children/Control';
 
 import './style.css';

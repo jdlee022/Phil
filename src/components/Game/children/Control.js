@@ -55,25 +55,21 @@ export default class Control extends Component {
 			<div className="container-fluid">
 				<div className="row">
 					<div className="col-sm-4">
-						<button onClick={this.handlingStart} className="btn btn-success"><h4>Start</h4></button>
+						<div>	
+							Type of Questions:
+							<select onChange={this.handleTypeSelect} name="gametype" id="">
+								<option selected="selected" value="Select the type of game"></option>
+								<option value="Which period is this from?">Which period is this from?</option>
+								<option value="Who says this?">Who says this?</option>
+								<option value="Mixed">Mixed (All)</option>
+							</select>
+						</div>
+						<button onClick={this.handlingStart} type="button" class="start btn btn-md"> <span className="glyphicon glyphicon-play"></span></button>
+						<button onClick={this.handlingReset} type="button" class="reset btn btn-md"> <span className="glyphicon glyphicon-refresh"></span></button>
 					</div>
-					
-					<div className="col-sm-4">
-						Score: {this.state.score} 
-					</div>
-
-					<div>
-						Type of Questions: 
-						<select onChange={this.handleTypeSelect} name="gametype" id="">
-							<option selected="selected" value="Select the type of game"></option>
-							<option value="Which period is this from?">Which period is this from?</option>
-							<option value="Who says this?">Who says this?</option>
-						</select>
-					</div>
-
-					<div className="col-sm-4" >
-						<button onClick={this.handlingReset} className="btn btn-danger"><h4>Reset</h4></button>
-					</div>
+					<div className="">
+						Score: {this.state.score}
+					</div>	
 				</div>
 			</div>
 		)

@@ -1,12 +1,12 @@
 import axios from "axios";
 
 const gameAPI = {
-	getSpecificQuestions: function () {
-		return axios.get("/api/game/getspecificquestions");
+	getSpecificQuestions: function (typeQuestion) {
+		return axios.get("/api/game/getspecificquestions", typeQuestion);
 	},
 
-	getAllQuestions: function () {
-		return axios.get("/api/game/getallquestions");
+	getAllQuestions: function (typeQuestion) {
+		return axios.get("/api/game/getallquestions", typeQuestion);
 	},
 
 	addQuestion: function (questionObj) {

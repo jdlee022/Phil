@@ -26,7 +26,8 @@ export default class Play extends Component {
 			answer: "", 
 			feedback: "", 
 			life : 5, 
-			timer: false, 
+			timer: false,
+			gametype: ""
 		}
 
 		this.handleAnswer = this.handleAnswer.bind(this);
@@ -40,10 +41,11 @@ export default class Play extends Component {
 		this.timerClock = this.timerClock.bind(this);
 		this.endGame = this.endGame.bind(this);
 		this.correctAnswerDisplay = this.correctAnswerDisplay.bind(this);
+		this.setupGameType = this.setupGameType.bind(this);
 	}
 
+	//  Introduction to the game 
 	componentDidMount() {
-		this.handleAPI();
 		this.setState({
 			currentQuestion: {
 				question: "Sphinx: 'I am the protector of Thebes. You can help Oedipus get back to his journey by answering my questions correctly.' "
@@ -55,29 +57,57 @@ export default class Play extends Component {
 						question: "Sphinx: 'A wrong answer will hurt Oedipus. You can only miss 5 questions before Oedipus has to turn around. Click 'Start' to play.'"
 					}
 				});
-			}.bind(this), 2000);
+			}.bind(this), 3000);
 		});
 	}
 
+	// When the start/reset or gametype is changed,
+	// this receives the props and set the state of playing (t/f) 
+	// and gametype to find the appropriate info from db
 	componentWillReceiveProps(nextProps){
 		console.log("nextProps", nextProps);
 		this.setState({
 			playing: nextProps.playing, 
 			gametype: nextProps.gametype
 		}, function(){
+			this.handleAPI();
 			this.startGame();
 		}.bind(this)); 
 	}
 
-
+	//this looks at the gametype state and find the right set of questiosn
 	handleAPI(){
-		gameAPI.getAllQuestions().then(function (allQuotes) {
-			console.log(" quoteAPI:", allQuotes);
-			this.setState({
-				questionBank: allQuotes.data.allQuotes
-			});
-		}.bind(this));
-		console.log("THIS.STATE", this.state);
+		this.setupGameType();
+		if (this.state.gametype === "Who says this?"){
+			gameAPI.getSpecificQuestions("Who says this?").then(function (questions){
+				console.log(" quoteAPI:", questions);
+				this.setState({
+					questionBank: questions.data.specificQuestions
+				}, function () {
+					console.log("THIS.STATE", this.state);
+				});
+			}.bind(this));
+		} 
+		else if (this.state.gametype === "Which period is this from?"){
+			gameAPI.getSpecificQuestions("Which period is this from?").then(function(questions){
+				console.log(" quoteAPI:", questions);
+				this.setState({
+					questionBank: questions.data.specificQuestions
+				}, function () {
+					console.log("THIS.STATE", this.state);
+				});
+			}.bind(this));
+		} 
+		else if (this.state.gametype === "Mixed"){
+			gameAPI.getAllQuestions().then(function (questions) {
+				console.log(" quoteAPI:", questions);
+				this.setState({
+					questionBank: questions.data.allQuestions
+				}, function () {
+					console.log("THIS.STATE", this.state);
+				});
+			}.bind(this));
+		}
 	}
 
 	
@@ -88,6 +118,7 @@ export default class Play extends Component {
 		console.log("input:", this.state.answer);
 	}
 
+	
 	handleAnswer(){
 		// event.preventDefault();
 		var submittedAns = this.state.answer.trim().toLowerCase();
@@ -142,7 +173,7 @@ export default class Play extends Component {
 				setTimeout(function() {
 					this.setState({
 						currentQuestion: {
-							question: "Collecting quotes...", 
+							question: "Collecting questions...", 
 							life: 5
 						}
 					}, function () {
@@ -170,10 +201,33 @@ export default class Play extends Component {
 			feedback: "",
 			timer: false,
 			playing: false,
-			currentIndex: 0
+			currentIndex: 0, 
+			gametype:""
 		});
 	}
 
+	setupGameType(){
+		this.setState({
+			currentQuestion: {
+				question: "Collecting questions...", 
+				answer: ""
+			},
+			playing: false,
+			questionBank: [],
+			currentIndex: 0,
+			matched: "",
+			sphinxSrc: sphinx,
+			oedipus: oedipus,
+			answer: "",
+			feedback: "",
+			life: 5,
+			timer: false
+		}, function () {
+			this.setState({
+				currentQuestion: this.state.questionBank[this.state.currentIndex]
+			});
+		}.bind(this));
+	}
 	resetGame(){
 		this.setState({
 			playing: false,
@@ -187,7 +241,8 @@ export default class Play extends Component {
 			answer: "",
 			feedback: "", 
 			timer: false,
-			life: 5
+			life: 5,
+			gametype: ""
 		}, function(){
 			this.setState({
 				currentQuestion: this.state.questionBank[this.state.currentIndex]
@@ -275,7 +330,7 @@ export default class Play extends Component {
 						<div>
 							{this.correctAnswerDisplay()}
 							<br /> <br /> 
-							<label htmlFor="">{this.state.gametype}</label><br />
+							<label htmlFor="">{this.state.currentQuestion.gametype}</label><br />
 							Answer: 
 							<div className="input-container">
 								<input type="text" onInput={this.handleInput} value={this.state.answer} />
