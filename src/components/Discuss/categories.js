@@ -23,8 +23,8 @@ export default class Categories extends Component {
     render() {
         // Create an array of CategoryChild components for every item in categories
         // and pass each child its category data
-        const categoryItems = this.state.categories.map((category) =>
-            <CategoryChild data={category} />
+        const categoryItems = this.state.categories.map((category, i) =>
+            <CategoryChild data={category} key={i}/>
         );
 
         return (

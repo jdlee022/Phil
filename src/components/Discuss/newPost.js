@@ -99,7 +99,7 @@ export default class NewPost extends React.Component {
     }
 
     checkLoginStatus() {
-        if (this.props.loginStatus === false) {
+        if (!this.props.loginStatus) {
             return <p style={{ color: 'red' }}>You must be logged in to post.</p>
         }
     }
