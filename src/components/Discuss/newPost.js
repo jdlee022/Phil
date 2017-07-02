@@ -14,19 +14,13 @@ export default class NewPost extends React.Component {
             userId: null,
             username: null
         }
-
         // Get the current date and time
         var date = new Date();
-        date = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " @ " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        this.state.date = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " @ " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 
         if (this.props.loginStatus == true) {
-            // this.state.userId = localStorage.getItem('userId');
-            // this.state.username = localStorage.getItem('username');
-            this.setState({
-                date: date,
-                userId: localStorage.getItem('userId'),
-                username: localStorage.getItem('username')
-            })
+            this.state.userId = localStorage.getItem('userId');
+            this.state.username = localStorage.getItem('username');
         }
 
         this.handleInputChange = this.handleInputChange.bind(this);
