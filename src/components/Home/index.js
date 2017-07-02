@@ -5,7 +5,7 @@ import './style.css'
 import teaser from './teaser.png'
 import image1 from './images/om.gif'
 import dailyQuoteAPI from "../../utils/dailyQuoteAPI"
-
+import Timer from './Timer.js'
 export default class Home extends Component {
 	constructor(){
 		super();
@@ -14,7 +14,8 @@ export default class Home extends Component {
 			quoteIndex: 0,
 			allQuotes: [],
 			now: moment(),
-			lastTime: ""
+			nextTime: "",
+			countdowntime: (4 * 60 * 60 * 1000 + 20 * 60 * 1000)
 		}
 
 		this.getDailyQuotes = this.getDailyQuotes.bind(this);
@@ -43,7 +44,9 @@ export default class Home extends Component {
 
 	//TODO:
 	checkTime(){
+		if (this.state.lastTime.from(this.state.now)){
 
+		}
 	}
 
 	displayTodayQuote(){
@@ -65,6 +68,7 @@ export default class Home extends Component {
             <div>
                 <div className="container">
 					{this.displayTodayQuote()}
+
 					<div className="image">
 						<img src={image1} alt="teaser" className="background" />
 					</div>

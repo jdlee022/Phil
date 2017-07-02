@@ -38,8 +38,10 @@ export default class Control extends Component {
 		// this.props.handlingReset();
 		this.setState({
 			score: 0,
-			playing: false,
+			playing: "reset",
 			disabled: true
+		}, function(){
+			this.props.handleControlBtn(this.state.playing);
 		});
 	}
 

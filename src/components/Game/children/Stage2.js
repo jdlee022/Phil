@@ -187,11 +187,11 @@ export default class Play extends Component {
 		} else if (this.state.playing === false){
 			this.setState({
 				currentQuestion: {
-					question: "Click &quot;Start&quot; to play.",
+					question: "Click Start to play.",
 					life: 5
 				}
 			});
-		} else if (this.state.playing === ''){
+		} else if (this.state.playing === 'reset'){
 			this.resetGame();
 		}
 	}
@@ -235,11 +235,15 @@ export default class Play extends Component {
 			});
 		}.bind(this));
 	}
+
+	//FIXME: Reset button
 	resetGame(){
 		this.setState({
-			playing: false,
+			playing: 'reset',
 			currentQuestion: {
-				question: "Resetting Game..."
+				question: "Resetting Game...",
+				answer: "",
+				gametype: ""
 			},
 			currentIndex: 0,
 			matched: "",
@@ -251,6 +255,14 @@ export default class Play extends Component {
 			life: 5,
 			gametype: ""
 		}, function(){
+			setTimeout(function() {
+				this.setState({
+					currentQuestion: {
+						question: "Now click Start to play."
+					}
+				});	
+			}, 1500);
+		}.bind(this), function(){
 			this.setState({
 				currentQuestion: this.state.questionBank[this.state.currentIndex]
 			});
