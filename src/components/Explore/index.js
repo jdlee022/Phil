@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Navbar from '../Navbar/index';
 import ExploreContent from "./ExploreContent";
 import Timeline from "./Timeline";
 

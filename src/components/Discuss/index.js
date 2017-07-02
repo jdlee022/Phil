@@ -5,7 +5,6 @@
  */
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import API from '../../utils/API';
 
 import './style.css';
 
@@ -33,7 +32,7 @@ export default class Discuss extends Component {
 
     /** Returns login, register, or logout JSX links depending on the login status  */
     displayUserLinks() {
-        if (this.state.loginStatus == true) {
+        if (this.state.loginStatus === true) {
             return <div className="discussLinks col-md-8 col-md-offset-2 ">
                 <Link to="/discuss" >Topics</Link>
                 <a onClick={this.handleLogout}>Logout</a>;

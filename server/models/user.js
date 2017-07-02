@@ -19,10 +19,11 @@ var UserSchema = mongoose.Schema({
 	name: {
 		type: String
 	},
-    posts: {
+    posts: [{
         type: mongoose.Schema.Types.ObjectId,
+        //The ObjectIds will refer to ids in the Post model
         ref: "Post"
-    },
+    }],
     comments: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Comment"
