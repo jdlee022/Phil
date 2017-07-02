@@ -69,9 +69,12 @@ router.post('/api/register', function (req, res) {
     }
 });
 
+/**
+ * Gets a user by username
+ * Used to check duplicate usernames in registration
+ */
 router.get('/check/:username', function (req, res) {
     User.findOne({ username: req.params.username }).then(function(response){
-        console.log("response from username db search:", response);
         res.json(response);
     });
 });
