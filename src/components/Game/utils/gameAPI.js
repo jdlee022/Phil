@@ -1,13 +1,25 @@
 import axios from "axios";
 
 const gameAPI = {
+
+	/**
+	 * High score
+	 */
+
+	getUserHighScore: function (userId){
+		return axios.get("/api/game/gethighscore/" + userId );
+	},
+
+	updateUserHighScore: function(userId, highScore){
+		return axios.post("/api/game/updatehighscore", {
+			userId: userId, 
+			highScore: highScore
+		});
+	}, 
+
 	getSpecificQuestions: function (typeQuestion) {
-		// if (typeQuestion === "Who is this?"){
-			return axios.get("/api/game/getspecificquestions/" + typeQuestion);
-		// }
-		// else if (typeQuestion === "Which period is this from?") {
-		// 	return axios.get("/api/game/getspecificquestions/whichperiodisthisfrom");
-		// }
+		return axios.get("/api/game/getspecificquestions/" + typeQuestion);
+		
 	},
 
 	getAllQuestions: function () {

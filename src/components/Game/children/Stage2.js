@@ -18,7 +18,9 @@ export default class Play extends Component {
 		this.state = {
 			playing: false,
 			questionBank: [],
-			currentQuestion: {},
+			currentQuestion: {
+				question: "Sphinx: Hello!"
+			},
 			currentIndex: 0, 
 			matched: "",
 			sphinxSrc: sphinx, 
@@ -27,7 +29,7 @@ export default class Play extends Component {
 			feedback: "", 
 			life : 5, 
 			timer: false,
-			gametype: ""
+			gametype: "mixed", 
 		}
 
 		this.handleAnswer = this.handleAnswer.bind(this);
@@ -48,17 +50,21 @@ export default class Play extends Component {
 	componentDidMount() {
 		this.setState({
 			currentQuestion: {
-				question: "Sphinx: &quot; I am the protector of Thebes. You can help Oedipus get back to his journey by answering my questions correctly. &quot; "
+				question: "Sphinx: I am the protector of Thebes. You can help Oedipus get back to his journey by answering my questions correctly. Click 'Start' to play."
 			}
-		}, function(){
+		}
+		, function(){
 			setTimeout(function(){
-				this.setState({
-					currentQuestion: {
-						question: "Sphinx: &quot; A wrong answer will hurt Oedipus. You can only miss 5 questions before Oedipus has to turn around. Click 'Start' to play. !&quot;"
-					}
-				});
-			}.bind(this), 3000);
-		});
+				this.handleAPI();
+				// this.setState({
+				// 	currentQuestion: {
+				// 		question: "Sphinx: &quot; A wrong answer will hurt Oedipus. You can only miss 5 questions before Oedipus has to turn around.  !&quot;"
+				// 	}
+				// });
+			}.bind(this), 2000);
+		}
+		);
+		
 	}
 
 	// When the start/reset or gametype is changed,
@@ -66,18 +72,81 @@ export default class Play extends Component {
 	// and gametype to find the appropriate info from db
 	componentWillReceiveProps(nextProps){
 		console.log("nextProps", nextProps);
-		this.setState({
-			playing: nextProps.playing, 
-			gametype: nextProps.gametype
-		}, function(){
-			this.handleAPI();
-			this.startGame();
-		}.bind(this)); 
+		if (nextProps.playing !== this.state.playing){
+			this.setState({
+				playing: nextProps.playing, 
+				currentIndex: 0
+			}, function(){
+				this.startGame();
+			}.bind(this));
+		}
+		if (nextProps.gametype !== this.state.gametype) {
+			this.setState({
+				gametype: nextProps.gametype
+			}, function () {
+				this.setupGameType();
+				this.handleAPI()
+			}.bind(this));
+		}
 	}
 
-	//this looks at the gametype state and find the right set of questiosn
+	startGame() {
+		if (this.state.playing === true) {
+			if (this.state.currentIndex === 0) {
+				setTimeout(function () {
+					this.setState({
+						currentQuestion: {
+							question: "Collecting questions...",
+							life: 5
+						}
+					}, function () {
+						this.setState({
+							currentQuestion: this.state.questionBank[this.state.currentIndex],
+							timer: true
+						});
+					}.bind(this));
+				}.bind(this), 2000);
+			}
+		} else if (this.state.playing === false) {
+			this.setState({
+				currentQuestion: {
+					question: "Click Start to play.",
+					life: 5
+				}
+			});
+		} else if (this.state.playing === 'reset') {
+			this.resetGame();
+		}
+	}
+
+	setupGameType() {
+		this.setState({
+			currentQuestion: {
+				question: "Click Start to play.",
+				answer: ""
+			},
+			playing: false,
+			questionBank: [],
+			currentIndex: 0,
+			matched: "",
+			sphinxSrc: sphinx,
+			oedipus: oedipus,
+			answer: "",
+			feedback: "",
+			life: 5,
+			timer: false
+		}, function () {
+			var question = this.state.questionBank[this.state.currentIndex]
+			if (question)
+				this.setState({
+					currentQuestion: question
+				});
+			// callback();
+		}.bind(this));
+	}
+
+	//this looks at the gametype state and find the right set of questions
 	handleAPI(){
-		this.setupGameType();
 		if (this.state.gametype !== "mixed"){
 			gameAPI.getSpecificQuestions(this.state.gametype).then(function (questions){
 				console.log(" quoteAPI:", questions);
@@ -88,16 +157,7 @@ export default class Play extends Component {
 				});
 			}.bind(this));
 		} 
-		// else if (this.state.gametype === "whichperiodisthisfrom"){
-		// 	gameAPI.getSpecificQuestions(this.state.gametype).then(function(questions){
-		// 		console.log(" quoteAPI:", questions);
-		// 		this.setState({
-		// 			questionBank: questions.data.specificQuestions
-		// 		}, function () {
-		// 			console.log("THIS.STATE", this.state);
-		// 		});
-		// 	}.bind(this));
-		// } 
+
 		else if (this.state.gametype === "mixed"){
 			gameAPI.getAllQuestions().then(function (questions) {
 				console.log(" quoteAPI:", questions);
@@ -110,6 +170,7 @@ export default class Play extends Component {
 		}
 	}
 
+
 	
 	handleInput(event){
 		this.setState({
@@ -118,7 +179,7 @@ export default class Play extends Component {
 		console.log("input:", this.state.answer);
 	}
 
-	
+
 	handleAnswer(){
 		// event.preventDefault();
 		var submittedAns = this.state.answer.trim().toLowerCase();
@@ -166,77 +227,27 @@ export default class Play extends Component {
 				});
 			} 
 	}
- 
-	startGame(){
-		if(this.state.playing === true) {
-			if (this.state.currentIndex === 0) {
-				setTimeout(function() {
-					this.setState({
-						currentQuestion: {
-							question: "Collecting questions...", 
-							life: 5
-						}
-					}, function () {
-						this.setState({
-							currentQuestion: this.state.questionBank[this.state.currentIndex], 
-							timer: true
-						});
-					}.bind(this));
-				}.bind(this), 1200);	
-			}
-		} else if (this.state.playing === false){
-			this.setState({
-				currentQuestion: {
-					question: "Click Start to play.",
-					life: 5
-				}
-			});
-		} else if (this.state.playing === 'reset'){
-			this.resetGame();
-		}
-	}
 	
 	endGame(){
+		this.props.comparingScores();
 		this.setState({
 			currentQuestion: {
 				question: "End of game",
-				author: ''
+				author: '', 
+				gametype: ""
 			},
 			matched: "",
 			sphinxSrc: sphinx,
 			oedipus: oedipus,
 			feedback: "",
 			timer: false,
+			timeToAns: 5,
 			playing: false,
 			currentIndex: 0, 
 			gametype:""
 		});
 	}
 
-	setupGameType(){
-		this.setState({
-			currentQuestion: {
-				question: "Collecting questions...", 
-				answer: ""
-			},
-			playing: false,
-			questionBank: [],
-			currentIndex: 0,
-			matched: "",
-			sphinxSrc: sphinx,
-			oedipus: oedipus,
-			answer: "",
-			feedback: "",
-			life: 5,
-			timer: false
-		}, function () {
-			this.setState({
-				currentQuestion: this.state.questionBank[this.state.currentIndex]
-			});
-		}.bind(this));
-	}
-
-	//FIXME: Reset button
 	resetGame(){
 		this.setState({
 			playing: 'reset',
@@ -261,7 +272,7 @@ export default class Play extends Component {
 						question: "Now click Start to play."
 					}
 				});	
-			}, 1500);
+			}.bind(this), 1500);
 		}.bind(this), function(){
 			this.setState({
 				currentQuestion: this.state.questionBank[this.state.currentIndex]
@@ -292,15 +303,37 @@ export default class Play extends Component {
 	
 	timerClock(){
 		if (this.state.timer === true){
-			return (
-				<ReactCountdownClock seconds={5}
-					color="#fff"
-					alpha={0.9}
-					size={100}
-					weight={10}
-					onComplete={this.handleAnswer.bind(this)}
-				/>
-			)
+			if (this.state.currentQuestion.gametype === "whosaysthis"){
+				return (
+					<ReactCountdownClock seconds={5}
+						color="#fff"
+						alpha={0.9}
+						size={100}
+						weight={10}
+						onComplete={this.handleAnswer.bind(this)}
+					/>
+				)
+			} else if (this.state.currentQuestion.gametype === "whichperiodisthisfrom") {
+				return (
+					<ReactCountdownClock seconds={10}
+						color="#fff"
+						alpha={0.9}
+						size={100}
+						weight={10}
+						onComplete={this.handleAnswer.bind(this)}
+					/>
+				)
+			} else {
+				return (
+					<ReactCountdownClock seconds={5}
+						color="#fff"
+						alpha={0.9}
+						size={100}
+						weight={10}
+						onComplete={this.handleAnswer.bind(this)}
+					/>
+				)
+			}
 		} else {
 			return;
 		}
@@ -357,7 +390,7 @@ export default class Play extends Component {
 							<input type="submit" value="Submit" onClick={this.handleAnswer}/>
 						</div>
 						<div>
-							<p class="feedback">{this.state.feedback}</p>
+							<p className="feedback">{this.state.feedback}</p>
 						</div>
 					</div>
 

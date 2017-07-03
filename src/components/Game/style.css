@@ -21,8 +21,8 @@
 	margin: 40px;
 	display: inline-block;
 	position: relative;
-	width: 400px;
-	height: 150px;
+	width: 500px;
+	height: 175px;
 	background-color: black;
 }
 
@@ -138,4 +138,9 @@ button {
 	background-color: black;
 	border-color: black;
 	font-size: 24px;
+}
+
+img { 
+	width : 80%;
+	height: 80%
 }

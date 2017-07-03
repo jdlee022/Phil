@@ -101,4 +101,35 @@ router.get('/logout', function (req, res) {
     res.json({ success: true });
 });
 
+
+/**
+ * Find user's high score by id. 
+ * Get requestion form gameAPI under updateUserHighScore
+ */
+router.get('/api/game/gethighscore/:id', function (req, res){
+	// console.log("req.params.id", req.params.id);
+	User.findOne({_id: req.params.id}, "_id name highScore", 
+	function(err, thisUser){
+		if (err){
+			res.json({error: err});
+		} else {
+			res.json({success: true, userInfo: thisUser});
+		}
+	});
+});
+
+router.post('/api/game/updatehighscore', function (req, res) {
+	User.findOneAndUpdate({_id: req.body.userId},
+	{$set: { "highScore": req.body.highScore}}, {new: true}, 
+	function (err, newScore){
+		if (err) {
+			res.json({error: err});
+		}
+		else {
+			res.json({success: true, newScore: newScore});
+		}
+	});
+});
+
+
 module.exports = router;

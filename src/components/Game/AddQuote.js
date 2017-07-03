@@ -84,8 +84,8 @@ export default class AddQuote extends Component {
 						<label htmlFor="">Type Question:</label>
 						<select onChange={this.handleSelect} name="gametype" id="">
 							<option selected="selected" value="Select the type of game"></option>
-							<option value="Which period is this from?">Which period is this from?</option>
-							<option value="Who says this?">Who says this?</option>
+							<option value="whichperiodisthisfrom">Which period is this from?</option>
+							<option value="whosaysthis">Who says this?</option>
 						</select>
 						<input  type="submit" value="Submit"/>
 					</form>

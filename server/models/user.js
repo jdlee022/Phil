@@ -28,7 +28,8 @@ var UserSchema = mongoose.Schema({
         ref: "Comment"
     },
     highScore: {
-        type: String
+        type: Number, 
+		default: 0
     }
 });
 

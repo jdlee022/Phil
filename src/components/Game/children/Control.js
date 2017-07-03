@@ -8,19 +8,35 @@ export default class Control extends Component {
 		this.state = {
 			playing: false,
 			score: 0,
-			gametype: "",
-			disabled: true
+			gametype: "mixed",
+			disabled: true, 
+			currHighScore: 0,
 		}
 		this.handlingReset = this.handlingReset.bind(this);
 		this.handlingStart = this.handlingStart.bind(this);
 		this.handleTypeSelect = this.handleTypeSelect.bind(this);
+		// this.handleUserHighScore = this.handleUserHighScore.bind(this);
 	}
+
+	componentWillReceiveProps(nextProps) {
+		console.log("nextProps:", nextProps.score);
+		this.setState({
+			score: nextProps.score, 
+			currHighScore: nextProps.highScore
+		});
+	}
+
+	// Look at: user-routes
+	// handleUserHighScore() {
+
+	// }
 
 	handleTypeSelect(event){
 		this.setState({
-			[event.target.name]: event.target.value
+			[event.target.name]: event.target.value, 
+			playing: false
 		}, function(){
-			this.props.handleTypeSelect(this.state.gametype);
+			this.props.handleTypeSelect(this.state.gametype, this.state.score);
 		});
 	}
 
@@ -30,9 +46,10 @@ export default class Control extends Component {
 			score: 0, 
 			disabled: false
 		}, function(){
-			this.props.handleControlBtn(this.state.playing);
+			this.props.handleControlBtn(this.state.playing, this.state.score);
 		});
 	}
+
 
 	handlingReset() {
 		// this.props.handlingReset();
@@ -41,15 +58,9 @@ export default class Control extends Component {
 			playing: "reset",
 			disabled: true
 		}, function(){
-			this.props.handleControlBtn(this.state.playing);
-		});
-	}
-
-	componentWillReceiveProps(nextProps) {
-		console.log("nextProps:", nextProps.score);
-		this.setState({
-			score: nextProps.score
-		});
+			console.log("RESET state", this.state);
+			this.props.handleControlBtn(this.state.playing, this.state.score);
+		}.bind(this));
 	}
 
 	render() {
@@ -60,17 +71,19 @@ export default class Control extends Component {
 						<div>	
 							Type of Questions:
 							<select onChange={this.handleTypeSelect} name="gametype" id="">
-								<option selected="selected" value="Select the type of game"></option>
+								<option defaultValue value="mixed">Mixed (All)</option>
 								<option value="whichperiodisthisfrom">Which period is this from?</option>
 								<option value="whosaysthis">Who says this?</option>
-								<option value="mixed">Mixed (All)</option>
+								
 							</select>
 						</div>
-						<button onClick={this.handlingStart} type="button" class="start btn btn-md"> <span className="glyphicon glyphicon-play"></span></button>
-						<button onClick={this.handlingReset} type="button" class="reset btn btn-md"> <span className="glyphicon glyphicon-refresh"></span></button>
+						<button onClick={this.handlingStart} type="button" className="start btn btn-md"> <span className="glyphicon glyphicon-play"></span></button>
+						<button onClick={this.handlingReset} type="button" className="reset btn btn-md"> <span className="glyphicon glyphicon-refresh"></span></button>
 					</div>
 					<div className="">
-						Score: {this.state.score}
+						<h3>Your Current High Score: {this.state.currHighScore}</h3>
+						<h3>Score: {this.state.score}</h3>
+						
 					</div>	
 				</div>
 			</div>
