@@ -15,7 +15,6 @@ export default class CommentChild extends Component {
             date: this.props.data.date,
             username: ''
         };
-
         API.getUserById(this.props.data.user).then((response) => {
             this.setState({
                 username: response.data.username
