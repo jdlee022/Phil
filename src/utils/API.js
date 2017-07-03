@@ -56,6 +56,17 @@ const API = {
      */
     newPost: function(postInfo){
         return axios.post('/api/new_post', postInfo);
+    },
+
+    /**
+     * Gets all categories stored in the db
+     */
+    getPosts: function(category){
+        return axios.get('/api/posts/'+category);
+    },
+
+    getPostById: function(_id){
+        return axios.get('/api/post/'+_id);
     }
 
 };

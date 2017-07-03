@@ -22,6 +22,7 @@ import Discuss from './components/Discuss/index';
 import Categories from './components/Discuss/categories';
 import CategoryPage from './components/Discuss/categoryPage';
 import NewPost from './components/Discuss/newPost';
+import PostPage from './components/Discuss/PostPage';
 import Explore from './components/Explore';
 import Game from './components/Game/index.js';
 import Play from './components/Game/Play'
@@ -40,6 +41,7 @@ const Routes = (props) => (
                 <Route path="/login" component={UserLogin} />
                 <Route path="/register" component={UserRegister} />
                 <Route path="/category/:category" component={CategoryPage} />
+                <Route path="/post/:_id" component={PostPage} />
                 <Route path="/new_post/:category" component={NewPost} />
             </Route>
             <Route path="/explore" component={Explore} />

@@ -13,7 +13,6 @@ const Post = require('../models/post');
  */ 
 router.get('/api/categories', function (req, res) {
     Category.find().then(function (docs) {
-        console.log("categories found in db:", docs);
         res.json(docs);
     });
 });

@@ -69,7 +69,7 @@ export default class UserRegister extends Component {
                         //If register was a success then redirect to login page
                         component.props.router.push('/login');
                     }
-                }.bind(this));;
+                });;
             }
         });
     }

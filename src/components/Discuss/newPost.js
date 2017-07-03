@@ -14,12 +14,11 @@ export default class NewPost extends React.Component {
             userId: null,
             username: null
         }
-
         // Get the current date and time
         var date = new Date();
         this.state.date = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " @ " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 
-        if (this.props.loginStatus === true) {
+        if (this.props.loginStatus == true) {
             this.state.userId = localStorage.getItem('userId');
             this.state.username = localStorage.getItem('username');
         }
@@ -58,46 +57,16 @@ export default class NewPost extends React.Component {
             username: this.state.username
         };
 
+        //If the user is logged in, save a new post and then navigate to that post's route
         if (this.props.loginStatus) {
             API.newPost(newPost).then(function (response) {
-                // component.setState({
-                //     errors: response.data.errors
-                // });
-                // if (response.data.success) {
-                //     //If register was a success then redirect to login page
-                //     component.props.router.push('/login');
-                // }
-                console.log("response from newPost:", response);
-            }.bind(this));;
+                var postQuery = '/post/' + response.data._id;
+                this.props.router.push({ pathname: postQuery });
+            }.bind(this));
         }
-        // var newUser = {
-        //     name: this.state.name,
-        //     username: this.state.username,
-        //     email: this.state.email,
-        //     password: this.state.password,
-        //     password2: this.state.password2,
-        //     duplicateError: false
-        // };
-        // var component = this;
-        // API.checkDuplicateUsername(newUser.username).then(function (response) {
-        //     if (response.data) {
-        //         component.setState({ duplicateError: true });
-        //     }
-        //     else {
-        //         console.log("valid username, adding new user");
-        //         API.postUser(newUser).then(function (response) {
-        //             component.setState({
-        //                 errors: response.data.errors
-        //             });
-        //             if (response.data.success) {
-        //                 //If register was a success then redirect to login page
-        //                 component.props.router.push('/login');
-        //             }
-        //         }.bind(this));;
-        //     }
-        // });
     }
 
+    /** Display an error message if the user tries to post without logging in. */
     checkLoginStatus() {
         if (!this.props.loginStatus) {
             return <p style={{ color: 'red' }}>You must be logged in to post.</p>
