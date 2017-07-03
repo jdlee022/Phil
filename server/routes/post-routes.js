@@ -50,8 +50,23 @@ router.post('/api/new_post', function (req, res) {
                     console.log("Added postId to user", doc);
                 }
             });
-            res.json({status: "Post submitted"});
+            res.json(doc);
         }
+    });
+});
+
+/**
+ * Called (via axios) in categoryPage.js to display all posts in a category
+ */ 
+router.get('/api/posts/:category', function (req, res) {
+    Post.find({category: req.params.category}).then(function (docs) {
+        res.json(docs);
+    });
+});
+
+router.get('/api/post/:_id', function (req, res) {
+    Post.findOne({_id: req.params._id}).then(function (docs) {
+        res.json(docs);
     });
 });
 

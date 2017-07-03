@@ -4,7 +4,7 @@
  * of CategoryChildren from /children/category-child
  */
 import React, { Component } from 'react';
-import CategoryChild from './children/category-child';
+import CategoriesChild from './children/categoriesChild';
 import API from '../../utils/API';
 
 export default class Categories extends Component {
@@ -24,7 +24,7 @@ export default class Categories extends Component {
         // Create an array of CategoryChild components for every item in categories
         // and pass each child its category data
         const categoryItems = this.state.categories.map((category, i) =>
-            <CategoryChild data={category} key={i}/>
+            <CategoriesChild data={category} key={i}/>
         );
 
         return (
