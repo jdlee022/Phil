@@ -81,12 +81,14 @@ var gameRoutes = require('./routes/game-routes');
 var dailyQuoteRoutes = require('./routes/dailyQuote-routes');
 var categoryRoutes = require('./routes/category-routes');
 var postRoutes = require('./routes/post-routes');
+var commentRoutes = require('./routes/comment-routes');
 app.use('/', userRoutes);
 app.use('/', quoteRoutes);
 app.use('/', gameRoutes);
 app.use('/', dailyQuoteRoutes);
 app.use('/', categoryRoutes);
 app.use('/', postRoutes);
+app.use('/', commentRoutes);
 
 // Always return the main index.html, so react-router render the route in the client
 app.get('*', (req, res) => {

@@ -80,6 +80,15 @@ router.get('/check/:username', function (req, res) {
 });
 
 /**
+ * Gets a user by id
+ */
+router.get('/user/:id', function (req, res) {
+    User.findOne({ _id: req.params.id }).then(function(response){
+        res.json(response);
+    });
+});
+
+/**
  * Check if the posted login info is valid and return a 
  * response via axios to indicate success or error
  */

@@ -12,40 +12,44 @@ const API = {
      * @returns a promise with a response from the server telling the component
      * whether there was a validation error or if the post was a success
      */
-	postUser: function (user) {
-		return axios.post("/api/register", user);
-	},
+    postUser: function(user) {
+        return axios.post("/api/register", user);
+    },
 
     /**
      * Submit user login info and attempt login
      * @param loginInfo - the user's submitted info that we're checking
      * @returns a promise telling us whether or not the login was a success
      */
-	userLogin: function (loginInfo) {
-		return axios.post("/login", loginInfo)
-	},
+    userLogin: function(loginInfo) {
+        return axios.post("/login", loginInfo)
+    },
 
     /**
      * Submits a user logout request to the server
      * @returns the success status of the request
      */
-	userLogout: function () {
-		return axios.get('/logout');
-	},
+    userLogout: function() {
+        return axios.get('/logout');
+    },
 
     /**
      * Checks db to see if a username has been taken
      * @param username - the username we are checking
      */
-    checkDuplicateUsername: function(username){
-        return axios.get('/check/'+username);
+    checkDuplicateUsername: function(username) {
+        return axios.get('/check/' + username);
+    },
+
+    getUserById: function(id) {
+        return axios.get('/user/' + id);
     },
 
 
     /**
      * Gets all categories stored in the db
      */
-    getCategories: function(){
+    getCategories: function() {
         return axios.get('/api/categories');
     },
 
@@ -54,19 +58,31 @@ const API = {
      * @param postInfo - contains the object that will be submitted as 
      * a new post in post-routes.js
      */
-    newPost: function(postInfo){
+    newPost: function(postInfo) {
         return axios.post('/api/new_post', postInfo);
     },
 
     /**
      * Gets all categories stored in the db
      */
-    getPosts: function(category){
-        return axios.get('/api/posts/'+category);
+    getPosts: function(category) {
+        return axios.get('/api/posts/' + category);
     },
 
-    getPostById: function(_id){
-        return axios.get('/api/post/'+_id);
+    getPostById: function(_id) {
+        return axios.get('/api/post/' + _id);
+    },
+
+    newComment: function(commentInfo) {
+        return axios.post('/api/new_comment', commentInfo);
+    },
+
+    getComments: function(postId) {
+        return axios.get('/api/comments/' + postId);
+    },
+
+    getCommentById: function(commentId) {
+        return axios.get('/api/comment/' + commentId);
     }
 
 };

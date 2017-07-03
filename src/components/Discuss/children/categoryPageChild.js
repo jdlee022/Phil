@@ -6,6 +6,7 @@
  */
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import API from '../../../utils/API';
 
 export default class CategoryPageChild extends Component {
     constructor(props) {
@@ -17,11 +18,19 @@ export default class CategoryPageChild extends Component {
             text: this.props.data.text,
             date: this.props.data.date,
             userId: this.props.data.userId,
-            replies: 'todo', //this.props.data.comments.length,
-            lastReply: 'todo',
+            replies: this.props.data.comments.length,
+            lastReply: 'N/A',
             username: this.props.data.username
 
         };
+
+        if (this.state.replies > 0) {
+            API.getCommentById(this.props.data.comments[this.state.replies - 1]).then((response) => {
+                this.setState({
+                    lastReply: response.data.date
+                });
+            });
+        }
     }
 
     render() {

@@ -17,12 +17,6 @@ export default class CategoryPage extends Component {
             posts: []
         };
 
-        //TODO: 
-        // create a route to post a new thread to a category
-        // make a post button
-        // make an api call to populate threads based on category key
-
-
         // Get categories from db and set state
         API.getPosts(this.state.category).then((response) => {
             this.setState({ posts: response.data });
@@ -64,7 +58,6 @@ export default class CategoryPage extends Component {
                     </ul>
                 </div>
             </div>
-
         );
     }
 }
