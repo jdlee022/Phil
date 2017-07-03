@@ -41,6 +41,7 @@ export default class ExploreContent extends Component {
 		this.findMatchingTitle = this.findMatchingTitle.bind(this);
 		this.renderPhilosophers = this.renderPhilosophers.bind(this);
 		this.renderDetails = this.renderDetails.bind(this);
+        this.checkEmpty = this.checkEmpty.bind(this);
 
     }
     
@@ -149,29 +150,74 @@ export default class ExploreContent extends Component {
 		// }
     }
 
-    render() {
-        return(
-        <div className = "row">
-          <div className = "col-md-2">
-          </div>
+    checkEmpty() {
+        console.log("checkEmpty this.state.summary: " + this.state.summary);
+            if (this.state.summary == ""){
+                console.log("Empty");
+            return (
+          <div className = "empty-container">
+            <div className = "row">
+                <div id='stars'></div>
+                    <div id='stars2'></div>
+                    <div id='stars3'></div>
+                    
 
-          <div className = "col-md-8" id = "content-container">
-            <div className = "explore-title">
-				
-              <h1 className = "title">{this.state.title}</h1>
-              <h4> {this.state.summary} </h4>
-              <h4 id = "prominent-philosopher-title">Prominent Philosophers: </h4>
-              {this.renderPhilosophers()}
-              {this.renderDetails() }
-             
+                <div className = "col-md-2">
+                </div>
+
+                <div className = "col-md-8" id = "content-container">
+                  <div className = "explore-title">
+                    <h1>Explore Content </h1>
+                  </div>
+                  <div className = "emptyContent">
+                    <h4> Click on the timeline buttons on the bottom to learn more about each period </h4>
+                  </div>
+                  </div>
+
+                <div className = "col-md-2">
+                </div>
             </div>
-          
+
+                <div className = "row">
+                  <div className = "arrow-container">
+                    <i className = "glyphicon glyphicon-arrow-down bounce"></i>
+                  </div>
+                </div>
           </div>
+          
+            )
+        }
+        else {
+            return(
+              <div className = "contentContainer">
+                <div className = "row">
+                  <div id='stars'></div>
+                  <div id='stars2'></div>
+                  <div id='stars3'></div>
+                </div>
+                <div className = "col-md-2">
+                </div>
 
-        <div className = "col-md-2">
-        </div>
-        </div>
-      )
-   }
+                <div className = "col-md-8" id = "content-container">
+                    <div className = "explore-title"> 
+                      <h1 className = "title">{this.state.title}</h1>
+                      <h4> {this.state.summary} </h4>
+                      <h4 id = "prominent-philosopher-title">Prominent Philosophers: </h4>
+                      {this.renderPhilosophers()}
+                      {this.renderDetails() }
+                    </div>
+                </div>
 
-}
+                <div className = "col-md-2">
+                </div>
+                </div>
+              
+            )
+        }
+    }
+
+    render(){
+        console.log("this.state.summary: " + this.state.summary);
+            return this.checkEmpty(); 
+        }
+    }
