@@ -16,10 +16,23 @@ var Promise = require("bluebird");
 mongoose.Promise = Promise;
 //heroku db: 'mongodb://heroku_vrds24zc:n3skg2tmaquasli0cs0ta4elrq@ds139322.mlab.com:39322/heroku_vrds24zc'
 //local db: 'mongodb://localhost:27017/loginapp'
-mongoose.connect('mongodb://heroku_vrds24zc:n3skg2tmaquasli0cs0ta4elrq@ds139322.mlab.com:39322/heroku_vrds24zc');
+mongoose.connect('mongodb://localhost:27017/loginapp');
 const db = mongoose.connection;
 
 const app = express();
+var allowCrossDomain = function (req, res, next) {
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+	// intercept OPTIONS method
+	if ('OPTIONS' == req.method) {
+		res.sendStatus(200);
+	} else {
+		next();
+	}
+};
+
+app.use(allowCrossDomain);
 
 // Setup logger
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));
@@ -67,11 +80,13 @@ var quoteRoutes = require('./routes/quotes');
 var gameRoutes = require('./routes/game-routes');
 var dailyQuoteRoutes = require('./routes/dailyQuote-routes');
 var categoryRoutes = require('./routes/category-routes');
+var postRoutes = require('./routes/post-routes');
 app.use('/', userRoutes);
 app.use('/', quoteRoutes);
 app.use('/', gameRoutes);
 app.use('/', dailyQuoteRoutes);
 app.use('/', categoryRoutes);
+app.use('/', postRoutes);
 
 // Always return the main index.html, so react-router render the route in the client
 app.get('*', (req, res) => {

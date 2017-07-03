@@ -18,14 +18,12 @@ var PostSchema = new mongoose.Schema({
     date: {
         type: String
     },
-    author: {
+    userId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
+        ref: "User",
+        required: [true, "Missing userId"]
     },
-    numComments: {
-        type: Number
-    },
-    latestReply: {
+    username: {
         type: String
     }
 });

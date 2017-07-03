@@ -1,5 +1,10 @@
+/**
+ * @file - the default view when navigating to /discuss. Gets list of 
+ * categories from the database and generates an unordered list 
+ * of CategoryChildren from /children/category-child
+ */
 import React, { Component } from 'react';
-import CategoryChild from './children/category-child';
+import CategoriesChild from './children/categoriesChild';
 import API from '../../utils/API';
 
 export default class Categories extends Component {
@@ -11,14 +16,15 @@ export default class Categories extends Component {
 
         // Get categories from db and set state
         API.getCategories().then((response) => {
-            console.log("categories retrieved from db:", response.data);
             this.setState({ categories: response.data });
         });
     }
 
     render() {
-        const categoryItems = this.state.categories.map((category) =>
-            <CategoryChild data={category} />
+        // Create an array of CategoryChild components for every item in categories
+        // and pass each child its category data
+        const categoryItems = this.state.categories.map((category, i) =>
+            <CategoriesChild data={category} key={i}/>
         );
 
         return (

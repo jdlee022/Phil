@@ -12,13 +12,15 @@ router.get('/api/game/getallquestions', function (req, res) {
 
 });
 
-router.get('/api/game/getspecificquestions', function (req, res) {
-	Gameset.getSpecificQuestions(req.body.gametype,function (err, specificQuestions) {
+router.get('/api/game/getspecificquestions/:type', function (req, res) {
+	console.log("req.body", req.params.type);
+	Gameset.getSpecificQuestions({
+			gametype: req.params.type
+		}, function (err, specificQuestions) {
 		if (err) throw err;
 		console.log("get quotes", specificQuestions);
 		res.json({ specificQuestions: specificQuestions });
 	});
-
 });
 
 router.post('/api/game/addquestion', function (req, res) {

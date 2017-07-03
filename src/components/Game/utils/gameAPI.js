@@ -2,11 +2,16 @@ import axios from "axios";
 
 const gameAPI = {
 	getSpecificQuestions: function (typeQuestion) {
-		return axios.get("/api/game/getspecificquestions", typeQuestion);
+		// if (typeQuestion === "Who is this?"){
+			return axios.get("/api/game/getspecificquestions/" + typeQuestion);
+		// }
+		// else if (typeQuestion === "Which period is this from?") {
+		// 	return axios.get("/api/game/getspecificquestions/whichperiodisthisfrom");
+		// }
 	},
 
-	getAllQuestions: function (typeQuestion) {
-		return axios.get("/api/game/getallquestions", typeQuestion);
+	getAllQuestions: function () {
+		return axios.get("/api/game/getallquestions");
 	},
 
 	addQuestion: function (questionObj) {

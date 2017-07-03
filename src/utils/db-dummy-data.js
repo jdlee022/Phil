@@ -1,34 +1,35 @@
 /**
- * To insert multiple categories to the db
+ * To insert multiple categories to the db:
  * Run the mongo CLI, use the app's database and run the following command
+ * (or hit the route from /server/routes/category-routes with Postman)
  */
 db.categories.insertMany([
     {
-        "topic": "General",
+        "category": "General",
         "description": "All things philosophy related are fair game."
     },
     {
-        "topic": "Applied Ethics",
+        "category": "Applied Ethics",
         "description": "Euthanasia, abortion, genetic engineering, just war theory and more..."
     },
     {
-        "topic": "Memes",
+        "category": "Memes",
         "description": "Only the dankest of philosophy related memes are welcome here."
     },
     {
-        "topic": "Metaphysics",
+        "category": "Metaphysics",
         "description": "Ultimately, what is there? What is it like?"
     },
     {
-        "topic": "Philosophy of Science",
+        "category": "Philosophy of Science",
         "description": "category description"
     },
     {
-        "topic": "Political Philosophy",
+        "category": "Political Philosophy",
         "description": "How should society be organized, if at all?"
     },
     {
-        "topic": "Religious Philosophy",
+        "category": "Religious Philosophy",
         "description": "category description"
     }
 ]);

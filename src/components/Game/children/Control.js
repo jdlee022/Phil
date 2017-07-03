@@ -38,8 +38,10 @@ export default class Control extends Component {
 		// this.props.handlingReset();
 		this.setState({
 			score: 0,
-			playing: false,
+			playing: "reset",
 			disabled: true
+		}, function(){
+			this.props.handleControlBtn(this.state.playing);
 		});
 	}
 
@@ -59,9 +61,9 @@ export default class Control extends Component {
 							Type of Questions:
 							<select onChange={this.handleTypeSelect} name="gametype" id="">
 								<option selected="selected" value="Select the type of game"></option>
-								<option value="Which period is this from?">Which period is this from?</option>
-								<option value="Who says this?">Who says this?</option>
-								<option value="Mixed">Mixed (All)</option>
+								<option value="whichperiodisthisfrom">Which period is this from?</option>
+								<option value="whosaysthis">Who says this?</option>
+								<option value="mixed">Mixed (All)</option>
 							</select>
 						</div>
 						<button onClick={this.handlingStart} type="button" class="start btn btn-md"> <span className="glyphicon glyphicon-play"></span></button>
