@@ -32,9 +32,11 @@ a:hover {
     width: 100vw;
     height: 86vh;
     margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
     left: 0px;
     position: absolute;
-    background: url('http://www.gifimagesdownload.com/wp-content/uploads/2016/02/background-gif-451.gif')
+    
 }
 
 .page-header{

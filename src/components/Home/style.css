@@ -1,17 +1,28 @@
 div.home-container {
-    height: 88vh;
-    width: 100%;
-    /*overflow: hidden;*/
-    margin-left:-5px;
-    margin-top: 10px;
-    position: relative;
+    height: 86vh;
+    width: 100vw;
+    position: absolute;
+    left: 0px;
+    margin:auto;
+    margin-top: 25px;
+    
+    text-align: center;
 }
 
-img.background {
-    position: absolute;
-    bottom: -450px;
-    width:100%;
+div.quote-container {
+    color: white;
+    padding-left:12%;
+    padding-right: 12%;
+    font-size: 700%;
+    font-weight: 700;
+    margin-top: 10%;
+    width: 100%;
+    line-height: 20px;
+    letter-spacing: 2px;
+    background-color: rgba(0, 0, 0, 0.5);
+
 }
+
 
 
 
