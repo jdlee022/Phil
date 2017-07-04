@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router';
+ 
 import '../style.css'
 
 export default class Control extends Component {
@@ -15,6 +16,7 @@ export default class Control extends Component {
 		this.handlingReset = this.handlingReset.bind(this);
 		this.handlingStart = this.handlingStart.bind(this);
 		this.handleTypeSelect = this.handleTypeSelect.bind(this);
+		this.loginInfo = this.loginInfo.bind(this);
 		// this.handleUserHighScore = this.handleUserHighScore.bind(this);
 	}
 
@@ -63,12 +65,23 @@ export default class Control extends Component {
 		}.bind(this));
 	}
 
+	loginInfo(){
+		var thisUser = localStorage.getItem('userId');
+		if (thisUser === null || thisUser === undefined){
+			return (
+				<p>(Login <Link to="/login"> here</Link> to save your high score)</p>
+			)
+		}
+		else return;
+	}
+
 	render() {
 		return (
 			<div className="container-fluid control-div">
 				<div className="row ">
 					<div className="col-sm-4">
 						<h3>Your Current High Score: {this.state.currHighScore}</h3>
+						{this.loginInfo()}
 					</div>
 
 					<div className="col-sm-4 control-inside" >

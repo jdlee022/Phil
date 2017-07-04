@@ -94,9 +94,13 @@ button {
 	font-size: 24px;
 }
 
-divs.story-imgs{
+div.clock{
+	width: 20vw;
+	height: 33.3vh;
+}
+
+div.story-imgs{
 	width: 100vw;
-	text-align: center;
 }
 
 .sphinx { 
@@ -111,19 +115,15 @@ divs.story-imgs{
 	display: inline-block;
 }
 
-div > .story-imgs > .col-lg-4 {
+/*.answerbox {
+	height: 15vh;
+	width: 60vh;
+}*/
+
+div.col-lg-4 {
 	display: inline-block;
 	margin: 0 auto;
 }
-
-.control-inside{
-	
-}
-
-.story-imgs .oedipus .sphinx {
-	background-color: transparent;
-}
-
 
 
 .control-div {
