@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
-import oedipus from '../assets/img/Oedipus_transbg.png'
+import oedipus from '../assets/img/Oedipus_full01.png'
 import sphinx from '../assets/img/Sphinx_transbg.png'
 import sphinx_laser from '../assets/img/Sphinx_laser_transbg.png'
-import oedipus_laser from '../assets/img/Oedipus_laser.png'
+import oedipus_laser from '../assets/img/Oedipus_full_laser.png'
 
 import MtSvgLines from 'react-mt-svg-lines'
 import ReactCountdownClock from 'react-countdown-clock'
@@ -48,23 +48,13 @@ export default class Play extends Component {
 
 	//  Introduction to the game 
 	componentDidMount() {
+		this.handleAPI();
 		this.setState({
 			currentQuestion: {
 				question: "Sphinx: I am the protector of Thebes. You can help Oedipus get back to his journey by answering my questions correctly. Click 'Start' to play."
 			}
-		}
-		, function(){
-			setTimeout(function(){
-				this.handleAPI();
-				// this.setState({
-				// 	currentQuestion: {
-				// 		question: "Sphinx: &quot; A wrong answer will hurt Oedipus. You can only miss 5 questions before Oedipus has to turn around.  !&quot;"
-				// 	}
-				// });
-			}.bind(this), 2000);
-		}
-		);
-		
+		});
+			
 	}
 
 	// When the start/reset or gametype is changed,
@@ -93,26 +83,46 @@ export default class Play extends Component {
 	startGame() {
 		if (this.state.playing === true) {
 			if (this.state.currentIndex === 0) {
+				this.setState({
+					currentQuestion: {
+						question: "Collecting questions..."
+					}
+				});
+				setTimeout(function(){
+					this.setState({
+						currentQuestion: {
+							question: "Start in 3..."
+						}
+					});
+				}.bind(this), 1000);
 				setTimeout(function () {
 					this.setState({
 						currentQuestion: {
-							question: "Collecting questions...",
-							life: 5
+							question: "2..."
 						}
-					}, function () {
-						this.setState({
-							currentQuestion: this.state.questionBank[this.state.currentIndex],
-							timer: true
-						});
-					}.bind(this));
+					});
 				}.bind(this), 2000);
+				setTimeout(function () {
+					this.setState({
+						currentQuestion: {
+							question: "1..."
+						}
+					});
+				}.bind(this), 3000);
+				setTimeout(function () {
+					this.setState({
+						currentQuestion: this.state.questionBank[this.state.currentIndex],
+						timer: true
+					});
+				}.bind(this), 4000);
 			}
 		} else if (this.state.playing === false) {
 			this.setState({
 				currentQuestion: {
 					question: "Click Start to play.",
 					life: 5
-				}
+				}, 
+				currentIndex: 0
 			});
 		} else if (this.state.playing === 'reset') {
 			this.resetGame();
@@ -183,6 +193,14 @@ export default class Play extends Component {
 	handleAnswer(){
 		// event.preventDefault();
 		var submittedAns = this.state.answer.trim().toLowerCase();
+		if (this.state.currentQuestion.answer === undefined){
+			this.setState({
+				currentQuestion: {
+					question: "Please start the game before submitting an answer!"
+				}
+			});
+			return;
+		}
 		var theRightAns = this.state.currentQuestion.answer.trim().toLowerCase();
 		if (submittedAns === theRightAns){
 			console.log("the answer is correct");
@@ -190,16 +208,23 @@ export default class Play extends Component {
 				matched: "true",
 				feedback: "Correct", 
 				answer: "",
-				currentIndex: (this.state.currentIndex + 1),
 				timer: false
 			}, function () {
 				console.log("this.state.matched:", this.state.matched);
 				this.props.handleScore(this.state.matched);
 				setTimeout(function () {
-					if ((this.state.currentIndex) < (this.state.questionBank).length && this.state.life > 0) {
-						this.nextQuestion();
+					if ((this.state.currentIndex + 1) < (this.state.questionBank).length && this.state.life > 0) {
+						this.setState({
+							currentIndex: (this.state.currentIndex + 1),
+						}, function () {
+							this.nextQuestion();
+						});	
 					} else {
-						this.endGame();
+						this.setState({
+							currentIndex: (this.state.currentIndex + 1),
+						}, function () {
+							this.endGame();
+						});	
 					}
 				}.bind(this), 500); 
 			});
@@ -211,17 +236,24 @@ export default class Play extends Component {
 					oedipus: oedipus_laser,
 					feedback: "Incorrect", 
 					answer: "",
-					currentIndex: (this.state.currentIndex + 1),
 					life : (this.state.life - 1), 
 					timer: false
 				}, function () {
 					console.log("this.state.matched:", this.state.matched);
 					this.props.handleScore(this.state.matched);
 					setTimeout(function() {
-						if ((this.state.currentIndex) < (this.state.questionBank).length && this.state.life > 0) {
-							this.nextQuestion();
+						if ((this.state.currentIndex + 1) < (this.state.questionBank).length && this.state.life > 0) {
+							this.setState({
+								currentIndex: (this.state.currentIndex + 1),
+							}, function(){
+								this.nextQuestion();
+							});	
 						} else {
-							this.endGame();
+							this.setState({
+								currentIndex: (this.state.currentIndex + 1),
+							}, function () {
+								this.endGame();
+							});	
 						}
 					}.bind(this), 1000); 
 				});
@@ -232,7 +264,7 @@ export default class Play extends Component {
 		this.props.comparingScores();
 		this.setState({
 			currentQuestion: {
-				question: "End of game",
+				question: "Gameover. /n You can Start another game at anytime.",
 				author: '', 
 				gametype: ""
 			},
@@ -269,10 +301,10 @@ export default class Play extends Component {
 			setTimeout(function() {
 				this.setState({
 					currentQuestion: {
-						question: "Now click Start to play."
+						question: "Click Start to play."
 					}
 				});	
-			}.bind(this), 1500);
+			}.bind(this), 1000);
 		}.bind(this), function(){
 			this.setState({
 				currentQuestion: this.state.questionBank[this.state.currentIndex]
@@ -367,8 +399,8 @@ export default class Play extends Component {
 					</div>
 				</div>
 
-				<div className="row">
-					<img onClick={this.handleSphinxAnimation} className="col-lg-4" src={this.state.sphinxSrc} alt="Sphinx" />
+				<div className="row story-imgs">
+					<img onClick={this.handleSphinxAnimation} className="col-lg-4 sphinx" src={this.state.sphinxSrc} alt="Sphinx" />
 					
 					<div className="laser-line col-lg-4">
 						<div className="clock">
@@ -394,7 +426,7 @@ export default class Play extends Component {
 						</div>
 					</div>
 
-					<img className="col-lg-4" src={this.state.oedipus} alt="Oedipus" />
+					<img className="col-lg-4 oedipus" src={this.state.oedipus} alt="Oedipus" />
 				</div>
 
 			</div>

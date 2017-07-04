@@ -65,11 +65,15 @@ export default class Control extends Component {
 
 	render() {
 		return (
-			<div className="container-fluid">
-				<div className="row">
+			<div className="container-fluid control-div">
+				<div className="row ">
 					<div className="col-sm-4">
+						<h3>Your Current High Score: {this.state.currHighScore}</h3>
+					</div>
+
+					<div className="col-sm-4 control-inside" >
 						<div>	
-							Type of Questions:
+							<h3>Type of Questions:</h3>
 							<select onChange={this.handleTypeSelect} name="gametype" id="">
 								<option defaultValue value="mixed">Mixed (All)</option>
 								<option value="whichperiodisthisfrom">Which period is this from?</option>
@@ -80,10 +84,10 @@ export default class Control extends Component {
 						<button onClick={this.handlingStart} type="button" className="start btn btn-md"> <span className="glyphicon glyphicon-play"></span></button>
 						<button onClick={this.handlingReset} type="button" className="reset btn btn-md"> <span className="glyphicon glyphicon-refresh"></span></button>
 					</div>
-					<div className="">
-						<h3>Your Current High Score: {this.state.currHighScore}</h3>
-						<h3>Score: {this.state.score}</h3>
 						
+
+					<div className="col-sm-4">
+						<h3>Score: {this.state.score}</h3>
 					</div>	
 				</div>
 			</div>

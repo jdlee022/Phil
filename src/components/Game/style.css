@@ -144,3 +144,22 @@ img {
 	width : 80%;
 	height: 80%
 }
+
+/*.control-div{
+	background: url("./assets/img/fullTemple2.png")  no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding: 80px;
+	color: black;
+}*/
+
+.control-inside{
+	
+}
+
+.story-imgs .oedipus .sphinx {
+	background-color: transparent;
+}
+
