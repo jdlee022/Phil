@@ -25,6 +25,13 @@ li {
 li a {
     color: #337ab7;
 }
+.content-summary {
+    text-align: center;
+}
+.details-container {
+text-align: left;
+}
+
 ul {
     margin: 0 auto;
     padding-left:0;
@@ -33,41 +40,31 @@ ul {
     margin:0 auto;
     text-align: center;
 }
-/*
-#root {
-background: linear-gradient(18deg, #000000, #0a1f33, #333333, #000000);
-background-size: 800% 800%;
 
--webkit-animation: AnimatedGradient 25s ease infinite;
--moz-animation: AnimatedGradient 25s ease infinite;
-animation: AnimatedGradient 25s ease infinite;
-}
-
-@-webkit-keyframes AnimatedGradient {
-    0%{background-position:0% 51%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 51%}
-}
-@-moz-keyframes AnimatedGradient {
-    0%{background-position:0% 51%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 51%}
-}
-@keyframes AnimatedGradient { 
-    0%{background-position:0% 51%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 51%}
-}
-*/
-
-
-#root  {
-  height: 100%;
+.empty-container  {
+  height: 100vh;
   background: linear-gradient(black, rgb(20, 20, 40));
   overflow: hidden;
 }
-/*.contentContainer {
+.content-container {
+    height: 100vh;
     background: linear-gradient(black, rgb(20, 20, 40));
+    overflow: hidden;
+}
+.col-md-8::-webkit-scrollbar-thumb {
+  background-color: rgb(40, 40, 40);
+  outline: 1px solid grey;
+  border-radius: 20px;
+}
+.col-md-8::-webkit-scrollbar{
+    background-color: rgb(20, 20, 20);
+    color:grey;
+    width:6px;
+}
+/*.col-md-8::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.6); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
 }*/
 
 #stars {
@@ -127,7 +124,7 @@ animation: AnimatedGradient 25s ease infinite;
   box-shadow: 1782px 106px #FFF , 1131px 1261px #FFF , 528px 1280px #FFF , 1430px 1078px #FFF , 1367px 1727px #FFF , 1638px 1819px #FFF , 1297px 214px #FFF , 74px 1134px #FFF , 112px 1552px #FFF , 1541px 131px #FFF , 1224px 1543px #FFF , 1022px 1100px #FFF , 1467px 1406px #FFF , 1926px 1644px #FFF , 1752px 463px #FFF , 499px 1586px #FFF , 1003px 1440px #FFF , 975px 972px #FFF , 965px 1496px #FFF , 685px 1688px #FFF , 255px 476px #FFF , 674px 306px #FFF , 672px 665px #FFF , 188px 910px #FFF , 35px 1608px #FFF , 1629px 158px #FFF , 1876px 1953px #FFF , 1164px 1822px #FFF , 78px 1985px #FFF , 64px 1922px #FFF , 468px 949px #FFF , 448px 1163px #FFF , 1795px 309px #FFF , 1955px 532px #FFF , 576px 1761px #FFF , 386px 952px #FFF , 390px 1393px #FFF , 89px 746px #FFF , 1051px 709px #FFF , 1761px 344px #FFF , 452px 1387px #FFF , 494px 1589px #FFF , 1473px 867px #FFF , 868px 746px #FFF , 979px 740px #FFF , 1866px 1186px #FFF , 669px 1808px #FFF , 835px 241px #FFF , 1330px 944px #FFF , 1198px 1585px #FFF , 23px 396px #FFF , 641px 476px #FFF , 611px 1067px #FFF , 1644px 1199px #FFF , 1661px 374px #FFF , 1722px 306px #FFF , 1071px 145px #FFF , 861px 219px #FFF , 544px 595px #FFF , 1170px 895px #FFF , 82px 1779px #FFF , 1785px 1469px #FFF , 1179px 424px #FFF , 895px 695px #FFF , 224px 1390px #FFF , 1698px 650px #FFF , 37px 1438px #FFF , 1650px 1767px #FFF , 1577px 544px #FFF , 1447px 193px #FFF , 986px 235px #FFF , 126px 152px #FFF , 1424px 1223px #FFF , 58px 668px #FFF , 1815px 405px #FFF , 719px 1307px #FFF , 1671px 490px #FFF , 1388px 843px #FFF , 1991px 1903px #FFF , 1586px 68px #FFF , 926px 607px #FFF , 110px 1084px #FFF , 744px 300px #FFF , 969px 1595px #FFF , 1635px 147px #FFF , 1964px 724px #FFF , 1042px 1065px #FFF , 1032px 1354px #FFF , 486px 699px #FFF , 1758px 147px #FFF , 981px 1445px #FFF , 1388px 1498px #FFF , 1943px 653px #FFF , 1693px 1188px #FFF , 156px 1074px #FFF , 1524px 390px #FFF , 1562px 754px #FFF , 909px 1098px #FFF , 656px 1966px #FFF , 832px 1253px #FFF;
 }
 
-#title {
+/*#title {
   position: absolute;
   top: 50%;
   left: 0;
@@ -145,7 +142,7 @@ animation: AnimatedGradient 25s ease infinite;
   background: -webkit-linear-gradient(white, #38495a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
+}*/
 
 @keyframes animStar {
   from {

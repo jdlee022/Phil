@@ -76,14 +76,14 @@ export default class UserRegister extends Component {
 
     /**
      * Check the state to see if there is an error for a particular input field.
-     * If so, then return a jsx element to display the error.
+     * If so, return a jsx element to display the error.
      * (function called below each label in render())
      * @param input - the input field we are checking for an error
      */
     checkError(input) {
         for (var i in this.state.errors) {
             if (this.state.errors[i].param === input) {
-                return <p style={{ 'color': 'red' }}>*{this.state.errors[i].msg}*</p>;
+                return <p className="warning">*{this.state.errors[i].msg}*</p>;
             }
         }
         return false;
@@ -95,8 +95,7 @@ export default class UserRegister extends Component {
      */
     displayDuplicateError() {
         if (this.state.duplicateError) {
-            console.log("inside displayLoginError");
-            return <p style={{ color: 'red' }}>Username already exists.</p>
+            return <p className="warning">Username already exists.</p>
         }
     }
 

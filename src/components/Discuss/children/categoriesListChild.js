@@ -5,7 +5,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-export default class CategoriesChild extends Component {
+export default class CategoriesListChild extends Component {
     constructor(props) {
         super(props);
         this.state = {
