@@ -1,5 +1,6 @@
 /**
- * @file - manages a single category list element that is created in categories.js
+ * @file - manages a single category list element that is created in categoriesList.js
+ * Rendered in categoriesList.js
  * 
  */
 import React, { Component } from 'react';
@@ -14,7 +15,6 @@ export default class CategoriesListChild extends Component {
             description: this.props.data.description,
             posts: this.props.data.posts,
             numPosts: this.props.data.posts.length
-
         };
     }
 

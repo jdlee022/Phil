@@ -2,6 +2,8 @@
  * @file - the main component for the discuss "page". In charge of keeping track of 
  * the login state, rendering user login links based on that state, and rendering 
  * the login, register, categories, threads, and posts components.
+ * Discuss's main component in react-router via /discuss All other components in
+ * /src/components/Discuss are children of this route
  */
 import React, { Component } from 'react';
 import { Link } from 'react-router';

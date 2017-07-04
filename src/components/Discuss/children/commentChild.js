@@ -1,7 +1,6 @@
 /**
  * @file - manages a single comment list element that
  * is displayed in the PostPage view.
- * 
  */
 import React, { Component } from 'react';
 import API from '../../../utils/API';
@@ -15,6 +14,10 @@ export default class CommentChild extends Component {
             date: this.props.data.date,
             username: ''
         };
+    }
+
+    // Set state with result from API after component mounts
+    componentDidMount() {
         API.getUserById(this.props.data.user).then((response) => {
             this.setState({
                 username: response.data.username
@@ -26,7 +29,7 @@ export default class CommentChild extends Component {
 
         return (
             <li className="row">
-                <div className="col-md-12 " style={{ background: '#11004d', margin: '10px' }}>
+                <div className="col-md-12 comment-list-element">
                     <h4>{this.state.title}</h4>
                     <p>By {this.state.username} on {this.state.date}</p>
                     <p>{this.state.text}</p>

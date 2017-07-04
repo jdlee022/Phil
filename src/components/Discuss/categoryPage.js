@@ -1,7 +1,8 @@
 /**
  * @file - manages a category page after the title was clicked on in the list of 
  * categories displayed when /discuss is hit. Displays a list of posts related
- * to the category
+ * to the category.
+ * Accessed via react-router
  */
 import React, { Component } from 'react';
 import { Link } from 'react-router';
@@ -16,7 +17,10 @@ export default class CategoryPage extends Component {
             category: this.props.params.category,
             posts: []
         };
+    }
 
+    // Set state with result from API after component mounts
+    componentDidMount() {
         // Get categories from db and set state
         API.getPosts(this.state.category).then((response) => {
             this.setState({ posts: response.data });
@@ -35,10 +39,10 @@ export default class CategoryPage extends Component {
             <div>
                 <div className="row">
                     <div className="col-md-3">
-                        <Link to={newPostQuery}>New Post</Link>
+                        <button className="btn btn-default new-post-btn"><Link to={newPostQuery}>New Post</Link></button>
                     </div>
                     <div className="col-md-6 text-center">
-                        <h3>{this.state.category}</h3>
+                        <h2 className="page-header">{this.state.category}</h2>
                     </div>
                 </div>
                 <div className="row">

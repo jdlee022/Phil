@@ -2,8 +2,7 @@
  * @file manages the register component which acts as the sign up page for users.
  * It submits post requests to the database and will render error warnings if 
  * there was an issue with validation.
- * 
- * Date: 6/26/17
+ * Accessed via react-router
  */
 import React, { Component } from 'react';
 import API from '../../utils/API';
@@ -101,8 +100,8 @@ export default class UserRegister extends Component {
 
     render() {
         return (
-            <div className="">
-                <div className="col-md-6 col-md-offset-3 text-center">
+            <div className="row">
+                <div className="col-md-10 col-md-offset-1 text-center register-container">
                     <h2 className="page-header">Register</h2>
                     <form onSubmit={this.handleSubmit}>
                         <div className="form-group">

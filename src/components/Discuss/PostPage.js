@@ -1,12 +1,13 @@
 /**
- * @file - manages a single post list element that
- * is displayed in the categoryPage view. Allows users to navigate
- * to a post by clicking on the title
+ * @file - manages a PostPage that contains the original post and a list of comments
+ * other users have posted.
+ * Navigated to via react-router by clicking on link in categoryPageChild.
  */
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import API from '../../utils/API';
 import CommentChild from './children/commentChild';
+import NewComment from './children/newComment';
 
 export default class PostPage extends Component {
     constructor(props) {
@@ -23,6 +24,13 @@ export default class PostPage extends Component {
             currentlyCommenting: false,
             commentField: ''
         };
+        this.handlePostReply = this.handlePostReply.bind(this);
+        this.displayCommentOptions = this.displayCommentOptions.bind(this);
+        this.updateCommentingStatus = this.updateCommentingStatus.bind(this);
+    }
+
+    // Set state with result from API after component mounts
+    componentDidMount() {
         //get the rest of the post info from its id
         API.getPostById(this.state._id).then(function (response) {
             this.setState({
@@ -41,71 +49,45 @@ export default class PostPage extends Component {
                 comments: response.data
             });
         });
-
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.checkLoginStatus = this.checkLoginStatus.bind(this);
-        this.handleCommentSubmit = this.handleCommentSubmit.bind(this);
-        this.handlePostReply = this.handlePostReply.bind(this);
-        this.displayCommentOptions = this.displayCommentOptions.bind(this);
     }
 
-    handleInputChange(event) {
-        const value = event.target.value;
-        const name = event.target.name;
-        this.setState({
-            [name]: value
+    /**
+     * Passed to newComment to update this states commenting status after a 
+     * new comment has been submitted
+     * @param status - changes our state property that indicates whether a user is commenting 
+     */
+    updateCommentingStatus(status) {
+        // Check for new comments and update commenting Status
+        API.getComments(this.state._id).then((response) => {
+            this.setState({
+                comments: response.data,
+                currentlyCommenting: status
+            });
         });
     }
 
+    /**
+     * When a user wants to submit a new comment to the post
+     * toggle the var that triggers the NewComment to render via 
+     * the displayCommentOptions func
+     */
     handlePostReply() {
         this.setState({
             currentlyCommenting: true
         });
     }
 
-    handleCommentSubmit() {
-        // Check if user is logged in before comment submit
-        if (this.props.loginStatus) {
-            var date = new Date();
-            date = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " @ " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-
-            API.newComment({
-                post: this.state._id,
-                user: this.state.userId,
-                text: this.state.commentField,
-                date: date
-            }).then((response) => {
-                API.getComments(this.state._id).then((response) => {
-                    this.setState({
-                        comments: response.data
-                    });
-                });
-            });
-
-            this.setState({
-                currentlyCommenting: false
-            });
-        }
-    }
-
-    /** Display an error message if the user tries to comment without logging in. */
-    checkLoginStatus() {
-        if (!this.props.loginStatus) {
-            return <div>
-                <p style={{ color: 'red' }}>You must be logged in to comment.</p>
-            </div>
-        }
-    }
-
+    /**
+     * Renders either a button that gives the users an option to reply to the post 
+     * or a NewComment that displays the comment text box and submit button after
+     * the button was pressed
+     */
     displayCommentOptions() {
         if (this.state.currentlyCommenting) {
             return <div>
-                {this.checkLoginStatus()}
-                <input type="text" className="form-control" name="commentField" value={this.state.commentField} onChange={this.handleInputChange} />
-                <button type="button" className="btn btn-default" onClick={this.handleCommentSubmit}>Submit</button>
+                <NewComment postId={this.state._id} userId={this.state.userId} loginStatus={this.props.loginStatus} updateCommentingStatus={this.updateCommentingStatus} />
                 <a onClick={() => this.setState({ currentlyCommenting: false })}>Cancel</a>
             </div>
-
         }
         else {
             return <button type="button" className="btn btn-default" onClick={this.handlePostReply}>Post Reply</button>;

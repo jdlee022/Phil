@@ -1,7 +1,8 @@
 /**
  * @file - manages a single post list element that
  * is displayed in the categoryPage view. Allows users to navigate
- * to a post by clicking on the title
+ * to a post by clicking on the title.
+ * Rendered in categoryPage.js
  * 
  */
 import React, { Component } from 'react';
@@ -21,9 +22,11 @@ export default class CategoryPageChild extends Component {
             replies: this.props.data.comments.length,
             lastReply: 'N/A',
             username: this.props.data.username
-
         };
+    }
 
+    // Set state with result from API after component mounts
+    componentDidMount() {
         if (this.state.replies > 0) {
             API.getCommentById(this.props.data.comments[this.state.replies - 1]).then((response) => {
                 this.setState({

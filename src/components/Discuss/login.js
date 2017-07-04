@@ -2,7 +2,8 @@
  * @file - a child component of /Discuss/index.js which renders the login page.
  * Can be accessed via react-router by hitting /login. 
  * Allows users to submit login requests and will redirect them to the discussion
- * board if login succeeds, else displays error
+ * board if login succeeds, else displays error.
+ * Accessed via react-router
  */
 import React, { Component } from 'react';
 import API from '../../utils/API';
@@ -34,7 +35,7 @@ export default class UserLogin extends Component {
     }
 
     /**
-     * Submits a request to post a new user to the database.
+     * Submits a request to authenticate user login info.
      * If there was an error then the state is updated and the view
      * is rendered to indicate what went wrong.
      */
@@ -64,14 +65,14 @@ export default class UserLogin extends Component {
     /** Returns a jsx error msg to be displayed when the state indicates */
     displayLoginError() {
         if (this.state.loginFailed) {
-            return <p style={{ color: 'red' }}>Invalid login information.</p>
+            return <p className="warning">Invalid login information.</p>
         }
     }
 
     render() {
         return (
-            <div className="">
-                <div className="col-md-6 col-md-offset-3 text-center">
+            <div className="row">
+                <div className="col-md-10 col-md-offset-1 text-center login-container">
                     <h2 className="page-header">Account Login</h2>
                     <form onSubmit={this.handleSubmit}>
                         {this.displayLoginError()}
