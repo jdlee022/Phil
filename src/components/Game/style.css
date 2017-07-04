@@ -49,45 +49,6 @@
 	border-color: #666 transparent transparent #666;
 }
 
-/*.tri-right.btm-left-in:after {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-	left: 38px;
-	right: auto;
-	top: auto;
-	bottom: -20px;
-	border: 12px solid;
-	border-color: lightyellow transparent transparent;
-}*/
-
-
-/** Intro transition*/
-/*.intro-appear {
-	text-align: center;
-	color: white;
-}*/
-
-
-/*
-.intro-appear {
-	opacity: 0.01;
-}
-
-.intro-appear.intro-appear-active {
-	opacity: 1;
-	transition: opacity 500ms ease-in;
-}
-
-.intro-leave {
-	opacity: 1;
-}
-
-.intro-leave.intro-leave-active {
-	opacity: 0.01;
-	transition: opacity 300ms ease-in;
-}*/
 
 .feedback {
 	color: white
@@ -98,13 +59,6 @@
 	margin: 0;
 	overflow: hidden;
 }
-
-/*img {
-	flex: 1;
-	width: 75%;
-	height: auto;
-	border-color: red;
-}*/
 
 
 .input-container {
@@ -140,20 +94,27 @@ button {
 	font-size: 24px;
 }
 
-img { 
-	width : 80%;
-	height: 80%
+divs.story-imgs{
+	width: 100vw;
+	text-align: center;
 }
 
-/*.control-div{
-	background: url("./assets/img/fullTemple2.png")  no-repeat;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	padding: 80px;
-	color: black;
-}*/
+.sphinx { 
+	height: 40vh;
+	width: 20vw;
+	display: inline-block;
+}
+
+.oedipus {
+	height: 40vh;
+	width: 20vw;
+	display: inline-block;
+}
+
+div > .story-imgs > .col-lg-4 {
+	display: inline-block;
+	margin: 0 auto;
+}
 
 .control-inside{
 	
@@ -163,3 +124,20 @@ img {
 	background-color: transparent;
 }
 
+
+
+.control-div {
+	width: 100vw;
+	height: 20vh;
+}
+
+.stage-div {
+	width: 100vw;
+	height: 58vh;
+}
+
+
+
+.row {
+
+}

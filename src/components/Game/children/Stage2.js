@@ -386,15 +386,19 @@ export default class Play extends Component {
 
 	renderNormal(){
 		return (
-			<div className="row container-fluid">
+			<div className="row container-fluid stage-div">
 				<div className="row">
-					<div className="col-lg-5 talk-bubble tri-right border round btm-left-in">
+					<div className="col-md-4 talk-bubble tri-right border round btm-left-in">
 						<div className="talktext">
 							<p>{this.state.currentQuestion.question}</p>
 						</div>
 					</div>
-
-					<div className="col-lg-5">
+					<div className="col-md-4 clock">
+						&nbsp;
+						{this.timerClock()}
+						
+					</div>
+					<div className="col-md-4 offset-md-4 ">
 						<h3>Oedipus: {this.state.life}</h3>
 					</div>
 				</div>
@@ -403,15 +407,11 @@ export default class Play extends Component {
 					<img onClick={this.handleSphinxAnimation} className="col-lg-4 sphinx" src={this.state.sphinxSrc} alt="Sphinx" />
 					
 					<div className="laser-line col-lg-4">
-						<div className="clock">
-							{this.timerClock()}
-
-							{/**onComplete={this.nextQuestion}*/}
-						</div>
+						
 						<br /> <br /> <br /> <br />
 						{this.laser()}
 
-						<div>
+						<div class="answerbox">
 							{this.correctAnswerDisplay()}
 							<br /> <br /> 
 							<label htmlFor="">{this.state.currentQuestion.gametype}</label><br />
