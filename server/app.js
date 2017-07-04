@@ -16,17 +16,7 @@ var Promise = require("bluebird");
 mongoose.Promise = Promise;
 //heroku db: 'mongodb://heroku_5g1vn335:h5blucfg46r4t8a8nk8iv0qcvg@ds147979.mlab.com:47979/heroku_5g1vn335'
 //local db: 'mongodb://localhost:27017/loginapp'
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> get new heroku db
->>>>>>> get new heroku db
-=======
->>>>>>> added dummy data
+
 //mongo ds147979.mlab.com:47979/heroku_5g1vn335 -u <dbuser> -p <dbpassword>
 mongoose.connect('mongodb://heroku_5g1vn335:h5blucfg46r4t8a8nk8iv0qcvg@ds147979.mlab.com:47979/heroku_5g1vn335');
 const db = mongoose.connection;
