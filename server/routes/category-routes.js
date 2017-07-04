@@ -24,16 +24,16 @@ router.get('/api/categories', function (req, res) {
  * (See /src/utils/db-dummy-data)
  */ 
 router.post('/api/categories', function (req, res) {
-        var newCategory = new Category(item);
+        var newCategory = new Category(req.body);
 
         newCategory.save(function (error, doc) {
             if (error) {
                console.log(error);
-               res.json({success: false});
+               res.json({error: error});
             }
             else {
                 console.log(doc);
-                res.json({success: true});
+                res.json({result: doc});
             }
         });
 });

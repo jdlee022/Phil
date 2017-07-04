@@ -19,7 +19,7 @@ router.post('/api/new_comment', function (req, res) {
     newComment.save(function (error, doc) {
         if (error) {
             console.log(error);
-            res.json({ success: false });
+            res.json({ error: error });
         }
         else {
             // Add post to corresponding category collection

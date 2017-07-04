@@ -8,19 +8,20 @@ import API from '../../../utils/API';
 export default class NewComment extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
-            post: this.props.postId,
-            user: this.props.userId,
+            postId: this.props.postId,
+            userId: this.props.userId,
             text: '',
             date: ''
         };
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleCommentSubmit = this.handleCommentSubmit.bind(this);
     }
 
     handleInputChange(event) {
         const value = event.target.value;
         const name = event.target.name;
-        //FIXME: Cannot read property 'setState' of undefined
         this.setState({
             [name]: value
         });
@@ -43,9 +44,9 @@ export default class NewComment extends Component {
             date = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " @ " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 
             API.newComment({
-                post: this.state._id,
+                post: this.state.postId,
                 user: this.state.userId,
-                text: this.state.commentField,
+                text: this.state.text,
                 date: date
             }).then((response) => {
                 //when we are done submitting the new comment then tell the parent (PostPage)

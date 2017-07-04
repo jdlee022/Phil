@@ -20,9 +20,9 @@ export default class PostPage extends Component {
             date: '',
             userId: '',
             username: '',
+            userScore: 0,
             comments: [],
-            currentlyCommenting: false,
-            commentField: ''
+            currentlyCommenting: false
         };
         this.handlePostReply = this.handlePostReply.bind(this);
         this.displayCommentOptions = this.displayCommentOptions.bind(this);
@@ -41,8 +41,14 @@ export default class PostPage extends Component {
                 userId: response.data.userId,
                 username: response.data.username
             });
-
+            API.getUserById(this.state.userId).then((response) => {
+                this.setState({
+                    userScore: response.data.highScore
+                });
+            });
         }.bind(this));
+
+
 
         API.getComments(this.state._id).then((response) => {
             this.setState({
@@ -59,6 +65,8 @@ export default class PostPage extends Component {
     updateCommentingStatus(status) {
         // Check for new comments and update commenting Status
         API.getComments(this.state._id).then((response) => {
+            console.log("response from getComments:", response);
+
             this.setState({
                 comments: response.data,
                 currentlyCommenting: status
@@ -104,11 +112,12 @@ export default class PostPage extends Component {
         return (
             <div className="row">
                 <div className="col-md-12 text-center">
-                    <Link to={categoryQuery}>{this.state.category}</Link>
+                    <h2 className="page-header"><Link to={categoryQuery}>{this.state.category}</Link></h2>
                 </div>
                 <div className="col-md-12 " style={{ background: 'grey', margin: '10px' }}>
                     <h4>{this.state.title}</h4>
                     <p>By {this.state.username} on {this.state.date}</p>
+                    <p>{this.state.username}'s high score: {this.state.userScore}</p>
                     <p>{this.state.text}</p>
                 </div>
                 {this.displayCommentOptions()}

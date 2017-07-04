@@ -12,7 +12,8 @@ export default class CommentChild extends Component {
             postTitle: this.props.postTitle,
             text: this.props.data.text,
             date: this.props.data.date,
-            username: ''
+            username: '',
+            userScore: 0
         };
     }
 
@@ -20,7 +21,8 @@ export default class CommentChild extends Component {
     componentDidMount() {
         API.getUserById(this.props.data.user).then((response) => {
             this.setState({
-                username: response.data.username
+                username: response.data.username,
+                userScore: response.data.highScore
             })
         });
     }
@@ -30,8 +32,9 @@ export default class CommentChild extends Component {
         return (
             <li className="row">
                 <div className="col-md-12 comment-list-element">
-                    <h4>{this.state.title}</h4>
+                    <h4>RE: {this.state.postTitle}</h4>
                     <p>By {this.state.username} on {this.state.date}</p>
+                    <p>{this.state.username}'s high score: {this.state.userScore}</p>
                     <p>{this.state.text}</p>
                 </div>
             </li>
