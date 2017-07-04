@@ -32,7 +32,7 @@ export default class CategoriesList extends Component {
         );
 
         return (
-            <div>
+            <div className="categories-list">
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3 text-center">
                         <h2 className="page-header">Categories</h2>

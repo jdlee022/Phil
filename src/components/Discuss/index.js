@@ -62,7 +62,7 @@ export default class Discuss extends Component {
 
     render() {
         return (
-            <div className="row">
+            <div className="row main-discuss-container">
                 <div className="col-md-8 col-md-offset-2 dashboard-links-div">
                     {this.displayUserLinks()}
                 </div>
