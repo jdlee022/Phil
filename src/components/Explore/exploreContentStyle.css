@@ -7,7 +7,7 @@
     max-height: 75%;
     position: absolute;
     left: 17vw;
-    top: 14vh;
+    top: 12vh;
     bottom: 22vh;
     overflow-y: auto;
     /*border-radius: 4px;*/
@@ -27,27 +27,31 @@ li a {
 }
 .content-summary {
     text-align: center;
+    margin: 20px 0 20px 0;
+
 }
 .details-container {
 text-align: left;
+margin-top: 20px;
 }
 
-ul {
-    margin: 0 auto;
+#philosopher-list {
+    margin: 0 auto !important;
     padding-left:0;
 }
 #prominent-philosopher-title {
     margin:0 auto;
     text-align: center;
+    font-size: 145%;
 }
 
 .empty-container  {
-  height: 100vh;
+  /*height: 100vh;*/
   background: linear-gradient(black, rgb(20, 20, 40));
   overflow: hidden;
 }
 .content-container {
-    height: 100vh;
+    /*height: 100vh;*/
     background: linear-gradient(black, rgb(20, 20, 40));
     overflow: hidden;
 }
@@ -79,7 +83,7 @@ ul {
   border-radius: 4px;
   content: " ";
   position: absolute;
-  top: 2000px;
+  top: 100vh;
   width: 1px;
   height: 1px;
   background: transparent;
@@ -98,7 +102,7 @@ ul {
   border-radius: 4px;
   content: " ";
   position: absolute;
-  top: 2000px;
+  top: 100vh;
   width: 2px;
   height: 2px;
   background: transparent;
@@ -117,7 +121,7 @@ ul {
   border-radius: 4px;
   content: " ";
   position: absolute;
-  top: 2000px;
+  top: 100vh;
   width: 3px;
   height: 3px;
   background: transparent;
@@ -162,7 +166,7 @@ i {
     
     position:absolute;
     left:47.8%;
-    bottom: 19.5vh;
+    bottom: 23vh;
 }
 
 

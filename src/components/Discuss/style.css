@@ -8,8 +8,31 @@ a:hover {
     color: white;
 }
 
+.register-container {
+    color: white;
+    font-size: 125%;
+    font-weight: 600;
+}
+.login-container {
+    color: white;
+    font-size: 125%;
+    font-weight: 600;
+}
+
 .discuss-container{
-    background: #11004d;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    
+}
+
+.main-discuss-container {
+    color: white;
+    font-size: 125%;
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+    margin-top: 25px;
+    
 }
 
 .page-header{
@@ -24,3 +47,65 @@ a:hover {
 .comment-list-element{
     background: #404040;
 }
+
+
+/*DASHBOARD LINKS*/
+
+.dashboard-links-div {
+    text-align: center;
+    
+}
+
+.dashboard-links-div a {
+    font-size: 175%;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px; 
+    font-weight: 600;
+}
+
+
+.dashboard-links-div a:active {
+    text-decoration: none;
+    color: #ffd863;
+     transition-duration: 1s;
+}
+.dashboard-links-div a:visited:active {
+    text-decoration: none;
+    color: #ffd863;
+     transition-duration: 1s;
+}
+.dashboard-links-div a:hover {
+    text-decoration: none;
+    color: #ffd863;
+     transition-duration: 1s;
+}
+.dashboard-links-div a:visited:hover {
+    text-decoration: none;
+    color: #ffd863;
+     transition-duration: 1s;
+}
+
+.dashboard-links-div a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+.dashboard-links-div a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/*CATEGORIES LIST*/
+
+.categories-list {
+    background-color: black;
+    opacity: 75%;
+}
+
+
+
+
+
+
+
+

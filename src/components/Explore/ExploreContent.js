@@ -121,7 +121,7 @@ export default class ExploreContent extends Component {
 				thisAnchor.replace(/\s/g, '');
 				// Render anchor tag for each philosopher inside of map function
 				return (
-					<ul>
+					<ul id = "philospher-list">
 						<div key={index}>
 							<li>
 								<a href = {thisAnchor} > {name} </a>
@@ -157,11 +157,7 @@ export default class ExploreContent extends Component {
             return (
           <div className = "empty-container">
             <div className = "row">
-                <div id='stars'></div>
-                    <div id='stars2'></div>
-                    <div id='stars3'></div>
                     
-
                 <div className = "col-md-2">
                 </div>
 
@@ -178,11 +174,7 @@ export default class ExploreContent extends Component {
                 </div>
             </div>
 
-                <div className = "row">
-                  <div className = "arrow-container">
-                    <i className = "glyphicon glyphicon-arrow-down bounce"></i>
-                  </div>
-                </div>
+            
           </div>
           
             )
@@ -191,9 +183,6 @@ export default class ExploreContent extends Component {
             return(
               <div className = "content-container">
                 <div className = "row">
-                  <div id='stars'></div>
-                  <div id='stars2'></div>
-                  <div id='stars3'></div>
                 </div>
                 <div className = "col-md-2">
                 </div>

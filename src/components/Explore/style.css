@@ -1,8 +1,3 @@
-body {
-  font-family: 'Source Sans Pro', Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.75;
-}
 
 #timeline {
   display: flex;
@@ -141,6 +136,11 @@ body {
   transition: filter 0.5s ease;
   filter: grayscale(100%);
 }
-a {
+
+div .main-timeline-container {
     color: white;
+    font-size: 125%;
+    font-weight: 600;
+    width: 100%;
 }
+
