@@ -45,6 +45,11 @@ db.getCollection('dailyquotes').insert([
         quote: "If you don't get what you want, you suffer; if you get what you don't want, you suffer; even when you get exactly what you want, you still suffer because you can't hold on to it forever. Your mind is your predicament. It wants to be free of change. Free of pain, free of the obligations of life and death. But change is law and no amount of pretending will alter that reality.",
         philosopher: 'Socrates',
         era: "400 BC",
-        historicPeriod: "Socratic"
+    },
+    {
+        quote: "Do not spoil what you have by desiring what you have not; remember that what you now have was once among the things you only hoped for.",
+        philosopher: 'Epicurus',
+        era: "300 BC",
+        associatedIdeas: "Materialism, Atomism"
     }
 ]);

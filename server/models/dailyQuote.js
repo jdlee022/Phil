@@ -15,8 +15,8 @@ var QuoteSchema = mongoose.Schema({
 	era: {
 		type: String
 	}, 
-	// "Modern "
-	historicPeriod: {
+	// "Humanism "
+	associatedIdeas: {
 		type: String
 	}
 });
