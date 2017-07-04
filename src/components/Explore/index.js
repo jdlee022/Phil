@@ -30,7 +30,7 @@ export default class Explore extends Component {
 
     render() {
         return (
-            <div className="">
+            <div className="main-timeline-container">
                  <ExploreContent currentTitle = {this.state.title} />
                  <Timeline updateTitle = {this.updateTitle}/>
                  
