@@ -3,11 +3,13 @@ const mongoose = require('mongoose');
 var QuoteSchema = mongoose.Schema({
 	//"A lost battle is a battle one thinks one has lost"
 	quote: {
-		type: String
+		type: String,
+        required: [true, 'Missing quote'],
 	},
 	// Jean-Paul Sartre
 	philosopher: {
-		type: String
+		type: String,
+        required: [true, 'Missing philosopher'],
 	}, 
 	// "XX Century"
 	era: {
