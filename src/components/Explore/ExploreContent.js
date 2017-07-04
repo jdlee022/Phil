@@ -174,11 +174,7 @@ export default class ExploreContent extends Component {
                 </div>
             </div>
 
-                <div className = "row">
-                  <div className = "arrow-container">
-                    <i className = "glyphicon glyphicon-arrow-down bounce"></i>
-                  </div>
-                </div>
+            
           </div>
           
             )

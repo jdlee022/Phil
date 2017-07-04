@@ -1,8 +1,6 @@
 div.home-container {
-    height: 86vh;
-    width: 100vw;
-    position: absolute;
-    left: 0px;
+    height: 100%;
+    width: 100%;
     margin:auto;
     margin-top: 25px;
     text-align: center;
@@ -10,11 +8,9 @@ div.home-container {
 
 div.quote-container {
     color: white;
-    padding-left:12%;
-    padding-right: 12%;
     font-size: 700%;
     font-weight: 700;
-    margin-top: 10%;
+    margin-top: 20%;
     width: 100%;
     line-height: 20px;
     letter-spacing: 2px;
