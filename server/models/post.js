@@ -18,6 +18,10 @@ var PostSchema = new mongoose.Schema({
     date: {
         type: String
     },
+    comments: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Comment"
+    }],
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",

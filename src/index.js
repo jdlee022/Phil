@@ -19,7 +19,7 @@ import { browserHistory } from 'react-router';
 import { Router, Route, IndexRoute } from 'react-router';
 import Home from './components/Home';
 import Discuss from './components/Discuss/index';
-import Categories from './components/Discuss/categories';
+import CategoriesList from './components/Discuss/categoriesList';
 import CategoryPage from './components/Discuss/categoryPage';
 import NewPost from './components/Discuss/newPost';
 import PostPage from './components/Discuss/PostPage';
@@ -37,7 +37,7 @@ const Routes = (props) => (
         <Route path="/" component={Main}>
             <IndexRoute component={Home}></IndexRoute>
             <Route path="/discuss" component={Discuss}>
-                <IndexRoute component={Categories} />
+                <IndexRoute component={CategoriesList} />
                 <Route path="/login" component={UserLogin} />
                 <Route path="/register" component={UserRegister} />
                 <Route path="/category/:category" component={CategoryPage} />

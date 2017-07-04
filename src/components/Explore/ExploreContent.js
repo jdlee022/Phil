@@ -143,7 +143,7 @@ export default class ExploreContent extends Component {
 				// Render details, with each paragraph inside it's own p tag
 				return (
 					<div class = "details" id = {thisKey}>
-						<p>{ details } </p>
+						<p>&nbsp; &nbsp; &nbsp;{ details } </p>
 					</div>
 				)
 			});
@@ -189,7 +189,7 @@ export default class ExploreContent extends Component {
         }
         else {
             return(
-              <div className = "contentContainer">
+              <div className = "content-container">
                 <div className = "row">
                   <div id='stars'></div>
                   <div id='stars2'></div>
@@ -201,10 +201,12 @@ export default class ExploreContent extends Component {
                 <div className = "col-md-8" id = "content-container">
                     <div className = "explore-title"> 
                       <h1 className = "title">{this.state.title}</h1>
-                      <h4> {this.state.summary} </h4>
+                      <h4 className = "content-summary"> {this.state.summary} </h4>
                       <h4 id = "prominent-philosopher-title">Prominent Philosophers: </h4>
                       {this.renderPhilosophers()}
-                      {this.renderDetails() }
+                        <div className = "details-container">
+                          {this.renderDetails() }
+                        </div>
                     </div>
                 </div>
 

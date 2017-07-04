@@ -2,6 +2,8 @@
  * @file - the main component for the discuss "page". In charge of keeping track of 
  * the login state, rendering user login links based on that state, and rendering 
  * the login, register, categories, threads, and posts components.
+ * Discuss's main component in react-router via /discuss All other components in
+ * /src/components/Discuss are children of this route
  */
 import React, { Component } from 'react';
 import { Link } from 'react-router';
@@ -33,14 +35,14 @@ export default class Discuss extends Component {
     /** Returns login, register, or logout JSX links depending on the login status  */
     displayUserLinks() {
         if (this.state.loginStatus === true) {
-            return <div className="discussLinks col-md-8 col-md-offset-2 ">
-                <Link to="/discuss" >Topics</Link>
+            return <div >
+                <Link to="/discuss" >Categories</Link>
                 <a onClick={this.handleLogout}>Logout</a>;
             </div>
         }
         else {
-            return <div className="discussLinks col-md-8 col-md-offset-2 ">
-                <Link to="/discuss" >Topics</Link>
+            return <div>
+                <Link to="/discuss" >Categories</Link>
                 <Link to="/login" >Login</Link>
                 <Link to="/register" >Register</Link>
             </div>;
@@ -60,14 +62,12 @@ export default class Discuss extends Component {
 
     render() {
         return (
-            <div>
-                <div className="row">
+            <div className="row">
+                <div className="col-md-8 col-md-offset-2 dashboard-links-div">
                     {this.displayUserLinks()}
                 </div>
-                <div className="row">
-                    <div className="col-md-8 col-md-offset-2" style={{ background: '#a742e3' }}>
-                        {React.cloneElement(this.props.children, {loginStatus: this.state.loginStatus, updateLoginStatus: this.updateLoginStatus })}
-                    </div>
+                <div className="col-md-8 col-md-offset-2 discuss-container">
+                    {React.cloneElement(this.props.children, { loginStatus: this.state.loginStatus, updateLoginStatus: this.updateLoginStatus })}
                 </div>
             </div>
         );

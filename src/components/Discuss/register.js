@@ -2,8 +2,7 @@
  * @file manages the register component which acts as the sign up page for users.
  * It submits post requests to the database and will render error warnings if 
  * there was an issue with validation.
- * 
- * Date: 6/26/17
+ * Accessed via react-router
  */
 import React, { Component } from 'react';
 import API from '../../utils/API';
@@ -76,14 +75,14 @@ export default class UserRegister extends Component {
 
     /**
      * Check the state to see if there is an error for a particular input field.
-     * If so, then return a jsx element to display the error.
+     * If so, return a jsx element to display the error.
      * (function called below each label in render())
      * @param input - the input field we are checking for an error
      */
     checkError(input) {
         for (var i in this.state.errors) {
             if (this.state.errors[i].param === input) {
-                return <p style={{ 'color': 'red' }}>*{this.state.errors[i].msg}*</p>;
+                return <p className="warning">*{this.state.errors[i].msg}*</p>;
             }
         }
         return false;
@@ -95,15 +94,14 @@ export default class UserRegister extends Component {
      */
     displayDuplicateError() {
         if (this.state.duplicateError) {
-            console.log("inside displayLoginError");
-            return <p style={{ color: 'red' }}>Username already exists.</p>
+            return <p className="warning">Username already exists.</p>
         }
     }
 
     render() {
         return (
-            <div className="">
-                <div className="col-md-6 col-md-offset-3 text-center">
+            <div className="row">
+                <div className="col-md-10 col-md-offset-1 text-center register-container">
                     <h2 className="page-header">Register</h2>
                     <form onSubmit={this.handleSubmit}>
                         <div className="form-group">

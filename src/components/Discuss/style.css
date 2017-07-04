@@ -1,0 +1,26 @@
+a:link {
+    color: grey;
+}
+a:visited {
+    color: grey;
+}
+a:hover {
+    color: white;
+}
+
+.discuss-container{
+    background: #11004d;
+}
+
+.page-header{
+    color: #e1d8ff;
+    margin-top: 10px;
+}
+
+.warning{
+    color: yellow;
+}
+
+.comment-list-element{
+    background: #404040;
+}

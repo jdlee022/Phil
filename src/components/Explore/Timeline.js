@@ -5,31 +5,31 @@ var style = require("./style.css");
 var CircularJSON = require('circular-json');
 
 const backgroundImg1 = {
-    backgroundImage: "url(https://placeimg.com/801/801/nature)",
+    backgroundImage: "url(http://dariusforoux.com/wp-content/uploads/2016/01/Greek_philosopher_busts.jpg)",
 };
 const backgroundImg2 = {
-    backgroundImage: "url(https://placeimg.com/802/802/nature)",
+    backgroundImage: "url(https://coachfederation.org/blog/wp-content/uploads/2013/11/socrates.jpg)",
 };
 const backgroundImg3 = {
-    backgroundImage: "url(https://placeimg.com/803/803/nature)",
+    backgroundImage: "url(https://historyofphilosophy.net/sites/historyofphilosophy.net/files/images/four-elements.jpg)",
 };
 const backgroundImg4 = {
-    backgroundImage: "url(https://placeimg.com/800/800/nature)"
+    backgroundImage: "url(http://www.crisismagazine.com/wp-content/uploads/2011/05/philosophy.jpg)"
 }
 const backgroundImg5 = {
-    backgroundImage: "url(https://placeimg.com/804/804/nature)"
+    backgroundImage: "url(https://www.tcd.ie/Philosophy/assets/images/homepage/philosophy-slider-library.gif)"
 }
 const backgroundImg6 = {
-    backgroundImage: "url(https://placeimg.com/805/805/nature)"
+    backgroundImage: "url(http://2.bp.blogspot.com/-uaeqsBrmrB4/UsL4ghqxDJI/AAAAAAAABMA/CqgHTWR3S3U/s400/Vitruviano.jpg)"
 }
 const backgroundImg7 = {
-    backgroundImage: "url(https://placeimg.com/806/806/nature)"
+    backgroundImage: "url(https://s-media-cache-ak0.pinimg.com/originals/d2/dd/ed/d2dded13719196d330305944509a7ca4.jpg)"
 }
 const backgroundImg8 = {
-    backgroundImage: "url(https://placeimg.com/807/807/nature)"
+    backgroundImage: "url(https://qph.ec.quoracdn.net/main-qimg-9fb75a1ad8d7b696e7ecc8104aa29c06)"
 }
 const backgroundImg9 = {
-    backgroundImage: "url(https://placeimg.com/808/808/nature)"
+    backgroundImage: "url(https://s-media-cache-ak0.pinimg.com/originals/22/e9/a6/22e9a6934aebe444986f3e54f300e6ce.gif)"
 }
 
 var Timeline = React.createClass({

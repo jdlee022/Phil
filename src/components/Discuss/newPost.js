@@ -1,11 +1,14 @@
+/**
+ * @file manages the component that renders a form for users to submit
+ * a new Post within a Category if they are logged in.
+ * Accessed via react-router
+ */
 import React, { Component } from 'react';
 import API from '../../utils/API';
 
 export default class NewPost extends React.Component {
-
     constructor(props) {
         super(props)
-
         this.state = {
             category: this.props.params.category,
             title: '',
@@ -14,18 +17,22 @@ export default class NewPost extends React.Component {
             userId: null,
             username: null
         }
-        // Get the current date and time
-        var date = new Date();
-        this.state.date = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " @ " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-
-        if (this.props.loginStatus == true) {
-            this.state.userId = localStorage.getItem('userId');
-            this.state.username = localStorage.getItem('username');
-        }
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.checkLoginStatus = this.checkLoginStatus.bind(this);
+    }
+
+    // Set state with result from API after component mounts
+    componentDidMount() {
+        // Get the current date and time
+        var date = new Date();
+        this.state.date = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " @ " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        // If user is logged in then set localStorage with user's info
+        if (this.props.loginStatus == true) {
+            this.state.userId = localStorage.getItem('userId');
+            this.state.username = localStorage.getItem('username');
+        }
     }
 
     /**
@@ -47,7 +54,6 @@ export default class NewPost extends React.Component {
      */
     handleSubmit(event) {
         event.preventDefault();
-
         var newPost = {
             category: this.state.category,
             title: this.state.title,
@@ -78,10 +84,9 @@ export default class NewPost extends React.Component {
         return (
             <div className="row">
                 <div className="col-md-12 text-center">
-                    <h3>Create a new post in {this.state.category}</h3>
+                    <h2 className="page-header">Create a new post in {this.state.category}</h2>
                     {this.checkLoginStatus()}
                 </div>
-
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label>Post Title</label>

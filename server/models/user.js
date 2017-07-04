@@ -24,10 +24,10 @@ var UserSchema = mongoose.Schema({
         //The ObjectIds will refer to ids in the Post model
         ref: "Post"
     }],
-    comments: {
+    comments: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Comment"
-    },
+    }],
     highScore: {
         type: Number, 
 		default: 0
