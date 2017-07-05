@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 var Gameset = mongoose.Schema({
-	question: {
+	hint: {
 		type: String, 
-		require: [true, "Missing question"]
+		require: [true, "Missing hint"]
 	},
 	answer: {
 		type: String, 
@@ -12,6 +12,10 @@ var Gameset = mongoose.Schema({
 	gametype: {
 		type: String, 
 		require: [true, "Missing type"]
+	}, 
+	question: {
+		type: String, 
+		require: [true, "Missing question"]
 	}
 });
 

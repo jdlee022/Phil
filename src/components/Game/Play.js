@@ -30,15 +30,18 @@ export default class Game extends Component {
 
 	getHighScore(){
 		let thisUserId = localStorage.getItem("userId");
-		if (thisUserId !== null){
+		console.log(typeof(JSON.parse(thisUserId)));
+		console.log("thisUserId " + typeof(thisUserId) + " " + thisUserId );
+		if ((thisUserId == "null") || (thisUserId == null) ){
+			console.log("You need to sign in");
+		} else if ((thisUserId !== "null") || (thisUserId !== "") || (JSON.stringify(thisUserId) !== "null")){
 			gameAPI.getUserHighScore(thisUserId).then(function(thisUser) {
 				console.log("thisUser", thisUser.data.userInfo.highScore);
 				this.setState({
 					highScore: thisUser.data.userInfo.highScore
 				});
 			}.bind(this));
-		} else {
-			console.log("You need to sign in");
+			
 		}
 	}
 

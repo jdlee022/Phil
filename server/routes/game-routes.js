@@ -24,15 +24,30 @@ router.get('/api/game/getspecificquestions/:type', function (req, res) {
 });
 
 router.post('/api/game/addquestion', function (req, res) {
-	var newQuestion = new Gameset({
-		question: req.body.question,
-		answer: req.body.answer, 
-		gametype: req.body.gametype
-	});
-	Gameset.addQuestion(newQuestion, function (err, question) {
-		if (err) throw err;
-		console.log("new quote added", question);
-	});
+	if (req.body.gametype === "whosaysthis"){
+		var newQuestion = new Gameset({
+			hint: req.body.question,
+			answer: req.body.answer,
+			gametype: req.body.gametype, 
+			question: "Who says this?"
+		});
+		Gameset.addQuestion(newQuestion, function (err, question) {
+			if (err) throw err;
+			console.log("new quote added", question);
+		});
+	} else if (req.body.gametype === "whichperiodisthisfrom") {
+		var newQuestion = new Gameset({
+			hint: req.body.question,
+			answer: req.body.answer,
+			gametype: req.body.gametype,
+			question: "Which period is this from?"
+		});
+		Gameset.addQuestion(newQuestion, function (err, question) {
+			if (err) throw err;
+			console.log("new quote added", question);
+		});
+	}
+	
 
 });
 
