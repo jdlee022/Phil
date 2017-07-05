@@ -9,19 +9,19 @@ export default class Navbar extends Component {
     render() {
         return (
             <div className="nav">
-                <div className="col-md-2 col-md-offset-1 text-center">
+                <div className="col-xs-2 col-xs-offset-1 text-center">
                     <Link to='/' className="link">home</Link>
                 </div>
-                <div className="col-md-2 text-center">
+                <div className="col-xs-2 text-center">
                     <Link to='/discuss' className="link">discuss</Link>
                 </div>
-                <div className="col-md-2 text-center">
+                <div className="col-xs-2 text-center">
                     <Link to='/' ><img src={logo} alt="logo" className="logo"/></Link>
             </div>
-                <div className="col-md-2 text-center">
+                <div className="col-xs-2 text-center">
                     <Link to='/explore' className="link">explore</Link>
                 </div>
-                <div className="col-md-2 text-center">
+                <div className="col-xs-2 text-center">
                     <Link to='/game' className="link">play</Link>
                 </div>
             </div>

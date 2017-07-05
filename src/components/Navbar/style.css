@@ -13,10 +13,10 @@ body{
     background: black;
     color: white;
     padding: 5px;
-    height: 80px;
+    height: 10%;
   line-height: 80px;
   text-align: center;
-  font-size: 235%;
+  font-size: 2vw;
   font-weight: 700;
   margin-top:10px;
 }
