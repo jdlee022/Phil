@@ -50,17 +50,47 @@ export default class Home extends Component {
     }
 
     displayTodayQuote() {
-        if (this.state.quoteOfTheDay) {
+        console.log("quoteOfTheDay:", this.state.quoteOfTheDay);
+        if (this.state.quoteOfTheDay.era && this.state.quoteOfTheDay.associatedIdeas) {
             return (
                 <div className="quoteOfTheDay">
                     <h2>{this.state.quoteOfTheDay.quote}</h2>
-                    <h3>- {this.state.quoteOfTheDay.philosopher} (
-					 {this.state.quoteOfTheDay.historicPeriod} -
-					 {this.state.quoteOfTheDay.era}) -
+                    <h3>- {this.state.quoteOfTheDay.philosopher} ({this.state.quoteOfTheDay.era})
+					 
+					</h3>
+                    <h4>Studied: {this.state.quoteOfTheDay.associatedIdeas}</h4>
+                </div>
+            )
+        }
+        if (this.state.quoteOfTheDay.era) {
+            console.log("YOOOOOO");
+            return (
+                <div className="quoteOfTheDay">
+                    <h2>{this.state.quoteOfTheDay.quote}</h2>
+                    <h3>- {this.state.quoteOfTheDay.philosopher} ({this.state.quoteOfTheDay.era})
 					</h3>
                 </div>
             )
-        } else return;
+        } 
+        if (this.state.quoteOfTheDay.associatedIdeas) {
+            return (
+                <div className="quoteOfTheDay">
+                    <h2>{this.state.quoteOfTheDay.quote}</h2>
+                    <h3>- {this.state.quoteOfTheDay.philosopher}
+					</h3>
+                    <h4>Studied: {this.state.quoteOfTheDay.associatedIdeas}</h4>
+                </div>
+            )
+        } 
+        else{
+            return (
+                <div className="quoteOfTheDay">
+                    <h2>{this.state.quoteOfTheDay.quote}</h2>
+                    <h3>- {this.state.quoteOfTheDay.philosopher}
+					</h3>
+                </div>
+            )
+        }
     }
 
     render() {
