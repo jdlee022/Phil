@@ -103,12 +103,8 @@ export default class ExploreContent extends Component {
 					this.renderDetails();
 				}
 			}
-		}.bind(this), function(){
-			console.log("findmatchingtitle THIS.STATE", this.state);
-		})
-		.fail(function(error){
-			console.log("error", error);
-		});
+		}.bind(this)
+      )
     }
 
     renderPhilosophers() {
@@ -124,7 +120,7 @@ export default class ExploreContent extends Component {
 					<ul id = "philospher-list">
 						<div key={index}>
 							<li>
-								<a href = {thisAnchor} > {name} </a>
+								<a href = {thisAnchor} target="_blank"> {name} </a>
 							</li>
 						</div>
 					</ul>
@@ -174,7 +170,12 @@ export default class ExploreContent extends Component {
                 </div>
             </div>
 
-            
+            <div className = "row">
+                  <div className = "arrow-container">
+                    <i className = "glyphicon glyphicon-arrow-down bounce"></i>
+                  </div>
+            </div>
+
           </div>
           
             )

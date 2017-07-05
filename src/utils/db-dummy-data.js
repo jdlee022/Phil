@@ -35,7 +35,11 @@ db.categories.insertMany([
 ]);
 
 
-/** DUMMY DATA FOR HOME PAGE QUOTES */
+/** 
+ * DUMMY DATA FOR HOME PAGE QUOTES
+ * Quote and Philosopher fields required.
+ * See dailyQuote model for reference
+ */
 db.getCollection('dailyquotes').insert([
     {
         quote: '“Beauty always represents an inward and inexhaustible equilibrium of forces; and this overwhelms our soul, since it can neither be calculated nor mechanically produced. A sense of beauty can therefore permit us the direct experience of relationships before we can perceive them, in a differentiated manner, with our discursive reason; in this, incidentally, there is a defence for our own physical and psychic well-being, something that we cannot neglect with impunity.”',

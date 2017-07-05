@@ -8,6 +8,17 @@ a:hover {
     color: white;
 }
 
+ul {
+ padding: 0;
+    list-style-type: none;
+}
+
+.categoryListChild {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 15px;
+}
+
 .register-container {
     color: white;
     font-size: 125%;

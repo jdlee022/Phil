@@ -75,7 +75,7 @@ export default class NewPost extends React.Component {
     /** Display an error message if the user tries to post without logging in. */
     checkLoginStatus() {
         if (!this.props.loginStatus) {
-            return <p style={{ color: 'red' }}>You must be logged in to post.</p>
+            return <p className="warning">You must be logged in to post.</p>
         }
     }
 
