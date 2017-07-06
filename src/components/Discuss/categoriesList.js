@@ -39,10 +39,10 @@ export default class CategoriesList extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-2 text-center">
+                    <div className="col-md-2">
                         <h4><u>Category</u></h4>
                     </div>
-                    <div className="col-md-8 text-center">
+                    <div className="col-md-8">
                         <h4><u>Description</u></h4>
                     </div>
                     <div className="col-md-2 text-center">

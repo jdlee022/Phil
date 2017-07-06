@@ -94,7 +94,7 @@ export default class PostPage extends Component {
         if (this.state.currentlyCommenting) {
             return <div>
                 <NewComment postId={this.state._id} userId={this.state.userId} loginStatus={this.props.loginStatus} updateCommentingStatus={this.updateCommentingStatus} />
-                <a onClick={() => this.setState({ currentlyCommenting: false })}>Cancel</a>
+                <a style={{marginLeft: '20px', cursor: 'pointer'}} onClick={() => this.setState({ currentlyCommenting: false })}>Cancel</a>
             </div>
         }
         else {
@@ -105,7 +105,7 @@ export default class PostPage extends Component {
     render() {
         var categoryQuery = "/category/" + this.state.category;
 
-        var postItems = this.state.comments.map((comment, i) =>
+        var commentItems = this.state.comments.map((comment, i) =>
             <CommentChild data={comment} postTitle={this.state.title} key={i} />
         );
 
@@ -118,11 +118,11 @@ export default class PostPage extends Component {
                     <h1>{this.state.title}</h1>
                     <h2>By {this.state.username} on {this.state.date}</h2>
                     <h3>{this.state.username}'s high score: {this.state.userScore}</h3>
-                    <h4>{this.state.text}</h4>
+                    <h4 style={{whiteSpace: 'pre-wrap'}}>{this.state.text}</h4>
                 </div>
                 {this.displayCommentOptions()}
                 <ul>
-                    {postItems}
+                    {commentItems}
                 </ul>
             </div>
         );

@@ -17,7 +17,8 @@ export default class Discuss extends Component {
         //Use local storage so that login status persists on page refresh
         var loginStatus = (typeof localStorage.getItem('loginStatus') !== 'undefined' && localStorage.getItem('loginStatus')) || 0;
         this.state = {
-            loginStatus: JSON.parse(loginStatus)
+            loginStatus: JSON.parse(loginStatus),
+            hover: false
         };
         this.displayUserLinks = this.displayUserLinks.bind(this);
         this.updateLoginStatus = this.updateLoginStatus.bind(this);
@@ -35,9 +36,24 @@ export default class Discuss extends Component {
     /** Returns login, register, or logout JSX links depending on the login status  */
     displayUserLinks() {
         if (this.state.loginStatus === true) {
-            return <div >
+            var logoutStyle;
+            if (this.state.hover) {
+                logoutStyle = {
+                    color: '#8AB6F8',
+                    textDecoration: 'none',
+                    transitionDuration: '.5s',
+                    cursor: 'pointer'
+                }
+            } else {
+                logoutStyle = {
+                    color: '#9b7ff2',
+                    textDecoration: 'none'
+                }
+            }
+
+            return <div>
                 <Link to="/discuss" >Dashboard</Link>
-                <a onClick={this.handleLogout}>Logout</a>
+                <a style={logoutStyle} onClick={this.handleLogout} onMouseEnter={()=>this.setState({hover: true})} onMouseLeave={()=>this.setState({hover: false})}>Logout</a>
             </div>
         }
         else {
@@ -61,6 +77,7 @@ export default class Discuss extends Component {
     }
 
     render() {
+
         return (
             <div className="row main-discuss-container">
                 <div className="col-md-10 col-md-offset-1 dashboard-links-div">

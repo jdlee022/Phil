@@ -10,7 +10,7 @@ export default class NewComment extends Component {
         super(props);
         this.state = {
             postId: this.props.postId,
-            userId: this.props.userId,
+            userId: localStorage.getItem('userId'),
             text: '',
             date: ''
         };
@@ -41,7 +41,8 @@ export default class NewComment extends Component {
         // Check if user is logged in before comment submit
         if (this.props.loginStatus) {
             var date = new Date();
-            date = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " @ " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+            date = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear() + " @ " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+
 
             API.newComment({
                 post: this.state.postId,
@@ -61,7 +62,7 @@ export default class NewComment extends Component {
         return (
             <div>
                 {this.checkLoginStatus()}
-                <input type="text" className="form-control" name="text" value={this.state.text} onChange={this.handleInputChange} />
+                <textarea style={{height: '110px', whiteSpace: 'pre-wrap'}} className="form-control" name="text" value={this.state.text} onChange={this.handleInputChange} />
                 <button type="button" className="btn btn-default" onClick={this.handleCommentSubmit}>Submit</button>
             </div>
         );

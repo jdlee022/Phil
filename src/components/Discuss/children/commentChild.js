@@ -35,7 +35,7 @@ export default class CommentChild extends Component {
                     <h1>RE: {this.state.postTitle}</h1>
                     <h2>By {this.state.username} on {this.state.date}</h2>
                     <h3>{this.state.username}'s high score: {this.state.userScore}</h3>
-                    <h4>{this.state.text}</h4>
+                    <h4 style={{whiteSpace: 'pre-wrap'}}>{this.state.text}</h4>
                 </div>
             </li>
         );

@@ -27,7 +27,7 @@ export default class NewPost extends React.Component {
     componentDidMount() {
         // Get the current date and time
         var date = new Date();
-        this.state.date = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " @ " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        this.state.date = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear() + " @ " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
         // If user is logged in then set localStorage with user's info
         if (this.props.loginStatus == true) {
             this.state.userId = localStorage.getItem('userId');
@@ -94,7 +94,7 @@ export default class NewPost extends React.Component {
                     </div>
                     <div className="form-group">
                         <label>Post Text</label>
-                        <input type="text" className="form-control" name="text" value={this.state.text} onChange={this.handleInputChange} />
+                        <textarea style={{height: '200px'}} type="text" className="form-control" name="text" value={this.state.text} onChange={this.handleInputChange} />
                     </div>
                     <button type="submit" className="btn btn-default">Submit</button>
                 </form>
