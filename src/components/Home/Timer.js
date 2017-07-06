@@ -1,96 +1,72 @@
-import React, {Component} from 'react'
-import moment from 'moment'
+import React, { Component } from 'react'
 
 export default class Timer extends Component {
-	constructor(props){
-		super(props);
-		this.state = {
-			time: props.time,
-			now: 0
-		}
 
-		this.start = this.start.bind(this);
-		this.displayHour = this.displayHour.bind(this);
-		this.displayMin = this.displayMin.bind(this);
-		this.displaySec = this.displaySec.bind(this);
+	constructor() {
+		super();
+		// This is called before our render function. The object that is 
+		// returned is assigned to this.state, so we can use it later.
+		this.state = { 
+			elapsed: 0, 
+			start: 0
+		};
+		this.tick = this.tick.bind(this);
 	}
-	
-	componentReceiveProps(nextProps){
-		console.log("nextProps", nextProps);
-		if (this.state.now !== nextProps.now){
+
+	componentDidMount() {
+		// componentDidMount is called by react when the component 
+		// has been rendered on the page. We can set the interval here:
+		this.timer = setInterval(this.tick, 1000);
+	}
+
+	componentWillUnmount() {
+		// This method is called immediately before the component is removed
+		// from the page and destroyed. We can clear the interval here:
+		clearInterval(this.timer);
+	}
+
+	tick() {
+		// This function is called every 50 ms. It updates the 
+		// elapsed counter. Calling setState causes the component to be re-rendered
+		if (this.state.elapsed >= 0){
 			this.setState({
-				now: nextProps.now
-			});
-			this.start();
-			this.props.checkTime(this.state.time);
-		}
-	}
-
-	start(){
-		let thisSec = this.state.time.hour;
-		let thisMin = this.state.time.minute;
-		let thisHr  = this.state.time.hour;
-
-		if (thisSec === 0 ){
-			if (thisMin !== 0){
-				thisMin--
-				thisSec = 59
-				this.setState({
-					second: thisSec,
-					minute: thisMin
-				});
-			} else if (thisMin === 0){
-				if (thisHr === 0){
-					this.setState({
-						hour: 4,
-						minute: 20,
-						second: 0
-					});
-				} else if (thisHr !== 0) {
-					thisHr--;
-					this.setState({
-						second: thisSec,
-						minute: 59,
-						hour: 59
-					});
-				}
-			}
-		} else {
-			thisSec--;
+				elapsed: this.state.start - new Date()
+			}, function(){
+				var totalInSecond = Math.round(this.state.elapsed / 1000);
+				this.props.checkTime(totalInSecond);
+			}.bind(this));
+		} 
+		else if (this.state.elapsed < 0 ){
 			this.setState({
-				second: thisSec
-			});
-		}
+				elapsed: 0
+			}, function(){
+				var totalInSecond = Math.round(this.state.elapsed / 1000);
+				this.props.checkTime(totalInSecond);
+			}.bind(this));	
+		}		
 	}
 
-	displayHour(){
-		var hour = (this.state.time.hour);
-		hour = JSON.stringify(hour);
-		console.log(hour);
-		while (hour.length < 2) {hour = "0" + hour}
-		return hour;
+	componentWillReceiveProps(nextProps){
+		this.setState({
+			start: nextProps.start
+		});
 	}
 
-	displayMin() {
-		var minute = (this.state.time.minute);
-		minute = JSON.stringify(minute);
-		console.log(minute);
-		while (minute.length < 2) { minute = "0" + minute }
-		return minute;
-	}
-	displaySec() {
-		var second = (this.state.time.second);
-		second = JSON.stringify(second);
-		console.log(second);
-		while (second.length < 2) { second = "0" + second }
-		return second;
-	}
+	render() {
+		// Calculate elapsed to tenth of a second:
+		var totalInSecond = Math.round(this.state.elapsed / 1000);
 
-	render(){
-		return (
-			<div>
-				<h3>{this.displayHour()} : {this.displayMin()} : {this.displaySec()}</h3>
-			</div>
-		)
+		var hour = Math.floor(this.state.elapsed / (60 * 60 * 1000));
+
+		var minute = Math.floor(totalInSecond / 60 - hour * 60);
+
+		var second = totalInSecond - (minute * 60 + hour * 60 * 60);
+		// This will give a number with one digit after the decimal dot (xx.x):
+		// var seconds = (elapsed / 10).toFixed(1);    
+
+		// Although we return an entire <p> element, react will smartly update
+		// only the changed parts, which contain the seconds variable.
+
+		return <p><b> {hour} hour : {minute} minute : {second} seconds, </b> </p>;
 	}
-}
+};
