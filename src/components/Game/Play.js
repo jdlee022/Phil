@@ -30,8 +30,6 @@ export default class Game extends Component {
 
 	getHighScore(){
 		let thisUserId = localStorage.getItem("userId");
-		console.log(typeof(JSON.parse(thisUserId)));
-		console.log("thisUserId " + typeof(thisUserId) + " " + thisUserId );
 		if ((thisUserId === "null") || (thisUserId === null) ){
 			console.log("You need to sign in");
 		} else if ((thisUserId !== "null") || (thisUserId !== "") || (JSON.stringify(thisUserId) !== "null")){
