@@ -1,33 +1,38 @@
 .explore-title  {
     color:white;
+    margin-top: 0px;
 }
 #content-container {
     /*border: 1px solid white;*/
     text-align: center;
-    max-height: 75%;
+    max-height: 60%;
+    height: 60%;
     position: absolute;
     left: 17vw;
-    top: 12vh;
-    bottom: 22vh;
+    top: 110px;
+    bottom: 100px;
     overflow-y: auto;
-    /*border-radius: 4px;*/
-    /*background-color:black;*/
+    font-weight: normal;
 }
 
 h4, p {
     color:white;
+}
+.title {
+    margin-top: 0px;
 }
 li {
     text-decoration: none;
     list-style-type: none;
     line-height: 25px;
 }
-li a {
-    color: #337ab7;
+#philosopher-list li a {
+    color: #337ab7 !important;
 }
 .content-summary {
     text-align: center;
     margin: 20px 0 20px 0;
+    font-size: 20px;
 
 }
 .details-container {
@@ -35,20 +40,32 @@ text-align: left;
 margin-top: 20px;
 }
 
-#philosopher-list {
+ul,#philosopher-list {
     margin: 0 auto !important;
     padding-left:0;
+    margin-bottom: 0px !important;
+    color: #337ab7 !important;
+
+    
 }
 #prominent-philosopher-title {
     margin:0 auto;
     text-align: center;
     font-size: 145%;
+    margin-bottom: 10px;
 }
 
+body {
+      background: linear-gradient(black, rgb(20, 20, 30));
+}
 .empty-container  {
   /*height: 100vh;*/
   background: linear-gradient(black, rgb(20, 20, 40));
   overflow: hidden;
+}
+.emptyContent {
+    position: absolute;
+    top: 50%;
 }
 .content-container {
     /*height: 100vh;*/
@@ -65,11 +82,11 @@ margin-top: 20px;
     color:grey;
     width:6px;
 }
-/*.col-md-8::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.6); 
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-}*/
+.content-container p {
+    font-size: 100%;
+    
+}
+.glyphicon-
 
 #stars {
   border-radius: 4px;
@@ -166,7 +183,7 @@ i {
     
     position:absolute;
     left:47.8%;
-    bottom: 23vh;
+    bottom: 20.5vh;
 }
 
 
