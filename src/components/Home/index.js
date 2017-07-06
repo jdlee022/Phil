@@ -127,10 +127,11 @@ export default class Home extends Component {
                         {this.displayTodayQuote()}
                     </div>
 					<div className="quoteTimer">
+						
 						<Timer 
-							start={Date.now() + (this.state.time)}
-							checkTime = {this.checkTime}
-							time = {this.state.time}
+							start={Date.now() + (this.props.countDownTime)}
+							// checkTime = {this.props.checkTime}
+							time = {this.props.countDownTime}
 						/>
 					</div>
                 </div>
