@@ -364,17 +364,7 @@ export default class Play extends Component {
 						onComplete={this.handleAnswer.bind(this)}
 					/>
 				)
-			} else {
-				return (
-					<ReactCountdownClock seconds={5}
-						color="#fff"
-						alpha={0.9}
-						size={100}
-						weight={10}
-						onComplete={this.handleAnswer.bind(this)}
-					/>
-				)
-			}
+			} 
 		} else {
 			return;
 		}
