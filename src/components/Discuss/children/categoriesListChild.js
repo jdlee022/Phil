@@ -24,10 +24,10 @@ export default class CategoriesListChild extends Component {
 
         return (
             <li className="row categoryListChild">
-                    <div className="col-md-2 text-center">
+                    <div className="col-md-2">
                         <Link to={categoryQuery}>{this.state.category}</Link>
                     </div>
-                    <div className="col-md-8 text-center">
+                    <div className="col-md-8">
                         <p>{this.state.description}</p>
                     </div>
                     <div className="col-md-2 text-center">
