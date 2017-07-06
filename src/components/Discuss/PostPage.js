@@ -114,11 +114,11 @@ export default class PostPage extends Component {
                 <div className="col-md-12 text-center">
                     <h2 className="page-header"><Link to={categoryQuery}>{this.state.category}</Link></h2>
                 </div>
-                <div className="col-md-12 " style={{ background: 'grey', margin: '10px' }}>
-                    <h4>{this.state.title}</h4>
-                    <p>By {this.state.username} on {this.state.date}</p>
-                    <p>{this.state.username}'s high score: {this.state.userScore}</p>
-                    <p>{this.state.text}</p>
+                <div className="col-md-12 comment-list-element op">
+                    <h1>{this.state.title}</h1>
+                    <h2>By {this.state.username} on {this.state.date}</h2>
+                    <h3>{this.state.username}'s high score: {this.state.userScore}</h3>
+                    <h4>{this.state.text}</h4>
                 </div>
                 {this.displayCommentOptions()}
                 <ul>

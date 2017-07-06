@@ -32,10 +32,10 @@ export default class CommentChild extends Component {
         return (
             <li className="row">
                 <div className="col-md-12 comment-list-element">
-                    <h4>RE: {this.state.postTitle}</h4>
-                    <p>By {this.state.username} on {this.state.date}</p>
-                    <p>{this.state.username}'s high score: {this.state.userScore}</p>
-                    <p>{this.state.text}</p>
+                    <h1>RE: {this.state.postTitle}</h1>
+                    <h2>By {this.state.username} on {this.state.date}</h2>
+                    <h3>{this.state.username}'s high score: {this.state.userScore}</h3>
+                    <h4>{this.state.text}</h4>
                 </div>
             </li>
         );

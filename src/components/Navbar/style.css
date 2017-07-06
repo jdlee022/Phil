@@ -13,11 +13,11 @@ body{
     background: black;
     color: white;
     padding: 5px;
-    height: 80px;
+    height: 10%;
   line-height: 80px;
   text-align: center;
-  font-size: 175%;
-  font-weight: 800;
+  font-size: 2vw;
+  font-weight: 700;
   margin-top:10px;
 }
 
@@ -25,29 +25,25 @@ body{
 
 a.link{
     color: white;
-    text-decoration: none;
+    text-decoration-line: none;
 }
 a.link:hover {
     color: #ffd863;
-    text-decoration: none;
+    text-decoration-line: none;
     transition-duration: 1s;
 }
 
 a.link:visited {
     color: #ffffff;
-    text-decoration: none;
-}
-
-a.link:visited {
-    text-decoration: none;
+    text-decoration-line: none;
 }
 
 a.link:active:visited {
-    text-decoration: none;
+    text-decoration-line: none;
 }
 
 a.link:visited:hover {
     color: #ffd863;
-    text-decoration: none;
+    text-decoration-line: none;
     transition-duration: 1s;
 }

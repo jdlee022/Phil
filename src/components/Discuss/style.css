@@ -1,11 +1,29 @@
-a:link {
-    color: grey;
+
+
+ul {
+    padding: 0;
+    list-style-type: none;
 }
-a:visited {
-    color: grey;
-}
-a:hover {
+
+.btn {
+    background:#2a2a2a;
+    font-weight: 700;
+    border: none;
+    margin-top: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    font-size: 125%;
     color: white;
+
+}
+
+
+
+.categoryListChild {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 15px;
 }
 
 .register-container {
@@ -20,17 +38,57 @@ a:hover {
 }
 
 .discuss-container{
+    width: 100%;
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.8);
-    
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/*ALL LINKS*/
+
+.main-discuss-container a:link {
+    color: #9b7ff2;
+    text-decoration: none;
+
+}
+.main-discuss-container a:visited {
+    color: #9b7ff2;
+    text-decoration: none;
+}
+
+.main-discuss-container a:hover {
+    color: #8AB6F8;
+    text-decoration: none;
+    transition-duration: .5s;
+
+}
+
+/*POST LINKS*/
+
+.comment-list-element a:link {
+    color: #9b7ff2;
+    text-decoration: none;
+
+}
+.main-discuss-container a:visited {
+    color: #9b7ff2;
+    text-decoration: none;
+}
+
+.main-discuss-container a:hover {
+    color: #8AB6F8;
+    text-decoration: none;
+    transition-duration: .5s;
+
+}
+
+
 .main-discuss-container {
+    
     color: white;
     font-size: 125%;
     font-weight: 600;
-    width: 100%;
-    height: 100%;
     margin-top: 25px;
     
 }
@@ -44,8 +102,48 @@ a:hover {
     color: yellow;
 }
 
-.comment-list-element{
-    background: #404040;
+/*COMMENT LIST*/
+
+
+.comment-list-element.op {
+   margin-left:0px;
+   margin-top: 30px;
+    font-weight: 700;
+    background-color: rgba(50, 50, 50, 0.6);
+    border-radius: 15px;
+    padding: 15px;
+}
+.comment-list-element {
+   margin-left: 50px;
+   margin-top: 30px;
+    font-weight: 700;
+    background-color: rgba(50, 50, 50, 0.4);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+
+
+
+.comment-list-element h1 {
+    font-size: 100%;
+    
+}
+
+.comment-list-element h2 {
+    margin-top: -5px;
+    font-size: 100%;
+}
+
+.comment-list-element h3 {
+    margin-top: -5px;
+    font-size: 75%;
+}
+.comment-list-element h4 {
+    font-size: 125%;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-left:15px;
 }
 
 
@@ -54,53 +152,26 @@ a:hover {
 .dashboard-links-div {
     text-align: center;
     
+    
 }
 
 .dashboard-links-div a {
-    font-size: 175%;
-    color: white;
+    font-size: 125%;
     margin-left: 10px;
     margin-right: 10px; 
     font-weight: 600;
 }
 
 
-.dashboard-links-div a:active {
-    text-decoration: none;
-    color: #ffd863;
-     transition-duration: 1s;
-}
-.dashboard-links-div a:visited:active {
-    text-decoration: none;
-    color: #ffd863;
-     transition-duration: 1s;
-}
-.dashboard-links-div a:hover {
-    text-decoration: none;
-    color: #ffd863;
-     transition-duration: 1s;
-}
-.dashboard-links-div a:visited:hover {
-    text-decoration: none;
-    color: #ffd863;
-     transition-duration: 1s;
-}
-
-.dashboard-links-div a:visited {
-    color: #ffffff;
-    text-decoration: none;
-}
-.dashboard-links-div a:visited {
-    color: #ffffff;
-    text-decoration: none;
-}
-
 /*CATEGORIES LIST*/
 
-.categories-list {
-    background-color: black;
-    opacity: 75%;
+.categoryTest {
+    margin-top: 25px;
 }
+
+
+
+
 
 
 

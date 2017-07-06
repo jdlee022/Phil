@@ -37,7 +37,7 @@ export default class Discuss extends Component {
         if (this.state.loginStatus === true) {
             return <div >
                 <Link to="/discuss" >Categories</Link>
-                <a onClick={this.handleLogout}>Logout</a>;
+                <a onClick={this.handleLogout}>Logout</a>
             </div>
         }
         else {
@@ -63,10 +63,10 @@ export default class Discuss extends Component {
     render() {
         return (
             <div className="row main-discuss-container">
-                <div className="col-md-8 col-md-offset-2 dashboard-links-div">
+                <div className="col-md-10 col-md-offset-1 dashboard-links-div">
                     {this.displayUserLinks()}
                 </div>
-                <div className="col-md-8 col-md-offset-2 discuss-container">
+                <div className="col-md-10 col-md-offset-1 discuss-container">
                     {React.cloneElement(this.props.children, { loginStatus: this.state.loginStatus, updateLoginStatus: this.updateLoginStatus })}
                 </div>
             </div>

@@ -39,7 +39,7 @@ export default class CategoryPage extends Component {
             <div>
                 <div className="row">
                     <div className="col-md-3">
-                        <button className="btn btn-default new-post-btn"><Link to={newPostQuery}>New Post</Link></button>
+                        <button className="btn btn-default new-post-btn"><Link to={newPostQuery}>new post</Link></button>
                     </div>
                     <div className="col-md-6 text-center">
                         <h2 className="page-header">{this.state.category}</h2>

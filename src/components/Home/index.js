@@ -81,7 +81,6 @@ export default class Home extends Component {
             )
         }
         if (this.state.quoteOfTheDay.era) {
-            console.log("YOOOOOO");
             return (
                 <div className="quoteOfTheDay">
                     <h2>{this.state.quoteOfTheDay.quote}</h2>

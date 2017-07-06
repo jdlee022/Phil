@@ -5,7 +5,6 @@
 #content-container {
     /*border: 1px solid white;*/
     text-align: center;
-    max-height: 60%;
     height: 60%;
     position: absolute;
     left: 17vw;
@@ -13,18 +12,6 @@
     bottom: 100px;
     overflow-y: auto;
     font-weight: normal;
-}
-
-h4, p {
-    color:white;
-}
-.title {
-    margin-top: 0px;
-}
-li {
-    text-decoration: none;
-    list-style-type: none;
-    line-height: 25px;
 }
 #philosopher-list li a {
     color: #337ab7 !important;
@@ -86,7 +73,7 @@ body {
     font-size: 100%;
     
 }
-.glyphicon-
+
 
 #stars {
   border-radius: 4px;
