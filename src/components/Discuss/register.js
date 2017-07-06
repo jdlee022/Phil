@@ -107,28 +107,28 @@ export default class UserRegister extends Component {
                         <div className="form-group">
                             <label>Name</label>
                             {this.checkError("name")}
-                            <input type="text" className="form-control" name="name" value={this.state.name} onChange={this.handleInputChange} />
+                            <input type="text" className="form-control form-input" name="name" value={this.state.name} onChange={this.handleInputChange} />
                         </div>
                         <div className="form-group">
                             <label>Username</label>
                             {this.checkError("username")}
                             {this.displayDuplicateError()}
-                            <input type="text" className="form-control" name="username" value={this.state.username} onChange={this.handleInputChange} />
+                            <input type="text" className="form-control form-input" name="username" value={this.state.username} onChange={this.handleInputChange} />
                         </div>
                         <div className="form-group">
                             <label>Email</label>
                             {this.checkError("email")}
-                            <input type="text" className="form-control" name="email" value={this.state.email} onChange={this.handleInputChange} />
+                            <input type="text" className="form-control form-input" name="email" value={this.state.email} onChange={this.handleInputChange} />
                         </div>
                         <div className="form-group">
                             <label>Password</label>
                             {this.checkError("password")}
-                            <input type="password" className="form-control" name="password" value={this.state.password} onChange={this.handleInputChange} />
+                            <input type="password" className="form-control form-input" name="password" value={this.state.password} onChange={this.handleInputChange} />
                         </div>
                         <div className="form-group">
                             <label>Confirm Password</label>
                             {this.checkError("password2")}
-                            <input type="password" className="form-control" name="password2" value={this.state.password2} onChange={this.handleInputChange} />
+                            <input type="password" className="form-control form-input" name="password2" value={this.state.password2} onChange={this.handleInputChange} />
                         </div>
                         <button type="submit" className="btn btn-default">Submit</button>
                     </form>

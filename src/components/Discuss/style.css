@@ -18,6 +18,10 @@ ul {
 
 }
 
+.form-input{
+    text-align: center;
+}
+
 
 
 .categoryListChild {
@@ -151,8 +155,6 @@ ul {
 
 .dashboard-links-div {
     text-align: center;
-    
-    
 }
 
 .dashboard-links-div a {

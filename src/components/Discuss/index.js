@@ -36,13 +36,13 @@ export default class Discuss extends Component {
     displayUserLinks() {
         if (this.state.loginStatus === true) {
             return <div >
-                <Link to="/discuss" >Categories</Link>
+                <Link to="/discuss" >Dashboard</Link>
                 <a onClick={this.handleLogout}>Logout</a>
             </div>
         }
         else {
             return <div>
-                <Link to="/discuss" >Categories</Link>
+                <Link to="/discuss" >Dashboard</Link>
                 <Link to="/login" >Login</Link>
                 <Link to="/register" >Register</Link>
             </div>;

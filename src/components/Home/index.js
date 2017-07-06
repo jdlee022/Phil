@@ -14,8 +14,18 @@ export default class Home extends Component {
             quoteOfTheDay: {},
             quoteIndex: 0,
             allQuotes: [],
+<<<<<<< HEAD
 			time: (20 * 1000 + 4 * 60 * 1000 + 0 * 60 * 60 * 1000)
 
+=======
+            now: moment().unix(),
+            time: {
+                hour: 0,
+                minute: 1,
+                second: 0
+            },
+            // countdowntime: (4 * 60 * 60 * 1000 + 20 * 60 * 1000
+>>>>>>> 414acd874d7f79cb74269b1226ca76b54d4cab97
         }
 
         this.getDailyQuotes = this.getDailyQuotes.bind(this);
@@ -81,7 +91,7 @@ export default class Home extends Component {
                 <div className="quoteOfTheDay">
                     <h2>{this.state.quoteOfTheDay.quote}</h2>
                     <h3>- {this.state.quoteOfTheDay.philosopher} ({this.state.quoteOfTheDay.era})
-					 
+
 					</h3>
                     <h4>Studied: {this.state.quoteOfTheDay.associatedIdeas}</h4>
                 </div>
@@ -95,23 +105,27 @@ export default class Home extends Component {
 					</h3>
                 </div>
             )
-        } 
+        }
         if (this.state.quoteOfTheDay.associatedIdeas) {
             return (
                 <div className="quoteOfTheDay">
                     <h2>{this.state.quoteOfTheDay.quote}</h2>
                     <h3>- {this.state.quoteOfTheDay.philosopher}
-					</h3>
+                    </h3>
                     <h4>Studied: {this.state.quoteOfTheDay.associatedIdeas}</h4>
                 </div>
             )
+<<<<<<< HEAD
         } 
+=======
+        }
+>>>>>>> 414acd874d7f79cb74269b1226ca76b54d4cab97
         else {
             return (
                 <div className="quoteOfTheDay">
                     <h2>{this.state.quoteOfTheDay.quote}</h2>
                     <h3>- {this.state.quoteOfTheDay.philosopher}
-					</h3>
+                    </h3>
                 </div>
             )
         }
@@ -121,7 +135,9 @@ export default class Home extends Component {
         return (
             <div>
                 <div className="home-container">
+                    <h3 className="tagline">Welcome to phil, a hub for people who enjoy discussing and learning about philosophy.</h3>
                     <div className="quote-container">
+                        <h4>Quote of the day:</h4>
                         {this.displayTodayQuote()}
                     </div>
 					<div className="quoteTimer">

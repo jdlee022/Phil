@@ -10,19 +10,19 @@ export default class Navbar extends Component {
         return (
             <div className="nav">
                 <div className="col-xs-2 col-xs-offset-1 text-center">
-                    <Link to='/' className="link">home</Link>
+                    <Link to='/' className="link">Home</Link>
                 </div>
                 <div className="col-xs-2 text-center">
-                    <Link to='/discuss' className="link">discuss</Link>
+                    <Link to='/discuss' className="link">Discuss</Link>
                 </div>
                 <div className="col-xs-2 text-center">
                     <Link to='/' ><img src={logo} alt="logo" className="logo"/></Link>
             </div>
                 <div className="col-xs-2 text-center">
-                    <Link to='/explore' className="link">explore</Link>
+                    <Link to='/explore' className="link">Explore</Link>
                 </div>
                 <div className="col-xs-2 text-center">
-                    <Link to='/game' className="link">play</Link>
+                    <Link to='/game' className="link">Play</Link>
                 </div>
             </div>
         );
