@@ -16,6 +16,11 @@
 #philosopher-list li a {
     color: #337ab7 !important;
 }
+
+#philosopher-item {
+	color: #337ab7 !important;
+}
+
 .content-summary {
     text-align: center;
     margin: 20px 0 20px 0;
