@@ -77,17 +77,17 @@ export default class AddQuote extends Component {
 				<div className="">
 					<form onSubmit={this.handleSubmit}>
 						<label htmlFor="">Hint:</label>
-						<input onInput={this.handleInput} type="text" name="question" value={this.state.question}/>
-						<br/>
+						<input onInput={this.handleInput} type="text" name="question" value={this.state.question} />
+						<br />
 						<label htmlFor="">Answer:</label>
-						<input onInput={this.handleInput} type="text" name='answer' value={this.state.answer}/>
+						<input onInput={this.handleInput} type="text" name='answer' value={this.state.answer} />
 						<label htmlFor="">Type Question:</label>
-						<select onChange={this.handleSelect} name="gametype" id="">
+						<select onChange={this.handleSelect} name="gametype" id="game-options">
 							<option selected="selected" value="Select the type of game"></option>
 							<option value="whichperiodisthisfrom">Which period is this from?</option>
 							<option value="whosaysthis">Who says this?</option>
 						</select>
-						<input  type="submit" value="Submit"/>
+						<input type="submit" value="Submit" />
 					</form>
 					{this.postSuccess()}
 				</div>

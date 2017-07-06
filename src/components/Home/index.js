@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import moment from 'moment'
+// import TimerExample from "./time";
 
 import './style.css'
 import teaser from './teaser.png'
 import image1 from './images/om.gif'
 import dailyQuoteAPI from "../../utils/dailyQuoteAPI"
-import Timer from './Timer.js'
+// import Timer from './Timer.js'
 export default class Home extends Component {
     constructor() {
         super();
@@ -13,9 +14,13 @@ export default class Home extends Component {
             quoteOfTheDay: {},
             quoteIndex: 0,
             allQuotes: [],
-            now: moment(),
-            nextTime: "",
-            countdowntime: (4 * 60 * 60 * 1000 + 20 * 60 * 1000)
+            now: moment().unix(),
+            time: {
+				hour: 0, 
+				minute: 1,
+				second: 0
+			},
+            // countdowntime: (4 * 60 * 60 * 1000 + 20 * 60 * 1000
         }
 
         this.getDailyQuotes = this.getDailyQuotes.bind(this);
@@ -42,11 +47,24 @@ export default class Home extends Component {
         }.bind(this));
     }
 
-    //TODO:
-    checkTime() {
-        if (this.state.lastTime.from(this.state.now)) {
-
-        }
+    checkTime(time) {
+		console.log(time);
+        // if (time.hour === 0 && time.minute === 0 && time.second === 0){
+		// 	if (this.state.quoteIndex < (this.state.allQuotes).length){
+		// 		this.setState({
+		// 			quoteIndex: (this.state.quoteIndex + 1),
+		// 			time: {
+		// 				hour: 0, 
+		// 				minute: 1, 
+		// 				second: 0
+		// 			}
+		// 		}, function(){
+		// 			this.setState({
+		// 				quoteOfTheDay: this.state.allQuotes[this.state.quoteIndex]
+		// 			});
+		// 		}.bind(this));
+		// 	}
+		// } 
     }
 
     displayTodayQuote() {

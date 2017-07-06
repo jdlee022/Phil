@@ -7,11 +7,20 @@ export default class Discuss extends Component {
 
 	render() {
 		return (
-			<div>
-				<div className="" >
-					<Link to="/addQuote">Add New Quote </Link>
-					<Link to="/game">Play</Link>
+			<div className="">
+				<div className="row">
+					<div className="col-xs-4" id="add-quote-container">
+						<Link to="/addQuote"><i className="glyphicon glyphicon-plus-sign"></i>Add Quote</Link>
+						<div className="row">
+							<div className="back-to-game-container">
+								<Link to="/game"><i className="glyphicon glyphicon-backward"></i>Back To Game</Link>
+							</div>
+						</div>
+					</div>
+					<div className="col-xs-8 empty">
+					</div>
 				</div>
+
 				<div className="">
 					{this.props.children}
 				</div>

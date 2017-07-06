@@ -79,15 +79,15 @@ export default class Control extends Component {
 		return (
 			<div className="container-fluid control-div">
 				<div className="row ">
-					<div className="col-sm-4">
-						<h3>Your Current High Score: {this.state.currHighScore}</h3>
+					<div className="col-sm-4 game-top-controls">
+						<h3>High Score: {this.state.currHighScore}</h3>
 						{this.loginInfo()}
 					</div>
 
-					<div className="col-sm-4 control-inside" >
+					<div className="col-sm-4 control-inside game-top-controls" >
 						<div>	
 							<h3>Type of Questions:</h3>
-							<select onChange={this.handleTypeSelect} name="gametype" id="">
+							<select className="selectpicker" onChange={this.handleTypeSelect} name="gametype" id="">
 								<option defaultValue value="mixed">Mixed (All)</option>
 								<option value="whichperiodisthisfrom">Which period is this from?</option>
 								<option value="whosaysthis">Who says this?</option>
@@ -98,8 +98,7 @@ export default class Control extends Component {
 						<button onClick={this.handlingReset} type="button" className="reset btn btn-md"> <span className="glyphicon glyphicon-refresh"></span></button>
 					</div>
 						
-
-					<div className="col-sm-4">
+					<div className="col-sm-4 game-top-controls">
 						<h3>Score: {this.state.score}</h3>
 					</div>	
 				</div>

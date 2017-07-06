@@ -1,5 +1,3 @@
-
-
 /* talk bubble contents */
 
 .talktext {
@@ -7,13 +5,16 @@
 	text-align: left;
 	line-height: 1.5em;
 	color: white;
+	font-size: 1vw;
 }
 
 .talktext p {
 	/* remove webkit p margins */
 	-webkit-margin-before: 0em;
 	-webkit-margin-after: 0em;
+	margin: 3%;
 }
+
 
 /* CSS talk bubble */
 
@@ -21,8 +22,8 @@
 	margin: 40px;
 	display: inline-block;
 	position: relative;
-	width: 500px;
-	height: 175px;
+	width: 23vw;
+	height: 20vh;
 	background-color: black;
 }
 
@@ -41,14 +42,13 @@
 	position: absolute;
 	width: 0;
 	height: 0;
-	left: 280px;
+	left: 70%;
 	right: auto;
 	top: auto;
 	bottom: -40px;
 	border: 20px solid;
 	border-color: #666 transparent transparent #666;
 }
-
 
 .feedback {
 	color: white
@@ -59,7 +59,6 @@
 	margin: 0;
 	overflow: hidden;
 }
-
 
 .input-container {
 	background: url(https://thumbs.dreamstime.com/x/seamless-sandstone-background-3313450.jpg) no-repeat;
@@ -83,10 +82,79 @@
 	/*full width - grey on the side - 2*10px padding*/
 }
 
+#game-title {
+	color: white;
+}
+
+#game-score {
+	color: white;
+}
+
+.glyphicon-plus-sign,
+.glyphicon-backward {
+	font-size: 100%;
+}
+
+.glyphicon-plus-sign {
+	margin-right: 2%;
+}
+
+.glyphicon-backward {
+	margin-right: 5%;
+}
+
+.back-to-game-container {
+	position: absolute;
+	right: 20vw;
+	width: 140px;
+}
+
+.glyphicon-play,
+.glyphicon-refresh {
+	font-size: 160%;
+}
+
+.start,
+.reset {
+	margin-top: 5px;
+	border: rgb(150, 150, 150) 1px solid;
+}
+
+.start {
+	margin-right: 10px;
+}
+
+.reset {
+	margin-left: 10px;
+}
+
+#game-options {
+	color: black;
+}
+
+#add-quote-container {
+	float: right;
+	right: -5vw;
+	font-size: 110%;
+	position: absolute;
+}
+
+.selectpicker {
+	clear: all;
+	color: black;
+	border-radius: 4px;
+}
+
+.game-top-controls {
+	clear: all;
+	text-align: center;
+	color: white;
+}
+
 
 /** Control js */
 
-button { 
+button {
 	border-radius: 10px;
 	color: white;
 	background-color: black;
@@ -94,26 +162,37 @@ button {
 	font-size: 24px;
 }
 
-div.clock{
-	width: 20vw;
-	height: 33.3vh;
+div.clock {
+	width: 22vw;
+	height: 22.3vh;
 }
 
-div.story-imgs{
+div.story-imgs {
 	width: 100vw;
 }
 
-.sphinx { 
+.sphinx {
+	left: 4vw;
+	bottom: 5vh;
 	height: 40vh;
 	width: 20vw;
 	display: inline-block;
 }
 
+.laser-line {
+	bottom: 16vh;
+	left: 8vw;
+}
+
 .oedipus {
+	float: right;
+	top: -6vh;
+	right: 23vw;
 	height: 40vh;
 	width: 20vw;
-	display: inline-block;
+	/*display: inline-block;*/
 }
+
 
 /*.answerbox {
 	height: 15vh;
@@ -126,10 +205,10 @@ div.col-lg-4 {
 }
 
 
-.control-div {
+/*.control-div {
 	width: 100vw;
 	height: 20vh;
-}
+}*/
 
 .stage-div {
 	width: 100vw;
@@ -137,7 +216,10 @@ div.col-lg-4 {
 }
 
 
+.correct{
+	color: green;
+}
 
-.row {
-
+.incorrect {
+	color: red;
 }

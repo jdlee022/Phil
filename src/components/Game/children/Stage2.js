@@ -19,7 +19,7 @@ export default class Play extends Component {
 			playing: false,
 			questionBank: [],
 			currentQuestion: {
-				question: "Sphinx: Hello!"
+				hint: "Sphinx: Hello!"
 			},
 			currentIndex: 0, 
 			matched: "",
@@ -51,7 +51,7 @@ export default class Play extends Component {
 		this.handleAPI();
 		this.setState({
 			currentQuestion: {
-				question: "Sphinx: I am the protector of Thebes. You can help Oedipus get back to his journey by answering my questions correctly. Click 'Start' to play."
+				hint: "Sphinx: I am the protector of Thebes. You can help Oedipus get back to his journey by answering my questions correctly. Click 'Start' to play."
 			}
 		});
 			
@@ -85,27 +85,27 @@ export default class Play extends Component {
 			if (this.state.currentIndex === 0) {
 				this.setState({
 					currentQuestion: {
-						question: "Collecting questions..."
+						hint: "Collecting questions..."
 					}
 				});
 				setTimeout(function(){
 					this.setState({
 						currentQuestion: {
-							question: "Start in 3..."
+							hint: "Start in 3..."
 						}
 					});
 				}.bind(this), 1000);
 				setTimeout(function () {
 					this.setState({
 						currentQuestion: {
-							question: "2..."
+							hint: "2..."
 						}
 					});
 				}.bind(this), 2000);
 				setTimeout(function () {
 					this.setState({
 						currentQuestion: {
-							question: "1..."
+							hint: "1..."
 						}
 					});
 				}.bind(this), 3000);
@@ -119,9 +119,9 @@ export default class Play extends Component {
 		} else if (this.state.playing === false) {
 			this.setState({
 				currentQuestion: {
-					question: "Click Start to play.",
-					life: 5
+					hint: "Click Start to play.",
 				}, 
+				life: 5,
 				currentIndex: 0
 			});
 		} else if (this.state.playing === 'reset') {
@@ -132,7 +132,7 @@ export default class Play extends Component {
 	setupGameType() {
 		this.setState({
 			currentQuestion: {
-				question: "Click Start to play.",
+				hint: "Click Start to play.",
 				answer: ""
 			},
 			playing: false,
@@ -196,7 +196,7 @@ export default class Play extends Component {
 		if (this.state.currentQuestion.answer === undefined){
 			this.setState({
 				currentQuestion: {
-					question: "Please start the game before submitting an answer!"
+					hint: "Please start the game before submitting an answer!"
 				}
 			});
 			return;
@@ -255,7 +255,7 @@ export default class Play extends Component {
 								this.endGame();
 							});	
 						}
-					}.bind(this), 1000); 
+					}.bind(this), 1500); 
 				});
 			} 
 	}
@@ -264,8 +264,8 @@ export default class Play extends Component {
 		this.props.comparingScores();
 		this.setState({
 			currentQuestion: {
-				question: "Gameover. /n You can Start another game at anytime.",
-				author: '', 
+				hint: "Gameover. /n You can Start another game at anytime.",
+				answer: '', 
 				gametype: ""
 			},
 			matched: "",
@@ -284,7 +284,7 @@ export default class Play extends Component {
 		this.setState({
 			playing: 'reset',
 			currentQuestion: {
-				question: "Resetting Game...",
+				hint: "Resetting Game...",
 				answer: "",
 				gametype: ""
 			},
@@ -301,7 +301,7 @@ export default class Play extends Component {
 			setTimeout(function() {
 				this.setState({
 					currentQuestion: {
-						question: "Click Start to play."
+						hint: "Click Start to play."
 					}
 				});	
 			}.bind(this), 1000);
@@ -328,9 +328,18 @@ export default class Play extends Component {
 	correctAnswerDisplay(){
 		if (this.state.matched === "false"){
 			return (
-				<h3>Correct Answer: {this.state.currentQuestion.answer}</h3>
+				<div>
+					<h4 class="incorrect">Incorrect!</h4>
+					<h4>Correct Answer: {this.state.currentQuestion.answer}</h4>
+				</div>	
 			)
-		} else return;
+		} else if (this.state.matched === "false"){
+			return (
+				<div>
+					<h4 class="correct">Correct!</h4>
+				</div>
+			)
+		};
 	}
 	
 	timerClock(){
@@ -390,15 +399,15 @@ export default class Play extends Component {
 				<div className="row">
 					<div className="col-md-4 talk-bubble tri-right border round btm-left-in">
 						<div className="talktext">
-							<p>{this.state.currentQuestion.question}</p>
+							<p>{this.state.currentQuestion.hint}</p>
 						</div>
 					</div>
 					<div className="col-md-4 clock">
 						&nbsp;
 						{this.timerClock()}
-						
 					</div>
-					<div className="col-md-4 offset-md-4 ">
+
+					<div className="col-md-4 offset-md-4 " id="game-score"s>
 						<h3>Oedipus: {this.state.life}</h3>
 					</div>
 				</div>
@@ -411,10 +420,10 @@ export default class Play extends Component {
 						<br /> <br /> <br /> <br />
 						{this.laser()}
 
-						<div class="answerbox">
+						<div className="answerbox">
 							{this.correctAnswerDisplay()}
 							<br /> <br /> 
-							<label htmlFor="">{this.state.currentQuestion.gametype}</label><br />
+							<label htmlFor="">{this.state.currentQuestion.question}</label><br />
 							Answer: 
 							<div className="input-container">
 								<input type="text" onInput={this.handleInput} value={this.state.answer} />

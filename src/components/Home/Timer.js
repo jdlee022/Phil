@@ -2,19 +2,34 @@ import React, {Component} from 'react'
 import moment from 'moment'
 
 export default class Timer extends Component {
-	constructor(){
-		super();
+	constructor(props){
+		super(props);
 		this.state = {
-			hour: 4,
-			minute: 20, 
-			second: 0
+			time: props.time,
+			now: 0
+		}
+
+		this.start = this.start.bind(this);
+		this.displayHour = this.displayHour.bind(this);
+		this.displayMin = this.displayMin.bind(this);
+		this.displaySec = this.displaySec.bind(this);
+	}
+	
+	componentReceiveProps(nextProps){
+		console.log("nextProps", nextProps);
+		if (this.state.now !== nextProps.now){
+			this.setState({
+				now: nextProps.now
+			});
+			this.start();
+			this.props.checkTime(this.state.time);
 		}
 	}
 
 	start(){
-		let thisSec = this.state.second;
-		let thisMin = this.state.minute;
-		let thisHr  = this.state.hour;
+		let thisSec = this.state.time.hour;
+		let thisMin = this.state.time.minute;
+		let thisHr  = this.state.time.hour;
 
 		if (thisSec === 0 ){
 			if (thisMin !== 0){
@@ -46,5 +61,36 @@ export default class Timer extends Component {
 				second: thisSec
 			});
 		}
+	}
+
+	displayHour(){
+		var hour = (this.state.time.hour);
+		hour = JSON.stringify(hour);
+		console.log(hour);
+		while (hour.length < 2) {hour = "0" + hour}
+		return hour;
+	}
+
+	displayMin() {
+		var minute = (this.state.time.minute);
+		minute = JSON.stringify(minute);
+		console.log(minute);
+		while (minute.length < 2) { minute = "0" + minute }
+		return minute;
+	}
+	displaySec() {
+		var second = (this.state.time.second);
+		second = JSON.stringify(second);
+		console.log(second);
+		while (second.length < 2) { second = "0" + second }
+		return second;
+	}
+
+	render(){
+		return (
+			<div>
+				<h3>{this.displayHour()} : {this.displayMin()} : {this.displaySec()}</h3>
+			</div>
+		)
 	}
 }
