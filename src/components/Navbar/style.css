@@ -25,29 +25,25 @@ body{
 
 a.link{
     color: white;
-    text-decoration: none;
+    text-decoration-line: none;
 }
 a.link:hover {
     color: #ffd863;
-    text-decoration: none;
+    text-decoration-line: none;
     transition-duration: 1s;
 }
 
 a.link:visited {
     color: #ffffff;
-    text-decoration: none;
-}
-
-a.link:visited {
-    text-decoration: none;
+    text-decoration-line: none;
 }
 
 a.link:active:visited {
-    text-decoration: none;
+    text-decoration-line: none;
 }
 
 a.link:visited:hover {
     color: #ffd863;
-    text-decoration: none;
+    text-decoration-line: none;
     transition-duration: 1s;
 }

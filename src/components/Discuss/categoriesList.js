@@ -35,7 +35,7 @@ export default class CategoriesList extends Component {
             <div className="categories-list">
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3 text-center">
-                        <h2 className="page-header">Categories</h2>
+                        <h2 className="page-header">categories</h2>
                     </div>
                 </div>
                 <div className="row">

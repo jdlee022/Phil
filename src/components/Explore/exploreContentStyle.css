@@ -24,9 +24,7 @@ li {
     list-style-type: none;
     line-height: 25px;
 }
-li a {
-    color: #337ab7 !important;
-}
+
 .content-summary {
     text-align: center;
     margin: 20px 0 20px 0;
