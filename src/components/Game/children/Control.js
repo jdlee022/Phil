@@ -67,9 +67,9 @@ export default class Control extends Component {
 
 	loginInfo(){
 		var thisUser = localStorage.getItem('userId');
-		if (thisUser === null || thisUser === undefined){
+		if (thisUser === null || thisUser === undefined || thisUser === "null"){
 			return (
-				<p>(Login <Link to="/login"> here</Link> to save your high score)</p>
+				<p>(Login to save your high score)</p>
 			)
 		}
 		else return;

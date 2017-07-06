@@ -91,7 +91,7 @@
 }
 
 .glyphicon-plus-sign,
-.glyphicon-backward {
+.glyphicon-backward, .glyphicon-log-in{
 	font-size: 100%;
 }
 
@@ -103,10 +103,33 @@
 	margin-right: 5%;
 }
 
+.glyphicon-log-in {
+	margin-top: 15%;
+	margin-right: 20%;
+}
+
+.log-in-container{
+	position: absolute;
+	right: 25vw;
+	height: 20px;
+	width: 140px;
+}
+
 .back-to-game-container {
 	position: absolute;
 	right: 20vw;
 	width: 140px;
+}
+ 
+.add-quote-container{
+	
+}
+
+#add-quote-container {
+	float: right;
+	right: -5vw;
+	font-size: 110%;
+	position: absolute;
 }
 
 .glyphicon-play,
@@ -132,12 +155,7 @@
 	color: black;
 }
 
-#add-quote-container {
-	float: right;
-	right: -5vw;
-	font-size: 110%;
-	position: absolute;
-}
+
 
 .selectpicker {
 	clear: all;
