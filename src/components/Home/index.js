@@ -14,18 +14,8 @@ export default class Home extends Component {
             quoteOfTheDay: {},
             quoteIndex: 0,
             allQuotes: [],
-<<<<<<< HEAD
 			time: (20 * 1000 + 4 * 60 * 1000 + 0 * 60 * 60 * 1000)
 
-=======
-            now: moment().unix(),
-            time: {
-                hour: 0,
-                minute: 1,
-                second: 0
-            },
-            // countdowntime: (4 * 60 * 60 * 1000 + 20 * 60 * 1000
->>>>>>> 414acd874d7f79cb74269b1226ca76b54d4cab97
         }
 
         this.getDailyQuotes = this.getDailyQuotes.bind(this);
@@ -115,11 +105,7 @@ export default class Home extends Component {
                     <h4>Studied: {this.state.quoteOfTheDay.associatedIdeas}</h4>
                 </div>
             )
-<<<<<<< HEAD
         } 
-=======
-        }
->>>>>>> 414acd874d7f79cb74269b1226ca76b54d4cab97
         else {
             return (
                 <div className="quoteOfTheDay">
