@@ -16,10 +16,10 @@ export default class Home extends Component {
             allQuotes: [],
             now: moment().unix(),
             time: {
-				hour: 0, 
-				minute: 1,
-				second: 0
-			},
+                hour: 0,
+                minute: 1,
+                second: 0
+            },
             // countdowntime: (4 * 60 * 60 * 1000 + 20 * 60 * 1000
         }
 
@@ -48,23 +48,23 @@ export default class Home extends Component {
     }
 
     checkTime(time) {
-		console.log(time);
+        console.log(time);
         // if (time.hour === 0 && time.minute === 0 && time.second === 0){
-		// 	if (this.state.quoteIndex < (this.state.allQuotes).length){
-		// 		this.setState({
-		// 			quoteIndex: (this.state.quoteIndex + 1),
-		// 			time: {
-		// 				hour: 0, 
-		// 				minute: 1, 
-		// 				second: 0
-		// 			}
-		// 		}, function(){
-		// 			this.setState({
-		// 				quoteOfTheDay: this.state.allQuotes[this.state.quoteIndex]
-		// 			});
-		// 		}.bind(this));
-		// 	}
-		// } 
+        // 	if (this.state.quoteIndex < (this.state.allQuotes).length){
+        // 		this.setState({
+        // 			quoteIndex: (this.state.quoteIndex + 1),
+        // 			time: {
+        // 				hour: 0, 
+        // 				minute: 1, 
+        // 				second: 0
+        // 			}
+        // 		}, function(){
+        // 			this.setState({
+        // 				quoteOfTheDay: this.state.allQuotes[this.state.quoteIndex]
+        // 			});
+        // 		}.bind(this));
+        // 	}
+        // } 
     }
 
     displayTodayQuote() {
@@ -74,7 +74,7 @@ export default class Home extends Component {
                 <div className="quoteOfTheDay">
                     <h2>{this.state.quoteOfTheDay.quote}</h2>
                     <h3>- {this.state.quoteOfTheDay.philosopher} ({this.state.quoteOfTheDay.era})
-					 
+
 					</h3>
                     <h4>Studied: {this.state.quoteOfTheDay.associatedIdeas}</h4>
                 </div>
@@ -88,23 +88,23 @@ export default class Home extends Component {
 					</h3>
                 </div>
             )
-        } 
+        }
         if (this.state.quoteOfTheDay.associatedIdeas) {
             return (
                 <div className="quoteOfTheDay">
                     <h2>{this.state.quoteOfTheDay.quote}</h2>
                     <h3>- {this.state.quoteOfTheDay.philosopher}
-					</h3>
+                    </h3>
                     <h4>Studied: {this.state.quoteOfTheDay.associatedIdeas}</h4>
                 </div>
             )
-        } 
-        else{
+        }
+        else {
             return (
                 <div className="quoteOfTheDay">
                     <h2>{this.state.quoteOfTheDay.quote}</h2>
                     <h3>- {this.state.quoteOfTheDay.philosopher}
-					</h3>
+                    </h3>
                 </div>
             )
         }
@@ -114,7 +114,9 @@ export default class Home extends Component {
         return (
             <div>
                 <div className="home-container">
+                    <h3 className="tagline">Welcome to phil, a hub for people who enjoy discussing and learning about philosophy.</h3>
                     <div className="quote-container">
+                        <h4>Quote of the day:</h4>
                         {this.displayTodayQuote()}
                     </div>
                 </div>

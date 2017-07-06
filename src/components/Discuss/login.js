@@ -78,11 +78,11 @@ export default class UserLogin extends Component {
                         {this.displayLoginError()}
                         <div className="form-group">
                             <label>Username</label>
-                            <input type="text" className="form-control" name="username" value={this.state.username} onChange={this.handleInputChange} />
+                            <input type="text" className="form-control form-input" name="username" value={this.state.username} onChange={this.handleInputChange} />
                         </div>
                         <div className="form-group">
                             <label>Password</label>
-                            <input type="password" className="form-control" name="password" value={this.state.password} onChange={this.handleInputChange} />
+                            <input type="password" className="form-control form-input" name="password" value={this.state.password} onChange={this.handleInputChange} />
                         </div>
                         <button type="submit" className="btn -default">Submit</button>
                     </form>
