@@ -14,9 +14,8 @@ export default class Home extends Component {
             quoteOfTheDay: {},
             quoteIndex: 0,
             allQuotes: [],
-            now: moment().unix(),
 			time: (20 * 1000 + 4 * 60 * 1000 + 0 * 60 * 60 * 1000)
-            // countdowntime: (4 * 60 * 60 * 1000 + 20 * 60 * 1000
+
         }
 
         this.getDailyQuotes = this.getDailyQuotes.bind(this);
@@ -46,9 +45,13 @@ export default class Home extends Component {
 
     checkTime(time) {
 		console.log(time);
-		if (time === this.state.time){
-			// setTimeout(this.changeQuote, this.state.time);
-		} else if (time == 0 || time == -0 ){
+		var countZero = 0;
+		if (time == 0  || time == -0){
+			countZero++;
+		}
+		if (countZero == 2 ){
+			countZero = 0;
+		} else if ( (time == 0 || time == -0) && countZero == 1){
 			this.changeQuote();
 		}
     }
