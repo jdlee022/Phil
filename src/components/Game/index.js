@@ -1,31 +1,30 @@
 import React, { Component } from 'react';
-import Navbar from '../Navbar/index';
-
-import Play from './children/Play';
-import Control from './children/Control';
+import { Link } from 'react-router';
 
 import './style.css';
 
-export default class Game extends Component {
+export default class Discuss extends Component {
 
-    render() {
-        return (
-            <div className="">
-                <Navbar />
-
-                <div className="col-md-6 col-md-offset-3 text-center">
-                    <h1>Game</h1>
-
-					
-                </div>
-
-				<div className="container">
-					<Control />
-					<br/>
-					<Play />
+	render() {
+		return (
+			<div className="">
+				<div className="row">
+					<div className="col-xs-4" id="add-quote-container">
+						<Link to="/addQuote"><i className="glyphicon glyphicon-plus-sign"></i>Add Quote</Link>
+						<div className="row">
+							<div className="back-to-game-container">
+								<Link to="/game"><i className="glyphicon glyphicon-backward"></i>Back To Game</Link>
+							</div>
+						</div>
+					</div>
+					<div className="col-xs-8 empty">
+					</div>
 				</div>
-				
-            </div>
-        );
-    }
+
+				<div className="">
+					{this.props.children}
+				</div>
+			</div>
+		);
+	}
 }

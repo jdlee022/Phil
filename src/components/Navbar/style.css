@@ -1,3 +1,5 @@
+/*GENERAL STYLING*/
+
 body{
     background: black;
 }
@@ -7,20 +9,41 @@ body{
     height: 80px;
 }
 
-
-
 .nav{
     background: black;
     color: white;
     padding: 5px;
-    height: 80px;
+    height: 10%;
   line-height: 80px;
   text-align: center;
+  font-size: 2vw;
+  font-weight: 700;
+  margin-top:10px;
 }
 
-.link{
+/*LINK STYLING*/
+
+a.link{
     color: white;
+    text-decoration-line: none;
 }
-.link:hover {
-    color: grey;
+a.link:hover {
+    color: #ffd863;
+    text-decoration-line: none;
+    transition-duration: 1s;
+}
+
+a.link:visited {
+    color: #ffffff;
+    text-decoration-line: none;
+}
+
+a.link:active:visited {
+    text-decoration-line: none;
+}
+
+a.link:visited:hover {
+    color: #ffd863;
+    text-decoration-line: none;
+    transition-duration: 1s;
 }

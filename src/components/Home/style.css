@@ -1,0 +1,32 @@
+div.home-container {
+    height: 100%;
+    width: 100%;
+    margin:auto;
+    margin-top: 25px;
+    text-align: center;
+}
+
+div.quote-container {
+    color: white;
+    font-size: 700%;
+    font-weight: 700;
+     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   width: 80%;
+    line-height: 20px;
+    letter-spacing: 2px;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+div.App {
+    height: 100vh;
+}
+
+.tagline{
+    color: white;
+}
+
+
