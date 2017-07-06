@@ -397,7 +397,7 @@ export default class Play extends Component {
 						{this.timerClock()}
 					</div>
 
-					<div className="col-md-4 offset-md-4 " id="game-score"s>
+					<div className="col-md-4 offset-md-4 " id="game-score">
 						<h3>Oedipus: {this.state.life}</h3>
 					</div>
 				</div>

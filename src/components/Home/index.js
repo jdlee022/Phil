@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import moment from 'moment'
+// import moment from 'moment'
 import Timer from "./Timer";
 
 import './style.css'
-import teaser from './teaser.png'
-import image1 from './images/om.gif'
+// import teaser from './teaser.png'
+// import image1 from './images/om.gif'
 import dailyQuoteAPI from "../../utils/dailyQuoteAPI"
 // import Timer from './Timer.js'
 export default class Home extends Component {
@@ -14,7 +14,7 @@ export default class Home extends Component {
             quoteOfTheDay: {},
             quoteIndex: 0,
             allQuotes: [],
-			time: (20 * 1000 + 4 * 60 * 1000 + 0 * 60 * 60 * 1000)
+			time: (20 * 1000 + 0 * 60 * 1000 + 0 * 60 * 60 * 1000)
 
         }
 
@@ -46,12 +46,12 @@ export default class Home extends Component {
     checkTime(time) {
 		console.log(time);
 		var countZero = 0;
-		if (time == 0  || time == -0){
+		if (time === 0  || time === -0){
 			countZero++;
 		}
-		if (countZero == 2 ){
+		if (countZero === 2 ){
 			countZero = 0;
-		} else if ( (time == 0 || time == -0) && countZero == 1){
+		} else if ( (time === 0 || time === -0) && countZero === 1){
 			this.changeQuote();
 		}
     }
@@ -66,7 +66,7 @@ export default class Home extends Component {
 					quoteOfTheDay: this.state.allQuotes[this.state.quoteIndex]
 				});
 			}.bind(this));
-		} else if (this.state.quoteIndex == ((this.state.allQuotes).length - 1)) {
+		} else if (this.state.quoteIndex === ((this.state.allQuotes).length - 1)) {
 			this.setState({
 				quoteIndex: 0, 
 				quoteOfTheDay: this.state.allQuotes[0]

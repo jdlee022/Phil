@@ -32,7 +32,7 @@ export default class Game extends Component {
 		let thisUserId = localStorage.getItem("userId");
 		console.log(typeof(JSON.parse(thisUserId)));
 		console.log("thisUserId " + typeof(thisUserId) + " " + thisUserId );
-		if ((thisUserId == "null") || (thisUserId == null) ){
+		if ((thisUserId === "null") || (thisUserId === null) ){
 			console.log("You need to sign in");
 		} else if ((thisUserId !== "null") || (thisUserId !== "") || (JSON.stringify(thisUserId) !== "null")){
 			gameAPI.getUserHighScore(thisUserId).then(function(thisUser) {
@@ -53,7 +53,7 @@ export default class Game extends Component {
 			}, function(){
 				gameAPI.updateUserHighScore(thisUserId, this.state.highScore).then(function(updatedScore){
 					console.log("updatedScore:", updatedScore);
-				}.bind(this));
+				});
 			}.bind(this));
 		} 
 	}
