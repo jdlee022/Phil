@@ -25,9 +25,24 @@ export default class CategoriesList extends Component {
     }
 
     render() {
+        //Always sort categories alphabetically before rendering
+        var sortedCategories = this.state.categories.sort(function (itemA, itemB) {
+            var textA = itemA.category.toUpperCase();
+            var textB = itemB.category.toUpperCase();
+            return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+        });
+
+        //Move the General category to the front of the array
+        for (var i in sortedCategories) {
+            if (sortedCategories[i].category === "General") {
+                var element = sortedCategories[i];
+                sortedCategories.splice(i, 1);
+                sortedCategories.splice(0, 0, element);
+            }
+        }
         // Create an array of CategoryChild components for every item in categories
         // and pass each child its category data
-        const categoryItems = this.state.categories.map((category, i) =>
+        const categoryItems = sortedCategories.map((category, i) =>
             <CategoriesListChild data={category} key={i} />
         );
 

@@ -121,7 +121,7 @@ export default class Home extends Component {
         return (
             <div>
                 <div className="home-container">
-                    <h3 className="tagline">Welcome to phil, a hub for people who enjoy discussing and learning about philosophy.</h3>
+                    <h3 className="tagline">Welcome to <span style={{color: "#ffd65f", fontStyle: 'italic'}}>phil</span>, a hub for people who enjoy discussing and learning about philosophy.</h3>
                     <div className="quote-container">
                         <h4>Quote of the day:</h4>
                         {this.displayTodayQuote()}
