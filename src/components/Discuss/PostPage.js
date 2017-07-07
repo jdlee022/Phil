@@ -94,7 +94,7 @@ export default class PostPage extends Component {
         if (this.state.currentlyCommenting) {
             return <div style={{ marginBottom: '30px' }}>
                 <NewComment postId={this.state._id} userId={this.state.userId} loginStatus={this.props.loginStatus} updateCommentingStatus={this.updateCommentingStatus} />
-                <a style={{ cursor: 'pointer' }} onClick={() => this.setState({ currentlyCommenting: false })}>Cancel</a>
+                <a className="cancel-it" onClick={() => this.setState({ currentlyCommenting: false })}>Cancel</a>
             </div>
         }
         else {
