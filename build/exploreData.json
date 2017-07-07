@@ -1,0 +1,156 @@
+{
+	"data": [
+		{
+			"Title": "Pre-Socratic",
+			"Summary": "The Pre-Socratic philosophers rejected traditional mythological explanations for the phenomena they saw around them in favor of more rational explanations. They started to ask questions like where did everything come from, and why is there such variety, and how can nature be described mathematically?",
+			"Philosophers": {
+				"one": "Thales of Miletos",
+				"two": "Anaximander",
+				"three": "Anaximenes",
+				"four": "pythagoras",
+				"five": "Democritus"
+			},
+			"Details": {
+				"p1": "Presocratic philosophers are the Western thinkers preceding Socrates (c. 469-c. 399 B.C.E.) but including some thinkers who were roughly contemporary with Socrates, such as Protagoras (c. 490-c. 420 B.C.E.). The application of the term “philosophy” to the Presocratics is somewhat anachronistic, but is certainly different from how many people currently think of philosophy. The Presocratics were interested in a wide variety of topics, especially in what we now think of as natural science rather than philosophy. These early thinkers often sought naturalistic explanations and causes for physical phenomena. For example, the earliest group of Presocratics, the Milesians, each proposed some material element ¾ water, air, the “boundless,” as the basic stuff either forming the foundation of, or constituting, everything in the cosmos.",
+				"p2": "Such an emphasis on physical explanations marked a break with more traditional ways of thinking that indicated the gods as primary causes. The Presocratics, in most cases, did not entirely abandon theistic or religious notions, but they characteristically posed challenges to traditional ways of thinking. Xenophanes of Colophon, for example, thought that most concepts of the gods were superficial, since they often amount to mere anthropomorphizing. Heraclitus understood sets of contraries, such as day-night, winter-summer, and war-peace to be gods (or God), while Protagoras claimed not to be able to know whether or not the gods exist. The foundation of Presocratic thought is the preference and esteem given to rational thought and argumentation over mythologizing. This movement towards rationality and argumentation would pave the way for the course Western thought."
+			},
+			"Dates": "460 - 625 B.C."
+		},
+		{
+			"Title": "Socratic",
+			"Summary": "Socrates developed a system of critical reasoning in order to work out how to live properly and to tell the difference between right and wrong. He and his followers, Plato and Aristotle maintained an unwavering commitment to the truth, and between them they organized and systematized most of the problems of philosophy.",
+			"Philosophers": {
+				"one": "Socrates",
+				"two": "Plato",
+				"three": "Aristotle",
+				"four": "Diogenes of Sinope"
+			},
+			"Details": {
+				"p1": "Socratic or History of the Philosophy of. The phenomena of nature and the system of the world had been the objects of philosophic meditation until Socrates. Philosophers had neglected the study of morality. They believed that its principles were intimately known to us and that it was useless to discuss the distinction between good and evil with a person whose conscience remained silent.",
+				"p2": "All their wisdom could be reduced to a few maxims that were inspired by daily experience and recited on occasions. Only Archelaus had broached the question of morals in his school, but his method was unsound and his lessons unsuccessful, Socrates, his disciple, born with excellent judgment, a noble soul, and a mind interested in important things with universal and primary usefulness, saw that it was necessary to try to make men good before we begin to make them learned; that while people had their eyes fastened on the stars, they were unaware of what happened at their feet; that by dwelling in heaven they became strangers in their own homes; that understanding was perhaps improving, but people still surrendered their will power; that time was lost in frivolous speculation; that men grew old without questioning themselves about the true happiness of life. And he brought back to earth the study of philosophy that had been led astray to the areas around the sun and the stars. He spoke about the soul and the passions, about vices and virtues, moral beauty and ugliness, society and other subjects directly related to our actions and our felicity. He displayed exceptional liberty in his way of thinking. There was not any sort of self-interest or intense fear which held the truth in his mouth. He listened only to experience, reflections, and the laws of honest men. And he deserved, among all those who had preceded him, the title of philosopher par excellence, a title that taken away by those who followed him. He removed our ancestors from their dusty eclipse and made them citizens and statesmen. This project could not be executed without danger among the brigands who were interested in perpetuating vice, ignorance, and prejudice. knew it, but nothing could intimidate a man who had placed his hopes beyond this world and for whom life was only an inconvenient place that held him in a prison far from his true native land."
+			},
+			"Dates": "322 - 464 B.C."
+		},
+		{
+			"Title": "Hellenistic",
+			"Summary": "The ethical thinkers of Hellenistic focussed upon the life of the individual, independently of the society as a whole, describing in detail the kinds of character and action that might enable a person to live well despite the prevailing political realities. In general, we might say, such philosophers tried to show how we should live when circumstances beyond our control seem to render pointless everything we try to accomplish.",
+			"Philosophers": {
+				"one": "Pyrrho",
+				"two": "Epicurus",
+				"three": "Zeno of Citium",
+				"four": "Philo of Alexandria",
+				"five": "Plotinus"
+			},
+			"Details": {
+				"p1": "Hellenistic philosophy is a name for a variety of philosophical options which flourished in the period from the life of Alexander the Great (356-323 BCE) to the late 2nd century CE. Even before Alexander began his conquest of the known world in 336 BCE, Greek culture had spread through the Mediterranean region. Indeed, Alexander was Macedonian, a nationality related to but self-consciously distinct from the Greeks. He was himself a Hellenized person, not least thanks to his tutor, Aristotle. Alexander saw Hellenization as a desirable imperial policy, firstly because he believed Greek culture to be the best available and, secondly to build cohesion in his rapidly expanding dominion. To this end, he established a number of conquered cities as ‘Greek’ cities. These cities were intended as centers of colonial settlement and transformation into the image of Greek cultural and political order.",
+				"p2": "Note that they were images of the Greek model—not the thing itself, if we may recall a Platonic attitude. At Alexander’s death, colonization was far from settled. Economic and social divisions were immense. The Hellenistic culture of the empire did not capture the idealized former splendor of Greece. Hellenistic culture accentuated lowest common denominators among its many diverse citizens and subjects, in a bid to maintain some peace and facilitate day to day life. So, for instance, the educational ideals of Greek paideia were adopted but most Hellenized folk spoke only koine Greek, a simplified language (and the language of the New Testament)—if they spoke Greek at all. Political crisis was usual, creating an environment of insecurity for ordinary people, people whose parochial cultures were already under threat from the homogenizing influence of colonial rule. It was a culture that ran on patronage, on ‘who knew whom.’ Secret societies, professional clubs and mystery cults were popular means of creating communities where people shamed by their deep sense of dislocation and anonymity could receive a measure of honorable recognition.",
+				"p3": "Philosophy was one strategy for steadying oneself. When I say ‘philosophy,’ though, don’t think of highly refined systematic achievements linked to a Plato, or Aristotle. The schools of Plato and Aristotle had lost prestige as a result of their increasingly specialized pursuits, seemingly so detached from the everyday concerns that motivated Socrates and their own founders. Many people were impatient with speculation and relied more on what their senses could tell them. People required philosophies that were portable, easily learned, and plainly engaged with the fortunes and misfortunes of everyday life. Eclecticism and syncretism characterize Hellenistic culture as much as Greek domination.",
+				"p4": "Religion in the Hellenistic world, like philosophy, was a field of mix-and-match. For example, by the time of the birth of Jesus, Hellenization had already reshaped Jewish culture. Small groups like the zealots violently resisted colonization while the Herodian kings, ruling as clients of the emperor, clearly preferred Greek culture to the Jewish heritage. Most Jews lived life as participants in both cultures. Thus the Hellenistic world was the world of the first Christians. To understand this world—at least a few of its philosophical options—is a major step towards understanding the development of Christian thought. This is not to say that Christian thinkers were entirely determined in their thinking by Hellenistic philosophy. However, their expectations, problems and answers are profoundly shaped under the influence of Hellenistic philosophy."
+			},
+			"Dates": "300 B.C. - 270 A.D."
+		},
+		{
+			"Title": "Roman",
+			"Summary": "Romans regarded philosophical education as distinctly Greek, and instead focused their efforts on building schools of law and rhetoric. The single most important philosophy in Rome was Stoicism, which originated in Hellenistic Greece.",
+			"Philosophers": {
+				"one": "Cicero, Marcus Tullius",
+				"two": "Epictetus",
+				"three": "Marcus Aurelius",
+				"four": "St.Augustine of Hippo",
+				"five": "Boethius"
+			},
+			"Details": {
+				"p1": "The single most important philosophy in Rome was Stoicism, which originated in Hellenistic Greece. The contents of the philosophy were particularly amenable to the Roman world view, especially since the Stoic insistence on acceptance of all situations, including adverse ones, seemed to reproduce what the Romans considered their crowning achievement: virtus, or manliness, or toughness. The centerpiece of Stoic philosophy was the concept of the logos. The universe is ordered by God and this order is the logos , which means rational order or meaning of the universe.",
+				"p3": "Stoic ideas appear in the greatest work of Roman literature, Vergil's Aeneid , and later the philosophy was adopted by Seneca (c. 1-65 A.D.), Lucan (39-65; poet and associate of the Emperor Nero), Epictetus (c. 55-135; see passages from the Enchiridion ), and the Emperor Marcus Aurelius (born 121, Emperor 161-180; author of the Meditations ). Stoicism is perhaps the most significant philosophical school in the Roman Empire, and much of our contemporary views and popular mythologies about Romans are derived from Stoic principles."
+			},
+			"Dates": "300 - 525 A.D."
+		},
+		{
+			"Title": "Medieval",
+			"Summary": "The Medieval period of philosophy focused on the use of logic and analysis to discover truth, respect for ancient philosophers (especially Aristotle) and their deference to authority.",
+			"Philosophers": {
+				"one": "Avicenna",
+				"two": "Peter Abelard",
+				"three": "St. Thomas Aquinas",
+				"four": "William Ockham",
+				"five": "Roger Bacon"
+			},
+			"Details": {
+				"p1": "Medieval philosophy designates the philosophical speculation that occurred in western Europe during the Middle Ages—i.e., from the fall of the Roman Empire in the 4th and 5th centuries ad to the Renaissance of the 15th century. Philosophy of the medieval period was closely connected to Christian thought, particularly theology, and the chief philosophers of the period were churchmen. Philosophers who strayed from this close relation were chided by their superiors. Greek philosophy ceased to be creative after Plotinus in the 3rd century ad. A century later, Christian thinkers such as St. Ambrose (339–397), St. Victorinus (died c. 304), and St. Augustine (354–430) began to assimilate Neoplatonism into Christian doctrine in order to give a rational interpretation of Christian faith. Thus, medieval philosophy was born of the confluence of Greek (and to a lesser extent of Roman) philosophy and Christianity. Plotinus’s philosophy was already deeply religious, having come under the influence of Middle Eastern religions. Medieval philosophy continued to be characterized by this religious orientation. Its methods were at first those of Plotinus and later those of Aristotle. But it developed within faith as a means of throwing light on the truths and mysteries of faith. Thus, religion and philosophy fruitfully cooperated in the Middle Ages. Philosophy, as the handmaiden of theology, made possible a rational understanding of faith. Faith, for its part, inspired Christian thinkers to develop new philosophical ideas, some of which became part of the philosophical heritage of the West.",
+				"p2": "Toward the end of the Middle Ages, this beneficial interplay of faith and reason started to break down. Philosophy began to be cultivated for its own sake, apart from—and even in contradiction to—Christian religion. This divorce of reason from faith, made definitive in the 17th century by Francis Bacon (1561–1626) in England and René Descartes (1596–1650) in France, marked the birth of modern philosophy."
+			},
+			"Dates": "980 - 1350 AD"
+		},
+		{
+			"Title": "Renaissance",
+			"Summary": "the renaissance represents a movement away from Christianity and medieval Scholasticism and towards Humanism, with an increasing focus on the temporal and personal over merely seeing this world as a gateway to the Christian afterlife. A new sense of critical enquiry arose that looked back to the ancient Greeks but also set the stage for the birth of modern philosphy in the Age of Reason.",
+			"Philosophers": {
+				"one": "Desiderius Erasmus",
+				"two": "Niccolo Machiavelli",
+				"three": "Sir Thomas More",
+				"four": "Sir Francis Bacon"
+			},
+			"Details": {
+				"p1": "Medieval philosophy had culminated in the cumulative achievements of scholasticism, a grand system of thought developed by generations of patient scholars employing neoplatonic and Aristotelean philosophy in the service of traditional Christian theology. But by the end of the fifteenth century, confidence in the success of this enterprise had eroded, and many thinkers tried to make a fresh start by rejecting such extensive reliance on the authority of earlier scholars. Just as religious reformers challenged ecclesiastical authority and made individual believers responsible for their own relation to god, prominent Renaissance thinkers proposed an analogous elimination of all appeals to authority in education and science",
+				"p2": "Educational practice was revolutionized by the recovery of ancient documents, the rejection of institutional authority, and renewed emphasis on individual freedom. The humanists expressed an enormous confidence in the power of reason as a source of profound understanding of human nature and of our place in the natural order. Giovanni Pico della Mirandola's Oration, for example, held forth the possibilities for a comprehensive new order of knowledge relying on human understanding without reference to divine revelation. For some, like Desiderius Erasmus and Marsillio Ficino, this spirit found expression in a return to careful study of classical texts in their own right, without relying on centuries of scholastic commentary. But for more revolutionary thinkers as diverse as Giordano Bruno and Francisco Suárez, humanism offered an opportunity to incorporate modern developments along with classical elements in entirely new systems of metaphysical knowledge.",
+				"p3": "The rise of the new science also offered a significant change in the prospects for human knowledge of the natural world. Copernicus argued on theoretical grounds for a heliocentric view of the universe, for which Kepler provided a more secure mathematical interpretation. Galileo contributed not only an impressive series of direct observations of both celestial and terrestrial motion but also a serious effort to explain and defend the new methods. By abandoning explanation in terms of final causes, by emphasizing the importance of observation, and by trying to develop quantified accounts of all, renaissance scientists began to develop the foundations of a thoroughly empirical view of the world.",
+				"p4": "This emerging emphasis on empirical methods permanently transformed study of the natural world. Making extensive use of sensory observations made possible by the development of new instrumentation fostered an urge to seek quantification of every phenomenon. There were exceptions like Herbert of Cherbury, who hoped that the natural light of common notions imprinted innately in every human being would provide perfect certainty as a foundation for Christianity. But most of the moderns gladly embraced the methods, style, and content of the new science."
+			},
+			"Dates": "1400 - 1630 AD"
+		},
+		{
+			"Title": "Age of Reason",
+			"Summary": "The Age of Reason saw a continuation of the move away from theology and faith-based arguments, and marks the shaking off of medieval approaches to philosophy such as Scholasticism, in preference for more unified philosophical systems like Rationalism and British Empiricism. The advances in science, the growth of religious tolerance and the rise of philosophical liberalism also led to a revival in Political Philosophy in general.",
+			"Philosophers": {
+				"one": "Thomas Hobbes",
+				"two": "Rene Descartes",
+				"three": "Blaise Pascal",
+				"four": "John Locke",
+				"five": "Gottfried Wilhelm Leibniz"
+			},
+			"Details": {
+				"p1": "The Enlightenment (also known as the Age of Enlightenment or the Age of Reason; in French: le Siècle des Lumières, lit. 'the Century of Lights'; and in German: Aufklärung, 'Enlightenment') was an intellectual and philosophical movement which dominated the world of ideas in Europe during the 18th century, The Century of Philosophy. The Enlightenment included a range of ideas centered on reason as the primary source of authority and legitimacy, and came to advance ideals like liberty, progress, tolerance, fraternity, constitutional government, and separation of church and state. In France, the central doctrines of les Lumières were individual liberty and religious tolerance in opposition to an absolute monarchy and the fixed dogmas of the Roman Catholic Church. The Enlightenment was marked by an emphasis on the scientific method and reductionism along with increased questioning of religious orthodoxy.",
+				"p2": "Les philosophes (French for 'the philosophers') of the period widely circulated their ideas through meetings at scientific academies, Masonic lodges, literary salons, coffee houses, and printed books and pamphlets. The ideas of the Enlightenment undermined the authority of the monarchy and the Church, and paved the way for the political revolutions of the 18th and 19th centuries. A variety of 19th-century movements, including liberalism and neo-classicism, trace their intellectual heritage back to the Enlightenment.",
+				"p3": "The Age of Enlightenment was preceded by and closely associated with the scientific revolution. Earlier philosophers whose work influenced the Enlightenment included Francis Bacon, René Descartes, John Locke and Baruch Spinoza. The major figures of the Enlightenment included Cesare Beccaria, Voltaire, Denis Diderot, Jean-Jacques Rousseau, David Hume, Adam Smith, and Immanuel Kant. Some European rulers, including Catherine II of Russia, Joseph II of Austria and Frederick II of Prussia, tried to apply Enlightenment thought on religious and political tolerance, which became known as enlightened absolutism. Benjamin Franklin visited Europe repeatedly and contributed actively to the scientific and political debates there and brought the newest ideas back to Philadelphia. Thomas Jefferson closely followed European ideas and later incorporated some of the ideals of the Enlightenment into the Declaration of Independence (1776). One of his peers, James Madison, incorporated these ideals into the United States Constitution during its framing in 1787."
+			},
+			"Dates": "1600 - 1715 AD"
+		},
+		{
+			"Title": "Age of Enlightenment",
+			"Summary": "The Enlightenment was an intellectual movement, developed mainly in France, Britain and Germany, which advocated freedom, democracy and reason as the primary values of society. It started from the standpoint that men's minds should be freed from ignorance, from superstition and from the arbitrary powers of the State, in order to allow mankind to achieve progress and perfection.",
+			"Philosophers": {
+				"one": "Francoise Marie Voltaire",
+				"two": "David Hume",
+				"three": "Jean-Jacques Rousseau",
+				"four": "Adam Smith",
+				"five": "Immanuel Kant",
+				"six": "Edmund Burke"
+			},
+			"Details": {
+				"p1": "The Age of Enlightenment, sometimes called the Age of Reason, refers to the time of the guiding intellectual movement, called The Enlightenment. It covers about a century and a half in Europe, beginning with the publication of Francis Bacon's Novum Organum (1620) and ending with Immanuel Kant's Critique of Pure Reason (1781). From the perspective of socio-political phenomena, the period is considered to have begun with the close of the Thirty Years' War (1648) and ended with the French Revolution (1789).",
+				"p2": "The Enlightenment advocated reason as a means to establishing an authoritative system of aesthetics, ethics, government, and even religion, which would allow human beings to obtain objective truth about the whole of reality. Emboldened by the revolution in physics commenced by Newtonian kinematics, Enlightenment thinkers argued that reason could free humankind from superstition and religious authoritarianism that had brought suffering and death to millions in religious wars. Also, the wide availability of knowledge was made possible through the production of encyclopedias, serving the Enlightenment cause of educating the human race.",
+				"p3": "The age of Enlightenment is considered to have ended with the French Revolution, which had a violent aspect that discredited it in the eyes of many. Also, Immanuel Kant (1724-1804), who referred to Sapere aude! (Dare to know!) as the motto of the Enlightenment, ended up criticizing the Enlightenment confidence on the power of reason. Romanticism, with its emphasis upon imagination, spontaneity, and passion, emerged also as a reaction against the dry intellectualism of rationalists. Criticism of the Enlightenment has expressed itself in a variety of forms, such as religious conservatism, postmodernism, and feminism."
+			},
+			"Dates": "1685 - 1800 AD"
+		},
+		{
+			"Title": "Modern",
+			"Summary": "Modern philosophy refers to the philosophy that originated in Western Europe in the 17th century and later spread to other parts of the world.  Most of the modern philosophers can be grouped into two categories: rationalists and empiricists.  Rationalists argue that all knowledge must start from inante ideas in the mind while empiricists believe that knowledge must start with sensory experience.",
+			"Philosophers": {
+				"one": "Thomas Hobbes",
+				"two": "Charles Darwin",
+				"three": "Karl Marx",
+				"four": "Henry David Thoreau",
+				"five": "Friedrich Nietzsche",
+				"six": "Bertrand Russel",
+				"seven": "Jean-Paul Sartre"
+			},
+			"Details": {
+				"p1": "Modern philosophy refers to the philosophy that originated in Western Europe in the 17th century and later spread to other parts of the world. Modern philosophy began in the 17th century and ended in the 20th century. This period was marked with a lot of philosophical writings and works from some of the greatest men of that era. The main players in modern philosophy during its earlier years can be grouped in to two namely the rationalists and the empiricists.",
+				"p2": "The rationalists were mainly from France and Germany and they argued that all knowledge must start from certain innate ideas in the mind. The major names in this school of thought included Descartes, Baruch Spinoza, Nicholas Malebranche and Gottfried Leibnitz. The Empiricists on the other hand believed that knowledge must start with sensory experience and the major advocates of this thought included George Berkeley, David Hume and John Locke. Philosopher Immanuel Kant came out with a philosophical system which he claimed would unite the two schools of thought and align their ideas but his effort never paid off as the two ideologies never got successfully harmonized.",
+				"p3": "The bulk of philosophy in the early 17th century was dominated by scholasticism and was basically written by theologians who based most of their work on writings by great philosophers like Plato and Aristotle. Some of the writings were also derived from early church literature."
+			},
+			"Dates": "1800 - 1910 AD"
+		}
+	]
+}
