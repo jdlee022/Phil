@@ -15,7 +15,7 @@ ul {
     margin-bottom: 15px;
     font-size: 125%;
     color: #ddd;
-
+    text-shadow: 0 0 black;
 }
 
 .form-input{
@@ -69,6 +69,22 @@ ul {
 }
 
 .main-discuss-container a:hover {
+    color: #1b85ff;
+    text-decoration: none;
+    transition-duration: .3s;
+
+}
+a:link {
+    color: #5dc4ff;
+    text-decoration: none;
+
+}
+a:visited {
+    color: #5dc4ff;
+    text-decoration: none;
+}
+
+a:hover {
     color: #1b85ff;
     text-decoration: none;
     transition-duration: .3s;
