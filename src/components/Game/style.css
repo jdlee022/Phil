@@ -17,7 +17,7 @@
 }
 
 .glyphicon-log-in {
-	margin-right: 2%;
+	margin-right: 10%;
 }
 
 .add-quote-container {
@@ -25,14 +25,15 @@
 	font-size: 120%;
 	left: 10vw;
 	top: 2vh;
+
 }
 
 .log-in-container {
 	text-align: center;
 	font-size: 120%;
-	right: 10vw;
+	right: -2vw;
 	top: 2vh;
-
+	width: 15vh;
 }
 
 
@@ -79,8 +80,12 @@ select.select-picker .game-opt{
 	text-align: center;	
 }
 
+.game-answer-box{
+	color: black;
+}
+
 .answerbox{
-	width: 15vw;
+	width: 20vw;
 	top: 4vh;
 	text-align: center;
 }

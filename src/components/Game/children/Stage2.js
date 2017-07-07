@@ -190,8 +190,10 @@ export default class Play extends Component {
 	}
 
 
-	handleAnswer(){
-		// event.preventDefault();
+	handleAnswer(event){
+		if (event){
+			event.preventDefault();
+		}
 		var submittedAns = this.state.answer.trim().toLowerCase();
 		if (this.state.currentQuestion.answer === undefined){
 			this.setState({
@@ -419,11 +421,13 @@ export default class Play extends Component {
 							<h4 className="main-question">{this.state.currentQuestion.question}</h4>
 							
 							<label>Answer: </label><br />
+							<form action="" onSubmit={this.handleAnswer}>
+								<div className="input-container">
+									<input className="game-answer-box" type="text" onInput={this.handleInput} value={this.state.answer} />
+								</div>
+								<input className="ansSubmitBtn" type="submit" value="Submit" />
+							</form>
 							
-							<div className="input-container">
-								<input type="text" onInput={this.handleInput} value={this.state.answer} />
-							</div>
-							<input className="ansSubmitBtn" type="submit" value="Submit" onClick={this.handleAnswer}/>
 						</div>
 						<div>
 							<p className="feedback">{this.state.feedback}</p>
