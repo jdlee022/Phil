@@ -105,7 +105,7 @@ db.getCollection('dailyquotes').insert([
         associatedIdeas: "Existentialism, Metaphysical Voluntarism"
     },
     {
-        quote: "Someday, in the distant future, our grand-children' s grand-children will develop a new equivalent of our classrooms. They will spend many hours in front of boxes with fires glowing within. May they have the wisdom to know the difference between light and knowledge.",
+        quote: "Someday, in the distant future, our grand-children's grand-children will develop a new equivalent of our classrooms. They will spend many hours in front of boxes with fires glowing within. May they have the wisdom to know the difference between light and knowledge.",
         philosopher: 'Plato',
         era: "~425-348 BC",
         associatedIdeas: "Platonism"

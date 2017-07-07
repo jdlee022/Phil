@@ -346,7 +346,7 @@ export default class Play extends Component {
 		if (this.state.timer === true){
 			if (this.state.currentQuestion.gametype === "whosaysthis"){
 				return (
-					<ReactCountdownClock seconds={5}
+					<ReactCountdownClock seconds={10}
 						color="#fff"
 						alpha={0.9}
 						size={70}
@@ -356,7 +356,7 @@ export default class Play extends Component {
 				)
 			} else if (this.state.currentQuestion.gametype === "whichperiodisthisfrom") {
 				return (
-					<ReactCountdownClock seconds={10}
+					<ReactCountdownClock seconds={15}
 						color="#fff"
 						alpha={0.9}
 						size={70}

@@ -13,13 +13,7 @@
     overflow-y: auto;
     font-weight: normal;
 }
-#philosopher-list li a {
-    color: #337ab7 !important;
-}
 
-#philosopher-item {
-	color: #337ab7 !important;
-}
 
 .content-summary {
     text-align: center;
@@ -36,7 +30,7 @@ ul,#philosopher-list {
     margin: 0 auto !important;
     padding-left:0;
     margin-bottom: 0px !important;
-    color: #337ab7 !important;
+
 
     
 }
@@ -56,8 +50,8 @@ body {
   overflow: hidden;
 }
 .emptyContent {
-    position: absolute;
-    top: 50%;
+    position: relative;
+    top: 20vh;
     width: 100%;
 }
 .content-container {
@@ -173,7 +167,7 @@ i {
     /*left: 4vw;*/
 }
 .arrow-container {
-    
+    display: none;
     position:absolute;
     left:47.8%;
     bottom: 20.5vh;

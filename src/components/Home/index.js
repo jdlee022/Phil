@@ -60,7 +60,7 @@ export default class Home extends Component {
         if (this.state.quoteOfTheDay.era && this.state.quoteOfTheDay.associatedIdeas) {
             return (
                 <div className="quoteOfTheDay">
-                    <div className = "daily-quote">{this.state.quoteOfTheDay.quote}</div>
+                    <div className = "daily-quote">"{this.state.quoteOfTheDay.quote}"</div>
                     <div className = "quote-philosopher-name">- {this.state.quoteOfTheDay.philosopher} ({this.state.quoteOfTheDay.era}) </div>
                     <div className = "quote-studied">Studied: {this.state.quoteOfTheDay.associatedIdeas}</div>
                 </div>
@@ -69,7 +69,7 @@ export default class Home extends Component {
         if (this.state.quoteOfTheDay.era) {
             return (
                 <div className="quoteOfTheDay">
-                    <div className = "daily-quote">{this.state.quoteOfTheDay.quote}</div>
+                    <div className = "daily-quote">"{this.state.quoteOfTheDay.quote}"</div>
                     <div className = "quote-philosopher-name">- {this.state.quoteOfTheDay.philosopher} ({this.state.quoteOfTheDay.era})
 					</div>
                 </div>
@@ -78,7 +78,7 @@ export default class Home extends Component {
         if (this.state.quoteOfTheDay.associatedIdeas) {
             return (
                 <div className="quoteOfTheDay">
-                    <div className = "daily-quote">{this.state.quoteOfTheDay.quote}</div>
+                    <div className = "daily-quote">"{this.state.quoteOfTheDay.quote}"</div>
                     <div className = "quote-philosopher-name">- {this.state.quoteOfTheDay.philosopher}
                     </div>
                     <h4>Studied: {this.state.quoteOfTheDay.associatedIdeas}</h4>
@@ -88,7 +88,7 @@ export default class Home extends Component {
         else {
             return (
                 <div className="quoteOfTheDay">
-                    <div className = "daily-quote">{this.state.quoteOfTheDay.quote}</div>
+                    <div className = "daily-quote">"{this.state.quoteOfTheDay.quote}"</div>
                     <div className = "quote-philosopher-name">- {this.state.quoteOfTheDay.philosopher}
                     </div>
                 </div>

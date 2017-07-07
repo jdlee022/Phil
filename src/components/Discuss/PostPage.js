@@ -92,13 +92,13 @@ export default class PostPage extends Component {
      */
     displayCommentOptions() {
         if (this.state.currentlyCommenting) {
-            return <div style={{marginBottom: '30px'}}>
+            return <div style={{ marginBottom: '30px' }}>
                 <NewComment postId={this.state._id} userId={this.state.userId} loginStatus={this.props.loginStatus} updateCommentingStatus={this.updateCommentingStatus} />
-                <a style={{marginLeft: '20px', cursor: 'pointer'}} onClick={() => this.setState({ currentlyCommenting: false })}>Cancel</a>
+                <a style={{ cursor: 'pointer' }} onClick={() => this.setState({ currentlyCommenting: false })}>Cancel</a>
             </div>
         }
         else {
-            return <button style={{marginTop: '0px'}} type="button" className="btn btn-default" id="top-reply-btn" onClick={this.handlePostReply}>Post Reply</button>;
+            return <button style={{ marginTop: '0px', marginLeft: '0px' }} type="button" className="btn btn-default" onClick={this.handlePostReply}>Post Reply</button>;
         }
     }
 
@@ -111,21 +111,22 @@ export default class PostPage extends Component {
 
         return (
             <div className="row">
-                <div className="col-md-12 text-center">
+                <div className="col-md-6 col-md-offset-3 text-center">
                     <h2 className="page-header"><Link to={categoryQuery}>{this.state.category}</Link></h2>
                 </div>
-                <div className="col-xs-1"/>
-                <div className="col-md-10 comment-list-element op">
-                    <h1 className="op-title">{this.state.title}</h1>
-                    <h2>By {this.state.username} on {this.state.date}</h2>
-                    <h3>{this.state.username}'s high score: {this.state.userScore}</h3>
-                    <h4 style={{whiteSpace: 'pre-wrap'}}>{this.state.text}</h4>
+                <div className="col-xs-12">
+                    <div className=" comment-list-element op">
+                        <h1 className="op-title">{this.state.title}</h1>
+                        <h2>By <span className="username">{this.state.username}</span> on {this.state.date}</h2>
+                        <h3>{this.state.username}'s high score: {this.state.userScore}</h3>
+                        <h4 style={{ whiteSpace: 'pre-wrap' }}>{this.state.text}</h4>
+                    </div>
+                    {this.displayCommentOptions()}
+
+                    <ul>
+                        {commentItems}
+                    </ul>
                 </div>
-                {this.displayCommentOptions()}
-                <ul>
-                    {commentItems}
-                </ul>
-                <div className="col-xs-1"/>
             </div>
         );
     }
