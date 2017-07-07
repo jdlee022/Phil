@@ -92,13 +92,13 @@ export default class PostPage extends Component {
      */
     displayCommentOptions() {
         if (this.state.currentlyCommenting) {
-            return <div>
+            return <div style={{marginBottom: '30px'}}>
                 <NewComment postId={this.state._id} userId={this.state.userId} loginStatus={this.props.loginStatus} updateCommentingStatus={this.updateCommentingStatus} />
                 <a style={{marginLeft: '20px', cursor: 'pointer'}} onClick={() => this.setState({ currentlyCommenting: false })}>Cancel</a>
             </div>
         }
         else {
-            return <button type="button" className="btn btn-default" onClick={this.handlePostReply}>Post Reply</button>;
+            return <button style={{marginTop: '0px'}} type="button" className="btn btn-default" onClick={this.handlePostReply}>Post Reply</button>;
         }
     }
 
@@ -124,6 +124,7 @@ export default class PostPage extends Component {
                 <ul>
                     {commentItems}
                 </ul>
+                {this.displayCommentOptions()}
             </div>
         );
     }

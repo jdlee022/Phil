@@ -154,10 +154,10 @@ export default class ExploreContent extends Component {
           <div className = "empty-container">
             <div className = "row">
                     
-                <div className = "col-md-2">
+                <div className = "col-xs-2">
                 </div>
 
-                <div className = "col-md-8" id = "content-container">
+                <div className = "col-xs-8" id = "content-container">
                   <div className = "explore-title">
                     <h1>Explore Content </h1>
                   </div>
@@ -166,7 +166,7 @@ export default class ExploreContent extends Component {
                   </div>
                   </div>
 
-                <div className = "col-md-2">
+                <div className = "col-xs-2">
                 </div>
             </div>
 

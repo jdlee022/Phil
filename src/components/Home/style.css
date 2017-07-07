@@ -10,23 +10,40 @@ div.quote-container {
     color: white;
     font-size: 700%;
     font-weight: 700;
-     position: absolute;
-    top: 50%;
+     position: relative;
+    top: 30vh;
     left: 50%;
     transform: translate(-50%, -50%);
-   width: 80%;
+   width: 100%;
     line-height: 20px;
-    letter-spacing: 2px;
-    background-color: rgba(0, 0, 0, 0.5);
-
+    letter-spacing: 1.7px;
+    background-color: rgba(0, 0, 0, 0.4);
 }
-
+.quote-heading {
+    font-size: 30px;
+    margin-bottom: 2%;
+}
+.quoteOfTheDay {
+    font-size: 26px;
+}
+.daily-quote {
+    font-size: 20px;
+    font-weight: normal;
+}
+.quote-philosopher-name {
+    font-size: 22px;
+    margin-top: 2%;
+}
+.quote-studied {
+    font-size:18px;
+    margin-top: 2%;
+}
 div.App {
     height: 100vh;
 }
-
 .tagline{
     color: white;
+    margin-top: 4%
 }
 
 
