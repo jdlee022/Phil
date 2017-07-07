@@ -15,14 +15,14 @@ export default class Discuss extends Component {
 		var thisUser = localStorage.getItem('userId');
 		if (thisUser === null || thisUser === undefined || thisUser === "null") {
 			return (
-				<div className="col-sm-4 log-in-container">
+				<div className="col-sm-6 log-in-container">
 					<a><Link to="/login"><i className="glyphicon glyphicon-log-in"></i>Sign In</Link></a>
 				</div>
 			)
 		}
 		else {
 			return (
-				<div className="col-sm-4 log-in-container">
+				<div className="col-sm-6 log-in-container">
 					<a onClick={this.handleLogout} ><Link to="/game"><i className="glyphicon glyphicon-log-in"></i>Sign In</Link></a>
 				</div>
 			)
@@ -31,13 +31,12 @@ export default class Discuss extends Component {
 
 	render() {
 		return (
-			<div className="">
+			<div className="game-all-div">
 				<div className="row game-nav-container">
-						<div className="col-sm-4 add-quote-container">
-							<a><Link to="/addquote"><i className="glyphicon glyphicon-plus-sign"></i>Add Quote</Link></a>
-						</div>
-						<div className="col-sm-4"></div>
-						{this.loginIcon()}
+					<div className="col-sm-6 add-quote-container">
+						<a><Link to="/addquote"><i className="glyphicon glyphicon-plus-sign"></i>Add Quote</Link></a>
+					</div>
+					{this.loginIcon()}
 				</div>
 
 				<div className="game-children">

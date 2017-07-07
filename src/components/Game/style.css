@@ -1,51 +1,41 @@
 /* ALL BUTTONS */
 
+
 /* Game Children Containers */
 .game-children{
 	position: absolute;
 
 }
 
-p {
-	font-size: 2vh;
-}
-
-h3 {
-	font-size: 3vh;
-}
-
-.title-div{
-	width: 20vw;
-}
 
 .game-title{
 	position: relative;
-	top: 6vh;
-	right: 2vw;
+	top: 7vh;
 	font-size: 5vh;
+	text-align: center;
 }
 
 .control-component{
 	position: relative;
-	top: 10vh;
+	top: 6vh;
+	right: -6vw;
+
 }
 
-.stage-component{
-	position: relative;
-	top: -2vh;
-}
+
 
 .game-nav-container {
 	position: absolute;
-	top: 15.6vh;
-	right: 31vw;
+	top: 16vh;
+	right: 30vw;
 	font-size: 3vh;
-	font-size: 2vw;
+
 }
 
-/* Start and Reset */ 
+.game-story-imgs {
+	position: absolute;
 
-
+}
 
 
 /* Link to Pages */
@@ -56,27 +46,118 @@ h3 {
 }
 
 .glyphicon-plus-sign {
-	margin-right: 5%;
-}
-
-.glyphicon-backward {
-	margin-right: 5%;
+	margin-right: 9%;
 }
 
 .glyphicon-log-in {
-	margin-right: 10%;
+	margin-right: 9%;
 }
-
-
-
 
 .add-quote-container {
 	position: relative;
-	width: 20vw;
+	width: 18vw;
 }
 
 .log-in-container {
 	position: relative;
-	width: 14vw;
+	width: 18vw;
 }
 
+/* Control */
+.game-question-type {
+	position: relative;
+	right: 1vw;
+}
+
+.select-picker {
+	position: absolute;
+	top: 7vh;
+	right: 13vw;
+}
+/* Start and Reset */
+
+.start-reset-btn {
+	position: relative;
+	right: -2vw;
+	top: 2vh;
+} 
+
+.game-highscore{
+	position: relative;
+	right: -2vw;
+}
+
+.game-score{
+	position: relative;
+	right: 2vw;
+}
+
+
+/* Stage */
+ 
+/* Question and timer; */
+.stage-component {
+	position: absolute;
+	top: 35vh;
+	right: -2vw;
+}
+
+
+.oedipus-life{
+	position: relative;
+	right: 10vw;
+}
+
+
+
+
+/* Images and animation */
+
+.game-img-animation{
+	position: absolute;
+	top: 48vh;
+	right: -7vw;
+	width: 80vw;
+}
+
+.talktext{ 
+	position: relative;
+	right: 37vw;
+	width: 25vw;
+	height: 10vh;
+	font-size: 115%;
+	text-align: center;
+}
+
+.answerbox {
+	position: relative;
+	top: 10vh;
+	
+}
+
+.clock {
+	position: relative;
+	top: 10vh;
+	right: 20vw;
+}
+
+.sphinx {
+	position: relative;
+	height: 40vh;
+	width: 20vw;
+
+}
+
+.laser-line {
+	position: relative;
+	top: 9vh;
+	right: 8vw;
+	width: 50vw;
+}
+
+.oedipus {
+	position: relative;
+	height: 40vh;
+	width: 15vw;
+	right: 5vw;	
+}

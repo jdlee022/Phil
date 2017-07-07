@@ -79,26 +79,28 @@ export default class Control extends Component {
 		return (
 			<div className="container-fluid control-div">
 				<div className="row control-component">
-					<div className="col-sm-4 game-top-controls">
+					<div className="col-sm-4 game-highscore">
 						<h3>High Score: {this.state.currHighScore}</h3>
 						{this.loginInfo()}
 					</div>
 
-					<div className="col-sm-4 control-inside game-top-controls" >
+					<div className="col-sm-4 game-question-type" >
 						<div>	
 							<h3>Type of Questions:</h3>
-							<select className="selectpicker" onChange={this.handleTypeSelect} name="gametype" id="">
+							<select className="select-picker" onChange={this.handleTypeSelect} name="gametype" id="">
 								<option defaultValue value="mixed">Mixed (All)</option>
 								<option value="whichperiodisthisfrom">Which period is this from?</option>
 								<option value="whosaysthis">Who says this?</option>
-								
 							</select>
 						</div>
-						<button onClick={this.handlingStart} type="button" className="start btn btn-md"> <span className="glyphicon glyphicon-play"></span></button>
-						<button onClick={this.handlingReset} type="button" className="reset btn btn-md"> <span className="glyphicon glyphicon-refresh"></span></button>
+						<div className="start-reset-btn">
+							<button onClick={this.handlingStart} type="button" className="start btn btn-md"> <span className="glyphicon glyphicon-play"></span></button>
+							<button onClick={this.handlingReset} type="button" className="reset btn btn-md"> <span className="glyphicon glyphicon-refresh"></span></button>
+						</div>
+						
 					</div>
 						
-					<div className="col-sm-4 game-top-controls">
+					<div className="col-sm-4 game-score">
 						<h3>Score: {this.state.score}</h3>
 					</div>	
 				</div>

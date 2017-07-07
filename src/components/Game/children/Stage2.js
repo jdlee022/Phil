@@ -264,7 +264,7 @@ export default class Play extends Component {
 		this.props.comparingScores();
 		this.setState({
 			currentQuestion: {
-				hint: "Gameover. /n You can Start another game at anytime.",
+				hint: "Gameover. You can Start another game at anytime.",
 				answer: '', 
 				gametype: ""
 			},
@@ -374,18 +374,21 @@ export default class Play extends Component {
 	laser(){
 		if (this.state.matched === 'false'){
 			return (
-				<MtSvgLines animate={true} duration={1000}>
-					<svg viewBox="0 0 100 5">
-						<path stroke="red" strokeWidth="3" fill="none" d="m0,0, h1000" />
-					</svg>
-				</MtSvgLines>
+				<div className="laser-line col-lg-4">
+					<MtSvgLines animate={true} duration={1000}>
+						<svg viewBox="0 0 1000 5">
+							<path stroke="red" strokeWidth="3" fill="none" d="m0,0, h820" />
+						</svg>
+					</MtSvgLines>
+				</div>
+				
 			)
 		}
 	}
 
 	renderNormal(){
 		return (
-			<div className="row container-fluid stage-div">
+			<div className="row container-fluid ">
 				<div className="row stage-component">
 					<div className="col-md-4 talk-bubble tri-right border round btm-left-in">
 						<div className="talktext">
@@ -397,20 +400,21 @@ export default class Play extends Component {
 						{this.timerClock()}
 					</div>
 
-					<div className="col-md-4 offset-md-4 " id="game-score">
+					<div className="col-md-4 offset-md-4 oedipus-life">
 						<h3>Oedipus: {this.state.life}</h3>
 					</div>
 				</div>
 
-				<div className="row story-imgs">
-					<img onClick={this.handleSphinxAnimation} className="col-lg-4 sphinx" src={this.state.sphinxSrc} alt="Sphinx" />
+				<div className="row game-img-animation">
+					<div className="sphinx-div col-sm-4">
+						<img onClick={this.handleSphinxAnimation} className="sphinx" src={this.state.sphinxSrc} alt="Sphinx" />
+					</div>
 					
-					<div className="laser-line col-lg-4">
+					<div className="animation-answer col-sm-4">
 						
-						<br /> <br /> <br /> <br />
 						{this.laser()}
 
-						<div className="answerbox">
+						<div className="answerbox ">
 							{this.correctAnswerDisplay()}
 							<br /> <br /> 
 							<label htmlFor="">{this.state.currentQuestion.question}</label><br />
@@ -425,7 +429,10 @@ export default class Play extends Component {
 						</div>
 					</div>
 
-					<img className="col-lg-4 oedipus" src={this.state.oedipus} alt="Oedipus" />
+					<div className="oedipus-div col-sm-4">
+						<img className="oedipus" src={this.state.oedipus} alt="Oedipus" />
+					</div>
+
 				</div>
 
 			</div>

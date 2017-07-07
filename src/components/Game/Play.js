@@ -84,7 +84,7 @@ export default class Game extends Component {
 			<div className="">
 
 				<div className="col-md-6 col-md-offset-3 text-center title-div">
-					<h1 className="game-title">Oedipus' Journey</h1>
+					<h2 className="game-title">Oedipus' Journey</h2>
 				</div>
 				<div className="container">
 					<Control 
