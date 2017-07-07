@@ -52,13 +52,13 @@ export default class Discuss extends Component {
             }
 
             return <div>
-                <Link to="/discuss" >Dashboard</Link>
+                <Link to="/discuss" >Topics</Link>
                 <a style={logoutStyle} onClick={this.handleLogout} onMouseEnter={()=>this.setState({hover: true})} onMouseLeave={()=>this.setState({hover: false})}>Logout</a>
             </div>
         }
         else {
             return <div>
-                <Link to="/discuss" >Dashboard</Link>
+                <Link to="/discuss" >Topics</Link>
                 <Link to="/login" >Login</Link>
                 <Link to="/register" >Register</Link>
             </div>;

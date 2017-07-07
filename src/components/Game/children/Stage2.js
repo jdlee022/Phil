@@ -331,14 +331,15 @@ export default class Play extends Component {
 		if (this.state.matched === "false"){
 			return (
 				<div className = "game-result">
-					<h4 class="incorrect">Incorrect!</h4>
-					<h4>Correct Answer: {this.state.currentQuestion.answer}</h4>
+					<p class="incorrect">Incorrect!</p>
+					<p>Answer: {this.state.currentQuestion.answer}</p>
 				</div>	
 			)
-		} else if (this.state.matched === "false"){
+		} else if (this.state.matched === "true"){
 			return (
 				<div className="game-result">
-					<h4 class="correct">Correct!</h4>
+					<p class="incorrect">Correct!</p>
+					<p>Answer: {this.state.currentQuestion.answer}</p>
 				</div>
 			)
 		};
@@ -348,7 +349,7 @@ export default class Play extends Component {
 		if (this.state.timer === true){
 			if (this.state.currentQuestion.gametype === "whosaysthis"){
 				return (
-					<ReactCountdownClock seconds={10}
+					<ReactCountdownClock seconds={15}
 						color="#fff"
 						alpha={0.9}
 						size={70}
@@ -358,7 +359,7 @@ export default class Play extends Component {
 				)
 			} else if (this.state.currentQuestion.gametype === "whichperiodisthisfrom") {
 				return (
-					<ReactCountdownClock seconds={15}
+					<ReactCountdownClock seconds={20}
 						color="#fff"
 						alpha={0.9}
 						size={70}
@@ -377,7 +378,7 @@ export default class Play extends Component {
 		if (this.state.matched === 'false'){
 			return (
 				<div className="laser-line col-xs-4">
-					<MtSvgLines animate={true} duration={1000}>
+					<MtSvgLines animate={true} duration={700}>
 						<svg viewBox="0 0 1000 5">
 							<path stroke="red" strokeWidth="3" fill="none" d="m0,0, h820" />
 						</svg>

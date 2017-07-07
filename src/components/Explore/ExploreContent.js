@@ -158,11 +158,8 @@ export default class ExploreContent extends Component {
                 </div>
 
                 <div className = "col-xs-8" id = "content-container">
-                  <div className = "explore-title">
-                    <h1>Explore Content </h1>
-                  </div>
                   <div className = "emptyContent">
-                    <h4> Click on the timeline buttons on the bottom to learn more about each period </h4>
+                    <h3> Click on the timeline buttons on the bottom to learn more about each period. </h3>
                   </div>
                   </div>
 
