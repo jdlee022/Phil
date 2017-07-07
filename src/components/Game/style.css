@@ -137,9 +137,15 @@ select.select-picker .game-opt{
 
 .laser-line {
 	position: fixed;
+<<<<<<< HEAD
 	right: 10.5vw;
 	top: 61.5vh;
 	width: 60vw;
+=======
+	right: 7vw;
+	top: 65.5vh;
+	width: 67vw;
+>>>>>>> fixed laser height
 
 }
 

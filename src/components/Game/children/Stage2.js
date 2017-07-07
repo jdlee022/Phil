@@ -385,7 +385,7 @@ export default class Play extends Component {
 				<div className="laser-line col-xs-4">
 					<MtSvgLines animate={true} duration={700}>
 						<svg viewBox="0 0 1000 5">
-							<path stroke="red" strokeWidth="3" fill="none" d="m0,0, h820" />
+							<path stroke="red" strokeWidth="7" fill="red" d="m0,0, h820" />
 						</svg>
 					</MtSvgLines>
 				</div>
