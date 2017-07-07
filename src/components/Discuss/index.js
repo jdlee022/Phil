@@ -39,14 +39,14 @@ export default class Discuss extends Component {
             var logoutStyle;
             if (this.state.hover) {
                 logoutStyle = {
-                    color: '#8AB6F8',
+                    color: '#1b85ff',
                     textDecoration: 'none',
                     transitionDuration: '.5s',
                     cursor: 'pointer'
                 }
             } else {
                 logoutStyle = {
-                    color: '#9b7ff2',
+                    color: '#5dc4ff',
                     textDecoration: 'none'
                 }
             }

@@ -98,7 +98,7 @@ export default class PostPage extends Component {
             </div>
         }
         else {
-            return <button style={{marginTop: '0px'}} type="button" className="btn btn-default" onClick={this.handlePostReply}>Post Reply</button>;
+            return <button style={{marginTop: '0px'}} type="button" className="btn btn-default" id="top-reply-btn" onClick={this.handlePostReply}>Post Reply</button>;
         }
     }
 
@@ -114,8 +114,9 @@ export default class PostPage extends Component {
                 <div className="col-md-12 text-center">
                     <h2 className="page-header"><Link to={categoryQuery}>{this.state.category}</Link></h2>
                 </div>
-                <div className="col-md-12 comment-list-element op">
-                    <h1>{this.state.title}</h1>
+                <div className="col-xs-1"/>
+                <div className="col-md-10 comment-list-element op">
+                    <h1 className="op-title">{this.state.title}</h1>
                     <h2>By {this.state.username} on {this.state.date}</h2>
                     <h3>{this.state.username}'s high score: {this.state.userScore}</h3>
                     <h4 style={{whiteSpace: 'pre-wrap'}}>{this.state.text}</h4>
@@ -124,7 +125,7 @@ export default class PostPage extends Component {
                 <ul>
                     {commentItems}
                 </ul>
-                {this.displayCommentOptions()}
+                <div className="col-xs-1"/>
             </div>
         );
     }

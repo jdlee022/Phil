@@ -14,10 +14,10 @@ div.quote-container {
     top: 30vh;
     left: 50%;
     transform: translate(-50%, -50%);
-   width: 100%;
+   width: 90%;
     line-height: 20px;
     letter-spacing: 1.7px;
-    background-color: rgba(0, 0, 0, 0.4);
+    /*background-color: rgba(0, 0, 0, 0.4);*/
 }
 .quote-heading {
     font-size: 30px;

@@ -28,6 +28,7 @@ ul {
     margin-left: 0px;
     margin-right: 0px;
     margin-top: 15px;
+    color: #ddd;
 }
 
 .register-container {
@@ -53,38 +54,32 @@ ul {
 /*ALL LINKS*/
 
 .main-discuss-container a:link {
-    color: #9b7ff2;
+    color: #5dc4ff;
     text-decoration: none;
 
 }
 .main-discuss-container a:visited {
-    color: #9b7ff2;
+    color: #5dc4ff;
     text-decoration: none;
 }
 
 .main-discuss-container a:hover {
-    color: #8AB6F8;
+    color: #1b85ff;
     text-decoration: none;
-    transition-duration: .5s;
+    transition-duration: .3s;
 
 }
 
-/*POST LINKS*/
-
-.comment-list-element a:link {
-    color: #9b7ff2;
-    text-decoration: none;
-
-}
-.main-discuss-container a:visited {
-    color: #9b7ff2;
+/*ALL LINKS*/
+.link {
+    color: #5dc4ff;
     text-decoration: none;
 }
 
-.main-discuss-container a:hover {
-    color: #8AB6F8;
+.link:hover {
+    color: #1b85ff;
     text-decoration: none;
-    transition-duration: .5s;
+    transition-duration: .3s;
 
 }
 
@@ -99,12 +94,12 @@ ul {
 }
 
 .page-header{
-    color: #e1d8ff;
+    color: white;
     margin-top: 10px;
 }
 
 .warning{
-    color: yellow;
+    color: #ffd65f;
 }
 
 /*COMMENT LIST*/
@@ -113,16 +108,16 @@ ul {
 .comment-list-element.op {
    margin-left:0px;
    margin-top: 30px;
-    /*font-weight: 700;*/
+    color: #ddd;
     background-color: rgba(50, 50, 50, 0.6);
     border-radius: 15px;
     padding: 15px;
 }
 .comment-list-element {
-   margin-left: 50px;
+   /*margin-left: 50px;*/
    /*margin-bottom: 30px;*/
    margin-bottom: 25px;
-    /*font-weight: 700;*/
+    color: #ffefc1;
     background-color: rgba(50, 50, 50, 0.4);
     border-radius: 15px;
     padding: 15px;
@@ -152,6 +147,15 @@ ul {
     margin-left:15px;
 }
 
+/* Forum styling */
+.op-title {
+    font-size: 22px;
+    margin: 0 0 10px 0;
+}
+#top-reply-btn {
+    position:relative;
+    right: -154vw;
+}
 
 /*DASHBOARD LINKS*/
 
@@ -171,6 +175,7 @@ ul {
 
 .categoryTest {
     margin-top: 25px;
+    color: #ddd;
 }
 
 
