@@ -23,17 +23,19 @@ export default class CategoriesListChild extends Component {
         var categoryQuery = "/category/" + this.state.category;
 
         return (
+            <Link to={categoryQuery}>
             <li className="row categoryListChild">
-                    <div className="col-md-2">
-                        <Link to={categoryQuery}>{this.state.category}</Link>
+                    <div className="col-md-2 link">
+                        {this.state.category}
                     </div>
                     <div className="col-md-8">
                         <p>{this.state.description}</p>
                     </div>
                     <div className="col-md-2 text-center">
-                        <p>{this.state.numPosts}</p>
+                        <p className="category-posts">{this.state.numPosts}</p>
                     </div>
             </li>
+            </Link>
         );
     }
 }

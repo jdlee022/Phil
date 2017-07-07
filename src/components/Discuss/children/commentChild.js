@@ -31,12 +31,13 @@ export default class CommentChild extends Component {
 
         return (
             <li className="row">
-                <div className="col-xs-11 comment-list-element">
-                    <h1>RE: {this.state.postTitle}</h1>
+              <div className="col-xs-1"/>
+                <div className="col-xs-10 comment-list-element">
                     <h2>By {this.state.username} on {this.state.date}</h2>
                     <h3>{this.state.username}'s high score: {this.state.userScore}</h3>
                     <h4 style={{whiteSpace: 'pre-wrap'}}>{this.state.text}</h4>
                 </div>
+              <div className="col-xs-1"/>
             </li>
         );
     }
