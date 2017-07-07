@@ -42,7 +42,7 @@ export default class CategoriesList extends Component {
         }
         // Create an array of CategoryChild components for every item in categories
         // and pass each child its category data
-        const categoryItems = sortedCategories.map((category, i) =>
+        var categoryItems = sortedCategories.map((category, i) =>
             <CategoriesListChild data={category} key={i} />
         );
 

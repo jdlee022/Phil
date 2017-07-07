@@ -13,7 +13,7 @@ ul {
     margin-left: 15px;
     margin-right: 15px;
     margin-bottom: 15px;
-    font-size: 125%;
+    font-size: 100%;
     color: #ddd;
 
 }
@@ -28,6 +28,7 @@ ul {
     margin-left: 0px;
     margin-right: 0px;
     margin-top: 15px;
+    margin-bottom: 15px;
     color: #ddd;
 }
 
@@ -117,12 +118,13 @@ ul {
     background-color: rgba(50, 50, 50, 0.6);
     border-radius: 15px;
     padding: 15px;
+    border: none;
 }
 .comment-list-element {
    /*margin-left: 50px;*/
    /*margin-bottom: 30px;*/
    margin-bottom: 25px;
-    color: #fff5da;
+    color: #c0c0c0;
     background-color: rgba(50, 50, 50, 0.4);
     border-radius: 15px;
     padding: 15px;
@@ -187,7 +189,9 @@ ul {
     color: #ddd;
 }
 
-
+.username{
+    color: #BE9AF3;
+}
 
 
 

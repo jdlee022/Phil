@@ -31,9 +31,16 @@ export default class CategoryPage extends Component {
         // route to hit when user wants to create a new post for this category
         var newPostQuery = "/new_post/" + this.state.category;
 
-        const postItems = this.state.posts.map((post, i) =>
+        var postItems = this.state.posts.map((post, i) =>
             <CategoryPageChild data={post} key={i} />
         );
+
+        console.log(postItems);
+        if (postItems.length === 0) {
+            postItems = <div className="col-xs-12 text-center" style={{color: '#ddd', paddingRight: '80px', margin: '20px'}}>
+                <li>Get this category started by creating a new post!</li>
+            </div>;
+        }
 
         return (
             <div>

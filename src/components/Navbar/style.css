@@ -30,7 +30,7 @@ a.link{
 a.link:hover {
     color: #ffd863;
     text-decoration-line: none;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
 }
 
 a.link:visited {
@@ -45,5 +45,5 @@ a.link:active:visited {
 a.link:visited:hover {
     color: #ffd863;
     text-decoration-line: none;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
 }
