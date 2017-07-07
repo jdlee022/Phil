@@ -95,6 +95,7 @@ select.select-picker .game-opt{
 
 .game-answer-box{
 	color: black;
+	/*left: 4vw;*/
 }
 
 .answerbox{
@@ -125,7 +126,7 @@ select.select-picker .game-opt{
 	position: absolute;
 	width: 20vw;
 	top: -2vh;
-	left: 30vw;
+	left: 37vw;
 	font-size: 120%
 }
 
@@ -137,15 +138,9 @@ select.select-picker .game-opt{
 
 .laser-line {
 	position: fixed;
-<<<<<<< HEAD
-	right: 10.5vw;
-	top: 61.5vh;
-	width: 60vw;
-=======
-	right: 7vw;
-	top: 65.5vh;
-	width: 67vw;
->>>>>>> fixed laser height
+	right:6vw;
+	top: 61vh;
+	width: 69vw;
 
 }
 

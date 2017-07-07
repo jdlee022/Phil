@@ -262,7 +262,7 @@ export default class Play extends Component {
 								this.endGame();
 							});	
 						}
-					}.bind(this), 1500); 
+					}.bind(this), 3000); 
 				});
 			} 
 	}
