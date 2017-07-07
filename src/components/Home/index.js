@@ -60,29 +60,27 @@ export default class Home extends Component {
         if (this.state.quoteOfTheDay.era && this.state.quoteOfTheDay.associatedIdeas) {
             return (
                 <div className="quoteOfTheDay">
-                    <h2>{this.state.quoteOfTheDay.quote}</h2>
-                    <h3>- {this.state.quoteOfTheDay.philosopher} ({this.state.quoteOfTheDay.era})
-
-					</h3>
-                    <h4>Studied: {this.state.quoteOfTheDay.associatedIdeas}</h4>
+                    <div className = "daily-quote">{this.state.quoteOfTheDay.quote}</div>
+                    <div className = "quote-philosopher-name">- {this.state.quoteOfTheDay.philosopher} ({this.state.quoteOfTheDay.era}) </div>
+                    <div className = "quote-studied">Studied: {this.state.quoteOfTheDay.associatedIdeas}</div>
                 </div>
             )
         }
         if (this.state.quoteOfTheDay.era) {
             return (
                 <div className="quoteOfTheDay">
-                    <h2>{this.state.quoteOfTheDay.quote}</h2>
-                    <h3>- {this.state.quoteOfTheDay.philosopher} ({this.state.quoteOfTheDay.era})
-					</h3>
+                    <div className = "daily-quote">{this.state.quoteOfTheDay.quote}</div>
+                    <div className = "quote-philosopher-name">- {this.state.quoteOfTheDay.philosopher} ({this.state.quoteOfTheDay.era})
+					</div>
                 </div>
             )
         }
         if (this.state.quoteOfTheDay.associatedIdeas) {
             return (
                 <div className="quoteOfTheDay">
-                    <h2>{this.state.quoteOfTheDay.quote}</h2>
-                    <h3>- {this.state.quoteOfTheDay.philosopher}
-                    </h3>
+                    <div className = "daily-quote">{this.state.quoteOfTheDay.quote}</div>
+                    <div className = "quote-philosopher-name">- {this.state.quoteOfTheDay.philosopher}
+                    </div>
                     <h4>Studied: {this.state.quoteOfTheDay.associatedIdeas}</h4>
                 </div>
             )
@@ -90,9 +88,9 @@ export default class Home extends Component {
         else {
             return (
                 <div className="quoteOfTheDay">
-                    <h2>{this.state.quoteOfTheDay.quote}</h2>
-                    <h3>- {this.state.quoteOfTheDay.philosopher}
-                    </h3>
+                    <div className = "daily-quote">{this.state.quoteOfTheDay.quote}</div>
+                    <div className = "quote-philosopher-name">- {this.state.quoteOfTheDay.philosopher}
+                    </div>
                 </div>
             )
         }
@@ -102,9 +100,9 @@ export default class Home extends Component {
         return (
             <div>
                 <div className="home-container">
-                    <h3 className="tagline">Welcome to phil, a hub for people who enjoy discussing and learning about philosophy.</h3>
+                    <h3 className="tagline">Welcome to <span style={{color: "#ffd65f", fontStyle: 'italic'}}>phil</span>, a hub for people who enjoy discussing and learning about philosophy.</h3>
                     <div className="quote-container">
-                        <h4>Quote of the day:</h4>
+                        <div className = "quote-heading">Quote of the day:</div>
                         {this.displayTodayQuote()}
                     </div>
                 </div>

@@ -94,7 +94,7 @@ export default class NewPost extends React.Component {
                     </div>
                     <div className="form-group">
                         <label>Post Text</label>
-                        <textarea style={{height: '200px'}} type="text" className="form-control" name="text" value={this.state.text} onChange={this.handleInputChange} />
+                        <textarea style={{height: '200px', position: 'absolute'}} type="text" className="form-control" name="text" value={this.state.text} onChange={this.handleInputChange} />
                     </div>
                     <button type="submit" className="btn btn-default">Submit</button>
                 </form>

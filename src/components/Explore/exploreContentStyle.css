@@ -58,6 +58,7 @@ body {
 .emptyContent {
     position: absolute;
     top: 50%;
+    width: 100%;
 }
 .content-container {
     /*height: 100vh;*/
