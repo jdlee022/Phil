@@ -78,7 +78,7 @@ export default class Control extends Component {
 	render() {
 		return (
 			<div className="container-fluid control-div">
-				<div className="row ">
+				<div className="row control-component">
 					<div className="col-sm-4 game-top-controls">
 						<h3>High Score: {this.state.currHighScore}</h3>
 						{this.loginInfo()}

@@ -1,102 +1,62 @@
-/* talk bubble contents */
+/* ALL BUTTONS */
 
-.talktext {
-	padding: 1em;
-	text-align: left;
-	line-height: 1.5em;
-	color: white;
-	font-size: 1vw;
-}
-
-.talktext p {
-	/* remove webkit p margins */
-	-webkit-margin-before: 0em;
-	-webkit-margin-after: 0em;
-	margin: 3%;
-}
-
-
-/* CSS talk bubble */
-
-.talk-bubble {
-	margin: 40px;
-	display: inline-block;
-	position: relative;
-	width: 23vw;
-	height: 20vh;
-	background-color: black;
-}
-
-.border {
-	border: 8px solid #666;
-}
-
-.round {
-	border-radius: 30px;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-}
-
-.tri-right.border.btm-left-in:before {
-	content: ' ';
+/* Game Children Containers */
+.game-children{
 	position: absolute;
-	width: 0;
-	height: 0;
-	left: 70%;
-	right: auto;
-	top: auto;
-	bottom: -40px;
-	border: 20px solid;
-	border-color: #666 transparent transparent #666;
+
 }
 
-.feedback {
-	color: white
+p {
+	font-size: 2vh;
 }
 
-.clock {
-	background: black;
-	margin: 0;
-	overflow: hidden;
+h3 {
+	font-size: 3vh;
 }
 
-.input-container {
-	background: url(https://thumbs.dreamstime.com/x/seamless-sandstone-background-3313450.jpg) no-repeat;
-	width: 250px;
-	height: 75px;
+.title-div{
+	width: 20vw;
 }
 
-.input-container input {
-	color: white;
-	text-align: center;
-	font-weight: bold;
-	font-size: 20px;
-	height: 75px;
-	line-height: 28px;
-	/*results in nice text vertical alignment*/
-	border: none;
-	background: transparent;
-	padding: 0 10px;
-	/*don't start input text directly from the edge*/
-	width: 250px;
-	/*full width - grey on the side - 2*10px padding*/
+.game-title{
+	position: relative;
+	top: 6vh;
+	right: 2vw;
+	font-size: 5vh;
 }
 
-#game-title {
-	color: white;
+.control-component{
+	position: relative;
+	top: 10vh;
 }
 
-#game-score {
-	color: white;
+.stage-component{
+	position: relative;
+	top: -2vh;
 }
 
+.game-nav-container {
+	position: absolute;
+	top: 15.6vh;
+	right: 31vw;
+	font-size: 3vh;
+	font-size: 2vw;
+}
+
+/* Start and Reset */ 
+
+
+
+
+/* Link to Pages */
 .glyphicon-plus-sign,
-.glyphicon-backward, .glyphicon-log-in{
+.glyphicon-backward,
+.glyphicon-log-in {
 	font-size: 100%;
 }
 
 .glyphicon-plus-sign {
-	margin-right: 2%;
+	margin-right: 5%;
 }
 
 .glyphicon-backward {
@@ -104,140 +64,19 @@
 }
 
 .glyphicon-log-in {
-	margin-top: 15%;
-	margin-right: 20%;
-}
-
-.log-in-container{
-	position: absolute;
-	right: 25vw;
-	height: 20px;
-	width: 140px;
-}
-
-.back-to-game-container {
-	position: absolute;
-	right: 20vw;
-	width: 140px;
-}
- 
-.add-quote-container{
-	
-}
-
-#add-quote-container {
-	float: right;
-	right: -5vw;
-	font-size: 110%;
-	position: absolute;
-}
-
-.glyphicon-play,
-.glyphicon-refresh {
-	font-size: 160%;
-}
-
-.start,
-.reset {
-	margin-top: 5px;
-	border: rgb(150, 150, 150) 1px solid;
-}
-
-.start {
-	margin-right: 10px;
-}
-
-.reset {
-	margin-left: 10px;
-}
-
-#game-options {
-	color: black;
+	margin-right: 10%;
 }
 
 
 
-.selectpicker {
-	clear: all;
-	color: black;
-	border-radius: 4px;
-}
 
-.game-top-controls {
-	clear: all;
-	text-align: center;
-	color: white;
-}
-
-
-/** Control js */
-
-button {
-	border-radius: 10px;
-	color: white;
-	background-color: black;
-	border-color: black;
-	font-size: 24px;
-}
-
-div.clock {
-	width: 22vw;
-	height: 22.3vh;
-}
-
-div.story-imgs {
-	width: 100vw;
-}
-
-.sphinx {
-	left: 4vw;
-	bottom: 5vh;
-	height: 40vh;
+.add-quote-container {
+	position: relative;
 	width: 20vw;
-	display: inline-block;
 }
 
-.laser-line {
-	bottom: 16vh;
-	left: 8vw;
+.log-in-container {
+	position: relative;
+	width: 14vw;
 }
 
-.oedipus {
-	float: right;
-	top: -6vh;
-	right: 23vw;
-	height: 40vh;
-	width: 20vw;
-	/*display: inline-block;*/
-}
-
-
-/*.answerbox {
-	height: 15vh;
-	width: 60vh;
-}*/
-
-div.col-lg-4 {
-	display: inline-block;
-	margin: 0 auto;
-}
-
-
-/*.control-div {
-	width: 100vw;
-	height: 20vh;
-}*/
-
-.stage-div {
-	width: 100vw;
-	height: 58vh;
-}
-
-
-.correct{
-	color: green;
-}
-
-.incorrect {
-	color: red;
-}

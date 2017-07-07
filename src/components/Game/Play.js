@@ -83,8 +83,8 @@ export default class Game extends Component {
 		return (
 			<div className="">
 
-				<div className="col-md-6 col-md-offset-3 text-center">
-					<h1 id="game-title">Oedipus' Journey</h1>
+				<div className="col-md-6 col-md-offset-3 text-center title-div">
+					<h1 className="game-title">Oedipus' Journey</h1>
 				</div>
 				<div className="container">
 					<Control 
@@ -95,7 +95,7 @@ export default class Game extends Component {
 						
 					/>
 					<br />
-					<Stage 
+					<Stage className="stage-component"
 						handleScore = {this.handleScore}
 						playing = {this.state.playing}
 						gametype = {this.state.gametype}

@@ -15,15 +15,15 @@ export default class Discuss extends Component {
 		var thisUser = localStorage.getItem('userId');
 		if (thisUser === null || thisUser === undefined || thisUser === "null") {
 			return (
-				<div className="log-in-container">
-					<a><Link to="/login"><i className="glyphicon glyphicon-log-in"></i>Login</Link></a>
+				<div className="col-sm-4 log-in-container">
+					<a><Link to="/login"><i className="glyphicon glyphicon-log-in"></i>Sign In</Link></a>
 				</div>
 			)
 		}
 		else {
 			return (
-				<div className="log-in-container">
-					<a onClick={this.handleLogout} ><Link to="/game"><i className="glyphicon glyphicon-log-in"></i>Logout</Link></a>
+				<div className="col-sm-4 log-in-container">
+					<a onClick={this.handleLogout} ><Link to="/game"><i className="glyphicon glyphicon-log-in"></i>Sign In</Link></a>
 				</div>
 			)
 		}
@@ -32,22 +32,15 @@ export default class Discuss extends Component {
 	render() {
 		return (
 			<div className="">
-				<div className="row">
-					<div className="col-xs-4" id="add-quote-container">
-						<div className="add-quote-container">
-							<Link to="/addquote"><i className="glyphicon glyphicon-plus-sign"></i>Add Quote</Link>
+				<div className="row game-nav-container">
+						<div className="col-sm-4 add-quote-container">
+							<a><Link to="/addquote"><i className="glyphicon glyphicon-plus-sign"></i>Add Quote</Link></a>
 						</div>
-						<div className="back-to-game-container">
-							<Link to="/game"><i className="glyphicon glyphicon-backward"></i>Back To Game</Link>
-						</div>
+						<div className="col-sm-4"></div>
 						{this.loginIcon()}
-					</div>
-
-					<div className="col-xs-8 empty">
-					</div>
 				</div>
 
-				<div className="">
+				<div className="game-children">
 					{this.props.children}
 				</div>
 			</div>

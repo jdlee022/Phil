@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import moment from 'moment'
-import Timer from "./Timer";
+// import Timer from "./Timer";
 
 import './style.css'
 // import teaser from './teaser.png'
@@ -14,19 +14,19 @@ export default class Home extends Component {
             quoteOfTheDay: {},
             quoteIndex: 0,
             allQuotes: [],
-			time: (20 * 1000 + 0 * 60 * 1000 + 0 * 60 * 60 * 1000)
+			// time: (20 * 1000 + 0 * 60 * 1000 + 0 * 60 * 60 * 1000)
 
         }
 
         this.getDailyQuotes = this.getDailyQuotes.bind(this);
         this.displayTodayQuote = this.displayTodayQuote.bind(this);
-        this.checkTime = this.checkTime.bind(this);
-		this.changeQuote = this.changeQuote.bind(this);
+		this.checkDate = this.checkDate.bind(this);
     }
 
     componentDidMount() {
         console.log("this.state.now", this.state.now);
-        this.getDailyQuotes();
+        this.getDailyQuotes ();
+		
     }
 
     getDailyQuotes() {
@@ -36,42 +36,23 @@ export default class Home extends Component {
                 allQuotes: myDailyQuotes.data.allQuotes
             }, function () {
                 console.log("THIS.STATE:", this.state);
-                this.setState({
-                    quoteOfTheDay: this.state.allQuotes[this.state.quoteIndex]
-                });
+				this.checkDate();
             }.bind(this));
         }.bind(this));
     }
 
-    checkTime(time) {
-		console.log(time);
-		var countZero = 0;
-		if (time === 0  || time === -0){
-			countZero++;
-		}
-		if (countZero === 2 ){
-			countZero = 0;
-		} else if ( (time === 0 || time === -0) && countZero === 1){
-			this.changeQuote();
-		}
-    }
-
-	changeQuote(){
-		console.log("this.changeQuote()");
-		if (this.state.quoteIndex < ((this.state.allQuotes).length - 1)) {
+	checkDate(getQuoteFunct){
+		var d = new Date;
+		var newIndex = Math.floor(d.getDate() % (this.state.allQuotes).length);
+		console.log("d: ", d);
+		console.log("newIndex", newIndex);
+		this.setState({
+			quoteIndex: newIndex
+		}, function(){
 			this.setState({
-				quoteIndex: (this.state.quoteIndex + 1)
-			}, function () {
-				this.setState({
-					quoteOfTheDay: this.state.allQuotes[this.state.quoteIndex]
-				});
-			}.bind(this));
-		} else if (this.state.quoteIndex === ((this.state.allQuotes).length - 1)) {
-			this.setState({
-				quoteIndex: 0, 
-				quoteOfTheDay: this.state.allQuotes[0]
+				quoteOfTheDay: this.state.allQuotes[this.state.quoteIndex]
 			});
-		}
+		}.bind(this));
 	}
 
     displayTodayQuote() {
@@ -126,13 +107,6 @@ export default class Home extends Component {
                         <h4>Quote of the day:</h4>
                         {this.displayTodayQuote()}
                     </div>
-					<div className="quoteTimer">
-						<Timer 
-							start={Date.now() + (this.state.time)}
-							checkTime = {this.checkTime}
-							time = {this.state.time}
-						/>
-					</div>
                 </div>
             </div>
         );
