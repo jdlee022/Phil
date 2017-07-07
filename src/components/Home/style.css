@@ -11,7 +11,7 @@ div.quote-container {
     font-size: 700%;
     font-weight: 700;
      position: relative;
-    top: 30vh;
+    top: 28vh;
     left: 50%;
     transform: translate(-50%, -50%);
    width: 90%;
@@ -20,30 +20,33 @@ div.quote-container {
     /*background-color: rgba(0, 0, 0, 0.4);*/
 }
 .quote-heading {
-    font-size: 28px;
+    font-size: 18px;
     margin-bottom: 2%;
+    color: #ddd;
 }
-.quoteOfTheDay {
-    font-size: 26px;
-}
+
 .daily-quote {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: normal;
 }
 .quote-philosopher-name {
     font-size: 18px;
     margin-top: 2%;
+    color: #ddd;
 }
 .quote-studied {
-    font-size:16px;
+    font-size:17px;
     margin-top: 1%;
+    color: #ddd;
 }
 div.App {
     height: 100vh;
 }
 .tagline{
-    color: #ddd;
-    margin-top: 4%
+    color: #b8b8b8;
+    margin-top: 5%;
+    font-size: 20px;
+    font-style: oblique;
 }
 
 
