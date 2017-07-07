@@ -117,7 +117,7 @@ ul {
    /*margin-left: 50px;*/
    /*margin-bottom: 30px;*/
    margin-bottom: 25px;
-    color: #ffefc1;
+    color: #fff5da;
     background-color: rgba(50, 50, 50, 0.4);
     border-radius: 15px;
     padding: 15px;
@@ -130,6 +130,8 @@ ul {
     font-size: 100%;
     
 }
+
+
 
 .comment-list-element h2 {
     margin-top: -5px;
@@ -154,7 +156,7 @@ ul {
 }
 #top-reply-btn {
     position:relative;
-    right: -154vw;
+    right: -54vw;
 }
 
 /*DASHBOARD LINKS*/

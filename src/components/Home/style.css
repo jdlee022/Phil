@@ -7,7 +7,7 @@ div.home-container {
 }
 
 div.quote-container {
-    color: white;
+    color: #ddd;
     font-size: 700%;
     font-weight: 700;
      position: relative;
@@ -35,14 +35,14 @@ div.quote-container {
     margin-top: 2%;
 }
 .quote-studied {
-    font-size:18px;
+    font-size:16px;
     margin-top: 2%;
 }
 div.App {
     height: 100vh;
 }
 .tagline{
-    color: white;
+    color: #ddd;
     margin-top: 4%
 }
 

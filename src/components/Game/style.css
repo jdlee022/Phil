@@ -8,6 +8,10 @@
 }
 
 
+.title-div{
+	width: 20vw;
+}
+
 .game-title{
 	position: relative;
 	top: 7vh;
