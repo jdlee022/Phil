@@ -22,7 +22,7 @@ export default class Navbar extends Component {
                     <Link to='/explore' className="link">Explore</Link>
                 </div>
                 <div className="col-xs-2 text-center">
-                    <Link to='/game' className="link">Play</Link>
+                    <Link to='/game' className="link">Challenge</Link>
                 </div>
             </div>
         );

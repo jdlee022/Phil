@@ -29,7 +29,7 @@ router.post('/api/game/addquestion', function (req, res) {
 			hint: req.body.question,
 			answer: req.body.answer,
 			gametype: req.body.gametype, 
-			question: "Who says this?"
+			question: "Who said this?"
 		});
 		Gameset.addQuestion(newQuestion, function (err, question) {
 			if (err) throw err;

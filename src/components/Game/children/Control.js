@@ -89,7 +89,7 @@ export default class Control extends Component {
 						<select className="select-picker" onChange={this.handleTypeSelect} name="gametype" id="selectpicker" style={{color: "black"}}>
 							<option class="game-opt" defaultValue value="mixed">Mixed (All)</option>
 							<option class="game-opt" value="whichperiodisthisfrom">Which period is this from?</option>
-							<option class="game-opt" value="whosaysthis">Who says this?</option>
+							<option class="game-opt" value="whosaysthis">Who said this?</option>
 						</select>
 					</div>
 					<div className="start-reset-btn">

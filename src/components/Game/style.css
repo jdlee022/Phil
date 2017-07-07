@@ -1,10 +1,12 @@
 .game-children {
-	color: white;
 	position: absolute;
 	top: 19vh;
 }
 
+.game-title{ 
+	color: white;
 
+}
 /* ROW 1: LINKS */
 .glyphicon-plus-sign,
 .glyphicon-backward,
@@ -25,7 +27,6 @@
 	font-size: 120%;
 	left: 10vw;
 	top: 2vh;
-
 }
 
 .log-in-container {
@@ -52,21 +53,33 @@ select.select-picker .game-opt{
 
 .control-component {
 	text-align: center;
-
+	color: white;
 }
 
 /* ROW 4: QUESTION */
+.all-game-stage { 
+	position: relative;
+	top: 0vh;
+	color: white;
+	/*border: 2px solid white;*/
+}
+
+.talktext {
+	font-weight: 500;
+}
+
 .stage-component {
 	text-align: center;
 	height: 17vh;
-	position: relative;
-	top: -2vh;
+	padding: 30px;
+	
 }
 
 .game-img-animation {
 	text-align: center;
 	position: relative;
 	top: -5vh;
+	
 }
 
 /* ROW 5: ANIMATION */
@@ -119,13 +132,13 @@ select.select-picker .game-opt{
 .sphinx {
 	/*position: relative;*/
 	height: 35vh;
-	width: 15vw;
+	width: 17vw;
 }
 
 .laser-line {
 	position: fixed;
-	right: 11vw;
-	top: 61vh;
+	right: 10.5vw;
+	top: 61.5vh;
 	width: 60vw;
 
 }
@@ -133,6 +146,11 @@ select.select-picker .game-opt{
 .oedipus {
 	/*position: relative;*/
 	height: 35vh;
-	width: 15vw;
+	width: 17vw;
 	/*right: 0vw;*/
+}
+
+
+.addQuestionForm{
+	color: black;
 }

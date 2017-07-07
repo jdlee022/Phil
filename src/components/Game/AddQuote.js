@@ -82,21 +82,21 @@ export default class AddQuote extends Component {
 			<div>
 				<div className="">
 					<h2>Add New Question</h2>
-					<form onSubmit={this.handleSubmit}>
-						<label htmlFor="">Hint:</label>
-						<input onInput={this.handleInput} type="text" name="question" value={this.state.question} />
+					<form class="addQuestionForm" onSubmit={this.handleSubmit}>
+						<label htmlFor="">Hint:  </label>
+						<input className="game-opt"  onInput={this.handleInput} type="text" name="question" value={this.state.question} />
 						<br/> <br/>
-						<label htmlFor="">Answer:</label>
-						<input onInput={this.handleInput} type="text" name='answer' value={this.state.answer} />
+						<label htmlFor="">Answer:  </label>
+						<input className="game-opt"  onInput={this.handleInput} type="text" name='answer' value={this.state.answer} />
 						<br /> <br />
-						<label htmlFor="">Type Question:</label>
-						<select onChange={this.handleSelect} name="gametype" id="game-options">
-							<option selected="selected" value="Select the type of game"></option>
-							<option value="whichperiodisthisfrom">Which period is this from?</option>
-							<option value="whosaysthis">Who says this?</option>
+						<label htmlFor="">Type Question:  </label>
+						<select onChange={this.handleSelect} name="gametype" className="game-opt" id="game-options">
+							<option className="game-opt" selected="selected" value="Select the type of game"></option>
+							<option className="game-opt" value="whichperiodisthisfrom">Which period is this from?</option>
+							<option className="game-opt" value="whosaysthis">Who said this?</option>
 						</select>
 						<br /> <br />
-						<input type="submit" value="Submit" />
+						<input className="game-opt" type="submit" value="Submit" />
 					</form>
 					<p> {this.state.postText}</p>
 				</div>

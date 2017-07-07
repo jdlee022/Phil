@@ -30,6 +30,8 @@ export default class Play extends Component {
 			life : 5, 
 			timer: false,
 			gametype: "mixed", 
+			choicesWho: [],
+			choicesWhich: []
 		}
 
 		this.handleAnswer = this.handleAnswer.bind(this);
@@ -44,6 +46,7 @@ export default class Play extends Component {
 		this.endGame = this.endGame.bind(this);
 		this.correctAnswerDisplay = this.correctAnswerDisplay.bind(this);
 		this.setupGameType = this.setupGameType.bind(this);
+		this.sortChoiceArray = this.sortChoiceArray.bind(this);
 	}
 
 	//  Introduction to the game 
@@ -164,6 +167,7 @@ export default class Play extends Component {
 					questionBank: questions.data.specificQuestions
 				}, function () {
 					console.log("THIS.STATE", this.state);
+					this.sortChoiceArray();
 				});
 			}.bind(this));
 		} 
@@ -175,6 +179,7 @@ export default class Play extends Component {
 					questionBank: questions.data.allQuestions
 				}, function () {
 					console.log("THIS.STATE", this.state);
+					this.sortChoiceArray();
 				});
 			}.bind(this));
 		}
@@ -389,9 +394,26 @@ export default class Play extends Component {
 		}
 	}
 
+	sortChoiceArray(){
+		
+	}
+
+	answerChoices(){
+		if (this.state.currentQuestion.question = "Who said this?"){
+			return (
+				<p>Choices: ()</p>
+			)
+		}
+		else if (this.state.currentQuestion.question = "Which period is this from?") {
+			return (
+				<p>Choices: ()</p>
+			)
+		}
+	}
+
 	renderNormal(){
 		return (
-			<div className="container">
+			<div className="container all-game-stage">
 				<div className="row stage-component">
 					<div className="col-xs-4 talk-bubble tri-right border round btm-left-in">
 						<div className="talktext">
@@ -420,6 +442,7 @@ export default class Play extends Component {
 
 						<div className="answerbox">
 							<h4 className="main-question">{this.state.currentQuestion.question}</h4>
+			
 							
 							<label>Answer: </label><br />
 							<form action="" onSubmit={this.handleAnswer}>
