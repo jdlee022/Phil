@@ -91,6 +91,15 @@ a:hover {
     transition-duration: .3s;
 
 }
+.cancel-it  {
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #5dc4ff;
+    cursor: pointer;
+
+}
+
+
 
 /*ALL LINKS*/
 .link {
