@@ -42,7 +42,7 @@ export default class Home extends Component {
     }
 
 	checkDate(getQuoteFunct){
-		var d = new Date;
+		var d = new Date();
 		var newIndex = Math.floor(d.getDate() % (this.state.allQuotes).length);
 		console.log("d: ", d);
 		console.log("newIndex", newIndex);

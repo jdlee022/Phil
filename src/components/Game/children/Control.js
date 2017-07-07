@@ -78,18 +78,18 @@ export default class Control extends Component {
 	render() {
 		return (
 			<div className="row control-component">
-				<div className="col-sm-4 game-highscore">
+				<div className="col-xs-4 game-highscore">
 					<h3>High Score: {this.state.currHighScore}</h3>
 					{this.loginInfo()}
 				</div>
 
-				<div className="col-sm-4 game-question-type" >
+				<div className="col-xs-4 game-question-type" >
 					<div>	
 						<h3>Type of Questions:</h3>
-						<select className="select-picker" onChange={this.handleTypeSelect} name="gametype" id="">
-							<option defaultValue value="mixed">Mixed (All)</option>
-							<option value="whichperiodisthisfrom">Which period is this from?</option>
-							<option value="whosaysthis">Who says this?</option>
+						<select className="select-picker" onChange={this.handleTypeSelect} name="gametype" id="selectpicker" style={{color: "black"}}>
+							<option class="game-opt" defaultValue value="mixed">Mixed (All)</option>
+							<option class="game-opt" value="whichperiodisthisfrom">Which period is this from?</option>
+							<option class="game-opt" value="whosaysthis">Who says this?</option>
 						</select>
 					</div>
 					<div className="start-reset-btn">
@@ -99,7 +99,7 @@ export default class Control extends Component {
 					
 				</div>
 					
-				<div className="col-sm-4 game-score">
+				<div className="col-xs-4 game-score">
 					<h3>Score: {this.state.score}</h3>
 				</div>	
 			</div>

@@ -1,163 +1,132 @@
-/* ALL BUTTONS */
-
-
-/* Game Children Containers */
-.game-children{
+.game-children {
+	color: white;
 	position: absolute;
-	height: 60vh;
-	top: 20vh;
-}
-
-.game-title{
-	position: relative;
-	top: -4vh;
-	font-size: 5vh;
-	text-align: center;
-}
-
-.control-component{
-	position: relative;
-	top: -4vh;
-	right: -6vw;
-	height: 10vh;
+	top: 18vh;
 }
 
 
-.game-nav-container {
-	position: absolute;
-	top: 12vh;
-	right: 30vw;
-	font-size: 2.8vh;
-}
-
-.game-story-imgs {
-	position: absolute;
-
-}
-
-
-/* Link to Pages */
+/* ROW 1: LINKS */
 .glyphicon-plus-sign,
 .glyphicon-backward,
 .glyphicon-log-in {
-	font-size: 100%;
+	font-size: 120%;
 }
 
 .glyphicon-plus-sign {
-	margin-right: 9%;
+	margin-right: 2%;
 }
 
 .glyphicon-log-in {
-	margin-right: 9%;
+	margin-right: 2%;
 }
 
 .add-quote-container {
-	position: relative;
-	width: 18vw;
-	right: 2vw;
+	text-align: center;
+	font-size: 120%;
+	left: 10vw;
+	top: 2vh;
 }
 
 .log-in-container {
-	position: relative;
-	width: 18vw;
-	right: -2vw;
+	text-align: center;
+	font-size: 120%;
+	right: 10vw;
+	top: 2vh;
+
 }
 
-/* Control */
-.game-question-type {
-	position: relative;
-	right: 1vw;
-}
 
-.select-picker {
-	position: absolute;
-	top: 7vh;
-	right: 13vw;
+/* ROW 2: TITLE */
+
+
+/* ROW 3: CONTROL */
+select.select-picker .game-opt{
+	color: black;
 }
-/* Start and Reset */
 
 .start-reset-btn {
 	position: relative;
-	right: -2vw;
-	top: 2vh;
-} 
-
-.game-highscore{
-	position: relative;
-	right: -2vw;
+	top: -2vh;
 }
 
-.game-score{
-	position: relative;
-	right: 2vw;
+.control-component {
+	text-align: center;
+
 }
 
-
-/* Stage */
- 
-/* Question and timer; */
+/* ROW 4: QUESTION */
 .stage-component {
-	position: absolute;
-	top: 25vh;
-	right: 6vw;
-}
-
-
-.oedipus-life{
+	text-align: center;
+	height: 17vh;
 	position: relative;
-	right: 10vw;
+	top: -2vh;
 }
 
-
-
-
-/* Images and animation */
-
-.game-img-animation{
-	position: absolute;
-	top: 38vh;
-	right: 5vw;
-	width: 80vw;
-}
-
-.talktext{ 
+.game-img-animation {
+	text-align: center;
 	position: relative;
-	right: 37vw;
-	width: 25vw;
-	height: 10vh;
-	font-size: 115%;
+	top: -5vh;
+}
+
+/* ROW 5: ANIMATION */
+
+.animation-answer{
+	text-align: center;
+	top: 16vh;
+}
+
+.main-question {
+	text-align: center;	
+}
+
+.answerbox{
+	width: 15vw;
+	top: 4vh;
 	text-align: center;
 }
 
-.answerbox {
+.input-container{
+
+}
+
+.ansSubmitBtn {
 	position: relative;
-	top: 10vh;
-	
+	background: gray 0.5%;
+	border: none;
+	top: 1vh;
+	color: white;
 }
 
 .clock {
-	position: relative;
-	top: 10vh;
-	right: 20vw;
+	/*position: relative;*/
+	top: -3vh;
+	right: 7vw;
+}
+
+.game-result{
+	position: absolute;
+	width: 20vw;
+	top: -2vh;
+	left: 30vw;
 }
 
 .sphinx {
-	position: relative;
+	/*position: relative;*/
 	height: 40vh;
-	width: 20vw;
-
+	width: 15vw;
 }
 
 .laser-line {
 	position: relative;
-	top: 9vh;
-	right: 8vw;
-	width: 50vw;
+	right: 5vw;
+	top: 7.5vh;
+	width: 59vw;
+
 }
 
 .oedipus {
-	position: relative;
+	/*position: relative;*/
 	height: 40vh;
 	width: 15vw;
-	right: 0vw;	
+	/*right: 0vw;*/
 }

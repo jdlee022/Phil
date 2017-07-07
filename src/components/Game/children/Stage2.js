@@ -328,14 +328,14 @@ export default class Play extends Component {
 	correctAnswerDisplay(){
 		if (this.state.matched === "false"){
 			return (
-				<div>
+				<div className = "game-result">
 					<h4 class="incorrect">Incorrect!</h4>
 					<h4>Correct Answer: {this.state.currentQuestion.answer}</h4>
 				</div>	
 			)
 		} else if (this.state.matched === "false"){
 			return (
-				<div>
+				<div className="game-result">
 					<h4 class="correct">Correct!</h4>
 				</div>
 			)
@@ -349,8 +349,8 @@ export default class Play extends Component {
 					<ReactCountdownClock seconds={10}
 						color="#fff"
 						alpha={0.9}
-						size={100}
-						weight={10}
+						size={70}
+						weight={8}
 						onComplete={this.handleAnswer.bind(this)}
 					/>
 				)
@@ -359,8 +359,8 @@ export default class Play extends Component {
 					<ReactCountdownClock seconds={15}
 						color="#fff"
 						alpha={0.9}
-						size={100}
-						weight={10}
+						size={70}
+						weight={8}
 						onComplete={this.handleAnswer.bind(this)}
 					/>
 				)
@@ -374,7 +374,7 @@ export default class Play extends Component {
 	laser(){
 		if (this.state.matched === 'false'){
 			return (
-				<div className="laser-line col-lg-4">
+				<div className="laser-line col-xs-4">
 					<MtSvgLines animate={true} duration={1000}>
 						<svg viewBox="0 0 1000 5">
 							<path stroke="red" strokeWidth="3" fill="none" d="m0,0, h820" />
@@ -390,17 +390,18 @@ export default class Play extends Component {
 		return (
 			<div className="container">
 				<div className="row stage-component">
-					<div className="col-md-4 talk-bubble tri-right border round btm-left-in">
+					<div className="col-xs-4 talk-bubble tri-right border round btm-left-in">
 						<div className="talktext">
 							<p>{this.state.currentQuestion.hint}</p>
 						</div>
 					</div>
-					<div className="col-md-4 clock">
+
+					<div className="col-xs-4 clock">
 						&nbsp;
 						{this.timerClock()}
 					</div>
 
-					<div className="col-md-4 offset-md-4 oedipus-life">
+					<div className="col-xs-4 oedipus-life">
 						<h3>Oedipus: {this.state.life}</h3>
 					</div>
 				</div>
@@ -409,27 +410,27 @@ export default class Play extends Component {
 					<div className="sphinx-div col-sm-4">
 						<img onClick={this.handleSphinxAnimation} className="sphinx" src={this.state.sphinxSrc} alt="Sphinx" />
 					</div>
-					
-					<div className="animation-answer col-sm-4">
-						
-						{this.laser()}
+					{this.laser()}
+					{this.correctAnswerDisplay()}
 
-						<div className="answerbox ">
-							{this.correctAnswerDisplay()}
-							<br /> <br /> 
-							<label htmlFor="">{this.state.currentQuestion.question}</label><br />
-							Answer: 
+					<div className="animation-answer col-xs-4">
+
+						<div className="answerbox">
+							<h4 className="main-question">{this.state.currentQuestion.question}</h4>
+							
+							<label>Answer: </label><br />
+							
 							<div className="input-container">
 								<input type="text" onInput={this.handleInput} value={this.state.answer} />
 							</div>
-							<input type="submit" value="Submit" onClick={this.handleAnswer}/>
+							<input className="ansSubmitBtn" type="submit" value="Submit" onClick={this.handleAnswer}/>
 						</div>
 						<div>
 							<p className="feedback">{this.state.feedback}</p>
 						</div>
 					</div>
 
-					<div className="oedipus-div col-sm-4">
+					<div className="oedipus-div col-xs-4">
 						<img className="oedipus" src={this.state.oedipus} alt="Oedipus" />
 					</div>
 
@@ -441,6 +442,5 @@ export default class Play extends Component {
 
 	render() {
 		return this.renderNormal();
-
 	}
 }

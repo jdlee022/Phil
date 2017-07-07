@@ -1,0 +1,164 @@
+/* ALL BUTTONS */
+.game-children{
+	color: white;
+}
+/* Game Children Containers */
+.game-children{
+	position: absolute;
+	height: 60vh;
+	top: 20vh;
+}
+
+.game-title{
+	position: absolute;
+	top: -4vh;
+	font-size: 5vh;
+	text-align: center;
+}
+
+.control-component{
+	position: absolute;
+	top: -4vh;
+	right: -6vw;
+	height: 10vh;
+}
+
+
+.game-nav-container {
+	position: absolute;
+	top: 12vh;
+	right: 30vw;
+	font-size: 2.8vh;
+}
+
+.game-story-imgs {
+	position: absolute;
+
+}
+
+
+/* Link to Pages */
+.glyphicon-plus-sign,
+.glyphicon-backward,
+.glyphicon-log-in {
+	font-size: 100%;
+}
+
+.glyphicon-plus-sign {
+	margin-right: 9%;
+}
+
+.glyphicon-log-in {
+	margin-right: 9%;
+}
+
+.add-quote-container {
+	position: absolute;
+	width: 18vw;
+	right: 2vw;
+}
+
+.log-in-container {
+	position: absolute;
+	width: 18vw;
+	right: -2vw;
+}
+
+/* Control */
+.game-question-type {
+	position: absolute;
+	right: 1vw;
+}
+
+.select-picker {
+	position: absolute;
+	top: 7vh;
+	right: 13vw;
+}
+/* Start and Reset */
+
+.start-reset-btn {
+	position: absolute;
+	right: -2vw;
+	top: 2vh;
+} 
+
+.game-highscore{
+	position: absolute;
+	right: -2vw;
+}
+
+.game-score{
+	position: absolute;
+	right: 2vw;
+}
+
+
+/* Stage */
+ 
+/* Question and timer; */
+.stage-component {
+	position: absolute;
+	top: 25vh;
+	right: 6vw;
+}
+
+
+.oedipus-life{
+	position: absolute;
+	right: 10vw;
+}
+
+
+
+
+/* Images and animation */
+
+.game-img-animation{
+	position: absolute;
+	top: 38vh;
+	right: 5vw;
+	width: 80vw;
+}
+
+.talktext{ 
+	position: absolute;
+	right: 37vw;
+	width: 25vw;
+	height: 10vh;
+	font-size: 115%;
+	text-align: center;
+}
+
+.answerbox {
+	position: absolute;
+	top: 10vh;
+	
+}
+
+.clock {
+	position: absolute;
+	top: 10vh;
+	right: 20vw;
+}
+
+.sphinx {
+	position: absolute;
+	height: 40vh;
+	width: 20vw;
+
+}
+
+.laser-line {
+	position: absolute;
+	top: 9vh;
+	right: 8vw;
+	width: 50vw;
+}
+
+.oedipus {
+	position: absolute;
+	height: 40vh;
+	width: 15vw;
+	right: 0vw;	
+}
