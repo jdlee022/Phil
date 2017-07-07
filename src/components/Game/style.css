@@ -4,32 +4,30 @@
 /* Game Children Containers */
 .game-children{
 	position: absolute;
-
+	height: 60vh;
+	top: 20vh;
 }
-
 
 .game-title{
 	position: relative;
-	top: 7vh;
+	top: -4vh;
 	font-size: 5vh;
 	text-align: center;
 }
 
 .control-component{
 	position: relative;
-	top: 6vh;
+	top: -4vh;
 	right: -6vw;
-
+	height: 10vh;
 }
-
 
 
 .game-nav-container {
 	position: absolute;
-	top: 16vh;
+	top: 12vh;
 	right: 30vw;
-	font-size: 3vh;
-
+	font-size: 2.8vh;
 }
 
 .game-story-imgs {
@@ -56,11 +54,13 @@
 .add-quote-container {
 	position: relative;
 	width: 18vw;
+	right: 2vw;
 }
 
 .log-in-container {
 	position: relative;
 	width: 18vw;
+	right: -2vw;
 }
 
 /* Control */
@@ -98,8 +98,8 @@
 /* Question and timer; */
 .stage-component {
 	position: absolute;
-	top: 35vh;
-	right: -2vw;
+	top: 25vh;
+	right: 6vw;
 }
 
 
@@ -115,8 +115,8 @@
 
 .game-img-animation{
 	position: absolute;
-	top: 48vh;
-	right: -7vw;
+	top: 38vh;
+	right: 5vw;
 	width: 80vw;
 }
 
@@ -159,5 +159,5 @@
 	position: relative;
 	height: 40vh;
 	width: 15vw;
-	right: 5vw;	
+	right: 0vw;	
 }

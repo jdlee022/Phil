@@ -388,7 +388,7 @@ export default class Play extends Component {
 
 	renderNormal(){
 		return (
-			<div className="row container-fluid ">
+			<div className="container">
 				<div className="row stage-component">
 					<div className="col-md-4 talk-bubble tri-right border round btm-left-in">
 						<div className="talktext">

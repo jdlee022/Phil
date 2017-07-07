@@ -82,7 +82,6 @@ export default class Game extends Component {
 	render() {
 		return (
 			<div className="">
-
 				<div className="col-md-6 col-md-offset-3 text-center title-div">
 					<h2 className="game-title">Oedipus' Journey</h2>
 				</div>
