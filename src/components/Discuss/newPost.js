@@ -87,17 +87,19 @@ export default class NewPost extends React.Component {
                     <h2 className="page-header">Create a new post in {this.state.category}</h2>
                     {this.checkLoginStatus()}
                 </div>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="form-group">
-                        <label>Post Title</label>
-                        <input type="text" className="form-control" name="title" value={this.state.title} onChange={this.handleInputChange} />
-                    </div>
-                    <div className="form-group">
-                        <label>Post Text</label>
-                        <textarea style={{height: '200px', position: 'absolute'}} type="text" className="form-control" name="text" value={this.state.text} onChange={this.handleInputChange} />
-                    </div>
-                    <button type="submit" className="btn btn-default">Submit</button>
-                </form>
+                <div className="col-md-offset-1 col-md-10">
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="form-group">
+                            <label>Post Title</label>
+                            <input type="text" className="form-control" name="title" value={this.state.title} onChange={this.handleInputChange} />
+                        </div>
+                        <div className="form-group">
+                            <label>Post Text</label>
+                            <textarea style={{ height: '200px' }} type="text" className="form-control" name="text" value={this.state.text} onChange={this.handleInputChange} />
+                        </div>
+                        <button type="submit" className="btn btn-default">Submit</button>
+                    </form>
+                </div>
             </div>
         );
     }

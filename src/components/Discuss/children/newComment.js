@@ -63,7 +63,7 @@ export default class NewComment extends Component {
             <div>
                 {this.checkLoginStatus()}
                 <textarea style={{height: '110px', whiteSpace: 'pre-wrap'}} className="form-control" name="text" value={this.state.text} onChange={this.handleInputChange} />
-                <button type="button" className="btn btn-default" onClick={this.handleCommentSubmit}>Submit</button>
+                <button style={{margin: '0px', marginTop:'10px', marginBottom: '10px'}} type="button" className="btn btn-default" onClick={this.handleCommentSubmit}>Submit</button>
             </div>
         );
     }

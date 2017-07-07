@@ -20,7 +20,7 @@ div.quote-container {
     /*background-color: rgba(0, 0, 0, 0.4);*/
 }
 .quote-heading {
-    font-size: 30px;
+    font-size: 28px;
     margin-bottom: 2%;
 }
 .quoteOfTheDay {
@@ -31,12 +31,12 @@ div.quote-container {
     font-weight: normal;
 }
 .quote-philosopher-name {
-    font-size: 22px;
+    font-size: 18px;
     margin-top: 2%;
 }
 .quote-studied {
     font-size:16px;
-    margin-top: 2%;
+    margin-top: 1%;
 }
 div.App {
     height: 100vh;

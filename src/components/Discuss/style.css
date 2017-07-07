@@ -14,7 +14,7 @@ ul {
     margin-right: 15px;
     margin-bottom: 15px;
     font-size: 125%;
-    color: white;
+    color: #ddd;
 
 }
 
@@ -33,12 +33,12 @@ ul {
 
 .register-container {
     color: white;
-    font-size: 125%;
+    font-size: 100%;
     font-weight: 600;
 }
 .login-container {
     color: white;
-    font-size: 125%;
+    font-size: 100%;
     font-weight: 600;
 }
 
@@ -47,8 +47,13 @@ ul {
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.8);
     /*margin-left: auto;*/
-    /*margin-right: auto;*/
-    margin-bottom: 20px;
+    margin-top: 7px;
+    margin-bottom: 30px;
+    border: 1px solid #b2b2b2;
+}
+
+.discuss-content-block{
+    padding-left: 20px;
 }
 
 /*ALL LINKS*/
@@ -107,7 +112,7 @@ ul {
 
 .comment-list-element.op {
    margin-left:0px;
-   margin-top: 30px;
+   margin-top: 10px;
     color: #ddd;
     background-color: rgba(50, 50, 50, 0.6);
     border-radius: 15px;
@@ -121,6 +126,8 @@ ul {
     background-color: rgba(50, 50, 50, 0.4);
     border-radius: 15px;
     padding: 15px;
+    border: 1px solid #5d5d5d;
+
 }
 
 
@@ -154,10 +161,10 @@ ul {
     font-size: 22px;
     margin: 0 0 10px 0;
 }
-#top-reply-btn {
+/*#top-reply-btn {
     position:relative;
     right: -54vw;
-}
+}*/
 
 /*DASHBOARD LINKS*/
 

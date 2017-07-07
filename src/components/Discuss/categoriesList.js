@@ -53,22 +53,25 @@ export default class CategoriesList extends Component {
                         <h2 className="page-header">Categories</h2>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-md-2">
-                        <h4><u>Category</u></h4>
+                <div className="discuss-content-block">
+                    <div className="row">
+                        <div className="col-md-2">
+                            <h4><u>Category</u></h4>
+                        </div>
+                        <div className="col-md-8">
+                            <h4><u>Description</u></h4>
+                        </div>
+                        <div className="col-md-2 text-center">
+                            <h4><u>Posts</u></h4>
+                        </div>
                     </div>
-                    <div className="col-md-8">
-                        <h4><u>Description</u></h4>
-                    </div>
-                    <div className="col-md-2 text-center">
-                        <h4><u>Posts</u></h4>
+                    <div className="row">
+                        <ul>
+                            {categoryItems}
+                        </ul>
                     </div>
                 </div>
-                <div className="row">
-                    <ul>
-                        {categoryItems}
-                    </ul>
-                </div>
+
             </div>
         );
     }

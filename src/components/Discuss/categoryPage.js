@@ -45,18 +45,19 @@ export default class CategoryPage extends Component {
                         <h2 className="page-header">{this.state.category}</h2>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-md-6">
-                        <u>Posts</u>
+                <div className="discuss-content-block">
+
+                    <div className="row">
+                        <div className="col-md-6">
+                            <u>Posts</u>
+                        </div>
+                        <div className="col-md-2 text-center">
+                            <u>Replies</u>
+                        </div>
+                        <div className="col-md-4 text-center">
+                            <u>Last Reply</u>
+                        </div>
                     </div>
-                    <div className="col-md-2 text-center">
-                        <u>Replies</u>
-                    </div>
-                    <div className="col-md-4 text-center">
-                        <u>Last Reply</u>
-                    </div>
-                </div>
-                <div className="">
                     <ul >
                         {postItems}
                     </ul>
