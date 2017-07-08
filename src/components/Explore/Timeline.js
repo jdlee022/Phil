@@ -78,7 +78,7 @@ var Timeline = React.createClass({
 							<a href="#" role="button" value="Socratic" onClick={this.handleClick}>
 								<div className="tl-bg" style={backgroundImg2}></div>
 								<div className="tl-year" value="Socratic">
-									<p className="f2 heading--sanSerif" value="Socratic">322 - 646 BC</p>
+									<p className="f2 heading--sanSerif" value="Socratic">646 - 322BC</p>
 								</div>
 								<div className="tl-content" value="Socratic">
 									<h1 className="f3 text--accent ttu" value="Socratic">Socratic</h1>
