@@ -65,7 +65,7 @@ var Timeline = React.createClass({
 							<a href="#" role="button" value="Pre-Socratic" onClick={this.handleClick}>
 								<div className="tl-bg" value="Pre-Socratic" style={backgroundImg1}></div>
 								<div className="tl-year" value="Pre-Socratic">
-									<p className="f2 heading--sanSerif" value="Pre-Socratic">460 - 625 BC</p>
+									<p className="f2 heading--sanSerif" value="Pre-Socratic">625 - 460 BC</p>
 								</div>
 								<div className="tl-content" value="Pre-Socratic">
 									<h1 className="f3 text--accent ttu" value="Pre-Socratic">Pre-Socratic</h1>
@@ -78,7 +78,7 @@ var Timeline = React.createClass({
 							<a href="#" role="button" value="Socratic" onClick={this.handleClick}>
 								<div className="tl-bg" style={backgroundImg2}></div>
 								<div className="tl-year" value="Socratic">
-									<p className="f2 heading--sanSerif" value="Socratic">646 - 322BC</p>
+									<p className="f2 heading--sanSerif" value="Socratic">460 - 322 BC</p>
 								</div>
 								<div className="tl-content" value="Socratic">
 									<h1 className="f3 text--accent ttu" value="Socratic">Socratic</h1>
@@ -90,7 +90,7 @@ var Timeline = React.createClass({
 							<a href="#" role="button" value="Hellenistic" onClick={this.handleClick}>
 								<div className="tl-bg" value="Hellenistic" style={backgroundImg3}></div>
 								<div className="tl-year" value="Hellenistic" >
-									<p className="f2 heading--sanSerif" value="Hellenistic" >300 BC - 270 AD</p>
+									<p className="f2 heading--sanSerif" value="Hellenistic">300 BC - 270 AD</p>
 								</div>
 								<div className="tl-content" value="Hellenistic" >
 									<h1 className="f3 text--accent ttu" value="Hellenistic" >Hellenistic</h1>
