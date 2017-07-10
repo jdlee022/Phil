@@ -38,10 +38,10 @@ Bootstrap
 ## Issues/Future Improvements
 
 Comments will sometimes populate in reverse order after a new comment has been made.
-
+<br />
 
 Mobile compatibility on all pages.
-
+<br />
 
 Allow users to delete their own comments and posts after logging in.
 
