@@ -42,14 +42,14 @@ export default class CategoryPageChild extends Component {
 
         return (
             <li className="row categoryTest">
-                <div className="col-md-6">
+                <div className="col-md-6 col-xs-7">
                     <Link to={postQuery}>{this.state.title}</Link>
                     <p>By <span className="username">{this.state.username}</span> on {this.state.date}</p>
                 </div>
-                <div className="col-md-2 text-center">
+                <div className="col-md-2 col-xs-2 text-center">
                     <p>{this.state.replies}</p>
                 </div>
-                <div className="col-md-4 text-center">
+                <div className="col-md-4 col-xs-3 text-center">
                     <p>{this.state.lastReply}</p>
                 </div>
             </li>

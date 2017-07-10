@@ -4,6 +4,16 @@
 ## Description
 Phil is a web application for people who love discussing and learning about philosophy. Featuring a discussion form where users can register for an account, login, create new posts, and comment on existing posts, as well as an Explore page that provides users with a brief history of Western Philosophy, and a Challenge page that puts users knowledge of philosophy to the test.
 
+## Team
+
+Jon Lee
+
+Melissa Nguyen
+
+Sean Naylor
+
+Tony Facchini
+
 ## Installation
 1. Download the master repository.
 
@@ -23,6 +33,8 @@ MERN stack (MongoDB, Express, React, Node)
 
 React-Router
 
+Create-react-app
+
 Axios
 
 Passport.js
@@ -41,9 +53,7 @@ Bootstrap
 
 ## Issues/Future Improvements
 
-Comments will sometimes populate in reverse order after a new comment has been made.
-
-Mobile compatibility on all pages.
+Mobile compatibility on the game page.
 
 Allow users to delete their own comments and posts after logging in.
 

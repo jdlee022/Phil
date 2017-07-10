@@ -25,13 +25,13 @@ export default class CategoriesListChild extends Component {
         return (
             <Link to={categoryQuery}>
             <li className="row categoryListChild">
-                    <div className="col-md-2 link">
+                    <div className="col-md-2 col-xs-3 link">
                         {this.state.category}
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-xs-8">
                         <p>{this.state.description}</p>
                     </div>
-                    <div className="col-md-2 text-center">
+                    <div className="col-md-2 col-xs-1 text-center">
                         <p className="category-posts">{this.state.numPosts}</p>
                     </div>
             </li>
