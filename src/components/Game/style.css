@@ -1,40 +1,40 @@
 .game-children {
-	position: absolute;
-	top: 19vh;
+    position: absolute;
+    top: 19vh;
 }
 
 .game-title{ 
-	color: white;
+    color: white;
 
 }
 /* ROW 1: LINKS */
 .glyphicon-plus-sign,
 .glyphicon-backward,
 .glyphicon-log-in {
-	font-size: 120%;
+    font-size: 120%;
 }
 
 .glyphicon-plus-sign {
-	margin-right: 2%;
+    margin-right: 2%;
 }
 
 .glyphicon-log-in {
-	margin-right: 10%;
+    margin-right: 10%;
 }
 
 .add-quote-container {
-	text-align: center;
-	font-size: 120%;
-	left: 10vw;
-	top: 2vh;
+    text-align: center;
+    font-size: 120%;
+    left: 10vw;
+    top: 2vh;
 }
 
 .log-in-container {
-	text-align: center;
-	font-size: 120%;
-	right: -2vw;
-	top: 2vh;
-	width: 15vw;
+    text-align: center;
+    font-size: 120%;
+    right: -2vw;
+    top: 2vh;
+    width: 15vw;
 }
 
 
@@ -43,65 +43,69 @@
 
 /* ROW 3: CONTROL */
 select.select-picker .game-opt{
-	color: black;
+    color: black;
 }
 
 .start-reset-btn {
-	position: relative;
-	top: 0vh;
+    position: relative;
+    top: -1vh;
 }
 
 .control-component {
-	text-align: center;
-	color: white;
+    text-align: center;
+    color: white;
 }
 
 /* ROW 4: QUESTION */
 .all-game-stage { 
-	position: relative;
-	top: 0vh;
-	color: white;
-	/*border: 2px solid white;*/
+    position: relative;
+    top: 0vh;
+    color: white;
+    /*border: 2px solid white;*/
 }
 
 .talktext {
-	font-weight: 500;
+    font-weight: 500;
 }
 
 .stage-component {
-	text-align: center;
-	height: 17vh;
-	padding: 30px;
-	
+    text-align: center;
+    height: 17vh;
+    position: relative;
+    top: -5vh;
 }
 
 .game-img-animation {
-	text-align: center;
-	position: relative;
-	top: -5vh;
-	
+    text-align: center;
+    position: relative;
+    top: -8vh;
+    
 }
 
 /* ROW 5: ANIMATION */
 
 .animation-answer{
-	text-align: center;
-	top: 16vh;
+    text-align: center;
+    top: 16vh;
 }
 
 .main-question {
-	text-align: center;	
+    text-align: center;    
 }
 
 .game-answer-box{
+<<<<<<< HEAD
 	color: black;
 	/*left: 4vw;*/
+=======
+    color: black;
+>>>>>>> updated readme
 }
 
 .answerbox{
-	width: 20vw;
-	top: 4vh;
-	text-align: center;
+    width: 20vw;
+    top: 4vh;
+    text-align: center;
 }
 
 .input-container{
@@ -109,49 +113,64 @@ select.select-picker .game-opt{
 }
 
 .ansSubmitBtn {
-	position: relative;
-	background: gray 0.5%;
-	border: none;
-	top: 1vh;
-	color: white;
+    position: relative;
+    background: gray 0.5%;
+    border: none;
+    top: 1vh;
+    color: white;
 }
 
 .clock {
-	/*position: relative;*/
-	top: -3vh;
-	right: 4vw;
+    /*position: relative;*/
+    top: -3vh;
+    right: 4vw;
 }
 
 .game-result{
+<<<<<<< HEAD
 	position: absolute;
 	width: 20vw;
 	top: -2vh;
 	left: 37vw;
 	font-size: 120%
+=======
+    position: absolute;
+    width: 20vw;
+    top: -2vh;
+    left: 30vw;
+    font-size: 120%
+>>>>>>> updated readme
 }
 
 .sphinx {
-	/*position: relative;*/
-	height: 35vh;
-	width: 17vw;
+    /*position: relative;*/
+    height: 35vh;
+    width: 17vw;
 }
 
 .laser-line {
+<<<<<<< HEAD
 	position: fixed;
 	right:6vw;
 	top: 61vh;
 	width: 69vw;
+=======
+    position: fixed;
+    right: 6.5vw;
+    top: 66.5vh;
+    width: 67vw;
+>>>>>>> updated readme
 
 }
 
 .oedipus {
-	/*position: relative;*/
-	height: 35vh;
-	width: 17vw;
-	/*right: 0vw;*/
+    /*position: relative;*/
+    height: 35vh;
+    width: 17vw;
+    /*right: 0vw;*/
 }
 
 
 .addQuestionForm{
-	color: black;
+    color: black;
 }

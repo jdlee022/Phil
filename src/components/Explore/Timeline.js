@@ -114,7 +114,7 @@ render: function() {
           <a href = "#" role = "button" value = "Medieval" onClick = {this.handleClick}>
             <div className="tl-bg" style={backgroundImg5}></div>
               <div className="tl-year" value = "Medieval">
-              <p className="f2 heading--sanSerif" value = "Medieval">460 - 625 BC</p>
+              <p className="f2 heading--sanSerif" value = "Medieval">980 - 1350 AD</p>
               </div>
              <div className="tl-content" value = "Medieval">
                <h1 value = "Medieval">Medieval</h1>
@@ -126,7 +126,7 @@ render: function() {
           <a href = "#" role = "button" value = "Renaissance" onClick = {this.handleClick}>
             <div className="tl-bg" style={backgroundImg6}></div>
               <div className="tl-year" value = "Renaissance">
-              <p className="f2 heading--sanSerif" value = "Renaissance">460 - 625 BC</p>
+              <p className="f2 heading--sanSerif" value = "Renaissance">1400 - 1630 BC</p>
               </div>
              <div className="tl-content" value = "Renaissance">
                <h1 value = "Renaissance">Renaissance</h1>
@@ -138,7 +138,7 @@ render: function() {
           <a href = "#" role = "button" onClick = {this.handleClick}>
             <div className="tl-bg" style={backgroundImg7}></div>
               <div className="tl-year" value = "Age of Reason">
-              <p className="f2 heading--sanSerif" value = "Age of Reason">460 - 625 BC</p>
+              <p className="f2 heading--sanSerif" value = "Age of Reason">1600 - 1715 AD</p>
               </div>
              <div className="tl-content" value = "Age of Reason">
                <h1 value = "Age of Reason">Age of Reason</h1>
@@ -150,7 +150,7 @@ render: function() {
           <a href = "#" role = "button" onClick = {this.handleClick}>
             <div className="tl-bg" style={backgroundImg8} value = "Age of Enlightenment"></div>
               <div className="tl-year" value = "Age of Enlightenment">
-              <p className="f2 heading--sanSerif" value = "Age of Enlightenment">460 - 625 BC</p>
+              <p className="f2 heading--sanSerif" value = "Age of Enlightenment">1685 - 1800 AD</p>
               </div>
              <div className="tl-content" value = "Age of Enlightenment">
                <h1 value = "Age of Enlightenment">Age of Enlightenment</h1>
@@ -162,7 +162,7 @@ render: function() {
           <a href = "/" role = "button" onClick = {this.handleClick}>
             <div className="tl-bg" style={backgroundImg9}></div>
               <div className="tl-year" value = "Modern">
-              <p className="f2 heading--sanSerif" value = "Modern">460 - 625 BC</p>
+              <p className="f2 heading--sanSerif" value = "Modern">1800 - 1910 AD</p>
               </div>
              <div className="tl-content" value = "Modern">
                <h1 value = "Modern">Modern</h1>
