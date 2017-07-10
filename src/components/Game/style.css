@@ -94,12 +94,7 @@ select.select-picker .game-opt{
 }
 
 .game-answer-box{
-<<<<<<< HEAD
-	color: black;
-	/*left: 4vw;*/
-=======
     color: black;
->>>>>>> updated readme
 }
 
 .answerbox{
@@ -127,19 +122,11 @@ select.select-picker .game-opt{
 }
 
 .game-result{
-<<<<<<< HEAD
-	position: absolute;
-	width: 20vw;
-	top: -2vh;
-	left: 37vw;
-	font-size: 120%
-=======
     position: absolute;
     width: 20vw;
     top: -2vh;
     left: 30vw;
     font-size: 120%
->>>>>>> updated readme
 }
 
 .sphinx {
@@ -149,17 +136,10 @@ select.select-picker .game-opt{
 }
 
 .laser-line {
-<<<<<<< HEAD
-	position: fixed;
-	right:6vw;
-	top: 61vh;
-	width: 69vw;
-=======
     position: fixed;
     right: 6.5vw;
     top: 66.5vh;
     width: 67vw;
->>>>>>> updated readme
 
 }
 

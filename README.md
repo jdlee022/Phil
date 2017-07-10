@@ -39,7 +39,9 @@ Bootstrap
 
 Comments will sometimes populate in reverse order after a new comment has been made.
 
+
 Mobile compatibility on all pages.
+
 
 Allow users to delete their own comments and posts after logging in.
 
