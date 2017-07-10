@@ -55,13 +55,13 @@ export default class CategoriesList extends Component {
                 </div>
                 <div className="discuss-content-block">
                     <div className="row">
-                        <div className="col-md-2">
+                        <div className="col-md-2 col-xs-3">
                             <h4><u>Category</u></h4>
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-8 col-xs-7">
                             <h4><u>Description</u></h4>
                         </div>
-                        <div className="col-md-2 text-center">
+                        <div className="col-md-2 col-xs-2 text-center">
                             <h4><u>Posts</u></h4>
                         </div>
                     </div>

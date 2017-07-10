@@ -55,13 +55,13 @@ export default class CategoryPage extends Component {
                 <div className="discuss-content-block">
 
                     <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-md-6 col-xs-7">
                             <u>Posts</u>
                         </div>
-                        <div className="col-md-2 text-center">
+                        <div className="col-md-2 col-xs-2 text-center">
                             <u>Replies</u>
                         </div>
-                        <div className="col-md-4 text-center">
+                        <div className="col-md-4 col-xs-3 text-center">
                             <u>Last Reply</u>
                         </div>
                     </div>
