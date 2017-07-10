@@ -20,9 +20,13 @@ Phil is a web application for people who love discussing and learning about phil
 
 ## Technologies
 MERN stack (MongoDB, Express, React, Node)
+
 React-Router
+
 Axios
+
 Passport.js
+
 Bootstrap
 
 
@@ -38,10 +42,8 @@ Bootstrap
 ## Issues/Future Improvements
 
 Comments will sometimes populate in reverse order after a new comment has been made.
-<br />
 
 Mobile compatibility on all pages.
-<br />
 
 Allow users to delete their own comments and posts after logging in.
 
