@@ -3,6 +3,8 @@
  * It submits post requests to the database and will render error warnings if 
  * there was an issue with validation.
  * Accessed via react-router
+ * 
+ * @author Jon Lee, 7/1/17
  */
 import React, { Component } from 'react';
 import API from '../../utils/API';

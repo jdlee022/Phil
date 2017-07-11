@@ -2,6 +2,7 @@
  * @file - manages a single category list element that is created in categoriesList.js
  * Rendered in categoriesList.js
  * 
+ * @author Jon Lee, 7/3/17
  */
 import React, { Component } from 'react';
 import { Link } from 'react-router';

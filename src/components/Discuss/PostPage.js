@@ -2,6 +2,8 @@
  * @file - manages a PostPage that contains the original post and a list of comments
  * other users have posted.
  * Navigated to via react-router by clicking on link in categoryPageChild.
+ * 
+ * @author Jon Lee, 7/4/17
  */
 import React, { Component } from 'react';
 import { Link } from 'react-router';
@@ -47,9 +49,7 @@ export default class PostPage extends Component {
                 });
             });
         }.bind(this));
-
-
-
+        //get the comments related to the post
         API.getComments(this.state._id).then((response) => {
             this.setState({
                 comments: response.data
@@ -65,8 +65,6 @@ export default class PostPage extends Component {
     updateCommentingStatus(status) {
         // Check for new comments and update commenting Status
         API.getComments(this.state._id).then((response) => {
-            console.log("response from getComments:", response);
-
             this.setState({
                 comments: response.data,
                 currentlyCommenting: status
@@ -105,6 +103,7 @@ export default class PostPage extends Component {
     render() {
         var categoryQuery = "/category/" + this.state.category;
 
+        // Generate a new Comment element for each item in the state's array
         var commentItems = this.state.comments.map((comment, i) =>
             <CommentChild data={comment} postTitle={this.state.title} key={i} />
         );

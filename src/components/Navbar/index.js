@@ -1,3 +1,7 @@
+/**
+ * @file - manages the navigation bar that is rendered at the top of every page.
+ * This component is imported into the Main component.
+ */
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 

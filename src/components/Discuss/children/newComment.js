@@ -1,6 +1,8 @@
 /**
  * @file - manages a single comment list element that
  * is displayed in the PostPage view.
+ * 
+ * @author Jon Lee, 7/5/17
  */
 import React, { Component } from 'react';
 import API from '../../../utils/API';
@@ -42,7 +44,6 @@ export default class NewComment extends Component {
         if (this.props.loginStatus) {
             var date = new Date();
             date = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear() + " @ " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-
 
             API.newComment({
                 post: this.state.postId,

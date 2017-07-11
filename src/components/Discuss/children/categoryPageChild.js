@@ -1,9 +1,9 @@
 /**
- * @file - manages a single post list element that
- * is displayed in the categoryPage view. Allows users to navigate
- * to a post by clicking on the title.
+ * @file - manages a single post list element that is displayed in the categoryPage view. 
+ * Allows users to navigate to a post by clicking on the title.
  * Rendered in categoryPage.js
  * 
+ * @author Jon Lee, 7/3/17
  */
 import React, { Component } from 'react';
 import { Link } from 'react-router';

@@ -41,14 +41,12 @@ const API = {
         return axios.get('/check/' + username);
     },
 
+    /** Gets a user by their id */
     getUserById: function(id) {
         return axios.get('/user/' + id);
     },
 
-
-    /**
-     * Gets all categories stored in the db
-     */
+    /** Gets all categories stored in the db */
     getCategories: function() {
         return axios.get('/api/categories');
     },
@@ -62,25 +60,27 @@ const API = {
         return axios.post('/api/new_post', postInfo);
     },
 
-    /**
-     * Gets all categories stored in the db
-     */
+    /** Gets all categories stored in the db */
     getPosts: function(category) {
         return axios.get('/api/posts/' + category);
     },
 
+    /** Gets a single post by its id */
     getPostById: function(_id) {
         return axios.get('/api/post/' + _id);
     },
 
+    /** posts a new comment to the database */
     newComment: function(commentInfo) {
         return axios.post('/api/new_comment', commentInfo);
     },
 
+    /** Gets an array of comments by a post's id */
     getComments: function(postId) {
         return axios.get('/api/comments/' + postId);
     },
 
+    /** Gets a single comment by its id */
     getCommentById: function(commentId) {
         return axios.get('/api/comment/' + commentId);
     }

@@ -4,6 +4,8 @@
  * Allows users to submit login requests and will redirect them to the discussion
  * board if login succeeds, else displays error.
  * Accessed via react-router
+ * 
+ * @author Jon Lee, 7/1/17
  */
 import React, { Component } from 'react';
 import API from '../../utils/API';

@@ -4,6 +4,8 @@
  * the login, register, categories, threads, and posts components.
  * Discuss's main component in react-router via /discuss All other components in
  * /src/components/Discuss are children of this route
+ * 
+ * @author Jon Lee, 6/30/17
  */
 import React, { Component } from 'react';
 import { Link } from 'react-router';

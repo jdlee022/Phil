@@ -1,7 +1,12 @@
 /**
+ * @file manages data that is used to initialize our database. This is not
+ * referenced anywhere else in code but can be used in the mongo CLI
+ * to populate the db.
+ */
+
+/**
  * To insert multiple categories to the db:
  * Run the mongo CLI, use the app's database and run the following command
- * (or hit the route from /server/routes/category-routes with Postman)
  */
 db.categories.insertMany([
     {
@@ -69,7 +74,7 @@ db.categories.insertMany([
 
 
 /** 
- * DUMMY DATA FOR HOME PAGE QUOTES
+ * DATA FOR HOME PAGE QUOTES
  * Quote and Philosopher fields required.
  * See dailyQuote model for reference
  */
