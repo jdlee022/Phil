@@ -3,20 +3,15 @@
  * We import all of the components used in routing, 
  * define our routes, and call ReactDOM to render the view.
  */
-/** TODO: 
- * After user creates a new post navigate to that post's view (add to handleSubmit in newPost.js)
- * validation - no empty fields on submission
- */
 
 //Import bootstrap first so we don't overwrite our own styles
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
+//import React dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { browserHistory } from 'react-router';
-
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 //Import all of our components to configure react-router
-import { Router, Route, IndexRoute } from 'react-router';
 import Home from './components/Home';
 import Discuss from './components/Discuss/index';
 import CategoriesList from './components/Discuss/categoriesList';

@@ -1,6 +1,8 @@
 /**
  * @file handles the server side routing related to users.
  * Receives requests from the client side via axios and directly communicates with mongoDB
+ * 
+ * @author - Jon Lee, 6/28/17
  */
 const express = require('express');
 const router = new express.Router();
@@ -8,6 +10,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('../models/user');
 
+// We use passport.js for user authentication
 passport.use(new LocalStrategy(
     function (username, password, done) {
         User.getUserByUsername(username, function (err, user) {
@@ -127,6 +130,9 @@ router.get('/api/game/gethighscore/:id', function (req, res){
 	});
 });
 
+/**
+ * Updates a user's high score
+ */
 router.post('/api/game/updatehighscore', function (req, res) {
 	User.findOneAndUpdate({_id: req.body.userId},
 	{$set: { "highScore": req.body.highScore}}, {new: true}, 

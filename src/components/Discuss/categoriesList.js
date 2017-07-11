@@ -1,8 +1,10 @@
 /**
- * @file - the default view when navigating to /discuss. Gets list of 
- * categories from the database and generates an unordered list 
- * of CategoryChildren from /children/category-child
+ * @file - the default view when navigating to /discuss. 
+ * Gets list of categories from the database and generates 
+ * an unordered list of CategoryChildren from /children/category-child.
  * Accessed via react-router, and is the default component when hitting /discuss
+ * 
+ * @author Jon Lee, 7/2/17
  */
 import React, { Component } from 'react';
 import CategoriesListChild from './children/categoriesListChild';
@@ -71,7 +73,6 @@ export default class CategoriesList extends Component {
                         </ul>
                     </div>
                 </div>
-
             </div>
         );
     }

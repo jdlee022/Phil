@@ -1,5 +1,7 @@
 /**
  * @file - manages the api routes to interact with the post collection from the db
+ * 
+ * @author - Jon Lee, 6/30/17
  */
 const express = require('express');
 const router = new express.Router();
@@ -64,6 +66,9 @@ router.get('/api/posts/:category', function (req, res) {
     });
 });
 
+/**
+ * Gets a post by its id
+ */
 router.get('/api/post/:_id', function (req, res) {
     Post.findOne({_id: req.params._id}).then(function (docs) {
         res.json(docs);

@@ -1,10 +1,12 @@
 /**
  * @file - manages the routes related to the categories collection in db.
  * Provides api routes to get a list of all categories and to post a new one.
+ * 
+ * @author - Jon Lee, 6/30/17
  */
 const express = require('express');
-
 const router = new express.Router();
+
 const Category = require('../models/category');
 const Post = require('../models/post');
 

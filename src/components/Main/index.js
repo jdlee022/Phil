@@ -1,7 +1,10 @@
+/**
+ * @file this is the parent component to all other components which also has the
+ * responsibility of rendering the background image. You can see the component 
+ * hierarchy in /src/index.js by looking at the routes.
+ */
 import React, { Component } from 'react';
 import Navbar from '../Navbar/';
-
-// import Timer from "./Timer"
 
 class Main extends Component {
 

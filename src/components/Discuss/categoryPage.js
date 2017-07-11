@@ -3,6 +3,8 @@
  * categories displayed when /discuss is hit. Displays a list of posts related
  * to the category.
  * Accessed via react-router
+ * 
+ * @author Jon Lee, 7/1/17
  */
 import React, { Component } from 'react';
 import { Link } from 'react-router';
@@ -35,7 +37,7 @@ export default class CategoryPage extends Component {
             <CategoryPageChild data={post} key={i} />
         );
 
-        console.log(postItems);
+        // If there are no posts in a given category then prompt the user to start it off
         if (postItems.length === 0) {
             postItems = <div className="col-xs-12 text-center" style={{color: '#ddd', paddingRight: '80px', margin: '20px'}}>
                 <li>Get this category started by creating a new post!</li>

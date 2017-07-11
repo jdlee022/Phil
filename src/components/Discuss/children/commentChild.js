@@ -1,6 +1,8 @@
 /**
  * @file - manages a single comment list element that
  * is displayed in the PostPage view.
+ * 
+ * @author Jon Lee, 7/5/17
  */
 import React, { Component } from 'react';
 import API from '../../../utils/API';
@@ -19,7 +21,6 @@ export default class CommentChild extends Component {
 
     // Set state with result from API after component mounts
     componentDidMount() {
-
         API.getUserById(this.props.data.user).then((response) => {
             if (response.data) {
                 this.setState({
@@ -28,8 +29,6 @@ export default class CommentChild extends Component {
                 })
             }
         });
-
-
     }
 
     render() {

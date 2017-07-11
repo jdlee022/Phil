@@ -1,5 +1,7 @@
 /**
  * @file - manages the api routes to interact with the post collection from the db
+ * 
+ * @author - Jon Lee, 7/2/17
  */
 const express = require('express');
 const router = new express.Router();
@@ -55,11 +57,11 @@ router.get('/api/comments/:postId', function (req, res) {
     });
 });
 
+/** Get a comment by its id */
 router.get('/api/comment/:id', function(req, res){
     Comment.findOne({_id: req.params.id}).then(function (docs) {
         res.json(docs);
     });
 });
-
 
 module.exports = router;

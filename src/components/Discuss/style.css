@@ -140,7 +140,7 @@ a:hover {
 .comment-list-element.op {
    margin-left:0px;
    margin-top: 10px;
-    color: #ddd;
+    color: white;
     background-color: rgba(50, 50, 50, 0.6);
     border-radius: 15px;
     padding: 15px;
@@ -150,7 +150,7 @@ a:hover {
 .comment-list-element {
    
     margin-bottom: 25px;
-    color: #c0c0c0;
+    color: #ddd;
     background-color: rgba(50, 50, 50, 0.4);
     border-radius: 15px;
     padding: 15px;

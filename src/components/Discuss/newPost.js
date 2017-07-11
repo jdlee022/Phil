@@ -2,8 +2,10 @@
  * @file manages the component that renders a form for users to submit
  * a new Post within a Category if they are logged in.
  * Accessed via react-router
+ * 
+ * @author Jon Lee, 7/3/17
  */
-import React, { Component } from 'react';
+import React from 'react';
 import API from '../../utils/API';
 
 export default class NewPost extends React.Component {
@@ -27,11 +29,16 @@ export default class NewPost extends React.Component {
     componentDidMount() {
         // Get the current date and time
         var date = new Date();
-        this.state.date = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear() + " @ " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        date = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear() + " @ " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        this.setState({
+            date: date
+        });
         // If user is logged in then set localStorage with user's info
-        if (this.props.loginStatus == true) {
-            this.state.userId = localStorage.getItem('userId');
-            this.state.username = localStorage.getItem('username');
+        if (this.props.loginStatus === true) {
+            this.setState({
+                userId: localStorage.getItem('userId'),
+                username: localStorage.getItem('username')
+            });
         }
     }
 
@@ -80,7 +87,7 @@ export default class NewPost extends React.Component {
     }
 
     render() {
-
+        
         return (
             <div className="row">
                 <div className="col-md-12 text-center">
