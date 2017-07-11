@@ -1,6 +1,8 @@
 # Phil
 [phil9000.herokuapp.com](https://phil9000.herokuapp.com)
 
+[brief screencast demo](https://youtu.be/HmjD4WforjU)
+
 ## Description
 Phil is a web application for people who love discussing and learning about philosophy. Featuring a discussion form where users can register for an account, login, create new posts, and comment on existing posts, as well as an Explore page that provides users with a brief history of Western Philosophy, and a Challenge page that puts users knowledge of philosophy to the test.
 
