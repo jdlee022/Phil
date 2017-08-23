@@ -4,7 +4,7 @@
 [brief screencast demo](https://youtu.be/HmjD4WforjU)
 
 ## Description
-Phil is a web application for people who love discussing and learning about philosophy. Featuring a discussion form where users can register for an account, login, create new posts, and comment on existing posts, as well as an Explore page that provides users with a brief history of Western Philosophy, and a Challenge page that puts users knowledge of philosophy to the test.
+Phil is a web application for people who love discussing and learning about philosophy. Featuring a discussion forum where users can register for an account, login, create new posts, and comment on existing posts, as well as an Explore page that provides users with a brief history of Western Philosophy, and a Challenge page that puts users knowledge of philosophy to the test.
 
 Note: The discussion threads used to populate the forum were borrowed from forum.philosophynow.com - you can find the original posts and their authors by searching the post text on their site.
 
