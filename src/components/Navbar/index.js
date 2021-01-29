@@ -26,7 +26,8 @@ export default class Navbar extends Component {
                     <Link to='/explore' className="link">Explore</Link>
                 </div>
                 <div className="col-xs-2 text-center">
-                    <Link to='/game' className="link">Challenge</Link>
+                    {/* <Link to='/game' className="link">Challenge</Link> */}
+                    <a href="https://github.com/jdlee022/Phil" className="link">Github</a>
                 </div>
             </div>
         );

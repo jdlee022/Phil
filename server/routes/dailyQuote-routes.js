@@ -13,10 +13,13 @@ router.get('/api/home/getquotes', function (req, res) {
 });
 
 router.post('/api/home/addquote', function (req, res) {
-	var newQuote = new DailyQuote(req.body);
+    var newQuote = new DailyQuote(req.body);
 	DailyQuote.addQuote(newQuote, function (err, quote) {
-		if (err) throw err;
-		console.log("new quote added", quote);
+		if (err) {
+            res.json({status: "error", error: err });
+        };
+        console.log("new quote added", quote);
+        res.json({status: "success"});
 	});
 });
 

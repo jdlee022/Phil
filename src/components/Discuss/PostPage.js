@@ -78,9 +78,9 @@ export default class PostPage extends Component {
      * the displayCommentOptions func
      */
     handlePostReply() {
-        this.setState({
-            currentlyCommenting: true
-        });
+        if(this.props.loginStatus){
+            this.setState({currentlyCommenting: true});
+        }
     }
 
     /**
@@ -96,7 +96,10 @@ export default class PostPage extends Component {
             </div>
         }
         else {
-            return <button style={{ marginTop: '0px', marginLeft: '0px' }} type="button" className="btn btn-default" onClick={this.handlePostReply}>Post Reply</button>;
+            return <div className="post_reply_div">
+                <button style={{ marginTop: '0px', marginLeft: '0px' }} type="button" className="btn btn-default" onClick={this.handlePostReply}>Post Reply</button>
+                {!this.props.loginStatus && <p className="warning">You must be logged in to reply.</p>}
+            </div>;
         }
     }
 
@@ -117,7 +120,7 @@ export default class PostPage extends Component {
                     <div className=" comment-list-element op">
                         <h1 className="op-title">{this.state.title}</h1>
                         <h2>By <span className="username">{this.state.username}</span> on {this.state.date}</h2>
-                        <h3>{this.state.username}'s high score: {this.state.userScore}</h3>
+                        {/* <h3>{this.state.username}'s high score: {this.state.userScore}</h3> */}
                         <h4 style={{ whiteSpace: 'pre-wrap' }}>{this.state.text}</h4>
                     </div>
                     {this.displayCommentOptions()}

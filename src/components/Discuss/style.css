@@ -136,6 +136,11 @@ a:hover {
 
 /*COMMENT LIST*/
 
+.post_reply_div{
+    display: flex;
+    align-items: center;
+}
+
 
 .comment-list-element.op {
    margin-left:0px;

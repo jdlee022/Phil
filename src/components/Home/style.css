@@ -28,6 +28,7 @@ div.quote-container {
 .daily-quote {
     font-size: 22px;
     font-weight: normal;
+    line-height: normal;
 }
 .quote-philosopher-name {
     font-size: 18px;

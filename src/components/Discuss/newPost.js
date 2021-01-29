@@ -22,7 +22,6 @@ export default class NewPost extends React.Component {
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.checkLoginStatus = this.checkLoginStatus.bind(this);
     }
 
     // Set state with result from API after component mounts
@@ -79,22 +78,14 @@ export default class NewPost extends React.Component {
         }
     }
 
-    /** Display an error message if the user tries to post without logging in. */
-    checkLoginStatus() {
-        if (!this.props.loginStatus) {
-            return <p className="warning">You must be logged in to post.</p>
-        }
-    }
-
     render() {
         
         return (
             <div className="row">
                 <div className="col-md-12 text-center">
                     <h2 className="page-header">Create a new post in {this.state.category}</h2>
-                    {this.checkLoginStatus()}
                 </div>
-                <div className="col-md-offset-1 col-md-10">
+                {this.props.loginStatus && <div className="col-md-offset-1 col-md-10">
                     <form onSubmit={this.handleSubmit}>
                         <div className="form-group">
                             <label>Post Title</label>
@@ -106,7 +97,7 @@ export default class NewPost extends React.Component {
                         </div>
                         <button type="submit" className="btn btn-default">Submit</button>
                     </form>
-                </div>
+                </div>}
             </div>
         );
     }

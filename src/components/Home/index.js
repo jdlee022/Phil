@@ -12,7 +12,7 @@ export default class Home extends Component {
     constructor() {
         super();
         this.state = {
-            quoteOfTheDay: {},
+            quoteOfTheDay: null,
             quoteIndex: 0,
             allQuotes: []
         }
@@ -93,7 +93,7 @@ export default class Home extends Component {
                     <h3 className="tagline">Welcome to <span style={{ color: "#ffd65f", fontStyle: 'oblique', fontWeight: '800' }}>phil</span>, a hub for people who enjoy discussing and learning about philosophy.</h3>
                     <div className="quote-container">
                         <div className="quote-heading">Quote of the day:</div>
-                        {this.displayTodayQuote()}
+                        {this.state.quoteOfTheDay !== null && this.displayTodayQuote()}
                     </div>
                 </div>
             </div>

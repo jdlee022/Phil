@@ -37,7 +37,7 @@ export default class CommentChild extends Component {
             <li className="row" style={{ margin: '0px' }}>
                 <div className="col-xs-12 comment-list-element">
                     <h2>By <span className="username">{this.state.username}</span> on {this.state.date}</h2>
-                    <h3>{this.state.username}'s high score: {this.state.userScore}</h3>
+                    {/* <h3>{this.state.username}'s high score: {this.state.userScore}</h3> */}
                     <h4 style={{ whiteSpace: 'pre-wrap' }}>{this.state.text}</h4>
                 </div>
             </li>
