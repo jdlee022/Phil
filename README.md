@@ -1,5 +1,5 @@
 # Phil
-[phil9000.herokuapp.com](https://phil9000.herokuapp.com)
+[phil-9000.herokuapp.com](https://phil-9000.herokuapp.com/)
 
 [brief screencast demo](https://youtu.be/HmjD4WforjU)
 
