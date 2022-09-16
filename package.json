@@ -10,7 +10,7 @@
     "babel-register": "6.24.1",
     "bcryptjs": "2.4.3",
     "body-parser": "*",
-    "bootstrap": "3.3.7",
+    "bootstrap": "3.4.1",
     "classnames": "2.2.5",
     "connect-flash": "*",
     "cookie-parser": "1.4.1",
