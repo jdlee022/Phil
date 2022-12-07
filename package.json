@@ -14,7 +14,7 @@
     "classnames": "2.2.5",
     "connect-flash": "*",
     "cookie-parser": "1.4.1",
-    "express": "4.15.3",
+    "express": "4.17.3",
     "express-messages": "*",
     "express-session": "*",
     "express-validator": "5.3.1",
